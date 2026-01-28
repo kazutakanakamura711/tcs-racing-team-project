@@ -1,8 +1,8 @@
-import { Title } from '@/components/Elements/Title';
-import { MainLayout } from '@/components/Layouts/MainLayout';
-import { PageLayout } from '@/components/Layouts/PageLayout';
-import { OurPartners } from '../Top/OurPartners';
-import { OfficialMedia } from '../Top/OfficialMedia';
+import { Title } from '@/shared/ui/title';
+import { MainLayout } from '@/shared/ui/main-layout';
+import { PageLayout } from '@/shared/ui/page-layout';
+import { OurPartners } from '../top/OurPartners';
+import { OfficialMedia } from '../top/OfficialMedia';
 import { MemberSlider } from './Slider';
 import { FirstView } from './FirstView';
 import { ProfileContent } from './ProfileContent';

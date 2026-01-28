@@ -1,5 +1,5 @@
-import { ImageFilter } from '@/components/Elements/ImageFilter';
-import { LinkUnderBarButton } from '@/components/Elements/LinkUnderBarButton';
+import { ImageFilter } from '@/shared/ui/image-filter';
+import { LinkUnderBarButton } from '@/shared/ui/link-under-bar-button';
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NewsItem } from './UpDateContents';

@@ -1,4 +1,4 @@
-import { SnsIcon } from '@/components/Elements/SnsIcon';
+import { SnsIcon } from '@/shared/ui/sns-icon';
 import {
   facebookUrl,
   getMemberById,

@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { AppRoutes } from './routes';
-import { AppProvider } from './providers/app/appProvider';
+import { AppProvider } from './providers/app/app-provider';
 import { RecoilRoot } from 'recoil';
 import customTheme from './theme';
 

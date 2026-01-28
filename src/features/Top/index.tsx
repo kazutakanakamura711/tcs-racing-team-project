@@ -1,14 +1,14 @@
 import { Carousel } from './Slider/Carousel';
-import { Title } from '@/components/Elements/Title';
+import { Title } from '@/shared/ui/title';
 import { UpdatesContent } from './UpDates/UpDateContents';
 import { TheTeam } from './TheTeam';
 import { Staff } from './Staff/Staff';
-import { PageLayout } from '@/components/Layouts/PageLayout';
+import { PageLayout } from '@/shared/ui/page-layout';
 import { Schedule } from './Schedule/Schedule';
 import { OurPartners } from './OurPartners';
 import { OfficialMedia } from './OfficialMedia';
 import { Box } from '@chakra-ui/react';
-import { Message } from '@/components/Elements/Message';
+import { Message } from '@/shared/ui/message';
 import { useTranslation } from 'react-i18next';
 
 export const TopContent = () => {

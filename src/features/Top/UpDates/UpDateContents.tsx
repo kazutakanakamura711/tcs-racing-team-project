@@ -1,10 +1,10 @@
-import { MainLayout } from '@/components/Layouts/MainLayout';
+import { MainLayout } from '@/shared/ui/main-layout';
 import { Box } from '@chakra-ui/react';
 import { FirstContent } from './FirstContent';
 import { SecondContent } from './SecondContent';
 import { OtherContents } from './OtherContents';
 import { useUpDateContents } from './hooks/useUpDateContents';
-import { LinkButton } from '@/components/Elements/LinkButton';
+import { LinkButton } from '@/shared/ui/link-button';
 
 // MicroCMSから返されるニュースアイテムの型を定義
 export interface NewsItem {

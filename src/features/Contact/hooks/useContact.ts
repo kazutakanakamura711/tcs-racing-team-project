@@ -1,4 +1,4 @@
-import { NewsItem } from '@/features/Top/UpDates/UpDateContents';
+import { NewsItem } from '@/features/top/UpDates/UpDateContents';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -7,8 +7,10 @@ export const useUpDateContents = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const apiUrl = `${import.meta.env.VITE_API_URL}blogs`
-      const categoryFilter = encodeURIComponent(`category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`);
+      const apiUrl = `${import.meta.env.VITE_API_URL}blogs`;
+      const categoryFilter = encodeURIComponent(
+        `category[equals]${import.meta.env.VITE_UPDATES_CONTENTS_ID}`,
+      );
       const urlWithFilter = `${apiUrl}?filters=${categoryFilter}&limit=5&orders=-updatedAt`;
 
       try {

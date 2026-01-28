@@ -1,5 +1,5 @@
-import { LinkButton } from '@/components/Elements/LinkButton';
-import { MainLayout } from '@/components/Layouts/MainLayout';
+import { LinkButton } from '@/shared/ui/link-button';
+import { MainLayout } from '@/shared/ui/main-layout';
 import { getTopTheStaffList, MemberId } from '@/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';

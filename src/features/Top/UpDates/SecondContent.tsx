@@ -1,4 +1,4 @@
-import { ImageFilter } from '@/components/Elements/ImageFilter';
+import { ImageFilter } from '@/shared/ui/image-filter';
 import { Box, HStack, Text, Image } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { NewsItem } from './UpDateContents';

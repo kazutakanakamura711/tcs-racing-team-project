@@ -1,10 +1,10 @@
-import { PageLayout } from '@/components/Layouts/PageLayout';
-import { Title } from '@/components/Elements/Title';
+import { PageLayout } from '@/shared/ui/page-layout';
+import { Title } from '@/shared/ui/title';
 import { Box, Image } from '@chakra-ui/react';
 import { Schedule } from './Schedule';
-import { OurPartners } from '../Top/OurPartners';
-import { OfficialMedia } from '../Top/OfficialMedia';
-import { MainLayout } from '@/components/Layouts/MainLayout';
+import { OurPartners } from '../top/OurPartners';
+import { OfficialMedia } from '../top/OfficialMedia';
+import { MainLayout } from '@/shared/ui/main-layout';
 
 export const ScheduleComponent = () => {
   return (
