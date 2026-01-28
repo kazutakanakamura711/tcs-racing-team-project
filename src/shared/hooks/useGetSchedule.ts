@@ -1,4 +1,4 @@
-import { ScheduleItem } from '@/features/Top/Schedule/Schedule';
+import { ScheduleItem } from '@/features/top/Schedule/Schedule';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 

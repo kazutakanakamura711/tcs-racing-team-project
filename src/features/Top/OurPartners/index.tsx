@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components/Layouts/MainLayout';
+import { MainLayout } from '@/shared/ui/main-layout';
 import { partnersImages } from '@/constants';
 import { Box, Image, SimpleGrid } from '@chakra-ui/react';
 

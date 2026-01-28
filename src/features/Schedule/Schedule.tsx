@@ -1,6 +1,6 @@
-import { MainLayout } from '@/components/Layouts/MainLayout';
+import { MainLayout } from '@/shared/ui/main-layout';
 import { Box, VStack } from '@chakra-ui/react';
-import { ScheduleItem } from '@/components/Elements/ScheduleItem';
+import { ScheduleItem } from '@/shared/ui/schedule-item';
 import { ScheduleTitle } from './components/ScheduleTitle';
 import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
 import { useLanguage } from '@/state/languageState/useLanguage';
