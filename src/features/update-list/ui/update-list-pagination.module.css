@@ -1,0 +1,22 @@
+.pagination {
+  font-weight: bold;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 76px;
+}
+
+.pageItem {
+  margin: 0 5px;
+}
+
+.pageLink {
+  text-decoration: none;
+}
+
+.active {
+  background-color: #ff8f80;
+  color: white;
+  padding: 5px 10px;
+}

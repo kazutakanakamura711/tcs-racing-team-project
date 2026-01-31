@@ -1,5 +1,5 @@
-import { Contact } from '@/features/contact';
+import { ContactContainer } from '@/features/contact';
 
 export const ContactPage = () => {
-  return <Contact />;
+  return <ContactContainer />;
 };

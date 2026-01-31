@@ -4,7 +4,7 @@ import { PageLayout } from '@/shared/ui/page-layout';
 import { Box, Divider, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { OurPartnersList } from './our-partners-list';
-import { OfficialMedia } from '../../top/OfficialMedia';
+import { TopOfficialMedia } from '../../top/ui/top-official-media/top-official-media';
 import { Partner, PartnerCategory } from '@/constants';
 import { FC } from 'react';
 
@@ -105,7 +105,7 @@ export const OurPartners: FC<Props> = ({ blackPartner, partnersImages }) => {
           />
         </MainLayout>
         <Box mt="121px">
-          <OfficialMedia />
+          <TopOfficialMedia />
         </Box>
       </Box>
     </PageLayout>

@@ -1,11 +1,11 @@
 import { ContactPage } from '@/pages/contact-page';
-import { TopPage } from '@/pages/home-page';
+import { TopPage } from '@/pages/top-page';
 import { OurPartnersPage } from '@/pages/our-partners-page';
-import { RiderPage } from '@/pages/rider-page';
 import { SchedulePage } from '@/pages/schedule-page';
 import { TeamMemberPage } from '@/pages/team-member-page';
 import { UpdateContentPage } from '@/pages/update-content-page';
 import { UpdateListPage } from '@/pages/update-list-page';
+import { MemberDetailPage } from '@/pages/member-detail-page';
 
 export const publicRoutes = [
   {
@@ -20,8 +20,8 @@ export const publicRoutes = [
   },
   {
     path: '/member-page/:id',
-    element: <RiderPage />,
-    children: [{ path: '', element: <RiderPage /> }],
+    element: <MemberDetailPage />,
+    children: [{ path: '', element: <MemberDetailPage /> }],
   },
   {
     path: '/contact',

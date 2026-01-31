@@ -1,5 +1,5 @@
-import { UpdateListContent } from '@/features/update-list';
+import { UpdateListContainer } from '@/features/update-list';
 
 export const UpdateListPage = () => {
-  return <UpdateListContent />;
+  return <UpdateListContainer />;
 };

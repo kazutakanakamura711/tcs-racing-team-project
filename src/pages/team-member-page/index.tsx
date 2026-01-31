@@ -1,5 +1,5 @@
-import { TeamMemberContent } from '@/features/team-member';
+import { TeamMemberContainer } from '@/features/team-member';
 
 export const TeamMemberPage = () => {
-  return <TeamMemberContent />;
+  return <TeamMemberContainer />;
 };

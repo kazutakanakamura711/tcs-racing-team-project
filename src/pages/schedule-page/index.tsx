@@ -1,5 +1,5 @@
-import { ScheduleComponent } from '@/features/schedule';
+import { ScheduleContainer } from '@/features/schedule';
 
 export const SchedulePage = () => {
-  return <ScheduleComponent />;
+  return <ScheduleContainer />;
 };
