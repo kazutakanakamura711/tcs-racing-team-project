@@ -1,5 +1,5 @@
 import { OurPartners } from './ui';
-import { partnersImages } from '@/constants/partnersImages';
+import { partnersImages } from '@/constants';
 
 export const OurPartnersContainer = () => {
   const blackPartner = partnersImages.black[0];

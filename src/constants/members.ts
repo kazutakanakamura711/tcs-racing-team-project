@@ -82,7 +82,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.KoheiYamamoto,
     nameJa: '山本 幸平',
     nameEn: 'Kohei Yamamoto',
-    memberType: 'ライダー',
+    memberType: 'director',
     gradationImagesPath:
       '/images/member/img-member-kohei-yamamoto-gradation.webp',
     topTheTeamSectionImagePath:
@@ -119,7 +119,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.RiyadhHakim,
     nameJa: 'リアッド ハキム',
     nameEn: 'Riyadh Hakim',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath:
       '/images/member/img-member-riyadh-hakim-gradation.webp',
     topTheTeamSectionBackgroundImagePath:
@@ -141,7 +141,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.SayuBella,
     nameJa: 'サユ ベラ',
     nameEn: 'Sayu Bella',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath: '/images/member/img-member-sayu-bella-gradation.webp',
     topTheTeamSectionBackgroundImagePath:
       '/images/top/img-top-indonesia-flag.webp',
@@ -162,7 +162,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.YutaMatsumoto,
     nameJa: '松本 佑太',
     nameEn: 'Yuta Matsumoto',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath:
       '/images/member/img-member-yuta-matsumoto-gradation.webp',
     topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp',
@@ -183,7 +183,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.EusebiaNicole,
     nameJa: 'エセビア ニコル',
     nameEn: 'Eusebia Nicole',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath:
       '/images/member/img-member-eusebia-nicole-gradation.webp',
     topTheTeamSectionBackgroundImagePath:
@@ -225,7 +225,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.FiliYudiono,
     nameJa: 'フェリ ユドヨノ',
     nameEn: 'Fili Yudiono',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath: '',
     topTheTeamSectionBackgroundImagePath: '',
     topTheTeamSectionImagePath:
@@ -241,7 +241,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.RinaZaki,
     nameJa: 'リナ ザキ',
     nameEn: 'Rina Zaki',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath: '',
     topTheTeamSectionBackgroundImagePath: '',
     topTheTeamSectionImagePath: '/images/member/img-member-rina-zaki-rider.png',
@@ -256,7 +256,7 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.AyakaHiyoshi,
     nameJa: '日吉 彩華',
     nameEn: 'Ayaka Hiyoshi',
-    memberType: 'ライダー',
+    memberType: 'rider',
     gradationImagesPath: '',
     topTheTeamSectionBackgroundImagePath: '',
     topTheTeamSectionImagePath:
@@ -319,4 +319,25 @@ export const getMemberByMemberKey = (key: MemberKey): Member => {
   }
 
   return member;
+};
+
+// 指定された memberType に一致するメンバーを配列で取得する
+export const getMembersByType = (type: string): Member[] => {
+  return Object.values(members).filter(member => member.memberType === type);
+};
+
+// memberType が 'director' のメンバーを取得する
+export const getDirector = (): Member => {
+  const directors = getMembersByType('director');
+
+  if (directors.length === 0) {
+    throw new Error('Director not found.');
+  }
+
+  return directors[0];
+};
+
+// memberType が 'rider' のメンバーを配列で取得する
+export const getRiders = (): Member[] => {
+  return getMembersByType('rider');
 };

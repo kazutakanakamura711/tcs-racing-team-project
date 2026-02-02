@@ -1,19 +1,21 @@
 import { ImageFilter } from '@/shared/ui/image-filter';
 import { Box, HStack, Text, Image } from '@chakra-ui/react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavigateFunction } from 'react-router-dom';
 import { NewsItem } from './top-updates';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
-import { useLanguage } from '@/state/languageState/useLanguage';
 
 interface Props {
   updateArray: NewsItem[];
+  navigate: NavigateFunction;
+  selectedLanguage: string;
 }
 
-export const SecondContent: FC<Props> = ({ updateArray }) => {
-  const navigate = useNavigate();
-  const [selectedLanguage] = useLanguage();
-
+export const SecondContent: FC<Props> = ({
+  updateArray,
+  navigate,
+  selectedLanguage,
+}) => {
   if (!updateArray) return <Box>データがありません。</Box>;
 
   return (

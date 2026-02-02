@@ -3,8 +3,6 @@ import { Box, VStack } from '@chakra-ui/react';
 import { ScheduleItem } from '@/shared/ui/schedule-item';
 import { LinkButton } from '@/shared/ui/link-button';
 import { ScheduleTitle } from './schedule-title';
-import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
-import { useLanguage } from '@/state/languageState/useLanguage';
 
 export interface ScheduleItem {
   id: number;
@@ -15,11 +13,17 @@ export interface ScheduleItem {
   url?: string;
 }
 
-const limit = 6;
+interface Props {
+  raceScheduleList: ScheduleItem[];
+  eventScheduleList: ScheduleItem[];
+  selectedLanguage: string;
+}
 
-export const TopSchedule = () => {
-  const { raceScheduleList, eventScheduleList } = useGetSchedule({ limit });
-  const [selectedLanguage] = useLanguage();
+export const TopSchedule: React.FC<Props> = ({
+  raceScheduleList,
+  eventScheduleList,
+  selectedLanguage,
+}) => {
   if (!raceScheduleList || !eventScheduleList)
     return <Box>データがありません。</Box>;
 

@@ -7,7 +7,7 @@ interface Props {
   // TODO: 国旗の画像が追加されたらbackgroundUrlを必須にする
   backgroundUrl?: string;
   name: string;
-  comment: React.ReactNode;
+  comment: JSX.Element[];
   imageUrl: string;
   width?: string;
   link: string;
@@ -80,9 +80,9 @@ export const MemberContent: FC<Props> = ({
         >
           {name}
         </Text>
-        <Box color="#fff" fontSize="12px">
+        <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
           {comment}
-        </Box>
+        </Text>
       </Box>
       <Box
         position="absolute"

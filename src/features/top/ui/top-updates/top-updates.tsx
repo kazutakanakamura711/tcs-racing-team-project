@@ -3,8 +3,8 @@ import { Box } from '@chakra-ui/react';
 import { FirstContent } from './first-content';
 import { SecondContent } from './second-content';
 import { OtherContents } from './other-contents';
-import { useUpDateContents } from '../../model/hooks/useUpDateContents';
 import { LinkButton } from '@/shared/ui/link-button';
+import { NavigateFunction } from 'react-router-dom';
 
 // MicroCMSから返されるニュースアイテムの型を定義
 export interface NewsItem {
@@ -26,10 +26,22 @@ export interface NewsItem {
     url: string;
   };
 }
-export const TopUpdates = () => {
-  const { updateFirstArray, updateSecondArray, updateThirdArray } =
-    useUpDateContents();
 
+interface Props {
+  updateFirstArray: NewsItem[];
+  updateSecondArray: NewsItem[];
+  updateThirdArray: NewsItem[];
+  navigate: NavigateFunction;
+  selectedLanguage: string;
+}
+
+export const TopUpdates: React.FC<Props> = ({
+  updateFirstArray,
+  updateSecondArray,
+  updateThirdArray,
+  navigate,
+  selectedLanguage,
+}) => {
   return (
     <MainLayout>
       <Box pb="96px">
@@ -40,16 +52,28 @@ export const TopUpdates = () => {
         >
           {updateFirstArray.length !== 0 && (
             <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
-              <FirstContent updateArray={updateFirstArray} />
+              <FirstContent
+                updateArray={updateFirstArray}
+                navigate={navigate}
+                selectedLanguage={selectedLanguage}
+              />
               {updateSecondArray.length !== 0 && (
-                <SecondContent updateArray={updateSecondArray} />
+                <SecondContent
+                  updateArray={updateSecondArray}
+                  navigate={navigate}
+                  selectedLanguage={selectedLanguage}
+                />
               )}
             </Box>
           )}
 
           {updateThirdArray.length !== 0 && (
             <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
-              <OtherContents updateArray={updateThirdArray} />
+              <OtherContents
+                updateArray={updateThirdArray}
+                navigate={navigate}
+                selectedLanguage={selectedLanguage}
+              />
             </Box>
           )}
 

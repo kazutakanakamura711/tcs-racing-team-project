@@ -7,6 +7,8 @@ import { UpdateListPagination } from './ui';
 import { useState, useEffect } from 'react';
 import { useUpdateListPagiNation } from './model/hooks/use-update-list-pagination';
 import { NewsItem } from '@/features/top/ui/top-updates/top-updates';
+import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/state/languageState/useLanguage';
 
 export const UpdateListContainer = () => {
   const [currentNews, setCurrentNews] = useState<NewsItem[]>([]); // 現在のページのニュース
@@ -14,6 +16,8 @@ export const UpdateListContainer = () => {
   const [itemOffset, setItemOffset] = useState<number>(0); // 現在のオフセット（表示開始位置）
   const newsPerPage = 24; // 1ページあたりのニュース数
   const { news } = useUpdateListPagiNation(); // APIからニュースを取得
+  const navigate = useNavigate();
+  const [selectedLanguage] = useLanguage();
 
   useEffect(() => {
     // ニュースが更新されたとき、またはオフセットが変更されたときに実行
@@ -37,6 +41,8 @@ export const UpdateListContainer = () => {
         pageCount={pageCount}
         handlePageClick={handlePageClick}
         news={news}
+        navigate={navigate}
+        selectedLanguage={selectedLanguage}
       />
       <Title title="Our Partners" subTitle="Our Partners" />
       <TopOurPartners />

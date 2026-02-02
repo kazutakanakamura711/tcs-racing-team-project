@@ -2,17 +2,19 @@ import { Box, HStack, Text } from '@chakra-ui/react';
 import { NewsItem } from './top-updates';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
-import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '@/state/languageState/useLanguage';
+import { NavigateFunction } from 'react-router-dom';
 
 interface Props {
   updateArray: NewsItem[];
+  navigate: NavigateFunction;
+  selectedLanguage: string;
 }
 
-export const OtherContents: FC<Props> = ({ updateArray }) => {
-  const navigate = useNavigate();
-  const [selectedLanguage] = useLanguage();
-
+export const OtherContents: FC<Props> = ({
+  updateArray,
+  navigate,
+  selectedLanguage,
+}) => {
   if (!updateArray) return <Box>データがありません。</Box>;
   return (
     <>

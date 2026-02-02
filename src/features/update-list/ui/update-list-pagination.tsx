@@ -5,12 +5,15 @@ import { NewsItem } from '@/features/top/ui/top-updates/top-updates';
 import styles from './update-list-pagination.module.css';
 import { MainLayout } from '@/shared/ui/main-layout';
 import { FC } from 'react';
+import { NavigateFunction } from 'react-router-dom';
 
 interface Props {
   currentNews: NewsItem[];
   pageCount: number;
   handlePageClick: (event: { selected: number }) => void;
   news: NewsItem[];
+  navigate: NavigateFunction;
+  selectedLanguage: string;
 }
 
 export const UpdateListPagination: FC<Props> = ({
@@ -18,6 +21,8 @@ export const UpdateListPagination: FC<Props> = ({
   pageCount,
   handlePageClick,
   news,
+  navigate,
+  selectedLanguage,
 }) => {
   return (
     <MainLayout>
@@ -27,7 +32,11 @@ export const UpdateListPagination: FC<Props> = ({
           templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap="32px"
         >
-          <FirstContent updateArray={currentNews} />
+          <FirstContent
+            updateArray={currentNews}
+            navigate={navigate}
+            selectedLanguage={selectedLanguage}
+          />
         </Grid>
 
         <Box color="#FFF">
