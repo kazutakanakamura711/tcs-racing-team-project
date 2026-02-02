@@ -1,17 +1,17 @@
 import { Box } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { MemberContent } from './member-content';
 import { MemberId } from '@/constants';
 
 type Props = {
   leftName: string;
-  leftComment: React.ReactNode;
+  leftComment: JSX.Element[];
   leftImage: string;
   leftBg: string;
   leftLink: string;
   leftId: MemberId;
   rightName?: string;
-  rightComment?: React.ReactNode;
+  rightComment?: JSX.Element[];
   rightImage?: string;
   rightBg?: string;
   rightWidth?: string;
@@ -75,7 +75,7 @@ export const Member: FC<Props> = ({
               <MemberContent
                 backgroundUrl={rightBg}
                 name={rightName}
-                comment={rightComment}
+                comment={rightComment!}
                 imageUrl={rightImage}
                 width={rightWidth}
                 link={rightLink}

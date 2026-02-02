@@ -4,14 +4,11 @@ import Slider from 'react-slick';
 import { Box, Image, Text } from '@chakra-ui/react';
 import styles from './top-slider.module.css';
 
-import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
-
-interface images {
+export interface SliderImage {
   id: number;
   src: {
     sp: string;
     pc: string;
-    bg?: string;
   };
   alt: string;
   isMovie?: boolean;
@@ -26,48 +23,10 @@ const settings = {
   autoplaySpeed: 3000,
 };
 
-const images: images[] = [
-  {
-    id: 0,
-    src: {
-      sp: '/movie/movie-top-sp.mp4',
-      pc: '/movie/movie-top-pc.mp4',
-    },
-    alt: 'スライド0',
-
-    isMovie: true,
-  },
-  {
-    id: 1,
-    src: {
-      sp: '/images/top/img-slider-sp01.webp',
-      pc: '/images/top/img-slider01.webp',
-      bg: '/images/top/img-slider-sp-bg01.png',
-    },
-    alt: 'スライド1',
-  },
-  {
-    id: 2,
-    src: {
-      sp: '/images/top/img-slider-sp02.webp',
-      pc: '/images/top/img-slider02.webp',
-      bg: '/images/top/img-slider-sp-bg02.png',
-    },
-    alt: 'スライド2',
-  },
-  {
-    id: 3,
-    src: {
-      sp: '/images/top/img-slider-sp03.webp',
-      pc: '/images/top/img-slider03.webp',
-      bg: '/images/top/img-slider-sp-bg03.png',
-    },
-    alt: 'スライド3',
-  },
-];
-
-export const TopSlider = () => {
-  const { isTablet } = useGetWindowWidth();
+export const TopSlider: React.FC<{
+  isTablet: boolean;
+  images: SliderImage[];
+}> = ({ isTablet, images }) => {
   return (
     <>
       <Box className={styles.sliderWrapper}>

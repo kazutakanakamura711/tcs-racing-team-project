@@ -1,4 +1,5 @@
 export * from './members';
-export * from './partnersImages';
+export * from './partners-images';
 export * from './urls';
-export * from './scheduleWinCounter';
+export * from './schedule-win-counter';
+export * from './top-slider-images';

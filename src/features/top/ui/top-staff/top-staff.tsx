@@ -1,14 +1,15 @@
 import { LinkButton } from '@/shared/ui/link-button';
 import { MainLayout } from '@/shared/ui/main-layout';
-import { getTopTheStaffList, MemberId } from '@/constants';
+import { Member, MemberId } from '@/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { NavigateFunction } from 'react-router-dom';
 
-export const TopStaff = () => {
-  const navigate = useNavigate();
+interface Props {
+  staffList: Member[];
+  navigate: NavigateFunction;
+}
 
-  const staffList = getTopTheStaffList();
-
+export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
   return (
     <Box mb="116px">
       <MainLayout>
