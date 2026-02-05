@@ -1,7 +1,4 @@
 import { Title } from '@/shared/ui/title';
-import { PageLayout } from '@/shared/ui/page-layout';
-import { TopOurPartners } from '../top/ui/top-our-partners';
-import { TopOfficialMedia } from '../top/ui/top-official-media/top-official-media';
 import { Box } from '@chakra-ui/react';
 import { UpdateListPagination } from './ui';
 import { useState, useEffect } from 'react';
@@ -32,7 +29,7 @@ export const UpdateListContainer = () => {
   };
 
   return (
-    <PageLayout>
+    <>
       <Box pt="128px" mb="128px">
         <Title title="Updates" subTitle="Updates" />
       </Box>
@@ -44,9 +41,6 @@ export const UpdateListContainer = () => {
         navigate={navigate}
         selectedLanguage={selectedLanguage}
       />
-      <Title title="Our Partners" subTitle="Our Partners" />
-      <TopOurPartners />
-      <TopOfficialMedia />
-    </PageLayout>
+    </>
   );
 };

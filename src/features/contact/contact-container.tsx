@@ -2,7 +2,7 @@ import { useUpDateContents } from './model/hooks/use-contact';
 import { useLanguage } from '@/state/languageState/useLanguage';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Contact } from './ui/contact';
+import { ContactContent, ContactHeroImage } from './ui';
 
 export const ContactContainer = () => {
   const { news } = useUpDateContents();
@@ -11,11 +11,14 @@ export const ContactContainer = () => {
   const { t } = useTranslation('contact');
 
   return (
-    <Contact
-      news={news}
-      selectedLanguage={selectedLanguage}
-      navigate={navigate}
-      t={t}
-    />
+    <>
+      <ContactHeroImage />
+      <ContactContent
+        news={news}
+        selectedLanguage={selectedLanguage}
+        navigate={navigate}
+        t={t}
+      />
+    </>
   );
 };

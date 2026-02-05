@@ -1,1 +1,2 @@
-export { OurPartners } from './our-partners';
+export { OurPartnersBlackList } from './our-partners-black-list';
+export { OurPartnersList } from './our-partners-list';

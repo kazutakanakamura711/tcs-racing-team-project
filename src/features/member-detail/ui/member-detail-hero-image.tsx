@@ -8,7 +8,7 @@ import {
   Member,
 } from '@/constants';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
-import { useBreakpointValue, HStack, Box, Image, Text } from '@chakra-ui/react';
+import { HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TFunction } from 'i18next';
 
@@ -16,13 +16,19 @@ interface Props {
   id: MemberId;
   member: Member;
   t: TFunction<'teamMember'>;
+  heroImageSrc: string | undefined;
 }
 
-export const FirstView: FC<Props> = ({ id, member, t }) => {
+export const MemberDetailHeroImage: FC<Props> = ({
+  id,
+  member,
+  t,
+  heroImageSrc,
+}) => {
   if (!member) {
     return <Text>No data</Text>;
   }
-  const firstViewBaseTopValue =
+  const heroImageBaseTopValue =
     member.id === MemberId.SayuBella || member.id === MemberId.YutaMatsumoto
       ? '36%'
       : '24%';
@@ -43,15 +49,7 @@ export const FirstView: FC<Props> = ({ id, member, t }) => {
         objectFit="cover"
         position="relative"
       >
-        <Image
-          src={useBreakpointValue({
-            base: member.memberPageFirstViewBackgroundImageSp,
-            lg: member.memberPageFirstViewBackgroundImagePc,
-          })}
-          alt={member.nameEn}
-          w="100%"
-          h="100%"
-        />
+        <Image src={heroImageSrc} alt={member.nameEn} w="100%" h="100%" />
       </Box>
       <Box
         position="absolute"
@@ -79,7 +77,7 @@ export const FirstView: FC<Props> = ({ id, member, t }) => {
         w={{ base: '66vw', lg: '40%' }}
         right={{ base: 'auto', lg: '10px' }}
         left={{ base: '10%', lg: 'auto' }}
-        top={{ base: firstViewBaseTopValue, lg: '50%' }}
+        top={{ base: heroImageBaseTopValue, lg: '50%' }}
         transform={{ base: 'translateY(-60%)', lg: 'translateY(-50%)' }}
         textAlign={{ base: 'left', lg: 'center' }}
         zIndex="2"

@@ -2,7 +2,7 @@ import { SnsIcon } from '@/shared/ui/sns-icon';
 import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
 import { Box, HStack, Text } from '@chakra-ui/react';
 
-export const TopOfficialMedia = () => {
+export const OfficialMedia = () => {
   return (
     <Box textAlign="center">
       <Text

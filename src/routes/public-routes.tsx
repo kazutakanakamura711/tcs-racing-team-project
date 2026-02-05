@@ -7,44 +7,55 @@ import { UpdateContentPage } from '@/pages/update-content-page';
 import { UpdateListPage } from '@/pages/update-list-page';
 import { MemberDetailPage } from '@/pages/member-detail-page';
 
+import {
+  TOP,
+  TEAM_MEMBER,
+  MEMBER_DETAIL,
+  CONTACT,
+  SCHEDULE,
+  OUR_PARTNERS,
+  UPDATE_CONTENT,
+  UPDATE_LIST,
+} from '@/constants';
+
 export const publicRoutes = [
   {
-    path: '/',
+    path: TOP,
     element: <TopPage />,
     children: [{ path: '', element: <TopPage /> }],
   },
   {
-    path: '/team-member',
+    path: TEAM_MEMBER,
     element: <TeamMemberPage />,
     children: [{ path: '', element: <TeamMemberPage /> }],
   },
   {
-    path: '/member-page/:id',
+    path: MEMBER_DETAIL,
     element: <MemberDetailPage />,
     children: [{ path: '', element: <MemberDetailPage /> }],
   },
   {
-    path: '/contact',
+    path: CONTACT,
     element: <ContactPage />,
     children: [{ path: '', element: <ContactPage /> }],
   },
   {
-    path: '/schedule-page',
+    path: SCHEDULE,
     element: <SchedulePage />,
     children: [{ path: '', element: <SchedulePage /> }],
   },
   {
-    path: '/our-partners',
+    path: OUR_PARTNERS,
     element: <OurPartnersPage />,
     children: [{ path: '', element: <OurPartnersPage /> }],
   },
   {
-    path: '/update-content/:id',
+    path: UPDATE_CONTENT,
     element: <UpdateContentPage />,
     children: [{ path: '', element: <UpdateContentPage /> }],
   },
   {
-    path: '/update-list',
+    path: UPDATE_LIST,
     element: <UpdateListPage />,
     children: [{ path: '', element: <UpdateListPage /> }],
   },

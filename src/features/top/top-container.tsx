@@ -3,13 +3,10 @@ import { Title } from '@/shared/ui/title';
 import { TopUpdates } from './ui/top-updates/top-updates';
 import { TopTheTeam } from './ui/top-the-team';
 import { TopStaff } from './ui/top-staff/top-staff';
-import { PageLayout } from '@/shared/ui/page-layout';
 import { Box } from '@chakra-ui/react';
 import { Message } from '@/shared/ui/message';
 import { useTranslation } from 'react-i18next';
 import { TopSchedule } from './ui/top-schedule/top-schedule';
-import { TopOfficialMedia } from './ui/top-official-media';
-import { TopOurPartners } from './ui/top-our-partners';
 import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
 import { useNavigate } from 'react-router-dom';
 import { getTopTheStaffList } from '@/constants';
@@ -48,47 +45,32 @@ export const TopContainer = () => {
 
   return (
     <>
-      <PageLayout>
-        <Box
-          position="relative"
-          h={{ base: 'calc(100vh - 90px)', lg: 'calc(100vh - 90px)' }}
-          mt={{ base: '110px', lg: '50px' }}
-        >
-          <TopSlider isTablet={isTablet} images={topSliderImages} />
-        </Box>
-        <Message message={message} />
-        <Title title="Updates" subTitle="Updates" id="Updates" />
-        <TopUpdates
-          updateFirstArray={updateFirstArray}
-          updateSecondArray={updateSecondArray}
-          updateThirdArray={updateThirdArray}
-          navigate={navigate}
-          selectedLanguage={selectedLanguage}
-        />
-        <Title title="The Team" subTitle="The Team" id="TopTheTeam" />
-        <TopTheTeam
-          t={tTopTheTeam}
-          director={director}
-          riderPairs={riderPairs}
-        />
-        <Title
-          title="TheStaff"
-          subTitle="TheStaff"
-          id="TheStaff"
-          isCenter
-          isHiddenUnderLine
-        />
-        <TopStaff staffList={staffList} navigate={navigate} />
-        <Title title="Schedule" subTitle="Schedule" id="Schedule" />
-        <TopSchedule
-          raceScheduleList={raceScheduleList}
-          eventScheduleList={eventScheduleList}
-          selectedLanguage={selectedLanguage}
-        />
-        <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
-        <TopOurPartners />
-        <TopOfficialMedia />
-      </PageLayout>
+      <Box
+        position="relative"
+        h={{ base: 'calc(100vh - 90px)', lg: 'calc(100vh - 90px)' }}
+        mt={{ base: '110px', lg: '50px' }}
+      >
+        <TopSlider isTablet={isTablet} images={topSliderImages} />
+      </Box>
+      <Message message={message} />
+      <Title title="Updates" subTitle="Updates" />
+      <TopUpdates
+        updateFirstArray={updateFirstArray}
+        updateSecondArray={updateSecondArray}
+        updateThirdArray={updateThirdArray}
+        navigate={navigate}
+        selectedLanguage={selectedLanguage}
+      />
+      <Title title="The Team" subTitle="The Team" />
+      <TopTheTeam t={tTopTheTeam} director={director} riderPairs={riderPairs} />
+      <Title title="TheStaff" subTitle="TheStaff" isCenter isHiddenUnderLine />
+      <TopStaff staffList={staffList} navigate={navigate} />
+      <Title title="Schedule" subTitle="Schedule" />
+      <TopSchedule
+        raceScheduleList={raceScheduleList}
+        eventScheduleList={eventScheduleList}
+        selectedLanguage={selectedLanguage}
+      />
     </>
   );
 };

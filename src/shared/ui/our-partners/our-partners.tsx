@@ -2,7 +2,7 @@ import { MainLayout } from '@/shared/ui/main-layout';
 import { partnersImages } from '@/constants';
 import { Box, Image, SimpleGrid } from '@chakra-ui/react';
 
-export const TopOurPartners = () => {
+export const OurPartners = () => {
   return (
     <MainLayout>
       <Box

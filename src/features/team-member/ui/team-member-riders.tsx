@@ -1,5 +1,5 @@
 import { MainLayout } from '@/shared/ui/main-layout';
-import { Member, MemberId } from '@/constants';
+import { Member, MemberId, TEAM_MEMBER, MEMBER_DETAIL } from '@/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
@@ -30,10 +30,11 @@ export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
                   rider.id === MemberId.RinaZaki ||
                   rider.id === MemberId.AyakaHiyoshi
                 ) {
-                  navigate('/team-member');
+                  navigate(TEAM_MEMBER);
                   return;
                 }
-                navigate(`/member-page/${rider.id}`);
+                const path = MEMBER_DETAIL.replace(':id', rider.id);
+                navigate(path);
               }}
             >
               <Image

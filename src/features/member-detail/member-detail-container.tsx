@@ -1,14 +1,10 @@
-import { Title } from '@/shared/ui/title';
 import { MainLayout } from '@/shared/ui/main-layout';
-import { PageLayout } from '@/shared/ui/page-layout';
-
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { parseMemberId, getMemberById, getOtherMembersList } from '@/constants';
 import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
-import { TopOurPartners } from '../top/ui/top-our-partners';
-import { TopOfficialMedia } from '../top/ui/top-official-media';
-import { About, Carousel, FirstView, ProfileContent } from './ui';
+import { useBreakpointValue } from '@chakra-ui/react';
+import { About, Carousel, MemberDetailHeroImage, ProfileContent } from './ui';
 
 export const MemberDetailContainer = () => {
   const { id } = useParams();
@@ -22,10 +18,19 @@ export const MemberDetailContainer = () => {
 
   const member = getMemberById(parsedId);
   const memberList = getOtherMembersList();
+  const heroImageSrc = useBreakpointValue({
+    base: member?.memberPageFirstViewBackgroundImageSp,
+    lg: member?.memberPageFirstViewBackgroundImagePc,
+  });
 
   return (
-    <PageLayout>
-      <FirstView id={parsedId} t={t} member={member} />
+    <>
+      <MemberDetailHeroImage
+        id={parsedId}
+        t={t}
+        member={member}
+        heroImageSrc={heroImageSrc}
+      />
       <MainLayout>
         <ProfileContent id={parsedId} t={t} />
       </MainLayout>
@@ -37,9 +42,6 @@ export const MemberDetailContainer = () => {
           memberList={memberList}
         />
       </MainLayout>
-      <Title title="Our Partners" subTitle="Our Partners" />
-      <TopOurPartners />
-      <TopOfficialMedia />
-    </PageLayout>
+    </>
   );
 };

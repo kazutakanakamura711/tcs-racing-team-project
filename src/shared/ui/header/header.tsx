@@ -12,6 +12,14 @@ import {
   Spacer,
   useDisclosure,
 } from '@chakra-ui/react';
+import {
+  TOP,
+  TEAM_MEMBER,
+  SCHEDULE,
+  OUR_PARTNERS,
+  CONTACT,
+  UPDATE_LIST,
+} from '@/constants';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { ChangeEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -52,7 +60,7 @@ export const Header = () => {
             h={{ base: 'auto', lg: 'auto' }}
             objectFit={{ base: 'contain', lg: 'none' }}
           >
-            <RouterLink to="/">
+            <RouterLink to={TOP}>
               <Image src="/images/common/ico-team-logo-name.webp" alt="logo" />
             </RouterLink>
           </Box>
@@ -67,19 +75,19 @@ export const Header = () => {
                 justifyContent="center"
                 flexDirection="column"
               >
-                <RouterLink to="/update-list" style={{ marginBottom: mb }}>
+                <RouterLink to={UPDATE_LIST} style={{ marginBottom: mb }}>
                   Updates
                 </RouterLink>
-                <RouterLink to="/team-member" style={{ marginBottom: mb }}>
+                <RouterLink to={TEAM_MEMBER} style={{ marginBottom: mb }}>
                   Our Team
                 </RouterLink>
-                <RouterLink to="/schedule-page" style={{ marginBottom: mb }}>
+                <RouterLink to={SCHEDULE} style={{ marginBottom: mb }}>
                   Schedule
                 </RouterLink>
-                <RouterLink to="/our-partners" style={{ marginBottom: mb }}>
+                <RouterLink to={OUR_PARTNERS} style={{ marginBottom: mb }}>
                   Partners
                 </RouterLink>
-                <RouterLink to="/contact" style={{ marginBottom: mb }}>
+                <RouterLink to={CONTACT} style={{ marginBottom: mb }}>
                   Contact
                 </RouterLink>
               </DrawerBody>
@@ -92,11 +100,11 @@ export const Header = () => {
             mr="16px"
             display={{ base: 'none', lg: 'flex' }}
           >
-            <RouterLink to="/update-list">Updates</RouterLink>
-            <RouterLink to="/team-member">Our Team</RouterLink>
-            <RouterLink to="/schedule-page">Schedule</RouterLink>
-            <RouterLink to="/our-partners">Partners</RouterLink>
-            <RouterLink to="/Contact">Contact</RouterLink>
+            <RouterLink to={UPDATE_LIST}>Updates</RouterLink>
+            <RouterLink to={TEAM_MEMBER}>Our Team</RouterLink>
+            <RouterLink to={SCHEDULE}>Schedule</RouterLink>
+            <RouterLink to={OUR_PARTNERS}>Partners</RouterLink>
+            <RouterLink to={CONTACT}>Contact</RouterLink>
           </HStack>
 
           <Spacer display={{ base: 'block', lg: 'none' }} />
