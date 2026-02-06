@@ -23,8 +23,8 @@ import {
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { ChangeEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '@/state/languageState/useLanguage';
-import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
+import { useLanguage } from '@/shared/hooks/use-language';
+import { useGetWindowWidth } from '@/shared/hooks/use-get-window-width';
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

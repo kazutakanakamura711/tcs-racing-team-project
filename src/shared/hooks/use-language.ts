@@ -1,14 +1,9 @@
-import { atom, useRecoilState } from 'recoil';
 import { useEffect } from 'react';
 import i18n from '@/i18n';
-
-export const languageState = atom<string>({
-  key: 'languageState',
-  default: 'Ja',
-});
+import { useLanguageStore } from '../store/language-store';
 
 export const useLanguage = (): [string, (value: string) => void] => {
-  const [language, setLanguage] = useRecoilState(languageState);
+  const { language, setLanguage } = useLanguageStore();
 
   // `setLanguage` に `localStorage` への保存を組み込む
   const updateLanguage = (value: string) => {

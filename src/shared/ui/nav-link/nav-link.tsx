@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
 import { FC, useEffect } from 'react';
-import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
+import { useGetWindowWidth } from '@/shared/hooks/use-get-window-width';
 
 interface Props {
   to: string;

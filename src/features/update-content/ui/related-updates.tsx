@@ -4,7 +4,7 @@ import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 import { HStack, Box, Text, Grid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
-import { NewsItem } from '@/features/top/ui/top-updates/top-updates';
+import { NewsItem } from '@/entities/news';
 
 interface Props {
   updateArray: { news: NewsItem[] };

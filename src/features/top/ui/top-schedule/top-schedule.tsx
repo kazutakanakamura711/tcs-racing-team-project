@@ -4,18 +4,11 @@ import { ScheduleItem } from '@/shared/ui/schedule-item';
 import { LinkButton } from '@/shared/ui/link-button';
 import { ScheduleTitle } from './schedule-title';
 
-export interface ScheduleItem {
-  id: number;
-  [key: `title${string}`]: string;
-  [key: `location${string}`]: string;
-  [key: `startDate${string}`]: string;
-  [key: `endDate${string}`]: string;
-  url?: string;
-}
+import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
 
 interface Props {
-  raceScheduleList: ScheduleItem[];
-  eventScheduleList: ScheduleItem[];
+  raceScheduleList: ScheduleItemType[];
+  eventScheduleList: ScheduleItemType[];
   selectedLanguage: string;
 }
 

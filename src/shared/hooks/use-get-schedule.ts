@@ -1,5 +1,4 @@
-import { ScheduleItem } from '@/features/top/ui/top-schedule/top-schedule';
-import axios from 'axios';
+import { ScheduleItem } from '@/entities/schedule';
 import { useEffect, useState } from 'react';
 
 interface Props {
@@ -23,19 +22,31 @@ export const useGetSchedule = ({ limit }: Props) => {
       const urlWithEventFilter = `${apiUrl}?filters=${eventCategoryFilter}&limit=${limit}&orders=-updatedAt`;
 
       try {
-        const responseRaceFilter = await axios.get(urlWithRaceFilter, {
+        const responseRaceFilter = await fetch(urlWithRaceFilter, {
           headers: {
             'X-API-KEY': import.meta.env.VITE_API_KEY,
           },
         });
-        setRaceSchedule(responseRaceFilter.data.contents);
+        if (!responseRaceFilter.ok) {
+          throw new Error(
+            `Race schedule fetch failed: ${responseRaceFilter.statusText}`,
+          );
+        }
+        const raceData = await responseRaceFilter.json();
+        setRaceSchedule(raceData.contents);
 
-        const responseEventFilter = await axios.get(urlWithEventFilter, {
+        const responseEventFilter = await fetch(urlWithEventFilter, {
           headers: {
             'X-API-KEY': import.meta.env.VITE_API_KEY,
           },
         });
-        setEventSchedule(responseEventFilter.data.contents);
+        if (!responseEventFilter.ok) {
+          throw new Error(
+            `Event schedule fetch failed: ${responseEventFilter.statusText}`,
+          );
+        }
+        const eventData = await responseEventFilter.json();
+        setEventSchedule(eventData.contents);
       } catch (error) {
         console.error('スケジュールの取得に失敗しました', error);
       }

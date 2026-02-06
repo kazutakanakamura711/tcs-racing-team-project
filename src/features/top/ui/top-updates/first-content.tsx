@@ -2,7 +2,7 @@ import { ImageFilter } from '@/shared/ui/image-filter';
 import { LinkUnderBarButton } from '@/shared/ui/link-under-bar-button';
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { NewsItem } from './top-updates';
+import { NewsItem } from '@/entities/news';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 import { NavigateFunction } from 'react-router-dom';
 

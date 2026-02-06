@@ -2,7 +2,7 @@ import { MainLayout } from '@/shared/ui/main-layout';
 import { Box, VStack } from '@chakra-ui/react';
 import { ScheduleItem } from '@/shared/ui/schedule-item';
 import { ScheduleTitle } from './schedule-title';
-import { ScheduleItem as ScheduleItemType } from '@/features/top/ui/top-schedule/top-schedule';
+import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
 
 interface Props {
   raceScheduleList: ScheduleItemType[];

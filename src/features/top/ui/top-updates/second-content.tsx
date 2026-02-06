@@ -1,7 +1,7 @@
 import { ImageFilter } from '@/shared/ui/image-filter';
 import { Box, HStack, Text, Image } from '@chakra-ui/react';
 import { Link, NavigateFunction } from 'react-router-dom';
-import { NewsItem } from './top-updates';
+import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 

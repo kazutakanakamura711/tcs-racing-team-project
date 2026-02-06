@@ -1,27 +1,12 @@
 import { MainLayout } from '@/shared/ui/main-layout';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { parseMemberId, getMemberById, getOtherMembersList } from '@/constants';
-import { useGetWindowWidth } from '@/shared/hooks/useGetWindowWidth';
-import { useBreakpointValue } from '@chakra-ui/react';
 import { About, Carousel, MemberDetailHeroImage, ProfileContent } from './ui';
+import { useMemberDetailContainer } from './model/hooks/use-member-detail-container';
 
 export const MemberDetailContainer = () => {
-  const { id } = useParams();
-  const { t } = useTranslation('teamMember');
-  const { isTablet } = useGetWindowWidth();
-  const navigate = useNavigate();
+  const { parsedId, t, member, memberList, heroImageSrc, isTablet, navigate } =
+    useMemberDetailContainer();
 
-  if (!id) return null;
-  const parsedId = parseMemberId(id);
-  if (!parsedId) return null;
-
-  const member = getMemberById(parsedId);
-  const memberList = getOtherMembersList();
-  const heroImageSrc = useBreakpointValue({
-    base: member?.memberPageFirstViewBackgroundImageSp,
-    lg: member?.memberPageFirstViewBackgroundImagePc,
-  });
+  if (!parsedId || !member) return null;
 
   return (
     <>

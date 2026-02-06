@@ -1,7 +1,7 @@
 import { FirstContent } from '@/features/top/ui/top-updates/first-content';
 import { Box, Grid } from '@chakra-ui/react';
 import ReactPaginate from 'react-paginate';
-import { NewsItem } from '@/features/top/ui/top-updates/top-updates';
+import { NewsItem } from '@/entities/news';
 import styles from './update-list-pagination.module.css';
 import { MainLayout } from '@/shared/ui/main-layout';
 import { FC } from 'react';

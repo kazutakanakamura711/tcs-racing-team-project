@@ -1,7 +1,7 @@
 import { Box, HStack, Image, Link, Text } from '@chakra-ui/react';
 import { Link as LinkRouter, NavigateFunction } from 'react-router-dom';
 import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
-import { NewsItem } from '@/features/top/ui/top-updates/top-updates';
+import { NewsItem } from '@/entities/news';
 import { TFunction } from 'i18next';
 import { FC } from 'react';
 import { LatestNewsList } from './latest-news-list';

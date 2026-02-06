@@ -1,9 +1,6 @@
-import { Text, useBreakpointValue } from '@chakra-ui/react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Text } from '@chakra-ui/react';
 import { MainLayout } from '@/shared/ui/main-layout';
-import { useLanguage } from '@/state/languageState/useLanguage';
-import { useSingleNewsContent } from './model/hooks/use-single-news-content';
-import { useUpDateContents } from './model/hooks/use-contact';
+import { useUpdateContentContainer } from './model/hooks/use-update-content-container';
 import {
   UpdateContentNews,
   RelatedUpdates,
@@ -11,16 +8,14 @@ import {
 } from './ui';
 
 export const UpdateContentContainer = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const { singleNews } = useSingleNewsContent(id || '');
-  const [selectedLanguage] = useLanguage();
-  const updateArray = useUpDateContents(id || '');
-
-  const heroImageSrc = useBreakpointValue({
-    base: '/images/updateContent/img-updateContent-top.jpeg',
-    lg: '/images/updateContent/img-updateContent-top.jpeg',
-  });
+  const {
+    id,
+    navigate,
+    singleNews,
+    selectedLanguage,
+    updateArray,
+    heroImageSrc,
+  } = useUpdateContentContainer();
 
   return (
     <>

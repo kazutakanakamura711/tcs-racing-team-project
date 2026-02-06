@@ -1,18 +1,16 @@
 import { Title } from '@/shared/ui/title';
-import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { Schedule, ScheduleHeroImage } from './ui';
 import { MainLayout } from '@/shared/ui/main-layout';
-import { useGetSchedule } from '@/shared/hooks/useGetSchedule';
-import { useLanguage } from '@/state/languageState/useLanguage';
-import { limit } from '@/constants';
+import { useScheduleContainer } from './model/hooks/use-schedule-container';
 
 export const ScheduleContainer = () => {
-  const [selectedLanguage] = useLanguage();
-  const { raceScheduleList, eventScheduleList } = useGetSchedule({ limit });
-  const heroImageSrc = useBreakpointValue({
-    base: '/images/schedule/img-schedule-top-sp.webp',
-    lg: '/images/schedule/img-schedule-top-pc.webp',
-  });
+  const {
+    selectedLanguage,
+    raceScheduleList,
+    eventScheduleList,
+    heroImageSrc,
+  } = useScheduleContainer();
 
   if (!raceScheduleList || !eventScheduleList)
     return <Box>データがありません。</Box>;

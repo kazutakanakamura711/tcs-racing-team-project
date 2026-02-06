@@ -18,6 +18,3 @@ export const winCounterData = [
     text: 'Wins by World Tour team in 2024',
   },
 ];
-
-// スケジュールの表示数
-export const limit: number = 100;
