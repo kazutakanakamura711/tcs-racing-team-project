@@ -1,4 +1,4 @@
-import { MainLayout } from '@/shared/ui/main-layout';
+import { MainLayout } from '@/shared/ui';
 import { About, Carousel, MemberDetailHeroImage, ProfileContent } from './ui';
 import { useMemberDetailContainer } from './model/hooks/use-member-detail-container';
 

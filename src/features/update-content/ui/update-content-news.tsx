@@ -1,7 +1,12 @@
 import { Box, HStack, Image, Text } from '@chakra-ui/react';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 import { Link as LinkRouter } from 'react-router-dom';
-import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
+import {
+  facebookUrl,
+  instagramUrl,
+  tiktokUrl,
+  youtubeUrl,
+} from '@/shared/constants';
 import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import styles from './update-content-news.module.css';

@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { DirectorContent } from './director-content';
 import { TFunction } from 'i18next';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
-import { noImageUrl, Member as MemberType } from '@/constants';
+import { noImageUrl, Member as MemberType } from '@/shared/constants';
 import { Member } from './member';
 
 interface Props {

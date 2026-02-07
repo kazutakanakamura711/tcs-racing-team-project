@@ -1,4 +1,4 @@
-import { Title } from '@/shared/ui/title';
+import { Title } from '@/shared/ui';
 import { Box } from '@chakra-ui/react';
 import { UpdateListPagination } from './ui';
 import { useUpdateListContainer } from './model/hooks/use-update-list-container';

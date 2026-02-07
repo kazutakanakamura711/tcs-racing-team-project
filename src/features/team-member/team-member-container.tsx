@@ -1,5 +1,4 @@
-import { Message } from '@/shared/ui/message';
-import { Title } from '@/shared/ui/title';
+import { Message, Title } from '@/shared/ui';
 import { useTranslation } from 'react-i18next';
 import {
   TeamMemberRiders,
@@ -13,7 +12,7 @@ import {
   getOurTeamPageTheRiderSectionList,
   getOurTeamTheStaffMainList,
   getOurTeamTheStaffSubList,
-} from '@/constants';
+} from '@/shared/constants';
 
 export const TeamMemberContainer = () => {
   const { t } = useTranslation('ourTeam');

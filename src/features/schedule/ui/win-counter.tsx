@@ -1,4 +1,4 @@
-import { WinCounterData } from '@/constants';
+import { WinCounterData } from '@/shared/constants';
 import { Box, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 

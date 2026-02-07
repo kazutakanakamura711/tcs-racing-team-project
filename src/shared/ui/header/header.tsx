@@ -19,11 +19,16 @@ import {
   OUR_PARTNERS,
   CONTACT,
   UPDATE_LIST,
-} from '@/constants';
+} from '@/shared/constants';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { ChangeEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/shared/hooks/use-language';
+import {
+  Language,
+  LanguageDisplay,
+  parseLanguage,
+} from '@/shared/store/language-store';
 import { useGetWindowWidth } from '@/shared/hooks/use-get-window-width';
 
 export const Header = () => {
@@ -39,7 +44,7 @@ export const Header = () => {
   }, [location]);
 
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = event.target.value;
+    const newLanguage = parseLanguage(event.target.value);
     i18n.changeLanguage(newLanguage);
     setSelectedLanguage(newLanguage);
   };
@@ -117,9 +122,9 @@ export const Header = () => {
             value={selectedLanguage}
             onChange={handleLanguageChange}
           >
-            <option value="Ja">JP</option>
-            <option value="En">EN</option>
-            <option value="Id">ID</option>
+            <option value={Language.Ja}>{LanguageDisplay[Language.Ja]}</option>
+            <option value={Language.En}>{LanguageDisplay[Language.En]}</option>
+            <option value={Language.Id}>{LanguageDisplay[Language.Id]}</option>
           </Select>
 
           <Box

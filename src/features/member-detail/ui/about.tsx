@@ -1,7 +1,7 @@
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { MemberId, Member } from '@/constants';
+import { MemberId, Member } from '@/shared/constants';
 import { TFunction } from 'i18next';
 
 interface Props {

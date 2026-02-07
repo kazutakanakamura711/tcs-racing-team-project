@@ -1,7 +1,11 @@
 import { useBreakpointValue } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { parseMemberId, getMemberById, getOtherMembersList } from '@/constants';
+import {
+  parseMemberId,
+  getMemberById,
+  getOtherMembersList,
+} from '@/shared/constants';
 import { useGetWindowWidth } from '@/shared/hooks/use-get-window-width';
 
 export const useMemberDetailContainer = () => {

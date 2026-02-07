@@ -3,7 +3,7 @@ import { Box, Grid } from '@chakra-ui/react';
 import ReactPaginate from 'react-paginate';
 import { NewsItem } from '@/entities/news';
 import styles from './update-list-pagination.module.css';
-import { MainLayout } from '@/shared/ui/main-layout';
+import { MainLayout } from '@/shared/ui';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 

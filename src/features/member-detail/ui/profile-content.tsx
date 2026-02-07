@@ -1,4 +1,4 @@
-import { MemberId } from '@/constants';
+import { MemberId } from '@/shared/constants';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { Box, Text, HStack } from '@chakra-ui/react';
 import { css } from '@emotion/react';

@@ -1,7 +1,7 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Partner } from '@/constants';
+import { Partner } from '@/shared/constants';
 
 interface Props {
   partners: Partner[];

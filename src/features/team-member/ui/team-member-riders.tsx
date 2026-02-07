@@ -1,5 +1,10 @@
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Member, MemberId, TEAM_MEMBER, MEMBER_DETAIL } from '@/constants';
+import { MainLayout } from '@/shared/ui';
+import {
+  Member,
+  MemberId,
+  TEAM_MEMBER,
+  MEMBER_DETAIL,
+} from '@/shared/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';

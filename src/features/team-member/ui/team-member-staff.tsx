@@ -1,5 +1,5 @@
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Member } from '@/constants';
+import { MainLayout } from '@/shared/ui';
+import { Member } from '@/shared/constants';
 import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TeamMemberSmallTitle } from './team-member-small-title';

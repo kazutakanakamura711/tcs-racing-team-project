@@ -1,6 +1,5 @@
-import { LinkButton } from '@/shared/ui/link-button';
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Member, MemberId } from '@/constants';
+import { LinkButton, MainLayout } from '@/shared/ui';
+import { Member, MemberId } from '@/shared/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { NavigateFunction } from 'react-router-dom';
 

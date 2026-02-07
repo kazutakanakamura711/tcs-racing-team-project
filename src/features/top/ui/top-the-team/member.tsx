@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { MemberContent } from './member-content';
-import { MemberId } from '@/constants';
+import { MemberId } from '@/shared/constants';
 
 type Props = {
   leftName: string;

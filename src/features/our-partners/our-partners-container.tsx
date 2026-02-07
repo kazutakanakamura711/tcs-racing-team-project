@@ -1,7 +1,6 @@
 import { OurPartnersBlackList, OurPartnersList } from './ui';
-import { partnersImages } from '@/constants';
-import { Title } from '@/shared/ui/title';
-import { MainLayout } from '@/shared/ui/main-layout';
+import { partnersImages } from '@/shared/constants';
+import { Title, MainLayout } from '@/shared/ui';
 import { Box, Divider } from '@chakra-ui/react';
 
 export const OurPartnersContainer = () => {

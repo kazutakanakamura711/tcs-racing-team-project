@@ -1,5 +1,10 @@
 import { SnsIcon } from '@/shared/ui/sns-icon';
-import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
+import {
+  facebookUrl,
+  instagramUrl,
+  tiktokUrl,
+  youtubeUrl,
+} from '@/shared/constants';
 import { Box, HStack, Text } from '@chakra-ui/react';
 
 export const OfficialMedia = () => {

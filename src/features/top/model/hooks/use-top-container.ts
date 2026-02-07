@@ -7,7 +7,7 @@ import {
   getRiders,
   Member,
   topSliderImages,
-} from '@/constants';
+} from '@/shared/constants';
 import { useGetSchedule } from '@/shared/hooks/use-get-schedule';
 import { useLanguage } from '@/shared/hooks/use-language';
 import { useGetNews } from '@/shared/hooks/use-get-news';

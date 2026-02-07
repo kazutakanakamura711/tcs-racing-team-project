@@ -1,4 +1,4 @@
-import { MainLayout } from '@/shared/ui/main-layout';
+import { MainLayout } from '@/shared/ui';
 import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 

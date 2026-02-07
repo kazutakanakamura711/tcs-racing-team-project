@@ -1,12 +1,7 @@
-import { TopSlider } from './ui/top-slider/top-slider';
-import { Title } from '@/shared/ui/title';
-import { TopUpdates } from './ui/top-updates/top-updates';
-import { TopTheTeam } from './ui/top-the-team';
-import { TopStaff } from './ui/top-staff/top-staff';
-import { Box } from '@chakra-ui/react';
-import { Message } from '@/shared/ui/message';
-import { TopSchedule } from './ui/top-schedule/top-schedule';
+import { Title, Message } from '@/shared/ui';
 import { useTopContainer } from './model/hooks/use-top-container';
+import { Box } from '@chakra-ui/react';
+import { TopSchedule, TopSlider, TopStaff, TopTheTeam, TopUpdates } from './ui';
 
 export const TopContainer = () => {
   const {

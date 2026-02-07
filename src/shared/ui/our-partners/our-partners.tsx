@@ -1,5 +1,5 @@
 import { MainLayout } from '@/shared/ui/main-layout';
-import { partnersImages } from '@/constants';
+import { partnersImages } from '@/shared/constants';
 import { Box, Image, SimpleGrid } from '@chakra-ui/react';
 
 export const OurPartners = () => {

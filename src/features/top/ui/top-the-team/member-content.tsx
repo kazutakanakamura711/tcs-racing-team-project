@@ -1,7 +1,7 @@
 import { Box, Text, Image } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MemberId } from '@/constants';
+import { MemberId } from '@/shared/constants';
 
 interface Props {
   // TODO: 国旗の画像が追加されたらbackgroundUrlを必須にする

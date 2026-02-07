@@ -1,6 +1,11 @@
 import { Box, HStack, Image, Link, Text } from '@chakra-ui/react';
 import { Link as LinkRouter, NavigateFunction } from 'react-router-dom';
-import { facebookUrl, instagramUrl, tiktokUrl, youtubeUrl } from '@/constants';
+import {
+  facebookUrl,
+  instagramUrl,
+  tiktokUrl,
+  youtubeUrl,
+} from '@/shared/constants';
 import { NewsItem } from '@/entities/news';
 import { TFunction } from 'i18next';
 import { FC } from 'react';

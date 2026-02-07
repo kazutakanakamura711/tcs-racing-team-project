@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './app/styles/index.css';
-import './i18n';
+import './app/i18n';
 import { CenterSpinner } from './shared/ui/center-spinner';
 
 const App = React.lazy(() => import('./app/app')); // 正しい使用方法

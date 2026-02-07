@@ -1,4 +1,4 @@
-import { SnsIcon } from '@/shared/ui/sns-icon';
+import { SnsIcon } from '@/shared/ui';
 import {
   facebookUrl,
   instagramUrl,
@@ -6,7 +6,7 @@ import {
   tiktokUrl,
   youtubeUrl,
   Member,
-} from '@/constants';
+} from '@/shared/constants';
 import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';

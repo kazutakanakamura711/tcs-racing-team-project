@@ -16,7 +16,7 @@ import {
   OUR_PARTNERS,
   UPDATE_CONTENT,
   UPDATE_LIST,
-} from '@/constants';
+} from '@/shared/constants';
 
 export const publicRoutes = [
   {

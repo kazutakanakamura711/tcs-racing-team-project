@@ -1,13 +1,12 @@
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Box } from '@chakra-ui/react';
-import { FirstContent } from './first-content';
-import { SecondContent } from './second-content';
-import { OtherContents } from './other-contents';
-import { LinkButton } from '@/shared/ui/link-button';
+import { MainLayout, LinkButton } from '@/shared/ui';
 import { NavigateFunction } from 'react-router-dom';
 
 // MicroCMSから返されるニュースアイテムの型を定義
 import { NewsItem } from '@/entities/news';
+import { Box } from '@chakra-ui/react';
+import { FirstContent } from './first-content';
+import { SecondContent } from './second-content';
+import { OtherContents } from './other-contents';
 
 interface Props {
   updateFirstArray: NewsItem[];

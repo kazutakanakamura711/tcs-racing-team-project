@@ -1,5 +1,5 @@
 import { Text } from '@chakra-ui/react';
-import { MainLayout } from '@/shared/ui/main-layout';
+import { MainLayout } from '@/shared/ui';
 import { useUpdateContentContainer } from './model/hooks/use-update-content-container';
 import {
   UpdateContentNews,

@@ -1,5 +1,4 @@
-import { ImageFilter } from '@/shared/ui/image-filter';
-import { LinkUnderBarButton } from '@/shared/ui/link-under-bar-button';
+import { ImageFilter, LinkUnderBarButton } from '@/shared/ui';
 import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
 import { HStack, Box, Text, Grid } from '@chakra-ui/react';
 import { FC } from 'react';
