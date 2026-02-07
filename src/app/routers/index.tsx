@@ -1,6 +1,8 @@
 import { useRoutes, useLocation } from 'react-router-dom';
 import { publicRoutes } from './public-routes';
-import { Header, Footer, Title, OurPartners, OfficialMedia } from '@/shared/ui';
+import { Header } from '@/widgets/header';
+import { Footer } from '@/widgets/footer';
+import { Title, OurPartners, OfficialMedia } from '@/shared/ui';
 import { OUR_PARTNERS } from '@/shared/constants';
 
 export const AppRoutes = () => {

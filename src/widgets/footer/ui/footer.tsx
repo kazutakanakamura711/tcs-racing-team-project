@@ -1,12 +1,11 @@
 import { Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { MainLayout } from '../main-layout/main-layout';
-import { useGetWindowWidth } from '@/shared/hooks/use-get-window-width';
+import { MainLayout } from '@/shared/ui/main-layout/main-layout';
+import { useFooter } from '../model/use-footer';
 
 export const Footer = () => {
-  const { isTablet } = useGetWindowWidth();
+  const { isTablet, fontSize } = useFooter();
 
-  const fontSize = isTablet ? '10px' : '24px';
   return (
     <Box pt="117px">
       <MainLayout>

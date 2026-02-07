@@ -1,5 +1,8 @@
 import { create } from 'zustand';
 
+// 言語コードは大文字始まり('Ja', 'En', 'Id')で定義
+// 理由: MicroCMSのフィールド名(titleJa, contentEnなど)と一致させるため
+// i18n用には toLowerCase() で小文字(ja, en, id)に変換して使用
 export const Language = {
   Ja: 'Ja',
   En: 'En',

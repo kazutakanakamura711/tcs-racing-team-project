@@ -11,8 +11,8 @@ export const useLanguage = (): [Language, (value: Language) => void] => {
 
   // `setLanguage` に `localStorage` への保存を組み込む
   const updateLanguage = (value: Language) => {
-    const locale =
-      value === Language.Ja ? 'ja' : value === Language.En ? 'en' : 'id';
+    // i18nのロケールフォルダ名(ja, en, id)に合わせるため小文字に変換
+    const locale = value.toLowerCase();
     localStorage.setItem('selectedLanguage', value);
     setLanguage(value);
     i18n.changeLanguage(locale);
@@ -23,8 +23,8 @@ export const useLanguage = (): [Language, (value: Language) => void] => {
     const storedLanguage = localStorage.getItem('selectedLanguage');
     const language = parseLanguage(storedLanguage || '');
 
-    const locale =
-      language === Language.Ja ? 'ja' : language === Language.En ? 'en' : 'id';
+    // i18nのロケールフォルダ名(ja, en, id)に合わせるため小文字に変換
+    const locale = language.toLowerCase();
     setLanguage(language);
     i18n.changeLanguage(locale);
   }, [setLanguage]);

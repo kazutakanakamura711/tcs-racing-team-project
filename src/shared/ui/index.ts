@@ -1,6 +1,4 @@
 export * from './center-spinner';
-export * from './footer';
-export * from './header';
 export * from './image-filter';
 export * from './link-button';
 export * from './link-under-bar-button';
