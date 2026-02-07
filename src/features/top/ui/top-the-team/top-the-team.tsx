@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { DirectorContent } from './director-content';
 import { TFunction } from 'i18next';
-import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
+import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { noImageUrl, Member as MemberType } from '@/shared/constants';
 import { Member } from './member';
 

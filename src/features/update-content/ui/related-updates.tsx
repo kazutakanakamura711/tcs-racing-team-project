@@ -1,5 +1,5 @@
 import { ImageFilter, LinkUnderBarButton } from '@/shared/ui';
-import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { formatDate } from '@/shared/utils/date-format/date-format';
 import { HStack, Box, Text, Grid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';

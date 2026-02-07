@@ -1,5 +1,5 @@
 import { MemberId } from '@/shared/constants';
-import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
+import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { Box, Text, HStack } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 import { FC } from 'react';

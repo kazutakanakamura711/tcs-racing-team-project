@@ -2,7 +2,7 @@ import { ImageFilter, LinkUnderBarButton } from '@/shared/ui';
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NewsItem } from '@/entities/news';
-import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 
 interface Props {

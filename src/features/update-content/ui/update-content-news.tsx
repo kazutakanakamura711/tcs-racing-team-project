@@ -1,5 +1,5 @@
 import { Box, HStack, Image, Text } from '@chakra-ui/react';
-import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { formatDate } from '@/shared/utils/date-format/date-format';
 import { Link as LinkRouter } from 'react-router-dom';
 import {
   facebookUrl,

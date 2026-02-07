@@ -1,4 +1,4 @@
-import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
+import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { MemberId, Member } from '@/shared/constants';

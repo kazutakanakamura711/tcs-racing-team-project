@@ -7,7 +7,7 @@ import {
   youtubeUrl,
   Member,
 } from '@/shared/constants';
-import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
+import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TFunction } from 'i18next';
