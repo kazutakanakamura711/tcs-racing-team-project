@@ -1,4 +1,3 @@
-import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { MemberId, Member } from '@/shared/constants';
@@ -74,8 +73,8 @@ export const About: FC<Props> = ({ id, member, t }) => {
         >
           {t(`aboutTitle.${id}`)}
         </Text>
-        <Text lineHeight="2" fontSize="14px">
-          {convertNewlineToBreak(t(`about.${id}`))}
+        <Text lineHeight="2" fontSize="14px" whiteSpace="pre-line">
+          {t(`about.${id}`)}
         </Text>
       </Box>
     </Box>

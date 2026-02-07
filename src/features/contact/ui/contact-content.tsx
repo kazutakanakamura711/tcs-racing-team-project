@@ -44,7 +44,12 @@ export const ContactContent: FC<Props> = ({
         <Text fontSize="36px" fontWeight="bold" mb="34px">
           Contact
         </Text>
-        <Text w={{ base: '60%', lg: '50%' }} mb="80px" fontWeight="bold">
+        <Text
+          w={{ base: '60%', lg: '50%' }}
+          mb="80px"
+          fontWeight="bold"
+          whiteSpace="pre-line"
+        >
           {t('title')}
         </Text>
 

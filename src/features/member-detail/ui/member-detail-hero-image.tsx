@@ -7,7 +7,6 @@ import {
   youtubeUrl,
   Member,
 } from '@/shared/constants';
-import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { HStack, Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TFunction } from 'i18next';
@@ -82,8 +81,12 @@ export const MemberDetailHeroImage: FC<Props> = ({
         textAlign={{ base: 'left', lg: 'center' }}
         zIndex="2"
       >
-        <Text fontSize={{ base: '16px', lg: '32px' }} fontWeight="bold">
-          {convertNewlineToBreak(t(`title.${id}`))}
+        <Text
+          fontSize={{ base: '16px', lg: '32px' }}
+          fontWeight="bold"
+          whiteSpace="pre-line"
+        >
+          {t(`title.${id}`)}
         </Text>
       </Box>
 
@@ -100,7 +103,7 @@ export const MemberDetailHeroImage: FC<Props> = ({
           fontSize={{ base: '36px', lg: '100px' }}
           fontWeight="bold"
         >
-          {convertNewlineToBreak(t(`name.${id}`))}
+          <Text whiteSpace="pre-line">{t(`name.${id}`)}</Text>
         </Box>
         <HStack alignItems="center" justifyContent="space-between" w="20%">
           <SnsIcon

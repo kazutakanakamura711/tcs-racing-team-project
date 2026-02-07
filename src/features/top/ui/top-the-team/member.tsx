@@ -5,13 +5,13 @@ import { MemberId } from '@/shared/constants';
 
 type Props = {
   leftName: string;
-  leftComment: JSX.Element[];
+  leftComment: string;
   leftImage: string;
   leftBg: string;
   leftLink: string;
   leftId: MemberId;
   rightName?: string;
-  rightComment?: JSX.Element[];
+  rightComment?: string;
   rightImage?: string;
   rightBg?: string;
   rightWidth?: string;

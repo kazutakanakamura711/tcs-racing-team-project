@@ -1,7 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { DirectorContent } from './director-content';
 import { TFunction } from 'i18next';
-import { convertNewlineToBreak } from '@/shared/utils/convert-newline-to-break/convert-newline-to-break';
 import { noImageUrl, Member as MemberType } from '@/shared/constants';
 import { Member } from './member';
 
@@ -17,7 +16,7 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
       <DirectorContent
         post={'株式会社 A-Union TCS 代表取締兼監督'}
         name={director.nameJa}
-        comment={convertNewlineToBreak(t(`description.${director.id}`))}
+        comment={t(`description.${director.id}`)}
         link={`/member-page/${director.id}`}
         imagePath={director.topTheTeamSectionImagePath || noImageUrl}
       />
@@ -27,9 +26,7 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
           <Member
             key={leftRider.id}
             leftName={leftRider.nameJa}
-            leftComment={convertNewlineToBreak(
-              t(`description.${leftRider.id}`),
-            )}
+            leftComment={t(`description.${leftRider.id}`)}
             leftImage={
               leftRider.ourTeamPageTheRiderSectionImagePath || noImageUrl
             }
@@ -42,9 +39,7 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
             leftId={leftRider.id}
             rightName={rightRider?.nameJa}
             rightComment={
-              rightRider
-                ? convertNewlineToBreak(t(`description.${rightRider.id}`))
-                : undefined
+              rightRider ? t(`description.${rightRider.id}`) : undefined
             }
             rightImage={
               rightRider?.ourTeamPageTheRiderSectionImagePath || noImageUrl
