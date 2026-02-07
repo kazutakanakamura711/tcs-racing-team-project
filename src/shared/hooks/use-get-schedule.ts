@@ -53,7 +53,7 @@ export const useGetSchedule = ({ limit }: Props) => {
     };
 
     fetchNews();
-  }, []);
+  }, [limit]);
 
   return {
     raceScheduleList: raceSchedule,
