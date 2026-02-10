@@ -13,7 +13,9 @@ describe('OfficialMedia', () => {
 
   it('メインタイトルがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <OfficialMedia socialLinks={socialLinks} />
       </MemoryRouter>,
     );
@@ -23,7 +25,9 @@ describe('OfficialMedia', () => {
 
   it('ソーシャルリンクがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <OfficialMedia socialLinks={socialLinks} />
       </MemoryRouter>,
     );

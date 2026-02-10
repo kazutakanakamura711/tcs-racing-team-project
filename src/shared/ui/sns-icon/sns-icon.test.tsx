@@ -12,7 +12,9 @@ describe('SnsIcon', () => {
 
   it('renders link with correct href and target', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <SnsIcon {...props} />
       </MemoryRouter>,
     );
@@ -24,7 +26,9 @@ describe('SnsIcon', () => {
 
   it('renders image with correct src and alt', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <SnsIcon {...props} />
       </MemoryRouter>,
     );

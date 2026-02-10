@@ -6,7 +6,9 @@ import { Footer } from './footer';
 describe('Footer', () => {
   it('有用なリンクのセクションがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Footer isTablet={false} fontSize="14px" />
       </MemoryRouter>,
     );
@@ -25,7 +27,9 @@ describe('Footer', () => {
 
   it('read moreセクションがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Footer isTablet={false} fontSize="14px" />
       </MemoryRouter>,
     );
@@ -35,7 +39,9 @@ describe('Footer', () => {
 
   it('フォロー用テキストがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Footer isTablet={false} fontSize="14px" />
       </MemoryRouter>,
     );
@@ -47,7 +53,9 @@ describe('Footer', () => {
 
   it('著作権テキストがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Footer isTablet={false} fontSize="14px" />
       </MemoryRouter>,
     );
