@@ -12,6 +12,9 @@ Asia Union TCS Racing Team の公式ウェブサイト
 - **国際化**: i18next (日本語、英語、インドネシア語対応)
 - **CMS**: MicroCMS
 - **アーキテクチャ**: Feature-Sliced Design (FSD)
+- **UIドキュメント**: Storybook
+- **テスト**: Vitest + React Testing Library + happy-dom
+- **コード品質**: ESLint + Prettier + Husky
 
 ## 📋 必要な環境
 
@@ -107,6 +110,113 @@ git commit -m "your message"
 - `.husky/pre-commit`: pre-commitフック
 - `package.json` の `lint-staged`: 実行内容を定義
 
+## 🧪 テスト
+
+プロジェクトの品質を保証するために、ユニットテストとインテグレーションテストを導入しています。
+
+- **テストランナー**: Vitest
+- **DOM環境**: happy-dom
+- **ユーティリティ**: React Testing Library
+
+### テスト対象コンポーネント
+
+- **shared/ui**: 再利用可能なUIコンポーネント（全てStorybookと連動）
+- **widgets**: ヘッダー、フッターなどの大きなUIブロック
+
+**テストポリシー**: Storybookを持つ全てのコンポーネントには対応するテストファイル（`.test.tsx`）が存在します。
+
+### テストの実行
+
+```bash
+# テストをウォッチモードで実行（開発中）
+npm test
+
+# テストを1回だけ実行（CI/CD等）
+npm run test:run
+
+# UIモードでテストを実行（詳細確認用）
+npm run test:ui
+
+# カバレッジレポート付きでテスト実行
+npm run test:coverage
+
+# 特定のファイルのテストのみ実行
+npm test src/shared/ui/link-button/link-button.test.tsx
+```
+
+### テストの書き方ガイドライン
+
+#### 基本構造
+
+```tsx
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { YourComponent } from './your-component';
+
+describe('YourComponent', () => {
+  it('正常にレンダリングされること', () => {
+    render(<YourComponent />);
+    expect(screen.getByText('テキスト')).toBeInTheDocument();
+  });
+});
+```
+
+#### React Routerを使用するコンポーネント
+
+```tsx
+import { MemoryRouter } from 'react-router-dom';
+
+render(
+  <MemoryRouter>
+    <YourComponent />
+  </MemoryRouter>,
+);
+```
+
+#### イベントハンドラーのテスト
+
+```tsx
+import { fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
+
+const handleClick = vi.fn();
+render(<Button onClick={handleClick}>クリック</Button>);
+fireEvent.click(screen.getByText('クリック'));
+expect(handleClick).toHaveBeenCalled();
+```
+
+### テストのベストプラクティス
+
+1. **視覚的な結果をテスト**: ユーザーが見えるもの（テキスト、画像のalt属性など）をテストする
+2. **実装の詳細には依存しない**: クラス名やDOM構造ではなく、役割（role）やテキストでクエリする
+3. **モックは最小限に**: 実際の動作をテストし、必要な場合のみモックを使用
+4. **テストケース名は日本語でわかりやすく**: 何をテストしているかが一目でわかるように記述
+
+### カバレッジレポート
+
+テストカバレッジは以下のコマンドで確認できます：
+
+```bash
+npm run test:coverage
+```
+
+カバレッジレポートは `coverage/` ディレクトリに生成され、ブラウザで `coverage/index.html` を開くと詳細を確認できます。
+
+### Storybookとの連携
+
+このプロジェクトでは、Storybookとテストを密接に連携させています：
+
+- **Storybook**: コンポーネントのビジュアル確認とドキュメント
+- **Vitest**: コンポーネントのロジックと動作の検証
+
+```bash
+# Storybookを起動してビジュアル確認
+npm run storybook
+
+# テストを実行して動作を検証
+npm test
+```
+
 ## 📁 プロジェクト構造 (FSD)
 
 ```
@@ -116,7 +226,8 @@ src/
 ├── features/         # ビジネスロジックを持つ機能単位
 ├── entities/         # ビジネスエンティティ (News, Schedule)
 ├── shared/           # 再利用可能なコード（UI、hooks、utils、constants）
-└── pages/            # アプリケーションのページ
+├── pages/            # アプリケーションのページ
+└── test/             # テスト環境のグローバル設定
 ```
 
 ### FSD層の責務
@@ -127,6 +238,7 @@ src/
 - **entities**: ビジネスモデル（ニュース、スケジュールなど）
 - **shared**: プロジェクト全体で共有される汎用コード
 - **pages**: ページコンポーネント（ルーティングと対応）
+- **test**: Vitestのセットアップファイル（テストファイル自体は各コンポーネントと同じ場所に配置）
 
 ## 🌍 多言語対応
 

@@ -141,6 +141,7 @@ export const Header: FC<Props> = ({
             ml="auto"
             onClick={onOpen}
             cursor="pointer"
+            data-testid="hamburger-menu"
           >
             <Box w="30px" h="2px" bg="#fff" mb="5px" />
             <Box w="30px" h="2px" bg="#fff" mb="5px" ml="8px" />
