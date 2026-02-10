@@ -81,6 +81,8 @@ export const TopSlider: React.FC<{
                       Asia Union TCS Racing Team
                     </Text>
                     <video
+                      key={isTablet ? 'sp' : 'pc'} // 追加：ソースが切り替わった時にビデオ要素をリフレッシュ
+                      src={isTablet ? image.src.sp : image.src.pc} // sourceタグではなくこちらに直接書く
                       autoPlay
                       loop
                       muted
@@ -95,10 +97,6 @@ export const TopSlider: React.FC<{
                           : { objectFit: 'cover', height: '100vh' }
                       }
                     >
-                      <source
-                        src={isTablet ? image.src.sp : image.src.pc}
-                        type="video/mp4"
-                      />
                       お使いのブラウザはビデオタグをサポートしていません。
                     </video>
                   </>
