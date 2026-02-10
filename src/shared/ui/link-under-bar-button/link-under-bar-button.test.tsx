@@ -6,7 +6,9 @@ import { LinkUnderBarButton } from './link-under-bar-button';
 describe('LinkUnderBarButton', () => {
   it('renders text', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <LinkUnderBarButton text="Read More" url="/news" />
       </MemoryRouter>,
     );
@@ -15,7 +17,9 @@ describe('LinkUnderBarButton', () => {
 
   it('renders correct link', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <LinkUnderBarButton text="About" url="/about" />
       </MemoryRouter>,
     );

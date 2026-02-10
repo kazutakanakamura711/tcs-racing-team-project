@@ -6,7 +6,9 @@ import { LinkButton } from './link-button';
 describe('LinkButton', () => {
   it('renders the button text', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <LinkButton text="Click Me" link="/target" />
       </MemoryRouter>,
     );
@@ -15,7 +17,9 @@ describe('LinkButton', () => {
 
   it('navigates to the correct link', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <LinkButton text="Go Home" link="/home" />
       </MemoryRouter>,
     );

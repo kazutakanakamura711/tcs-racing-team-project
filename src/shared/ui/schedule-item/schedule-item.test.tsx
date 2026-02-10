@@ -14,7 +14,9 @@ describe('ScheduleItem', () => {
 
   it('日付、タイトル、場所がレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <ScheduleItem {...defaultProps} />
       </MemoryRouter>,
     );
@@ -26,7 +28,9 @@ describe('ScheduleItem', () => {
 
   it('正しいURLを持つリンクがレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <ScheduleItem {...defaultProps} />
       </MemoryRouter>,
     );
@@ -40,7 +44,9 @@ describe('ScheduleItem', () => {
 
   it('endDateがない場合でも正しくレンダリングされること', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <ScheduleItem {...defaultProps} endDate={undefined} />
       </MemoryRouter>,
     );

@@ -53,7 +53,7 @@ export const Header: FC<Props> = ({
             h={{ base: 'auto', lg: 'auto' }}
             objectFit={{ base: 'contain', lg: 'none' }}
           >
-            <RouterLink to={TOP}>
+            <RouterLink to={TOP} onClick={onClose}>
               <Image src="/images/common/ico-team-logo-name.webp" alt="logo" />
             </RouterLink>
           </Box>

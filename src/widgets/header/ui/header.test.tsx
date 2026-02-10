@@ -16,7 +16,9 @@ describe('Header', () => {
 
   it('renders logo', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Header {...defaultProps} />
       </MemoryRouter>,
     );
@@ -25,7 +27,9 @@ describe('Header', () => {
 
   it('renders navigation links in desktop view', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Header {...defaultProps} />
       </MemoryRouter>,
     );
@@ -39,7 +43,9 @@ describe('Header', () => {
 
   it('calls onOpen when hamburger menu is clicked', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Header {...defaultProps} />
       </MemoryRouter>,
     );
@@ -52,7 +58,9 @@ describe('Header', () => {
 
   it('calls handleLanguageChange when language is selected', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Header {...defaultProps} />
       </MemoryRouter>,
     );
@@ -63,7 +71,9 @@ describe('Header', () => {
 
   it('calls onClose when a drawer menu item is clicked', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Header {...defaultProps} isOpen={true} />
       </MemoryRouter>,
     );
