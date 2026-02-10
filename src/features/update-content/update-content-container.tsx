@@ -1,5 +1,5 @@
 import { Text } from '@chakra-ui/react';
-import { MainLayout } from '@/shared/ui';
+import { CenteredContainer } from '@/shared/ui';
 import { useUpdateContentContainer } from './model/hooks/use-update-content-container';
 import {
   UpdateContentNews,
@@ -24,7 +24,7 @@ export const UpdateContentContainer = () => {
         singleNews={singleNews}
         selectedLanguage={selectedLanguage}
       />
-      <MainLayout>
+      <CenteredContainer>
         <Text
           color="#fff"
           fontSize={{ base: '24px', lg: '56px' }}
@@ -40,7 +40,7 @@ export const UpdateContentContainer = () => {
             navigate={navigate}
           />
         )}
-      </MainLayout>
+      </CenteredContainer>
     </>
   );
 };

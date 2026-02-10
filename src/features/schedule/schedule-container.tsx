@@ -1,7 +1,7 @@
 import { Title } from '@/shared/ui/title';
 import { Box } from '@chakra-ui/react';
 import { Schedule, ScheduleHeroImage } from './ui';
-import { MainLayout } from '@/shared/ui/main-layout';
+import { CenteredContainer } from '@/shared/ui';
 import { useScheduleContainer } from './model/hooks/use-schedule-container';
 
 export const ScheduleContainer = () => {
@@ -18,13 +18,15 @@ export const ScheduleContainer = () => {
   return (
     <>
       <ScheduleHeroImage heroImageSrc={heroImageSrc} />
-      <Title title="Schedule" subTitle="Schedule" />
+      <CenteredContainer>
+        <Title title="Schedule" subTitle="Schedule" />
+      </CenteredContainer>
       <Schedule
         raceScheduleList={raceScheduleList}
         eventScheduleList={eventScheduleList}
         selectedLanguage={selectedLanguage}
       />
-      <MainLayout>
+      <CenteredContainer>
         <Box mb={{ base: '144px', lg: '192px' }}>
           {/* <Grid
             templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
@@ -42,7 +44,7 @@ export const ScheduleContainer = () => {
             ))}
           </Grid> */}
         </Box>
-      </MainLayout>
+      </CenteredContainer>
     </>
   );
 };

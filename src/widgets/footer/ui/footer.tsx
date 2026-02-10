@@ -1,14 +1,17 @@
 import { Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { MainLayout } from '@/shared/ui/main-layout/main-layout';
-import { useFooter } from '../model/use-footer';
+import { CenteredContainer } from '@/shared/ui';
+import { FC } from 'react';
 
-export const Footer = () => {
-  const { isTablet, fontSize } = useFooter();
+interface Props {
+  isTablet: boolean;
+  fontSize: string;
+}
 
+export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
   return (
-    <Box pt="117px">
-      <MainLayout>
+    <>
+      <CenteredContainer>
         <HStack alignItems="start" mb="37px">
           <Box
             display={{ base: 'block', lg: 'flex' }}
@@ -60,7 +63,7 @@ export const Footer = () => {
             </Link>
           </Box>
         </HStack>
-      </MainLayout>
+      </CenteredContainer>
       <Box
         w="100%"
         pt="7.5px"
@@ -73,6 +76,6 @@ export const Footer = () => {
       >
         Copyright &copy; 2024 TCS Racing Team All Rights Reserved.
       </Box>
-    </Box>
+    </>
   );
 };

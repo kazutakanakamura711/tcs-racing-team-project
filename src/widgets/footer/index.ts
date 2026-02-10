@@ -1,1 +1,1 @@
-export { Footer } from './ui/footer';
+export { FooterContainer as Footer } from './footer-container';

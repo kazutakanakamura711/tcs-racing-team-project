@@ -1,4 +1,4 @@
-import { Title, Message } from '@/shared/ui';
+import { Title, Message, CenteredContainer } from '@/shared/ui';
 import { useTopContainer } from './model/hooks/use-top-container';
 import { Box } from '@chakra-ui/react';
 import { TopSchedule, TopSlider, TopStaff, TopTheTeam, TopUpdates } from './ui';
@@ -30,8 +30,12 @@ export const TopContainer = () => {
       >
         <TopSlider isTablet={isTablet} images={topSliderImages} />
       </Box>
-      <Message message={message} />
-      <Title title="Updates" subTitle="Updates" />
+      <CenteredContainer>
+        <Message message={message} />
+      </CenteredContainer>
+      <CenteredContainer>
+        <Title title="Updates" subTitle="Updates" />
+      </CenteredContainer>
       <TopUpdates
         updateFirstArray={updateFirstArray}
         updateSecondArray={updateSecondArray}
@@ -39,11 +43,22 @@ export const TopContainer = () => {
         navigate={navigate}
         selectedLanguage={selectedLanguage}
       />
-      <Title title="The Team" subTitle="The Team" />
+      <CenteredContainer>
+        <Title title="The Team" subTitle="The Team" />
+      </CenteredContainer>
       <TopTheTeam t={tTopTheTeam} director={director} riderPairs={riderPairs} />
-      <Title title="TheStaff" subTitle="TheStaff" isCenter isHiddenUnderLine />
+      <CenteredContainer>
+        <Title
+          title="TheStaff"
+          subTitle="TheStaff"
+          isCenter
+          isHiddenUnderLine
+        />
+      </CenteredContainer>
       <TopStaff staffList={staffList} navigate={navigate} />
-      <Title title="Schedule" subTitle="Schedule" />
+      <CenteredContainer>
+        <Title title="Schedule" subTitle="Schedule" />
+      </CenteredContainer>
       <TopSchedule
         raceScheduleList={raceScheduleList}
         eventScheduleList={eventScheduleList}

@@ -1,1 +1,1 @@
-export { Header } from './ui/header';
+export { HeaderContainer as Header } from './header-container';

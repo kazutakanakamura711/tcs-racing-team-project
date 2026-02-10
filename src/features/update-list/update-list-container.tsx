@@ -1,4 +1,4 @@
-import { Title } from '@/shared/ui';
+import { CenteredContainer, Title } from '@/shared/ui';
 import { Box } from '@chakra-ui/react';
 import { UpdateListPagination } from './ui';
 import { useUpdateListContainer } from './model/hooks/use-update-list-container';
@@ -16,7 +16,9 @@ export const UpdateListContainer = () => {
   return (
     <>
       <Box pt="128px" mb="128px">
-        <Title title="Updates" subTitle="Updates" />
+        <CenteredContainer>
+          <Title title="Updates" subTitle="Updates" />
+        </CenteredContainer>
       </Box>
       <UpdateListPagination
         currentNews={currentNews}

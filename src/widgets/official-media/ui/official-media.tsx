@@ -1,13 +1,17 @@
 import { SnsIcon } from '@/shared/ui/sns-icon';
-import {
-  facebookUrl,
-  instagramUrl,
-  tiktokUrl,
-  youtubeUrl,
-} from '@/shared/constants';
 import { Box, HStack, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 
-export const OfficialMedia = () => {
+interface Props {
+  socialLinks: {
+    facebook: string;
+    instagram: string;
+    youtube: string;
+    tiktok: string;
+  };
+}
+
+export const OfficialMedia: FC<Props> = ({ socialLinks }) => {
   return (
     <Box textAlign="center">
       <Text
@@ -38,22 +42,22 @@ export const OfficialMedia = () => {
           mx="auto"
         >
           <SnsIcon
-            href={facebookUrl}
+            href={socialLinks.facebook}
             icon="/images/common/ico-facebook-bg-white.webp"
             label="Facebook"
           />
           <SnsIcon
-            href={instagramUrl}
+            href={socialLinks.instagram}
             icon="/images/common/ico-instagram-bg-white.webp"
             label="Instagram"
           />
           <SnsIcon
-            href={youtubeUrl}
+            href={socialLinks.youtube}
             icon="/images/common/ico-youtube-bg-white.webp"
             label="YouTube"
           />
           <SnsIcon
-            href={tiktokUrl}
+            href={socialLinks.tiktok}
             icon="/images/common/ico-tiktok-bg-white.webp"
             label="TikTok"
           />

@@ -1,4 +1,4 @@
-import { Message, Title } from '@/shared/ui';
+import { CenteredContainer, Message, Title } from '@/shared/ui';
 import { useTranslation } from 'react-i18next';
 import {
   TeamMemberRiders,
@@ -34,9 +34,13 @@ export const TeamMemberContainer = () => {
   return (
     <>
       <TeamMemberHeroImage heroImageSrc={heroImageSrc} />
-      <Message message={message} />
+      <CenteredContainer>
+        <Message message={message} />
+      </CenteredContainer>
       <TeamMemberSummary t={t} />
-      <Title title="The Riders" subTitle="The Riders" />
+      <CenteredContainer>
+        <Title title="The Riders" subTitle="The Riders" />
+      </CenteredContainer>
       <TeamMemberRiders riders={riders} navigate={navigate} />
       <TeamMemberStaff
         mainStaffs={mainStaffs}

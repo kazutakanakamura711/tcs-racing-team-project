@@ -1,4 +1,4 @@
-import { MainLayout, LinkButton } from '@/shared/ui';
+import { CenteredContainer, LinkButton } from '@/shared/ui';
 import { NavigateFunction } from 'react-router-dom';
 
 // MicroCMSから返されるニュースアイテムの型を定義
@@ -24,7 +24,7 @@ export const TopUpdates: React.FC<Props> = ({
   selectedLanguage,
 }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box pb="96px">
         <Box
           display={{ base: 'block', lg: 'flex' }}
@@ -67,6 +67,6 @@ export const TopUpdates: React.FC<Props> = ({
 
         <LinkButton link="/update-list" text="More Updates" />
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };

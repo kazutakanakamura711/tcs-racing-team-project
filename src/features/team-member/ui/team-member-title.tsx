@@ -1,4 +1,4 @@
-import { MainLayout } from '@/shared/ui';
+import { CenteredContainer } from '@/shared/ui';
 import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
@@ -14,7 +14,7 @@ export const TeamMemberTitle: FC<Props> = ({
   subTitle,
 }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box position="relative" minH="160px" mb="56px">
         <Box
           position="absolute"
@@ -58,6 +58,6 @@ export const TeamMemberTitle: FC<Props> = ({
           </Box>
         </Box>
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };

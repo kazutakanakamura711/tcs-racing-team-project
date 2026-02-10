@@ -1,4 +1,4 @@
-import { MainLayout } from '@/shared/ui';
+import { CenteredContainer } from '@/shared/ui';
 import { About, Carousel, MemberDetailHeroImage, ProfileContent } from './ui';
 import { useMemberDetailContainer } from './model/hooks/use-member-detail-container';
 
@@ -16,17 +16,17 @@ export const MemberDetailContainer = () => {
         member={member}
         heroImageSrc={heroImageSrc}
       />
-      <MainLayout>
+      <CenteredContainer>
         <ProfileContent id={parsedId} t={t} />
-      </MainLayout>
+      </CenteredContainer>
       <About id={parsedId} t={t} member={member} />
-      <MainLayout>
+      <CenteredContainer>
         <Carousel
           isTablet={isTablet}
           navigate={navigate}
           memberList={memberList}
         />
-      </MainLayout>
+      </CenteredContainer>
     </>
   );
 };

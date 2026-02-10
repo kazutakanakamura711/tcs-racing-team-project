@@ -1,4 +1,4 @@
-import { MainLayout, ScheduleItem, LinkButton } from '@/shared/ui';
+import { CenteredContainer, ScheduleItem, LinkButton } from '@/shared/ui';
 import { ScheduleTitle } from '.';
 
 import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
@@ -20,7 +20,7 @@ export const TopSchedule: React.FC<Props> = ({
 
   return (
     <Box mb="117px">
-      <MainLayout>
+      <CenteredContainer>
         <Box display={{ base: 'block', lg: 'flex' }} gap="64px" mb="70px">
           <Box flex="1" mb={{ base: '81px', lg: '0px' }}>
             <ScheduleTitle text="Race" />
@@ -60,7 +60,7 @@ export const TopSchedule: React.FC<Props> = ({
           </Box>
         </Box>
         <LinkButton link="/schedule-page" text="Overview" />
-      </MainLayout>
+      </CenteredContainer>
     </Box>
   );
 };

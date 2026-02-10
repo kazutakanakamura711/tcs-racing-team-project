@@ -21,18 +21,25 @@ import {
 } from '@/shared/constants';
 import { Link as RouterLink } from 'react-router-dom';
 import { Language, LanguageDisplay } from '@/shared/store/language-store';
-import { useHeader } from '../model/use-header';
+import { ChangeEvent, FC } from 'react';
 
-export const Header = () => {
-  const {
-    isOpen,
-    onOpen,
-    onClose,
-    selectedLanguage,
-    handleLanguageChange,
-    mb,
-  } = useHeader();
+interface Props {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  selectedLanguage: Language;
+  handleLanguageChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+  mb: string;
+}
 
+export const Header: FC<Props> = ({
+  isOpen,
+  onOpen,
+  onClose,
+  selectedLanguage,
+  handleLanguageChange,
+  mb,
+}) => {
   return (
     <Box as="header" position="fixed" top="0" left="0" zIndex="99999" w="100%">
       <Box bg="#1A1A1A" p={{ base: '33px 40px', lg: '13px 80px' }}>
@@ -61,19 +68,39 @@ export const Header = () => {
                 justifyContent="center"
                 flexDirection="column"
               >
-                <RouterLink to={UPDATE_LIST} style={{ marginBottom: mb }}>
+                <RouterLink
+                  to={UPDATE_LIST}
+                  style={{ marginBottom: mb }}
+                  onClick={onClose}
+                >
                   Updates
                 </RouterLink>
-                <RouterLink to={TEAM_MEMBER} style={{ marginBottom: mb }}>
+                <RouterLink
+                  to={TEAM_MEMBER}
+                  style={{ marginBottom: mb }}
+                  onClick={onClose}
+                >
                   Our Team
                 </RouterLink>
-                <RouterLink to={SCHEDULE} style={{ marginBottom: mb }}>
+                <RouterLink
+                  to={SCHEDULE}
+                  style={{ marginBottom: mb }}
+                  onClick={onClose}
+                >
                   Schedule
                 </RouterLink>
-                <RouterLink to={OUR_PARTNERS} style={{ marginBottom: mb }}>
+                <RouterLink
+                  to={OUR_PARTNERS}
+                  style={{ marginBottom: mb }}
+                  onClick={onClose}
+                >
                   Partners
                 </RouterLink>
-                <RouterLink to={CONTACT} style={{ marginBottom: mb }}>
+                <RouterLink
+                  to={CONTACT}
+                  style={{ marginBottom: mb }}
+                  onClick={onClose}
+                >
                   Contact
                 </RouterLink>
               </DrawerBody>
@@ -99,6 +126,7 @@ export const Header = () => {
             w="80px"
             h="26px"
             bg="#fff"
+            color="#000"
             mr={{ base: '16px', lg: '0px' }}
             value={selectedLanguage}
             onChange={handleLanguageChange}

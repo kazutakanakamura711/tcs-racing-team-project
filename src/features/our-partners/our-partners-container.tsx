@@ -1,13 +1,15 @@
 import { OurPartnersBlackList, OurPartnersList } from './ui';
 import { partnersImages } from '@/shared/constants';
-import { Title, MainLayout } from '@/shared/ui';
+import { Title, CenteredContainer } from '@/shared/ui';
 import { Box, Divider } from '@chakra-ui/react';
 
 export const OurPartnersContainer = () => {
   return (
     <Box pt="110px" bg="#1a1a1a">
-      <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
-      <MainLayout>
+      <CenteredContainer>
+        <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
+      </CenteredContainer>
+      <CenteredContainer>
         {/* Black Partner */}
         <OurPartnersBlackList partners={partnersImages.black} />
         {/* Other Partners */}
@@ -24,7 +26,7 @@ export const OurPartnersContainer = () => {
           title="Suppliers"
           imagePath={partnersImages.suppliers}
         />
-      </MainLayout>
+      </CenteredContainer>
     </Box>
   );
 };

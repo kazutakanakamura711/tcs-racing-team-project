@@ -1,4 +1,4 @@
-import { MainLayout } from '@/shared/ui';
+import { CenteredContainer } from '@/shared/ui';
 import {
   Member,
   MemberId,
@@ -16,7 +16,7 @@ interface Props {
 
 export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box mb="160px">
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
@@ -72,6 +72,6 @@ export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
           ))}
         </Grid>
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };
