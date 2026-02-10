@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 type Props = {
   post: string;
   name: string;
-  comment: JSX.Element[];
+  comment: string;
   link: string;
   imagePath: string;
 };
@@ -91,6 +91,7 @@ export const DirectorContent: FC<Props> = ({
                 color="#fff"
                 fontSize={{ base: '10px', lg: '16px' }}
                 w={{ base: '50%', lg: '50%' }}
+                whiteSpace="pre-line"
               >
                 {comment}
               </Text>

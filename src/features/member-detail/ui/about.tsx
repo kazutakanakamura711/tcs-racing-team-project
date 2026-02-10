@@ -1,7 +1,6 @@
-import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { MemberId, Member } from '@/constants';
+import { MemberId, Member } from '@/shared/constants';
 import { TFunction } from 'i18next';
 
 interface Props {
@@ -74,8 +73,8 @@ export const About: FC<Props> = ({ id, member, t }) => {
         >
           {t(`aboutTitle.${id}`)}
         </Text>
-        <Text lineHeight="2" fontSize="14px">
-          {convertNewlineToBreak(t(`about.${id}`))}
+        <Text lineHeight="2" fontSize="14px" whiteSpace="pre-line">
+          {t(`about.${id}`)}
         </Text>
       </Box>
     </Box>

@@ -1,5 +1,10 @@
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Member, MemberId } from '@/constants';
+import { CenteredContainer } from '@/shared/ui';
+import {
+  Member,
+  MemberId,
+  TEAM_MEMBER,
+  MEMBER_DETAIL,
+} from '@/shared/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
@@ -11,7 +16,7 @@ interface Props {
 
 export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box mb="160px">
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
@@ -30,10 +35,11 @@ export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
                   rider.id === MemberId.RinaZaki ||
                   rider.id === MemberId.AyakaHiyoshi
                 ) {
-                  navigate('/team-member');
+                  navigate(TEAM_MEMBER);
                   return;
                 }
-                navigate(`/member-page/${rider.id}`);
+                const path = MEMBER_DETAIL.replace(':id', rider.id);
+                navigate(path);
               }}
             >
               <Image
@@ -66,6 +72,6 @@ export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
           ))}
         </Grid>
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };

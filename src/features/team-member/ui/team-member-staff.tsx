@@ -1,5 +1,5 @@
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Member } from '@/constants';
+import { CenteredContainer } from '@/shared/ui';
+import { Member } from '@/shared/constants';
 import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TeamMemberSmallTitle } from './team-member-small-title';
@@ -17,7 +17,7 @@ export const TeamMemberStaff: FC<Props> = ({
   navigate,
 }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box mb={{ base: '200px', lg: '280px' }}>
         <TeamMemberSmallTitle title="The Staff" />
         <VStack spacing={24}>
@@ -106,6 +106,6 @@ export const TeamMemberStaff: FC<Props> = ({
           </Grid>
         </VStack>
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };

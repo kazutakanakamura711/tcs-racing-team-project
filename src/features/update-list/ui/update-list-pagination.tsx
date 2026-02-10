@@ -1,9 +1,9 @@
 import { FirstContent } from '@/features/top/ui/top-updates/first-content';
 import { Box, Grid } from '@chakra-ui/react';
 import ReactPaginate from 'react-paginate';
-import { NewsItem } from '@/features/top/ui/top-updates/top-updates';
+import { NewsItem } from '@/entities/news';
 import styles from './update-list-pagination.module.css';
-import { MainLayout } from '@/shared/ui/main-layout';
+import { CenteredContainer } from '@/shared/ui';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ export const UpdateListPagination: FC<Props> = ({
   selectedLanguage,
 }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box mb="156px">
         {!news.length && <Box color="#FFF">Coming Soon</Box>}
         <Grid
@@ -62,6 +62,6 @@ export const UpdateListPagination: FC<Props> = ({
           />
         </Box>
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };

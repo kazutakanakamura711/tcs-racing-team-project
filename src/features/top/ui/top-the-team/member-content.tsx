@@ -1,13 +1,13 @@
 import { Box, Text, Image } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MemberId } from '@/constants';
+import { MemberId } from '@/shared/constants';
 
 interface Props {
   // TODO: 国旗の画像が追加されたらbackgroundUrlを必須にする
   backgroundUrl?: string;
   name: string;
-  comment: JSX.Element[];
+  comment: string;
   imageUrl: string;
   width?: string;
   link: string;
@@ -80,7 +80,11 @@ export const MemberContent: FC<Props> = ({
         >
           {name}
         </Text>
-        <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
+        <Text
+          color="#fff"
+          fontSize={{ base: '10px', lg: '12px' }}
+          whiteSpace="pre-line"
+        >
           {comment}
         </Text>
       </Box>

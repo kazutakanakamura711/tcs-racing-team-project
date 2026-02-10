@@ -1,5 +1,4 @@
-import { MemberId } from '@/constants';
-import { convertNewlineToBreak } from '@/shared/utils/convertNewlineToBreak/convertNewlineToBreak';
+import { MemberId } from '@/shared/constants';
 import { Box, Text, HStack } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 import { FC } from 'react';
@@ -74,8 +73,11 @@ export const ProfileContent: FC<Props> = ({ id, t }) => {
             >
               {t(`menuTitle.${0}`)}
             </Text>
-            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
-              {convertNewlineToBreak(t(`nationality.${id}`))}
+            <Text
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+              whiteSpace="pre-line"
+            >
+              {t(`nationality.${id}`)}
             </Text>
           </HStack>
           <HStack mb="16px">
@@ -86,8 +88,11 @@ export const ProfileContent: FC<Props> = ({ id, t }) => {
             >
               {t(`menuTitle.${1}`)}
             </Text>
-            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
-              {convertNewlineToBreak(t(`birthplace.${id}`))}
+            <Text
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+              whiteSpace="pre-line"
+            >
+              {t(`birthplace.${id}`)}
             </Text>
           </HStack>
           <HStack mb="16px">
@@ -122,8 +127,11 @@ export const ProfileContent: FC<Props> = ({ id, t }) => {
             >
               {t(`menuTitle.${4}`)}
             </Text>
-            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
-              {convertNewlineToBreak(t(`tastes.${id}`))}
+            <Text
+              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
+              whiteSpace="pre-line"
+            >
+              {t(`tastes.${id}`)}
             </Text>
           </HStack>
         </Box>
@@ -143,7 +151,7 @@ export const ProfileContent: FC<Props> = ({ id, t }) => {
             lg: '18px !important',
           }}
         >
-          {convertNewlineToBreak(t(`result.${id}`))}
+          <Text whiteSpace="pre-line">{t(`result.${id}`)}</Text>
         </Box>
       </Box>
     </Box>

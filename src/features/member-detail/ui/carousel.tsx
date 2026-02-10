@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './carousel.module.css';
 import { NavigateFunction } from 'react-router-dom';
-import { Member } from '@/constants';
+import { Member } from '@/shared/constants';
 
 const settings = {
   dots: false,

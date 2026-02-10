@@ -1,6 +1,5 @@
-import { LinkButton } from '@/shared/ui/link-button';
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Member, MemberId } from '@/constants';
+import { LinkButton, CenteredContainer } from '@/shared/ui';
+import { Member, MemberId } from '@/shared/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -12,7 +11,7 @@ interface Props {
 export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
   return (
     <Box mb="116px">
-      <MainLayout>
+      <CenteredContainer>
         <Grid
           templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={{ base: '16px', lg: 12 }}
@@ -68,7 +67,7 @@ export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
           ))}
         </Grid>
         <LinkButton link="/team-member" text="Overview" />
-      </MainLayout>
+      </CenteredContainer>
       <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
     </Box>
   );

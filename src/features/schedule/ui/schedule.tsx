@@ -1,8 +1,7 @@
-import { MainLayout } from '@/shared/ui/main-layout';
 import { Box, VStack } from '@chakra-ui/react';
-import { ScheduleItem } from '@/shared/ui/schedule-item';
+import { CenteredContainer, ScheduleItem } from '@/shared/ui';
 import { ScheduleTitle } from './schedule-title';
-import { ScheduleItem as ScheduleItemType } from '@/features/top/ui/top-schedule/top-schedule';
+import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
 
 interface Props {
   raceScheduleList: ScheduleItemType[];
@@ -17,7 +16,7 @@ export const Schedule: React.FC<Props> = ({
 }) => {
   return (
     <Box mb="117px">
-      <MainLayout>
+      <CenteredContainer>
         <Box display={{ base: 'block', lg: 'flex' }} gap="64px" mb="70px">
           <Box flex="1" mb={{ base: '81px', lg: '0px' }}>
             <ScheduleTitle text="Race" />
@@ -56,7 +55,7 @@ export const Schedule: React.FC<Props> = ({
             </VStack>
           </Box>
         </Box>
-      </MainLayout>
+      </CenteredContainer>
     </Box>
   );
 };

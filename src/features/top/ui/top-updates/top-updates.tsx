@@ -1,31 +1,12 @@
-import { MainLayout } from '@/shared/ui/main-layout';
+import { CenteredContainer, LinkButton } from '@/shared/ui';
+import { NavigateFunction } from 'react-router-dom';
+
+// MicroCMSから返されるニュースアイテムの型を定義
+import { NewsItem } from '@/entities/news';
 import { Box } from '@chakra-ui/react';
 import { FirstContent } from './first-content';
 import { SecondContent } from './second-content';
 import { OtherContents } from './other-contents';
-import { LinkButton } from '@/shared/ui/link-button';
-import { NavigateFunction } from 'react-router-dom';
-
-// MicroCMSから返されるニュースアイテムの型を定義
-export interface NewsItem {
-  id: string;
-  [key: `title${string}`]: string;
-  [key: `content${string}`]: string;
-  createdAt: string;
-  publishedAt: string;
-  revisedAt: string;
-  updatedAt: string;
-  category: {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-  };
-  eyecatch: {
-    url: string;
-  };
-}
 
 interface Props {
   updateFirstArray: NewsItem[];
@@ -43,7 +24,7 @@ export const TopUpdates: React.FC<Props> = ({
   selectedLanguage,
 }) => {
   return (
-    <MainLayout>
+    <CenteredContainer>
       <Box pb="96px">
         <Box
           display={{ base: 'block', lg: 'flex' }}
@@ -86,6 +67,6 @@ export const TopUpdates: React.FC<Props> = ({
 
         <LinkButton link="/update-list" text="More Updates" />
       </Box>
-    </MainLayout>
+    </CenteredContainer>
   );
 };

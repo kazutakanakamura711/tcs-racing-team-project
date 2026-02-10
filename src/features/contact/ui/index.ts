@@ -1,1 +1,2 @@
-export { Contact } from './contact';
+export * from './contact-hero-image';
+export * from './contact-content';

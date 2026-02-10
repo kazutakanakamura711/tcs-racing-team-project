@@ -1,9 +1,8 @@
-import { ImageFilter } from '@/shared/ui/image-filter';
-import { LinkUnderBarButton } from '@/shared/ui/link-under-bar-button';
+import { ImageFilter, LinkUnderBarButton } from '@/shared/ui';
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { NewsItem } from './top-updates';
-import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { NewsItem } from '@/entities/news';
+import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 
 interface Props {

@@ -1,7 +1,7 @@
 import { Box, HStack, Text } from '@chakra-ui/react';
-import { NewsItem } from './top-updates';
+import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
-import { formatDate } from '@/shared/utils/dateFormat/dateFormat';
+import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 
 interface Props {

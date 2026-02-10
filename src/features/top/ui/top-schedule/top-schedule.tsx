@@ -1,21 +1,12 @@
-import { MainLayout } from '@/shared/ui/main-layout';
-import { Box, VStack } from '@chakra-ui/react';
-import { ScheduleItem } from '@/shared/ui/schedule-item';
-import { LinkButton } from '@/shared/ui/link-button';
-import { ScheduleTitle } from './schedule-title';
+import { CenteredContainer, ScheduleItem, LinkButton } from '@/shared/ui';
+import { ScheduleTitle } from '.';
 
-export interface ScheduleItem {
-  id: number;
-  [key: `title${string}`]: string;
-  [key: `location${string}`]: string;
-  [key: `startDate${string}`]: string;
-  [key: `endDate${string}`]: string;
-  url?: string;
-}
+import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
+import { Box, VStack } from '@chakra-ui/react';
 
 interface Props {
-  raceScheduleList: ScheduleItem[];
-  eventScheduleList: ScheduleItem[];
+  raceScheduleList: ScheduleItemType[];
+  eventScheduleList: ScheduleItemType[];
   selectedLanguage: string;
 }
 
@@ -29,7 +20,7 @@ export const TopSchedule: React.FC<Props> = ({
 
   return (
     <Box mb="117px">
-      <MainLayout>
+      <CenteredContainer>
         <Box display={{ base: 'block', lg: 'flex' }} gap="64px" mb="70px">
           <Box flex="1" mb={{ base: '81px', lg: '0px' }}>
             <ScheduleTitle text="Race" />
@@ -69,7 +60,7 @@ export const TopSchedule: React.FC<Props> = ({
           </Box>
         </Box>
         <LinkButton link="/schedule-page" text="Overview" />
-      </MainLayout>
+      </CenteredContainer>
     </Box>
   );
 };
