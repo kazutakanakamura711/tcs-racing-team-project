@@ -2,10 +2,10 @@ import { ContactPage } from '@/pages/contact-page';
 import { TopPage } from '@/pages/top-page';
 import { OurPartnersPage } from '@/pages/our-partners-page';
 import { SchedulePage } from '@/pages/schedule-page';
-import { TeamMemberPage } from '@/pages/team-member-page';
-import { UpdateContentPage } from '@/pages/update-content-page';
-import { UpdateListPage } from '@/pages/update-list-page';
-import { MemberDetailPage } from '@/pages/member-detail-page';
+import { OurTeamPage } from '@/pages/our-team-page';
+import { UpdatesDetailPage } from '@/pages/updates-detail-page';
+import { UpdatesPage } from '@/pages/updates';
+import { OurTeamDetailPage } from '@/pages/our-team-detail-page';
 import { NotFoundPage } from '@/pages/not-found-page';
 
 import {
@@ -27,13 +27,13 @@ export const publicRoutes = [
   },
   {
     path: OUR_TEAM,
-    element: <TeamMemberPage />,
-    children: [{ path: '', element: <TeamMemberPage /> }],
+    element: <OurTeamPage />,
+    children: [{ path: '', element: <OurTeamPage /> }],
   },
   {
     path: OUR_TEAM_DETAIL,
-    element: <MemberDetailPage />,
-    children: [{ path: '', element: <MemberDetailPage /> }],
+    element: <OurTeamDetailPage />,
+    children: [{ path: '', element: <OurTeamDetailPage /> }],
   },
   {
     path: CONTACT,
@@ -52,13 +52,13 @@ export const publicRoutes = [
   },
   {
     path: UPDATE_DETAIL,
-    element: <UpdateContentPage />,
-    children: [{ path: '', element: <UpdateContentPage /> }],
+    element: <UpdatesDetailPage />,
+    children: [{ path: '', element: <UpdatesDetailPage /> }],
   },
   {
     path: UPDATES,
-    element: <UpdateListPage />,
-    children: [{ path: '', element: <UpdateListPage /> }],
+    element: <UpdatesPage />,
+    children: [{ path: '', element: <UpdatesPage /> }],
   },
   {
     path: '*',
