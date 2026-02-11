@@ -4,6 +4,7 @@ export * from './link-button';
 export * from './link-under-bar-button';
 export * from './centered-container';
 export * from './message';
+export * from './not-found';
 export * from './schedule-item';
 export * from './sns-icon';
 export * from './title';

@@ -1,3 +1,10 @@
+import {
+  UPDATES,
+  OUR_TEAM,
+  SCHEDULE,
+  OUR_PARTNERS,
+  CONTACT,
+} from '@/shared/constants';
 import { Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { CenteredContainer } from '@/shared/ui';
@@ -28,10 +35,10 @@ export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
                 USEFUL LINKS
               </Text>
               <VStack align="start">
-                <Link to="/update-list">News</Link>
-                <Link to="/team-member">Team</Link>
-                <Link to="/schedule-page">Schedule</Link>
-                <Link to="/our-partners">Partner</Link>
+                <Link to={UPDATES}>News</Link>
+                <Link to={OUR_TEAM}>Team</Link>
+                <Link to={SCHEDULE}>Schedule</Link>
+                <Link to={OUR_PARTNERS}>Partner</Link>
               </VStack>
             </Box>
             <Box>
@@ -43,7 +50,7 @@ export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
                 READ MORE ABOUT
               </Text>
               <VStack align="start">
-                <Link to="/Contact">Contact</Link>
+                <Link to={CONTACT}>Contact</Link>
               </VStack>
             </Box>
           </Box>

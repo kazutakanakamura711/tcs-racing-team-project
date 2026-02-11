@@ -21,6 +21,7 @@ i18n
       'rider',
       'ourTeam',
       'contact',
+      'notFound',
     ], // 翻訳ファイルの名前
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json', // 翻訳ファイルのパス

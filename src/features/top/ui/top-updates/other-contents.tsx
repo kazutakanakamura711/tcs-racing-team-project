@@ -3,6 +3,7 @@ import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
+import { UPDATE_DETAIL } from '@/shared/constants';
 
 interface Props {
   updateArray: NewsItem[];
@@ -25,7 +26,7 @@ export const OtherContents: FC<Props> = ({
           borderColor="#fff"
           mb="16px"
           cursor="pointer"
-          onClick={() => navigate(`/update-content/${item.id}`)}
+          onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <HStack mb={{ base: '8px', lg: '8px' }}>
             <Text color="#FF9080">News |</Text>

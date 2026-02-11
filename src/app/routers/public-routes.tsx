@@ -2,20 +2,21 @@ import { ContactPage } from '@/pages/contact-page';
 import { TopPage } from '@/pages/top-page';
 import { OurPartnersPage } from '@/pages/our-partners-page';
 import { SchedulePage } from '@/pages/schedule-page';
-import { TeamMemberPage } from '@/pages/team-member-page';
-import { UpdateContentPage } from '@/pages/update-content-page';
-import { UpdateListPage } from '@/pages/update-list-page';
-import { MemberDetailPage } from '@/pages/member-detail-page';
+import { OurTeamPage } from '@/pages/our-team-page';
+import { UpdatesDetailPage } from '@/pages/updates-detail-page';
+import { UpdatesPage } from '@/pages/updates';
+import { OurTeamDetailPage } from '@/pages/our-team-detail-page';
+import { NotFoundPage } from '@/pages/not-found-page';
 
 import {
   TOP,
-  TEAM_MEMBER,
-  MEMBER_DETAIL,
+  OUR_TEAM,
+  OUR_TEAM_DETAIL,
   CONTACT,
   SCHEDULE,
   OUR_PARTNERS,
-  UPDATE_CONTENT,
-  UPDATE_LIST,
+  UPDATE_DETAIL,
+  UPDATES,
 } from '@/shared/constants';
 
 export const publicRoutes = [
@@ -25,14 +26,14 @@ export const publicRoutes = [
     children: [{ path: '', element: <TopPage /> }],
   },
   {
-    path: TEAM_MEMBER,
-    element: <TeamMemberPage />,
-    children: [{ path: '', element: <TeamMemberPage /> }],
+    path: OUR_TEAM,
+    element: <OurTeamPage />,
+    children: [{ path: '', element: <OurTeamPage /> }],
   },
   {
-    path: MEMBER_DETAIL,
-    element: <MemberDetailPage />,
-    children: [{ path: '', element: <MemberDetailPage /> }],
+    path: OUR_TEAM_DETAIL,
+    element: <OurTeamDetailPage />,
+    children: [{ path: '', element: <OurTeamDetailPage /> }],
   },
   {
     path: CONTACT,
@@ -50,13 +51,17 @@ export const publicRoutes = [
     children: [{ path: '', element: <OurPartnersPage /> }],
   },
   {
-    path: UPDATE_CONTENT,
-    element: <UpdateContentPage />,
-    children: [{ path: '', element: <UpdateContentPage /> }],
+    path: UPDATE_DETAIL,
+    element: <UpdatesDetailPage />,
+    children: [{ path: '', element: <UpdatesDetailPage /> }],
   },
   {
-    path: UPDATE_LIST,
-    element: <UpdateListPage />,
-    children: [{ path: '', element: <UpdateListPage /> }],
+    path: UPDATES,
+    element: <UpdatesPage />,
+    children: [{ path: '', element: <UpdatesPage /> }],
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />,
   },
 ];

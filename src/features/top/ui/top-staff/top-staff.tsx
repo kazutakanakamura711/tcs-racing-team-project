@@ -1,5 +1,10 @@
 import { LinkButton, CenteredContainer } from '@/shared/ui';
-import { Member, MemberId } from '@/shared/constants';
+import {
+  Member,
+  MemberId,
+  OUR_TEAM_DETAIL,
+  OUR_TEAM,
+} from '@/shared/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -36,7 +41,7 @@ export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
                 }
                 onClick={() => {
                   if (staff.id === MemberId.YusukeFukumitsu) {
-                    navigate(`/member-page/${staff.id}`);
+                    navigate(OUR_TEAM_DETAIL.replace(':id', staff.id));
                   }
                 }}
               >
@@ -66,7 +71,7 @@ export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
             </GridItem>
           ))}
         </Grid>
-        <LinkButton link="/team-member" text="Overview" />
+        <LinkButton link={OUR_TEAM} text="Overview" />
       </CenteredContainer>
       <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
     </Box>

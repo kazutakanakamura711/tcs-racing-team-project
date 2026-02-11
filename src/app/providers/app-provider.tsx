@@ -1,21 +1,56 @@
-import { Button, Center, Spinner } from '@chakra-ui/react';
+import { Box, Button, Center, Spinner, VStack, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const ErrorFallback = () => {
   return (
-    <div className="" role="alert">
-      <h2 className="text-lg text-red-500 font-semibold">
-        エラーが発生しました{' '}
-      </h2>
-      <Button
-        className="mt-4"
-        onClick={() => window.location.assign(window.location.origin)}
-      >
-        ホーム
-      </Button>
-    </div>
+    <Box
+      minH="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bg="#1a1a1a"
+      px={{ base: 4, md: 8 }}
+    >
+      <VStack spacing={8} textAlign="center">
+        <VStack spacing={4}>
+          <Text
+            fontSize={{ base: '4xl', md: '6xl' }}
+            fontWeight="bold"
+            color="white"
+          >
+            Error
+          </Text>
+          <Text
+            fontSize={{ base: 'xl', md: '2xl' }}
+            fontWeight="bold"
+            color="white"
+          >
+            エラーが発生しました / An Error Occurred
+          </Text>
+          <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.400">
+            予期しないエラーが発生しました。トップページに戻ってやり直してください。
+            <br />
+            An unexpected error occurred. Please return to the top page and try
+            again.
+          </Text>
+        </VStack>
+        <Button
+          as="a"
+          href="/"
+          bg="white"
+          color="black"
+          fontWeight="bold"
+          px={8}
+          py={6}
+          fontSize={{ base: 'sm', md: 'md' }}
+          _hover={{ bg: 'gray.200' }}
+        >
+          Back to Top
+        </Button>
+      </VStack>
+    </Box>
   );
 };
 
