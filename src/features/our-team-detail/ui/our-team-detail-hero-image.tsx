@@ -27,10 +27,6 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
   if (!member) {
     return <Text>No data</Text>;
   }
-  const heroImageBaseTopValue =
-    member.id === MemberId.SayuBella || member.id === MemberId.YutaMatsumoto
-      ? '36%'
-      : '24%';
 
   return (
     <Box
@@ -76,7 +72,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
         w={{ base: '66vw', lg: '40%' }}
         right={{ base: 'auto', lg: '10px' }}
         left={{ base: '10%', lg: 'auto' }}
-        top={{ base: heroImageBaseTopValue, lg: '50%' }}
+        top={{ base: '24%', lg: '50%' }}
         transform={{ base: 'translateY(-60%)', lg: 'translateY(-50%)' }}
         textAlign={{ base: 'left', lg: 'center' }}
         zIndex="2"
