@@ -29,9 +29,8 @@ export const OurTeamRiders: FC<Props> = ({ riders, navigate }) => {
               position="relative"
               aspectRatio="1097 / 880"
               onClick={() => {
-                // TODO: 後でidがFiliYudiono,RinaZaki,AyakaHiyoshiの条件分岐を削除する
+                // TODO: 後でidがRinaZaki,AyakaHiyoshiの条件分岐を削除する
                 if (
-                  rider.id === MemberId.FiliYudiono ||
                   rider.id === MemberId.RinaZaki ||
                   rider.id === MemberId.AyakaHiyoshi
                 ) {

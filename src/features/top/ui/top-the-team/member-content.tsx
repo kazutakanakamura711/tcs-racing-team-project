@@ -92,18 +92,14 @@ export const MemberContent: FC<Props> = ({
         position="absolute"
         bottom="0"
         right="0"
-        // TODO: 後でidFiliYudiono,RinaZaki,AyakaHiyoshiの条件分岐を削除する
+        // TODO: 後でidRinaZaki,AyakaHiyoshiの条件分岐を削除する
         w={{
           base:
-            id === MemberId.FiliYudiono ||
-            id === MemberId.RinaZaki ||
-            id === MemberId.AyakaHiyoshi
+            id === MemberId.RinaZaki || id === MemberId.AyakaHiyoshi
               ? '100%'
               : width || '100%',
           lg:
-            id === MemberId.FiliYudiono ||
-            id === MemberId.RinaZaki ||
-            id === MemberId.AyakaHiyoshi
+            id === MemberId.RinaZaki || id === MemberId.AyakaHiyoshi
               ? '70%'
               : width || '70%',
         }}

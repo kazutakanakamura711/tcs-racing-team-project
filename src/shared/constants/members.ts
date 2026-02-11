@@ -19,13 +19,9 @@ export type Member = {
 export const MemberId = {
   KoheiYamamoto: 'kohei-yamamoto',
   YusukeFukumitsu: 'yusuke-fukumitsu',
-  RiyadhHakim: 'riyadh-hakim',
-  SayuBella: 'sayu-bella',
-  YutaMatsumoto: 'yuta-matsumoto',
   EusebiaNicole: 'eusebia-nicole',
   YoshiharuShiozawa: 'yoshiharu-shiozawa',
   DeddyKurniawan: 'deddy-kurniawan',
-  FiliYudiono: 'fili-yudiono',
   RinaZaki: 'rina-zaki',
   AyakaHiyoshi: 'ayaka-hiyoshi',
 } as const;
@@ -38,20 +34,12 @@ export const parseMemberId = (id: string): MemberId | undefined => {
       return MemberId.KoheiYamamoto;
     case MemberId.YusukeFukumitsu:
       return MemberId.YusukeFukumitsu;
-    case MemberId.RiyadhHakim:
-      return MemberId.RiyadhHakim;
-    case MemberId.SayuBella:
-      return MemberId.SayuBella;
-    case MemberId.YutaMatsumoto:
-      return MemberId.YutaMatsumoto;
     case MemberId.EusebiaNicole:
       return MemberId.EusebiaNicole;
     case MemberId.YoshiharuShiozawa:
       return MemberId.YoshiharuShiozawa;
     case MemberId.DeddyKurniawan:
       return MemberId.DeddyKurniawan;
-    case MemberId.FiliYudiono:
-      return MemberId.FiliYudiono;
     case MemberId.RinaZaki:
       return MemberId.RinaZaki;
     case MemberId.AyakaHiyoshi:
@@ -64,13 +52,9 @@ export const parseMemberId = (id: string): MemberId | undefined => {
 export const MemberKey = {
   KoheiYamamoto: 'KoheiYamamoto',
   YusukeFukumitsu: 'YusukeFukumitsu',
-  RiyadhHakim: 'RiyadhHakim',
-  SayuBella: 'SayuBella',
-  YutaMatsumoto: 'YutaMatsumoto',
   EusebiaNicole: 'EusebiaNicole',
   YoshiharuShiozawa: 'YoshiharuShiozawa',
   DeddyKurniawan: 'DeddyKurniawan',
-  FiliYudiono: 'FiliYudiono',
   RinaZaki: 'RinaZaki',
   AyakaHiyoshi: 'AyakaHiyoshi',
 } as const;
@@ -115,70 +99,6 @@ export const members: Record<MemberKey, Member> = {
     isTopTheStaff: true,
     isOurTeamTheStaffMain: true,
   },
-  [MemberKey.RiyadhHakim]: {
-    id: MemberId.RiyadhHakim,
-    nameJa: 'リアッド ハキム',
-    nameEn: 'Riyadh Hakim',
-    memberType: 'rider',
-    gradationImagesPath:
-      '/images/member/img-member-riyadh-hakim-gradation.webp',
-    topTheTeamSectionBackgroundImagePath:
-      '/images/top/img-top-singapore-flag.webp',
-    topTheTeamSectionImagePath:
-      '/images/member/img-member-riyadh-hakim-rider.webp',
-    ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-riyadh-hakim-rider.webp',
-    memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-riyadh-hakim.png',
-    memberPageFirstViewMemberImagePath:
-      '/images/memberPage/img-memberPage-riyadh-hakim.webp',
-    memberPageFirstViewBackgroundImagePc:
-      '/images/memberPage/img-memberPage-top-riyadh-hakim-pc.webp',
-    memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-riyadh-hakim-sp.webp',
-  },
-  [MemberKey.SayuBella]: {
-    id: MemberId.SayuBella,
-    nameJa: 'サユ ベラ',
-    nameEn: 'Sayu Bella',
-    memberType: 'rider',
-    gradationImagesPath: '/images/member/img-member-sayu-bella-gradation.webp',
-    topTheTeamSectionBackgroundImagePath:
-      '/images/top/img-top-indonesia-flag.webp',
-    topTheTeamSectionImagePath:
-      '/images/member/img-member-sayu-bella-rider.webp',
-    ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-sayu-bella-rider.webp',
-    memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-sayu-bella.jpeg',
-    memberPageFirstViewMemberImagePath:
-      '/images/memberPage/img-memberPage-sayu-bella.webp',
-    memberPageFirstViewBackgroundImagePc:
-      '/images/memberPage/img-memberPage-top-sayu-bella-pc.webp',
-    memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-sayu-bella-sp.webp',
-  },
-  [MemberKey.YutaMatsumoto]: {
-    id: MemberId.YutaMatsumoto,
-    nameJa: '松本 佑太',
-    nameEn: 'Yuta Matsumoto',
-    memberType: 'rider',
-    gradationImagesPath:
-      '/images/member/img-member-yuta-matsumoto-gradation.webp',
-    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp',
-    topTheTeamSectionImagePath:
-      '/images/member/img-member-yuta-matsumoto-rider.webp',
-    ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-yuta-matsumoto-rider.webp',
-    memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-yuta-matsumoto.jpeg',
-    memberPageFirstViewMemberImagePath:
-      '/images/memberPage/img-memberPage-yuta-matsumoto.webp',
-    memberPageFirstViewBackgroundImagePc:
-      '/images/memberPage/img-memberPage-top-yuta-matsumoto-pc.webp',
-    memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-yuta-matsumoto-sp.webp',
-  },
   [MemberKey.EusebiaNicole]: {
     id: MemberId.EusebiaNicole,
     nameJa: 'エセビア ニコル',
@@ -220,22 +140,6 @@ export const members: Record<MemberKey, Member> = {
       '/images/member/img-member-deddy-Kurniawan-gradation.png',
     isTopTheStaff: true,
     isOurTeamTheStaffSub: true,
-  },
-  [MemberKey.FiliYudiono]: {
-    id: MemberId.FiliYudiono,
-    nameJa: 'フェリ ユドヨノ',
-    nameEn: 'Fili Yudiono',
-    memberType: 'rider',
-    gradationImagesPath: '',
-    topTheTeamSectionBackgroundImagePath: '',
-    topTheTeamSectionImagePath:
-      '/images/member/img-member-fili-yudiono-rider.png',
-    ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-fili-yudiono-rider.png',
-    memberPageAboutSectionImagesPath: undefined,
-    memberPageFirstViewMemberImagePath: '',
-    memberPageFirstViewBackgroundImagePc: '',
-    memberPageFirstViewBackgroundImageSp: '',
   },
   [MemberKey.RinaZaki]: {
     id: MemberId.RinaZaki,

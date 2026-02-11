@@ -22,7 +22,7 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
         post={'株式会社 A-Union TCS 代表取締兼監督'}
         name={director.nameJa}
         comment={t(`description.${director.id}`)}
-        link={`/member-page/${director.id}`}
+        link={OUR_TEAM_DETAIL.replace(':id', director.id)}
         imagePath={director.topTheTeamSectionImagePath || noImageUrl}
       />
       {riderPairs.map(pair => {

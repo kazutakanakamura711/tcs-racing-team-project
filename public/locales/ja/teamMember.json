@@ -2,82 +2,52 @@
   "name": {
     "kohei-yamamoto": "KOHEI\nYAMAMOTO",
     "yusuke-fukumitsu": "YUSUKE\nFUKUMITSU",
-    "riyadh-hakim": "RIYADH\nHAKIM",
-    "sayu-bella": "SAYU\nBELLA",
-    "yuta-matsumoto": "YUTA\nMATSUMOTO",
     "eusebia-nicole": "EUSEBIA\nNICOLE"
   },
   "menuTitle": ["国籍", "出身地", "生年月日", "身長", "趣味"],
   "title": {
     "kohei-yamamoto": "Lifetime Challenger",
     "yusuke-fukumitsu": "成功とは、自分に価値ある目標を設定し挑む事である。",
-    "riyadh-hakim": "The only way to predict the future, is to create it.",
-    "sayu-bella": "There is no secret to success. Success is simply the result of preparation, hard work, perseverance and learning from failure",
-    "yuta-matsumoto": "夢なき者に理想なし、\n理想なき者に計画なし、\n計画なき者に実行なし、\n実行なき者に成功なし。\n故に、夢なき者に成功なし。\n\n-　吉田松陰　-",
     "eusebia-nicole": "The only way to achieve the impossible is to believe it is possible"
   },
   "nationality": {
     "kohei-yamamoto": "日本",
     "yusuke-fukumitsu": "日本",
-    "riyadh-hakim": "シンガポール",
-    "sayu-bella": "インドネシア",
-    "yuta-matsumoto": "日本",
     "eusebia-nicole": "フィリピン"
   },
   "birthplace": {
     "kohei-yamamoto": "北海道",
     "yusuke-fukumitsu": "北海道",
-    "riyadh-hakim": "シンガポール",
-    "sayu-bella": "-",
-    "yuta-matsumoto": "横浜",
     "eusebia-nicole": "ケソン市"
   },
   "berthDay": {
     "kohei-yamamoto": "1985年8月20日",
     "yusuke-fukumitsu": "1987年6月19日",
-    "riyadh-hakim": "1998年11月14日",
-    "sayu-bella": "-",
-    "yuta-matsumoto": "1997年4月21日",
     "eusebia-nicole": "2001年5月5日"
   },
   "stature": {
     "kohei-yamamoto": "180cm",
     "yusuke-fukumitsu": "173cm",
-    "riyadh-hakim": "165cm",
-    "sayu-bella": "-",
-    "yuta-matsumoto": "183cm",
     "eusebia-nicole": "168cm"
   },
   "tastes": {
     "kohei-yamamoto": "MTBに乗ること・コーヒー、ワイン愛好家",
     "yusuke-fukumitsu": "アウトドア・フィールドDIY",
-    "riyadh-hakim": "サッカー・自転車競技全般,・デザイン、メディア関係",
-    "sayu-bella": "-",
-    "yuta-matsumoto": "PCゲーム、お寿司を食べること",
     "eusebia-nicole": "コーヒーを淹れること・SNSコンテンツを作ること・アート活動をすること"
   },
   "result": {
     "kohei-yamamoto": "2020.2.1 - 2.5\nアジア選手権 XCO・XCE・DHI・XCR優勝 - チェンライ・タイ\n2018.5.2 - 5.6\nアジア大陸選手権XCO・XCR・DHI優勝 - ダナオ市・フィリピン\n2016.5.4 - 5.8\nアジア大陸選手権 XCO・XCR・DHI・XCE優勝 - チェーナート州・タイ\n2016.8.12 - 8.16\nアジア大陸選手権XCO-XCR-DHI優勝 - マラッカ・マレーシア\n2014.10.29 - 11.2\nアジア大陸選手権-XCO-DHI-XCR優勝 - ルブク・リンガウ、インドネシア",
     "yusuke-fukumitsu": "全日本選手権マスターズ8位",
-    "riyadh-hakim": "2022\nシンガポールナショナルチャンピオンシップ\nXCO・XCC・DH優勝\nWカップXCE4位\n2023\nシンガポールナショナルチャンピオンシップ\nXCO・XCE・XCC優勝",
-    "sayu-bella": "2022\nアジア選手権XCO2位\nインドネシア選手権XCO1位\n2023\nシーゲームXCO1位\nインドネシア選手権XCO1位",
-    "yuta-matsumoto": "2022\n全日本選手権XCE優勝\nWカップXCE10位",
     "eusebia-nicole": "2023\nフィリピン選手権XCE3位\nシーゲーム出場"
   },
   "aboutTitle": {
     "kohei-yamamoto": "About Kohei Yamamoto",
     "yusuke-fukumitsu": "About Yusuke Fukumitsu",
-    "riyadh-hakim": "About Riyadh Hakim",
-    "sayu-bella": "About Sayu Bella",
-    "yuta-matsumoto": "About Matsumoto Yuta",
     "eusebia-nicole": "About Eusebia Nicole"
   },
   "about": {
     "kohei-yamamoto": "北京オリンピックから４大会連続オリンピック日本代表。全日本選手権では12度の優勝、アジア選手権では10度優勝を果たし、２０１３年には世界ランキング11位となる。アジアマウンテンバイク界の生きるレジェンド。現在もプレイングマネージャーとしてレース活動を行いながら、これまでの経験を生かして、これからの若い世代へスポーツの素晴らしさを伝えていく活動を行なっている。アジアから世界チャンピオン獲得へ貢献をしたいという強い想いを胸に掲げて活動中。",
     "yusuke-fukumitsu": "北海道に生まれ育ち、野球、柔道、ブレイクダンスに打ち込んだ学生時代。23歳から柔道整復師として整骨院を独立開業。その後、鍼灸師を取得し全国から依頼の絶えない施術家として活躍。スポーツトレーナーとしても、プロアスリートのケア、コンディショニングを行うマルチトレーナーである。現在は、介護、福祉事業を全国に展開し法人6社スタッフ300人を抱える敏腕経営者である。口癖は、情熱こそ才能であり常に前進、常に革新、常に熱心をモットーに北海道から世界を目指す。",
-    "riyadh-hakim": "シンガポール生まれのシンガポール育ち。家族や友人と自転車に乗るのが好きな少年でした。マウンテンバイクでオフロードコースを走り、自然の中に身を置き、オフロードを走ることによるアドレナリンを感じることがMTBを続ける源になる。\n\n地元のMTBダウンヒルレースに出場するようになり、徐々に海外のレースにも足を踏み入れるようになった。世界中を旅して一流選手と競い合うことで、モチベーションはさらに高まり、いつかは世界の一流選手の仲間入りができると信じて活動を続ける。\n\n努力と決意と忍耐があれば、どんなに大きな夢でも達成することは可能なのだと信じ、常に努力することがモットー。\n\nサイクリング・キャリアの目標は、確実にランクを上げ、このスポーツの最大の舞台に立つこと。世界チャンピオンになることが大きな最終目標。",
-    "sayu-bella": "インドネシア・バリ出身。幼少期から、学校の課外活動を通じてMTBの道を歩み始めました。この初期の経験が、才能を披露し、成功への不屈の意志を示す一連の競技会へとつながりました。\n選手としてのデビュー戦では、初レースで見事1位に輝き、その後のキャリアにおいても高い水準を維持し続けました。ジュニアクラスでは、国内チャンピオンの称号を獲得。\nインドネシア国内の若手サイクリストの希望の星として、世界選手権で優勝を目指す。",
-    "yuta-matsumoto": "横浜生まれ横浜育ち、現在は東京都昭島市を拠点に活動。小学生からＭＴＢに乗り始め、高校生から本格的に競技に取り組む。大学生時代にＭＴＢチーム「FUKAYA RACING」を起業。同年にＸＣＯワールドカップに初出場。2022年からは並行して取り組んでいたＸＣＥ競技専門の選手として活動を開始。ビジネス・競技の両面での成功を目指している。\n恵まれた体格から、力強い走りが特徴。スタートの加速では誰にも負けないパワーをもつ。短距離のコースを好み、フラットなコースを得意とする。\n世界選手権でのメダル獲得を目標とし、ビジネス面では、本チームを世界一のチームにすること。",
     "eusebia-nicole": "情熱的サイクリスト。髪に風を、ペダルに冒険心を宿らせながら、フィリピンの風光明媚なルートを走ることが生きがい。父からサイクリング世界の魅力を教わり、このスポーツを単なる趣味ではなく、自己発見の旅として受け入れる。\n\n5年間、学生アスリートとして学業とスポーツの両分野を駆け巡り、サイクリングと学習の両方への愛情を原動力とする。この旅は、科学と観光管理の学士号取得という集大成へと導いてくれた。サイクリング・トレイルで自分の限界に挑戦するときも、複雑な学問に没頭するときも、卓越性を追求し、挑戦を進化の機会として受け入れている。\n\n今後は、国際大会に出場し、オリンピック・カラーを身にまとい、このスポーツの歴史にチャンピオンとして名を刻むことにある。"
   }
 }
