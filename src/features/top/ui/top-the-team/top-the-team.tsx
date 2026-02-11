@@ -1,7 +1,12 @@
 import { Box } from '@chakra-ui/react';
 import { DirectorContent } from './director-content';
 import { TFunction } from 'i18next';
-import { noImageUrl, Member as MemberType } from '@/shared/constants';
+import {
+  noImageUrl,
+  Member as MemberType,
+  OUR_TEAM_DETAIL,
+  TOP,
+} from '@/shared/constants';
 import { Member } from './member';
 
 interface Props {
@@ -33,8 +38,8 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
             leftBg={leftRider.topTheTeamSectionBackgroundImagePath || ''}
             leftLink={
               leftRider.memberPageFirstViewMemberImagePath
-                ? `/member-page/${leftRider.id}`
-                : `/`
+                ? OUR_TEAM_DETAIL.replace(':id', leftRider.id)
+                : TOP
             }
             leftId={leftRider.id}
             rightName={rightRider?.nameJa}
@@ -47,8 +52,8 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
             rightBg={rightRider?.topTheTeamSectionBackgroundImagePath || ''}
             rightLink={
               rightRider?.memberPageFirstViewMemberImagePath
-                ? `/member-page/${rightRider.id}`
-                : `/`
+                ? OUR_TEAM_DETAIL.replace(':id', rightRider.id)
+                : TOP
             }
             rightId={rightRider?.id}
           />

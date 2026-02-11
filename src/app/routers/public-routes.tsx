@@ -6,16 +6,17 @@ import { TeamMemberPage } from '@/pages/team-member-page';
 import { UpdateContentPage } from '@/pages/update-content-page';
 import { UpdateListPage } from '@/pages/update-list-page';
 import { MemberDetailPage } from '@/pages/member-detail-page';
+import { NotFoundPage } from '@/pages/not-found-page';
 
 import {
   TOP,
-  TEAM_MEMBER,
-  MEMBER_DETAIL,
+  OUR_TEAM,
+  OUR_TEAM_DETAIL,
   CONTACT,
   SCHEDULE,
   OUR_PARTNERS,
-  UPDATE_CONTENT,
-  UPDATE_LIST,
+  UPDATE_DETAIL,
+  UPDATES,
 } from '@/shared/constants';
 
 export const publicRoutes = [
@@ -25,12 +26,12 @@ export const publicRoutes = [
     children: [{ path: '', element: <TopPage /> }],
   },
   {
-    path: TEAM_MEMBER,
+    path: OUR_TEAM,
     element: <TeamMemberPage />,
     children: [{ path: '', element: <TeamMemberPage /> }],
   },
   {
-    path: MEMBER_DETAIL,
+    path: OUR_TEAM_DETAIL,
     element: <MemberDetailPage />,
     children: [{ path: '', element: <MemberDetailPage /> }],
   },
@@ -50,13 +51,17 @@ export const publicRoutes = [
     children: [{ path: '', element: <OurPartnersPage /> }],
   },
   {
-    path: UPDATE_CONTENT,
+    path: UPDATE_DETAIL,
     element: <UpdateContentPage />,
     children: [{ path: '', element: <UpdateContentPage /> }],
   },
   {
-    path: UPDATE_LIST,
+    path: UPDATES,
     element: <UpdateListPage />,
     children: [{ path: '', element: <UpdateListPage /> }],
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />,
   },
 ];

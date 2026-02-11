@@ -7,6 +7,7 @@ import { Box } from '@chakra-ui/react';
 import { FirstContent } from './first-content';
 import { SecondContent } from './second-content';
 import { OtherContents } from './other-contents';
+import { UPDATES } from '@/shared/constants';
 
 interface Props {
   updateFirstArray: NewsItem[];
@@ -65,7 +66,7 @@ export const TopUpdates: React.FC<Props> = ({
             )}
         </Box>
 
-        <LinkButton link="/update-list" text="More Updates" />
+        <LinkButton link={UPDATES} text="More Updates" />
       </Box>
     </CenteredContainer>
   );

@@ -2,8 +2,8 @@ import { CenteredContainer } from '@/shared/ui';
 import {
   Member,
   MemberId,
-  TEAM_MEMBER,
-  MEMBER_DETAIL,
+  OUR_TEAM,
+  OUR_TEAM_DETAIL,
 } from '@/shared/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
@@ -35,10 +35,10 @@ export const TeamMemberRiders: FC<Props> = ({ riders, navigate }) => {
                   rider.id === MemberId.RinaZaki ||
                   rider.id === MemberId.AyakaHiyoshi
                 ) {
-                  navigate(TEAM_MEMBER);
+                  navigate(OUR_TEAM);
                   return;
                 }
-                const path = MEMBER_DETAIL.replace(':id', rider.id);
+                const path = OUR_TEAM_DETAIL.replace(':id', rider.id);
                 navigate(path);
               }}
             >

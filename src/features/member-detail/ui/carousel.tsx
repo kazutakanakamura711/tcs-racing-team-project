@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './carousel.module.css';
 import { NavigateFunction } from 'react-router-dom';
-import { Member } from '@/shared/constants';
+import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
 
 const settings = {
   dots: false,
@@ -28,44 +28,21 @@ export const Carousel: React.FC<Props> = ({
   navigate,
   memberList,
 }) => {
-  const slider = isTablet ? (
-    <SimpleGrid columns={2} spacing={10}>
-      {memberList.map(member => (
-        <Box key={member.id} w="100%" h="100%" pr="16px">
-          <Box
-            w="100%"
-            objectFit="cover"
-            cursor="pointer"
-            onClick={() => {
-              navigate(`/member-page/${member.id}`);
-            }}
-          >
-            <Image
-              display="block"
-              w="100%"
-              h="100%"
-              objectFit="cover"
-              src={member.gradationImagesPath}
-              alt={member.nameJa}
-            />
-          </Box>
-          <Text fontSize="16px" color="white" textAlign="center">
-            {member.nameEn.toUpperCase()}
-          </Text>
-        </Box>
-      ))}
-    </SimpleGrid>
-  ) : (
-    <div className={styles.root}>
-      <Slider {...settings}>
+  const slider =
+    isTablet || memberList.length <= 4 ? (
+      <SimpleGrid
+        columns={isTablet ? 2 : memberList.length < 4 ? memberList.length : 4}
+        spacing={10}
+        justifyContent="center"
+      >
         {memberList.map(member => (
-          <Box key={member.id} w="23%" h="100%" pr="16px">
+          <Box key={member.id} w="100%" h="100%" pr="16px">
             <Box
               w="100%"
               objectFit="cover"
               cursor="pointer"
               onClick={() => {
-                navigate(`/member-page/${member.id}`);
+                navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
               }}
             >
               <Image
@@ -82,9 +59,37 @@ export const Carousel: React.FC<Props> = ({
             </Text>
           </Box>
         ))}
-      </Slider>
-    </div>
-  );
+      </SimpleGrid>
+    ) : (
+      <div className={styles.root}>
+        <Slider {...settings}>
+          {memberList.map(member => (
+            <Box key={member.id} w="23%" h="100%" pr="16px">
+              <Box
+                w="100%"
+                objectFit="cover"
+                cursor="pointer"
+                onClick={() => {
+                  navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
+                }}
+              >
+                <Image
+                  display="block"
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                  src={member.gradationImagesPath}
+                  alt={member.nameJa}
+                />
+              </Box>
+              <Text fontSize="16px" color="white" textAlign="center">
+                {member.nameEn.toUpperCase()}
+              </Text>
+            </Box>
+          ))}
+        </Slider>
+      </div>
+    );
 
   return (
     <Box mb="139px">

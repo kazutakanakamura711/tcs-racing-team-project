@@ -4,6 +4,7 @@ import { Link, NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/date-format/date-format';
+import { noImageUrl, UPDATE_DETAIL } from '@/shared/constants';
 
 interface Props {
   updateArray: NewsItem[];
@@ -31,13 +32,10 @@ export const SecondContent: FC<Props> = ({
           boxShadow="5px -5px #626063"
           transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: '10px -10px #626063' }}
-          onClick={() => navigate(`/update-content/${item.id}`)}
+          onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <ImageFilter
-            src={
-              item.eyecatch?.url ||
-              'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=NoImage'
-            }
+            src={item.eyecatch?.url || noImageUrl}
             isHoverEffectEnabled={true}
           />
           <Box

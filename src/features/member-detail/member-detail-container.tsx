@@ -1,4 +1,5 @@
 import { CenteredContainer } from '@/shared/ui';
+import { NotFoundPage } from '@/pages/not-found-page';
 import { About, Carousel, MemberDetailHeroImage, ProfileContent } from './ui';
 import { useMemberDetailContainer } from './model/hooks/use-member-detail-container';
 
@@ -6,7 +7,7 @@ export const MemberDetailContainer = () => {
   const { parsedId, t, member, memberList, heroImageSrc, isTablet, navigate } =
     useMemberDetailContainer();
 
-  if (!parsedId || !member) return null;
+  if (!parsedId || !member) return <NotFoundPage />;
 
   return (
     <>

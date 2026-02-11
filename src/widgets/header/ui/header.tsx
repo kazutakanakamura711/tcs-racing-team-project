@@ -13,11 +13,11 @@ import {
 } from '@chakra-ui/react';
 import {
   TOP,
-  TEAM_MEMBER,
+  OUR_TEAM,
   SCHEDULE,
   OUR_PARTNERS,
   CONTACT,
-  UPDATE_LIST,
+  UPDATES,
 } from '@/shared/constants';
 import { Link as RouterLink } from 'react-router-dom';
 import { Language, LanguageDisplay } from '@/shared/store/language-store';
@@ -69,14 +69,14 @@ export const Header: FC<Props> = ({
                 flexDirection="column"
               >
                 <RouterLink
-                  to={UPDATE_LIST}
+                  to={UPDATES}
                   style={{ marginBottom: mb }}
                   onClick={onClose}
                 >
                   Updates
                 </RouterLink>
                 <RouterLink
-                  to={TEAM_MEMBER}
+                  to={OUR_TEAM}
                   style={{ marginBottom: mb }}
                   onClick={onClose}
                 >
@@ -113,8 +113,8 @@ export const Header: FC<Props> = ({
             mr="16px"
             display={{ base: 'none', lg: 'flex' }}
           >
-            <RouterLink to={UPDATE_LIST}>Updates</RouterLink>
-            <RouterLink to={TEAM_MEMBER}>Our Team</RouterLink>
+            <RouterLink to={UPDATES}>Updates</RouterLink>
+            <RouterLink to={OUR_TEAM}>Our Team</RouterLink>
             <RouterLink to={SCHEDULE}>Schedule</RouterLink>
             <RouterLink to={OUR_PARTNERS}>Partners</RouterLink>
             <RouterLink to={CONTACT}>Contact</RouterLink>

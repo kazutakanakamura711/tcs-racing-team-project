@@ -1,8 +1,8 @@
 export const TOP = '/';
-export const TEAM_MEMBER = '/team-member';
-export const MEMBER_DETAIL = '/member-page/:id';
+export const OUR_TEAM = '/our-team';
+export const OUR_TEAM_DETAIL = '/our-team/:id';
 export const CONTACT = '/contact';
-export const SCHEDULE = '/schedule-page';
+export const SCHEDULE = '/schedule';
 export const OUR_PARTNERS = '/our-partners';
-export const UPDATE_CONTENT = '/update-content/:id';
-export const UPDATE_LIST = '/update-list';
+export const UPDATES = '/updates';
+export const UPDATE_DETAIL = '/updates/:id';

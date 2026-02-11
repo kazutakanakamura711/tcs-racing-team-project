@@ -4,6 +4,7 @@ import { HStack, Box, Text, Grid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
+import { noImageUrl, UPDATE_DETAIL } from '@/shared/constants';
 
 interface Props {
   updateArray: { news: NewsItem[] };
@@ -31,13 +32,10 @@ export const RelatedUpdates: FC<Props> = ({
           boxShadow="10px -10px #626063"
           transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: '15px -15px #626063' }}
-          onClick={() => navigate(`/update-content/${item.id}`)}
+          onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <ImageFilter
-            src={
-              item.eyecatch?.url ||
-              'https://placehold.jp/30/A1A1A1/ffffff/300x150.png?text=NoImage'
-            }
+            src={item.eyecatch?.url || noImageUrl}
             isHoverEffectEnabled={true}
           />
           <Box position="absolute" bottom="0" left="20px" zIndex="2">

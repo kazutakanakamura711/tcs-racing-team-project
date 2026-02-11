@@ -3,6 +3,7 @@ import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
+import { UPDATE_DETAIL } from '@/shared/constants';
 
 interface Props {
   news: NewsItem[];
@@ -25,7 +26,7 @@ export const LatestNewsList: FC<Props> = ({
           pt="27px"
           pb="19px"
           cursor="pointer"
-          onClick={() => navigate(`/update-content/${item.id}`)}
+          onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <Box display="flex" alignItems="center" mb="15px">
             <Text color="#FF8F80" fontSize="16px" fontWeight="bold">

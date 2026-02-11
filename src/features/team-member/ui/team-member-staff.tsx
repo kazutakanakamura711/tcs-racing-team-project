@@ -1,5 +1,5 @@
 import { CenteredContainer } from '@/shared/ui';
-import { Member } from '@/shared/constants';
+import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
 import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { TeamMemberSmallTitle } from './team-member-small-title';
@@ -31,7 +31,9 @@ export const TeamMemberStaff: FC<Props> = ({
                 key={staff.id}
                 cursor="pointer"
                 position="relative"
-                onClick={() => navigate(`/member-page/${staff.id}`)}
+                onClick={() => {
+                  navigate(OUR_TEAM_DETAIL.replace(':id', staff.id));
+                }}
               >
                 <Box
                   w={{ base: '100%', lg: '72%' }}

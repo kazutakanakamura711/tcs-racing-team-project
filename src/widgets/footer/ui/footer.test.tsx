@@ -13,12 +13,9 @@ describe('Footer', () => {
       </MemoryRouter>,
     );
     expect(screen.getByText('USEFUL LINKS')).toBeInTheDocument();
-    expect(screen.getByText('News')).toHaveAttribute('href', '/update-list');
-    expect(screen.getByText('Team')).toHaveAttribute('href', '/team-member');
-    expect(screen.getByText('Schedule')).toHaveAttribute(
-      'href',
-      '/schedule-page',
-    );
+    expect(screen.getByText('News')).toHaveAttribute('href', '/updates');
+    expect(screen.getByText('Team')).toHaveAttribute('href', '/our-team');
+    expect(screen.getByText('Schedule')).toHaveAttribute('href', '/schedule');
     expect(screen.getByText('Partner')).toHaveAttribute(
       'href',
       '/our-partners',
@@ -34,7 +31,7 @@ describe('Footer', () => {
       </MemoryRouter>,
     );
     expect(screen.getByText('READ MORE ABOUT')).toBeInTheDocument();
-    expect(screen.getByText('Contact')).toHaveAttribute('href', '/Contact');
+    expect(screen.getByText('Contact')).toHaveAttribute('href', '/contact');
   });
 
   it('フォロー用テキストがレンダリングされること', () => {
