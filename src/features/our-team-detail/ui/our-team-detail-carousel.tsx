@@ -36,7 +36,7 @@ export const OurTeamDetailCarousel: React.FC<Props> = ({
         justifyContent="center"
       >
         {memberList.map(member => (
-          <Box key={member.id} w="100%" h="100%" pr="16px">
+          <Box key={member.id} w="100%" h="100%">
             <Box
               w="100%"
               objectFit="cover"
@@ -64,7 +64,7 @@ export const OurTeamDetailCarousel: React.FC<Props> = ({
       <div className={styles.root}>
         <Slider {...settings}>
           {memberList.map(member => (
-            <Box key={member.id} w="23%" h="100%" pr="16px">
+            <Box key={member.id} w="23%" h="100%" pr={4}>
               <Box
                 w="100%"
                 objectFit="cover"
