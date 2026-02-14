@@ -4,7 +4,10 @@
     "yusuke-fukumitsu": "YUSUKE\nFUKUMITSU",
     "eusebia-nicole": "EUSEBIA\nNICOLE",
     "rina-zaki": "RINA\nZAKI",
-    "ayaka-hiyoshi": "AYAKA\nHIYOSHI"
+    "ayaka-hiyoshi": "AYAKA\nHIYOSHI",
+    "tshewang-norbu": "TSHEWANG\nNORBU",
+    "ikuta-yuga": "IKUTA\nYUGA",
+    "kadek-dwi": "KADEK\nDWI"
   },
   "menuTitle": ["国籍", "出身地", "生年月日", "身長", "趣味"],
   "title": {
@@ -12,62 +15,89 @@
     "yusuke-fukumitsu": "成功とは、自分に価値ある目標を設定し挑む事である。",
     "eusebia-nicole": "\"The only way to achieve the impossible is to believe it is possible\"",
     "rina-zaki": "Hard work beats talent when talent doesn't work hard",
-    "ayaka-hiyoshi": "親しき仲にも礼儀あり"
+    "ayaka-hiyoshi": "親しき仲にも礼儀あり",
+    "tshewang-norbu": "Stay disciplined, stay consistent, and keep moving forward.",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "nationality": {
     "kohei-yamamoto": "日本",
     "yusuke-fukumitsu": "日本",
     "eusebia-nicole": "フィリピン",
     "rina-zaki": "マレーシア",
-    "ayaka-hiyoshi": "日本"
+    "ayaka-hiyoshi": "日本",
+    "tshewang-norbu": "インド",
+    "ikuta-yuga": "日本",
+    "kadek-dwi": "インドネシア"
   },
   "birthplace": {
     "kohei-yamamoto": "北海道",
     "yusuke-fukumitsu": "北海道",
     "eusebia-nicole": "ケソン市",
     "rina-zaki": "カジャン",
-    "ayaka-hiyoshi": "岐阜"
+    "ayaka-hiyoshi": "岐阜",
+    "tshewang-norbu": "ラダック",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "berthDay": {
     "kohei-yamamoto": "1985年8月20日",
     "yusuke-fukumitsu": "1987年6月19日",
     "eusebia-nicole": "2001年5月5日",
     "rina-zaki": "2003年3月5日",
-    "ayaka-hiyoshi": "2009年4月1日"
+    "ayaka-hiyoshi": "2009年4月1日",
+    "tshewang-norbu": "2006年5月25日",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "stature": {
     "kohei-yamamoto": "180cm",
     "yusuke-fukumitsu": "173cm",
     "eusebia-nicole": "168cm",
     "rina-zaki": "166cm",
-    "ayaka-hiyoshi": "156cm"
+    "ayaka-hiyoshi": "156cm",
+    "tshewang-norbu": "172cm",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "tastes": {
     "kohei-yamamoto": "MTBに乗ること・コーヒー、ワイン愛好家",
     "yusuke-fukumitsu": "アウトドア・フィールドDIY",
     "eusebia-nicole": "コーヒーを淹れること・SNSコンテンツを作ること・アート活動をすること",
     "rina-zaki": "写真撮影・自然の中で過ごすこと",
-    "ayaka-hiyoshi": "メイク・ファッション"
+    "ayaka-hiyoshi": "メイク・ファッション",
+    "tshewang-norbu": "ボクシング、サイクリング全般、音楽を聴くこと",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "result": {
     "kohei-yamamoto": "2020.2.1 - 2.5\nアジア選手権 XCO・XCE・DHI・XCR優勝 - チェンライ・タイ\n2018.5.2 - 5.6\nアジア大陸選手権XCO・XCR・DHI優勝 - ダナオ市・フィリピン\n2016.5.4 - 5.8\nアジア大陸選手権 XCO・XCR・DHI・XCE優勝 - チェーナート州・タイ\n2016.8.12 - 8.16\nアジア大陸選手権XCO-XCR-DHI優勝 - マラッカ・マレーシア\n2014.10.29 - 11.2\nアジア大陸選手権-XCO-DHI-XCR優勝 - ルブク・リンガウ、インドネシア",
     "yusuke-fukumitsu": "全日本選手権マスターズ8位",
     "eusebia-nicole": "2024\nフィリピン・ナショナル選手権 XCE 2位\nフィリピン・ナショナル選手権 XCO 3位\n2025\nアジア・マウンテンバイクシリーズ アレグリア XCE 1位",
     "rina-zaki": "2022\nマレーシアナショナルチャンピオンシップ XCM2位\n2023\nナショナル選手権 U23 XCO 1位\n2025\nタイ・マウンテンバイクカップ U23 XCO 3位",
-    "ayaka-hiyoshi": "2024\n全日本選手権 ジュニア XCO 1位\n2025\n全日本選手権 ジュニア XCO 2位\nジャパン・マウンテンバイクカップ XCO 1位"
+    "ayaka-hiyoshi": "2024\n全日本選手権 ジュニア XCO 1位\n2025\n全日本選手権 ジュニア XCO 2位\nジャパン・マウンテンバイクカップ XCO 1位",
+    "tshewang-norbu": "2024\nHelaz XCOシリーズ第3戦 XCO 2位\n2025年\nインド・ナショナル選手権 XCO 1位\nタイ・マウンテンバイクカップ XCO 3位",
+    "ikuta-yuga": "2025\nJOCジュニア全国ユースMTB XCO 2位\n全日本選手権 ジュニア DHI 1位(エリート含めて4位)\nアジア選手権 ジュニア DHI 1位\nダウンヒルシリーズ年間総合優勝 (エリートクラス)\nMTB ENSエンデューロ シリーズ エリート総合優勝",
+    "kadek-dwi": " 2025\nPorprov Bali BMX男子カテゴリー 1位\nPorjar Bali 男子中学XCCカテゴリー 2位\nPorjar Bali Odeカテゴリー 1位"
   },
   "aboutTitle": {
     "kohei-yamamoto": "About Kohei Yamamoto",
     "yusuke-fukumitsu": "About Yusuke Fukumitsu",
     "eusebia-nicole": "About Eusebia Nicole",
     "rina-zaki": "About Rina Zaki",
-    "ayaka-hiyoshi": "About Ayaka Hiyoshi"
+    "ayaka-hiyoshi": "About Ayaka Hiyoshi",
+    "tshewang-norbu": "About Tshewang Norbu",
+    "ikuta-yuga": "About Ikuta Yuga",
+    "kadek-dwi": "About Kadek Dwi"
   },
   "about": {
     "kohei-yamamoto": "北京オリンピックから4大会連続オリンピック日本代表。全日本選手権では12度の優勝、アジア選手権では10度優勝を果たし、2013年には世界ランキング11位となる。アジアマウンテンバイク界の生きるレジェンド。現在もプレイングマネージャーとしてレース活動を行いながら、これまでの経験を生かして、これからの若い世代へスポーツの素晴らしさを伝えていく活動を行なっている。アジアから世界チャンピオン獲得へ貢献をしたいという強い想いを胸に掲げて活動中。",
     "yusuke-fukumitsu": "北海道に生まれ育ち、野球、柔道、ブレイクダンスに打ち込んだ学生時代。23歳から柔道整復師として整骨院を独立開業。その後、鍼灸師を取得し全国から依頼の絶えない施術家として活躍。スポーツトレーナーとしても、プロアスリートのケア、コンディショニングを行うマルチトレーナーである。現在は、介護、福祉事業を全国に展開し法人6社スタッフ300人を抱える敏腕経営者である。口癖は、情熱こそ才能であり常に前進、常に革新、常に熱心をモットーに北海道から世界を目指す。",
     "eusebia-nicole": "フィリピン出身のサイクリスト。幼少期に父の影響でサイクリングの魅力に触れ、自然の中を走る楽しさをきっかけに競技へと向き合うようになった。風光明媚なフィリピンのルートを走る経験を通じて、サイクリングは単なる趣味にとどまらず、自身を成長させる重要な要素となっていった。\n\n学生アスリートとして約5年間、学業と競技の両立に取り組み、サイクリングへの情熱と学びへの探究心を両立させてきた。科学および観光管理分野の学士号を取得し、競技と知的成長の双方において着実な歩みを重ねている。トレーニングやレースだけでなく、学問への挑戦においても高い目標を掲げ、常に自己の向上を追求している。\n\n将来は国際大会への出場を重ね、オリンピックの舞台で戦うことを目標としている。競技者としての挑戦を通じて、自身の可能性を広げるとともに、サイクリングの魅力と価値をより多くの人に伝えていきたいと考えている。",
     "rina-zaki": "マレーシア出身のマウンテンバイク（MTB）ライダー。数々の国内大会で上位に入賞し、2023年にはマレーシアナショナルチャンピオンシップでXCO優勝を果たすなど、国内外のレースで安定した戦績を残している。\n\nアジア大会やMTBカップシリーズへの出場を通じて経験を積み、2025年からは Asia Union TCS Racing Team の一員として国際レースへ挑戦している。プレースタイルは高い持久力と一定のレースペースで、トップカテゴリーでの結果を追求している。\n\n今後も国際大会での更なる上位進出を目標に、日々トレーニングとレース活動に取り組んでいる。",
-    "ayaka-hiyoshi": "幼少期に父と姉の影響で山へ出かけ、マウンテンバイクに触れたことが競技を始めるきっかけとなった。自然の中を走る楽しさを感じ、遊びとして始めたMTBが、次第に競技として真剣に取り組む対象へと変わっていった。\n\nユースカテゴリでは国内大会で優勝を重ねるほか、全日本選手権やカップ戦でも上位争いに食い込むなど、確かな成長を見せている。アジアユニオンTCSレーシングチームの一員として国内外のレースにも参戦し、着実に力をつけている。\n\n将来の目標はオリンピックの舞台でトップ10入りを果たすこと。その実現に向け、日々トレーニングとレース活動に取り組んでいる。"
+    "ayaka-hiyoshi": "幼少期に父と姉の影響で山へ出かけ、マウンテンバイクに触れたことが競技を始めるきっかけとなった。自然の中を走る楽しさを感じ、遊びとして始めたMTBが、次第に競技として真剣に取り組む対象へと変わっていった。\n\nユースカテゴリでは国内大会で優勝を重ねるほか、全日本選手権やカップ戦でも上位争いに食い込むなど、確かな成長を見せている。アジアユニオンTCSレーシングチームの一員として国内外のレースにも参戦し、着実に力をつけている。\n\n将来の目標はオリンピックの舞台でトップ10入りを果たすこと。その実現に向け、日々トレーニングとレース活動に取り組んでいる。",
+    "tshewang-norbu": "インド・ラダック出身のマウンテンバイク クロスカントリー（MTB XCO）ライダー。標高約3,500mの高地で生まれ育ち、過酷な自然環境の中で培われた持久力と精神的な強さを武器に成長してきた。\nラダックの険しいトレイルを原点に、ローカルレースから国内大会、国際大会へと着実にステップアップし、州代表、そしてインド代表として活躍。高い持久力とプレッシャー下でも崩れない安定したレース運びを強みとする。\n\n世界のトップレベルで戦うことを目標に、インドを代表して国際舞台へ挑戦すると同時に、辺境地域や高地に暮らす次世代のアスリートたちに夢と可能性を示す存在となることを志している。\n自身の挑戦を通じて、環境や立地の制約を超えられることを証明し、インドおよびアジアのMTB界の発展に貢献することを目指し活動中。",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   }
 }

@@ -4,7 +4,10 @@
     "yusuke-fukumitsu": "YUSUKE\nFUKUMITSU",
     "eusebia-nicole": "EUSEBIA\nNICOLE",
     "rina-zaki": "RINA\nZAKI",
-    "ayaka-hiyoshi": "AYAKA\nHIYOSHI"
+    "ayaka-hiyoshi": "AYAKA\nHIYOSHI",
+    "tshewang-norbu": "TSHEWANG\nNORBU",
+    "ikuta-yuga": "IKUTA\nYUGA",
+    "kadek-dwi": "KADEK\nDWI"
   },
   "menuTitle": [
     "Nationality",
@@ -18,62 +21,89 @@
     "yusuke-fukumitsu": "Success is setting and challenging yourself to set worthwhile goals.",
     "eusebia-nicole": "\"The only way to achieve the impossible is to believe it is possible\"",
     "rina-zaki": "Hard work beats talent when talent doesn't work hard",
-    "ayaka-hiyoshi": "Familiarity breeds contempt"
+    "ayaka-hiyoshi": "Familiarity breeds contempt",
+    "tshewang-norbu": "Stay disciplined, stay consistent, and keep moving forward.",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "nationality": {
     "kohei-yamamoto": "Japan",
     "yusuke-fukumitsu": "Japan",
     "eusebia-nicole": "Philippines",
     "rina-zaki": "Malaysia",
-    "ayaka-hiyoshi": "Japan"
+    "ayaka-hiyoshi": "Japan",
+    "tshewang-norbu": "India",
+    "ikuta-yuga": "Japan",
+    "kadek-dwi": "Indonesia"
   },
   "birthplace": {
     "kohei-yamamoto": "Hokkaido, Japan",
     "yusuke-fukumitsu": "Hokkaido, Japan",
     "eusebia-nicole": "Quezon City",
     "rina-zaki": "Kajang",
-    "ayaka-hiyoshi": "Gifu"
+    "ayaka-hiyoshi": "Gifu",
+    "tshewang-norbu": "Ladakh",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "berthDay": {
     "kohei-yamamoto": "August 20, 1985",
     "yusuke-fukumitsu": "June 19, 1987",
     "eusebia-nicole": "May 5, 2001",
     "rina-zaki": "March 5, 2003",
-    "ayaka-hiyoshi": "April 1, 2009"
+    "ayaka-hiyoshi": "April 1, 2009",
+    "tshewang-norbu": "May 25, 2006",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "stature": {
     "kohei-yamamoto": "180cm",
     "yusuke-fukumitsu": "173cm",
     "eusebia-nicole": "168cm",
     "rina-zaki": "166cm",
-    "ayaka-hiyoshi": "156cm"
+    "ayaka-hiyoshi": "156cm",
+    "tshewang-norbu": "172cm",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "tastes": {
     "kohei-yamamoto": "Riding MTB, coffee and wine enthusiast",
     "yusuke-fukumitsu": "Outdoor, field DIY",
     "eusebia-nicole": "Brewing coffee, creating SNS contents, art activities",
     "rina-zaki": "Photography, spending time in nature",
-    "ayaka-hiyoshi": "Makeup, fashion"
+    "ayaka-hiyoshi": "Makeup, fashion",
+    "tshewang-norbu": "Boxing, cycling in general, listening to music",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   },
   "result": {
     "kohei-yamamoto": "2020.2.1 - 2.5\nAsian Championships XCO, XCE, DHI, XCR Winner - Chiang Rai, Thailand\n2018.5.2 - 5.6\nAsian Continental Championship XCO, XCR, DHI winner - Danao City, Philippines\n2016.5.4 - 5.8\nAsian Continental Championship XCO, XCR, DHI, XCE Winner - Chiang Nat Province, Thailand\n2016.8.12 - 8.16\nAsian Continental Championship XCO-XCR-DHI Winner - Malacca, Malaysia\n2014.10.29 - 11.2\nAsian Continental Championship-XCO-DHI-XCR Winner - Lubuk Lingau, Indonesia",
     "yusuke-fukumitsu": "Japan Championship Masters - 8th place",
-    "eusebia-nicole": "2023\n3rd place in the Philippine Championship XCE\n\nParticipated in Sea Games",
+    "eusebia-nicole": "2024\n2nd place at the Philippines National Championship XCE\n3rd place at the Philippines National Championship XCO\n2025\n1st place at the Asian Mountain Bike Series Alegria XCE",
     "rina-zaki": "2022\n2nd place at the Malaysia National Championship XCM\n2023\n1st place at the National Championship U23 XCO\n2025\n3rd place at the Thailand Mountain Bike Cup U23 XCO",
-    "ayaka-hiyoshi": "2024\n1st place at the All-Japan Championship Junior XCO\n2025\n2nd place at the All-Japan Championship Junior XCO\n1st place at the Japan Mountain Bike Cup XCO"
+    "ayaka-hiyoshi": "2024\n1st place at the All-Japan Championship Junior XCO\n2025\n2nd place at the All-Japan Championship Junior XCO\n1st place at the Japan Mountain Bike Cup XCO",
+    "tshewang-norbu": "2024\n2nd place at Helaz XCO Series Round 3 XCO\n2025\n1st place at India National Championship XCO\n3rd place at Thailand Mountain Bike Cup XCO",
+    "ikuta-yuga": "2025\n2nd place at the JOC Junior National Youth MTB XCO\n1st place at the All-Japan Championship Junior DHI (4th overall including elite)\n1st place at the Asian Championship Junior DHI\nOverall winner of the Downhill Series (Elite class)\nOverall winner of the MTB ENS Enduro Series (Elite class)",
+    "kadek-dwi": "2025\n1st place at the Porprov Bali BMX Men's Category\n2nd place at the Porjar Bali Men's Junior XCC Category\n1st place at the Porjar Bali Ode Category"
   },
   "aboutTitle": {
     "kohei-yamamoto": "About Kohei Yamamoto",
     "yusuke-fukumitsu": "About Yusuke Fukumitsu",
     "eusebia-nicole": "About Eusebia Nicole",
     "rina-zaki": "About Rina Zaki",
-    "ayaka-hiyoshi": "About Ayaka Hiyoshi"
+    "ayaka-hiyoshi": "About Ayaka Hiyoshi",
+    "tshewang-norbu": "About Tshewang Norbu",
+    "ikuta-yuga": "About Ikuta Yuga",
+    "kadek-dwi": "About Kadek Dwi"
   },
   "about": {
     "kohei-yamamoto": "Kohei has achieved remarkable success by representing Japan in four consecutive Olympics since the Beijing Olympics. With 12 victories in the Japan Championships and 10 in the Asian Championships, he secured the 11th position in the world rankings in 2013.\n\nA living legend in the Asian mountain biking scene, he currently engages in racing as a playing manager. Leveraging his past experiences, he actively works to pass on the beauty of sports to the younger generation. He strongly desires to contribute to Asia's journey towards achieving world championships.",
     "yusuke-fukumitsu": "Born and raised in Hokkaido, Yusuke dedicated his school days to baseball, judo, and breakdancing. \n\nAt 23, he opened an osteopathic clinic specializing as a judo therapist. Later, he acquired licenses as an acupuncturist and moxibustion practitioner (traditional Chinese medicine ), gaining steady demand from clients across Japan. Also, he serves as a multi-trainer, offering care and conditioning for professional athletes.\n\nCurrently, he efficiently manages six corporations with a staff of 300 people, overseeing nursing care and welfare businesses throughout Japan. His motto, 'Passion is talent,' guides his approach as he consistently moves forward, innovates, and remains enthusiastic, aspiring for success on a global scale.",
     "eusebia-nicole": "A passionate Filipina cyclist who loves riding her bike through the beautiful places in the Philippines, feeling the wind and enjoying the adventure. Her dad introduced her to cycling, and it became more than just a hobby – it's a journey of discovering herself and being strong.\n\nFor five years, Nicole balanced school and sports as a student-athlete.\n\nDriven by her determination and love for cycling and learning, she earned a Bachelor's degree in Science and Tourism Management. Whether challenging herself on the bike trail or studying hard, she aims for excellence and sees challenges as chances to grow.\n\nWith a strong desire to be great at cycling, her dreams include competing worldwide, wearing the Olympic colors, and making a mark as a champion in the sport's history.\n\n",
     "rina-zaki": "Malaysian mountain bike (MTB) rider. She has achieved consistent top finishes in domestic competitions, including a victory at the Malaysia National Championship XCO in 2023, and has maintained stable results across both domestic and international races.\n\nThrough participation in Asian championships and MTB Cup series events, she has steadily built international experience. From 2025, she competes internationally as a member of the Asia Union TCS Racing Team. Her riding style is characterized by strong endurance and a consistent race pace, with a focus on achieving results at the top competitive level.\n\nShe continues to train and race with the goal of securing higher placements in international competitions.",
-    "ayaka-hiyoshi": "She began mountain biking at a young age after being introduced to the sport through outings to the mountains with her father and older sister. What started as a fun activity in nature gradually developed into a serious competitive pursuit as she discovered the enjoyment of riding off-road.\n\nIn the youth category, she has achieved multiple victories in domestic competitions and has consistently contended for top positions at the All-Japan Championships and national cup races, demonstrating steady and reliable progress. As a member of the Asia Union TCS Racing Team, she competes in both domestic and international events, continuing to build her experience and performance level.\n\nHer long-term goal is to finish in the top 10 at the Olympic Games. She trains and races daily with dedication toward achieving that objective."
+    "ayaka-hiyoshi": "She began mountain biking at a young age after being introduced to the sport through outings to the mountains with her father and older sister. What started as a fun activity in nature gradually developed into a serious competitive pursuit as she discovered the enjoyment of riding off-road.\n\nIn the youth category, she has achieved multiple victories in domestic competitions and has consistently contended for top positions at the All-Japan Championships and national cup races, demonstrating steady and reliable progress. As a member of the Asia Union TCS Racing Team, she competes in both domestic and international events, continuing to build her experience and performance level.\n\nHer long-term goal is to finish in the top 10 at the Olympic Games. She trains and races daily with dedication toward achieving that objective.",
+    "tshewang-norbu": "He is a mountain bike cross-country (MTB XCO) rider from Ladakh, India. Born and raised at an altitude of approximately 3,500 meters, he has developed strong endurance and mental toughness through training in a harsh natural environment. Starting on the rugged trails of Ladakh, he has steadily progressed from local races to national and international competitions, representing both his state and India. His strengths lie in his high endurance and consistent race performance, even under pressure.\n\nAiming to compete at the highest level in the world, he continues to challenge himself on the international stage as a representative of India, while aspiring to inspire the next generation of athletes from remote and high-altitude regions. Through his own journey, he seeks to demonstrate that environmental and geographical limitations can be overcome, and to contribute to the growth and development of mountain biking in India and across Asia.",
+    "ikuta-yuga": "",
+    "kadek-dwi": ""
   }
 }
