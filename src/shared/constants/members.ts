@@ -146,31 +146,31 @@ export const members: Record<MemberKey, Member> = {
     nameJa: 'リナ ザキ',
     nameEn: 'Rina Zaki',
     memberType: 'rider',
-    gradationImagesPath: '',
-    topTheTeamSectionBackgroundImagePath: '',
+    gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
+    topTheTeamSectionBackgroundImagePath: '', //TODO: トップページの旗背景画像差し替え
     topTheTeamSectionImagePath: '/images/member/img-member-rina-zaki-rider.png',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-rina-zaki-rider.png',
-    memberPageAboutSectionImagesPath: undefined,
-    memberPageFirstViewMemberImagePath: '',
-    memberPageFirstViewBackgroundImagePc: '',
-    memberPageFirstViewBackgroundImageSp: '',
+    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
+    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
+    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
+    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
   [MemberKey.AyakaHiyoshi]: {
     id: MemberId.AyakaHiyoshi,
     nameJa: '日吉 彩華',
     nameEn: 'Ayaka Hiyoshi',
     memberType: 'rider',
-    gradationImagesPath: '',
-    topTheTeamSectionBackgroundImagePath: '',
+    gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
+    topTheTeamSectionBackgroundImagePath: '', //TODO: トップページの旗背景画像差し替え
     topTheTeamSectionImagePath:
       '/images/member/img-member-ayaka-hiyoshi-rider.png',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-ayaka-hiyoshi-rider.png',
-    memberPageAboutSectionImagesPath: undefined,
-    memberPageFirstViewMemberImagePath: '',
-    memberPageFirstViewBackgroundImagePc: '',
-    memberPageFirstViewBackgroundImageSp: '',
+    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
+    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
+    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
+    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
 } as const;
 
