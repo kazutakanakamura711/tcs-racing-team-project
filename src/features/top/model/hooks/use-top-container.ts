@@ -14,11 +14,11 @@ import { useGetNews } from '@/shared/hooks/use-get-news';
 import { NewsItem } from '@/entities/news';
 
 export const useTopContainer = () => {
-  const { t } = useTranslation('topMessage');
   const { t: tTopTheTeam } = useTranslation('topTheTeam');
+  const { t: tTeamMember } = useTranslation('teamMember');
   const message = {
     title: 'Asia Union TCS Racing Team',
-    text: t('teamDescription'),
+    text: tTopTheTeam('teamDescription'),
   };
 
   const { isTablet } = useGetWindowWidth();
@@ -58,7 +58,7 @@ export const useTopContainer = () => {
     third: updateThirdArray,
   } = categorizedArrays;
 
-  // memberType で director と riders を取得
+  // MemberType で Director と Rider を取得
   const director = getDirector();
   const riders = getRiders();
 
@@ -70,6 +70,7 @@ export const useTopContainer = () => {
 
   return {
     tTopTheTeam,
+    tTeamMember,
     message,
     isTablet,
     navigate,

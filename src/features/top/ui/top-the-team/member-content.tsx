@@ -1,6 +1,6 @@
 import { Box, Text, Image } from '@chakra-ui/react';
-import { FC, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC } from 'react';
+import { NavigateFunction } from 'react-router-dom';
 import { MemberId } from '@/shared/constants';
 
 interface Props {
@@ -8,10 +8,11 @@ interface Props {
   backgroundUrl?: string;
   name: string;
   comment: string;
-  imageUrl: string;
+  imageUrl?: string;
   width?: string;
   link: string;
   id: MemberId;
+  navigate: NavigateFunction;
 }
 
 export const MemberContent: FC<Props> = ({
@@ -22,31 +23,11 @@ export const MemberContent: FC<Props> = ({
   width,
   link,
   id,
+  navigate,
 }) => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const boxRef = useRef<HTMLImageElement>(null);
-
-  const navigate = useNavigate();
-
-  const handleMouseEnter = () => {
-    if (imageRef.current) {
-      imageRef.current.style.transform = 'scale(1.05)';
-    }
-    if (boxRef.current) {
-      boxRef.current.style.right = '-10px';
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (imageRef.current) {
-      imageRef.current.style.transform = 'scale(1)';
-    }
-    if (boxRef.current) {
-      boxRef.current.style.right = '0';
-    }
-  };
   return (
     <Box
+      role="group"
       w={{ base: '100%', lg: 'calc(50% - 34px)' }}
       minH="276px"
       p="99px 0"
@@ -58,8 +39,6 @@ export const MemberContent: FC<Props> = ({
       borderBottom={{ base: 'solid 1px', lg: 'none' }}
       borderColor="#fff"
       cursor="pointer"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={() => {
         navigate(`${link}`);
       }}
@@ -108,17 +87,18 @@ export const MemberContent: FC<Props> = ({
         overflow="hidden"
         aspectRatio="1097 / 880"
       >
-        <Image
-          ref={imageRef}
-          src={imageUrl}
-          alt="director"
-          transition="transform 0.3s ease"
-          h="100%"
-          mx="auto"
-        />
+        {imageUrl && (
+          <Image
+            src={imageUrl}
+            alt="メンバー画像"
+            transition="transform 0.3s ease"
+            h="100%"
+            mx="auto"
+            _groupHover={{ transform: 'scale(1.05)' }}
+          />
+        )}
       </Box>
       <Box
-        ref={boxRef}
         position="absolute"
         bottom="20px"
         right="0"
@@ -126,11 +106,13 @@ export const MemberContent: FC<Props> = ({
         h="36px"
         objectFit="cover"
         transition="right 0.3s ease"
+        _groupHover={{ right: '-10px' }}
       >
         <Image
           display="block"
           w="100%"
           src="/images/common/ico-arrow-white-brock.svg"
+          alt="矢印アイコン"
         />
       </Box>
     </Box>

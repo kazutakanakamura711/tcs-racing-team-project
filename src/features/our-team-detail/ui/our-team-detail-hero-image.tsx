@@ -15,7 +15,7 @@ interface Props {
   id: MemberId;
   member: Member;
   t: TFunction<'teamMember'>;
-  heroImageSrc: string | undefined;
+  heroImageSrc?: string;
 }
 
 export const OurTeamDetailHeroImage: FC<Props> = ({
@@ -44,7 +44,9 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
         objectFit="cover"
         position="relative"
       >
-        <Image src={heroImageSrc} alt={member.nameEn} w="100%" h="100%" />
+        {heroImageSrc && (
+          <Image src={heroImageSrc} alt={member.nameEn} w="100%" h="100%" />
+        )}
       </Box>
       <Box
         position="absolute"
@@ -58,13 +60,15 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
         objectFit="contain"
         zIndex="2"
       >
-        <Image
-          w="100%"
-          h="100%"
-          objectFit="cover"
-          src={member.memberPageFirstViewMemberImagePath}
-          alt={member.nameEn}
-        />
+        {member.memberPageFirstViewMemberImagePath && (
+          <Image
+            w="100%"
+            h="100%"
+            objectFit="cover"
+            src={member.memberPageFirstViewMemberImagePath}
+            alt={member.nameEn}
+          />
+        )}
       </Box>
 
       <Box
@@ -99,7 +103,9 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
           fontSize={{ base: '36px', lg: '100px' }}
           fontWeight="bold"
         >
-          <Text whiteSpace="pre-line">{t(`name.${id}`)}</Text>
+          <Text whiteSpace="pre-line" textTransform="uppercase">
+            {member.nameEn}
+          </Text>
         </Box>
         <HStack alignItems="center" justifyContent="space-between" w="20%">
           <SnsIcon

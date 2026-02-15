@@ -39,20 +39,23 @@ export const OurTeamDetailCarousel: React.FC<Props> = ({
           <Box key={member.id} w="100%" h="100%">
             <Box
               w="100%"
-              objectFit="cover"
+              aspectRatio="1"
+              overflow="hidden"
               cursor="pointer"
               onClick={() => {
                 navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
               }}
             >
-              <Image
-                display="block"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-                src={member.gradationImagesPath}
-                alt={member.nameJa}
-              />
+              {member.gradationImagesPath && (
+                <Image
+                  display="block"
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                  src={member.gradationImagesPath}
+                  alt={member.nameJa}
+                />
+              )}
             </Box>
             <Text fontSize="16px" color="white" textAlign="center">
               {member.nameEn.toUpperCase()}
@@ -64,23 +67,26 @@ export const OurTeamDetailCarousel: React.FC<Props> = ({
       <div className={styles.root}>
         <Slider {...settings}>
           {memberList.map(member => (
-            <Box key={member.id} w="23%" h="100%" pr={4}>
+            <Box key={member.id} w="23%" h="100%" px={2}>
               <Box
                 w="100%"
-                objectFit="cover"
+                aspectRatio="1"
+                overflow="hidden"
                 cursor="pointer"
                 onClick={() => {
                   navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
                 }}
               >
-                <Image
-                  display="block"
-                  w="100%"
-                  h="100%"
-                  objectFit="cover"
-                  src={member.gradationImagesPath}
-                  alt={member.nameJa}
-                />
+                {member.gradationImagesPath && (
+                  <Image
+                    display="block"
+                    w="100%"
+                    h="100%"
+                    objectFit="cover"
+                    src={member.gradationImagesPath}
+                    alt={member.nameJa}
+                  />
+                )}
               </Box>
               <Text fontSize="16px" color="white" textAlign="center">
                 {member.nameEn.toUpperCase()}

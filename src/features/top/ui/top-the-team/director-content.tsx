@@ -1,6 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
-import { FC, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC } from 'react';
+import { NavigateFunction } from 'react-router-dom';
 
 type Props = {
   post: string;
@@ -8,6 +8,7 @@ type Props = {
   comment: string;
   link: string;
   imagePath: string;
+  navigate: NavigateFunction;
 };
 
 export const DirectorContent: FC<Props> = ({
@@ -16,38 +17,15 @@ export const DirectorContent: FC<Props> = ({
   name,
   comment,
   imagePath,
+  navigate,
 }) => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const boxRef = useRef<HTMLImageElement>(null);
-
-  const navigate = useNavigate();
-
-  const handleMouseEnter = () => {
-    if (imageRef.current) {
-      imageRef.current.style.transform = 'scale(1.05)';
-    }
-    if (boxRef.current) {
-      boxRef.current.style.right = '-10px';
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (imageRef.current) {
-      imageRef.current.style.transform = 'scale(1)';
-    }
-    if (boxRef.current) {
-      boxRef.current.style.right = '0';
-    }
-  };
-
   return (
     <Box
+      role="group"
       w="100%"
       background={`linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 0.8),rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
       backgroundSize="80%"
       cursor="pointer"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={() => {
         navigate(`${link}`);
       }}
@@ -104,15 +82,16 @@ export const DirectorContent: FC<Props> = ({
               maxW={{ base: '380px', lg: 'auto' }}
               overflow="hidden"
             >
-              <Image
-                ref={imageRef}
-                src={imagePath}
-                alt="director"
-                transition="transform 0.3s ease"
-              />
+              {imagePath && (
+                <Image
+                  src={imagePath}
+                  alt="メンバー画像"
+                  transition="transform 0.3s ease"
+                  _groupHover={{ transform: 'scale(1.05)' }}
+                />
+              )}
             </Box>
             <Box
-              ref={boxRef}
               position="absolute"
               bottom="50px"
               right="0"
@@ -120,11 +99,13 @@ export const DirectorContent: FC<Props> = ({
               h="36px"
               objectFit="cover"
               transition="right 0.3s ease"
+              _groupHover={{ right: '-10px' }}
             >
               <Image
                 display="block"
                 w="100%"
                 src="/images/common/ico-arrow-white-brock.svg"
+                alt="矢印アイコン"
               />
             </Box>
           </Box>

@@ -33,7 +33,7 @@ export const OurTeamDetailAbout: FC<Props> = ({ id, member, t }) => {
 
       <Box
         w={{ base: '100%', lg: '50%' }}
-        minW={{ base: '350px', lg: '850px' }}
+        minW={{ base: '320px', lg: '850px' }}
         ml="auto"
         mb={{ base: '16px', lg: '0' }}
         objectFit="cover"

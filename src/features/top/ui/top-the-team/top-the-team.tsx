@@ -1,29 +1,34 @@
 import { Box } from '@chakra-ui/react';
 import { DirectorContent } from './director-content';
 import { TFunction } from 'i18next';
-import {
-  noImageUrl,
-  Member as MemberType,
-  OUR_TEAM_DETAIL,
-  TOP,
-} from '@/shared/constants';
+import { NavigateFunction } from 'react-router-dom';
+import { Member as MemberType, OUR_TEAM_DETAIL, TOP } from '@/shared/constants';
 import { Member } from './member';
 
 interface Props {
   t: TFunction;
+  tTeamMember: TFunction;
   director: MemberType;
   riderPairs: [MemberType, MemberType | undefined][];
+  navigate: NavigateFunction;
 }
 
-export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
+export const TopTheTeam: React.FC<Props> = ({
+  t,
+  tTeamMember,
+  director,
+  riderPairs,
+  navigate,
+}) => {
   return (
     <Box mb="98px">
       <DirectorContent
         post={'株式会社 A-Union TCS 代表取締兼監督'}
         name={director.nameJa}
-        comment={t(`description.${director.id}`)}
+        comment={t('directorDescription')}
         link={OUR_TEAM_DETAIL.replace(':id', director.id)}
-        imagePath={director.topTheTeamSectionImagePath || noImageUrl}
+        imagePath={director.topTheTeamSectionImagePath || ''}
+        navigate={navigate}
       />
       {riderPairs.map(pair => {
         const [leftRider, rightRider] = pair;
@@ -31,31 +36,22 @@ export const TopTheTeam: React.FC<Props> = ({ t, director, riderPairs }) => {
           <Member
             key={leftRider.id}
             leftName={leftRider.nameJa}
-            leftComment={t(`description.${leftRider.id}`)}
-            leftImage={
-              leftRider.ourTeamPageTheRiderSectionImagePath || noImageUrl
-            }
+            leftComment={tTeamMember(`result.${leftRider.id}`)}
+            leftImage={leftRider.ourTeamPageTheRiderSectionImagePath || ''}
             leftBg={leftRider.topTheTeamSectionBackgroundImagePath || ''}
-            leftLink={
-              leftRider.memberPageFirstViewMemberImagePath
-                ? OUR_TEAM_DETAIL.replace(':id', leftRider.id)
-                : TOP
-            }
+            leftLink={OUR_TEAM_DETAIL.replace(':id', leftRider.id)}
             leftId={leftRider.id}
             rightName={rightRider?.nameJa}
             rightComment={
-              rightRider ? t(`description.${rightRider.id}`) : undefined
+              rightRider ? tTeamMember(`result.${rightRider.id}`) : undefined
             }
-            rightImage={
-              rightRider?.ourTeamPageTheRiderSectionImagePath || noImageUrl
-            }
+            rightImage={rightRider?.ourTeamPageTheRiderSectionImagePath || ''}
             rightBg={rightRider?.topTheTeamSectionBackgroundImagePath || ''}
             rightLink={
-              rightRider?.memberPageFirstViewMemberImagePath
-                ? OUR_TEAM_DETAIL.replace(':id', rightRider.id)
-                : TOP
+              rightRider ? OUR_TEAM_DETAIL.replace(':id', rightRider.id) : TOP
             }
             rightId={rightRider?.id}
+            navigate={navigate}
           />
         );
       })}

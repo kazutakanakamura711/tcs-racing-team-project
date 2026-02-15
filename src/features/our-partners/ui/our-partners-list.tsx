@@ -15,23 +15,14 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
   const imageContent = imagePath.map((image, index) => (
     <Link to={image.link} key={index} target="_blank" rel="noopener noreferrer">
       <Box
+        role="group"
         position="relative"
         display="flex"
         alignItems="center"
         justifyContent="center"
         bg="#fff"
-        minH="153px"
+        minH="152px"
         rounded="10px"
-        _hover={{
-          '.arrow': {
-            transform: 'translateX(5px)',
-            transition: 'transform 0.3s ease-in-out',
-          },
-          '.image': {
-            transform: 'scale(1.05)',
-            transition: 'transform 0.3s ease-in-out',
-          },
-        }}
       >
         <Box
           w={image.partnersPageLogoImageWidth}
@@ -40,10 +31,10 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
         >
           {image.imagePath !== '' && (
             <Image
-              className="image"
               src={image.imagePath}
               alt="black"
               transition="transform 0.3s ease-in-out"
+              _groupHover={{ transform: 'scale(1.05)' }}
             />
           )}
         </Box>
@@ -53,16 +44,16 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
           left="21px"
           display="flex"
           alignItems="center"
+          gap={2}
         >
           <Text color="#000" fontSize="16px" fontWeight="bold">
             Read more
           </Text>
           <Box
-            className="arrow"
             display="flex"
             alignItems="center"
-            ml="8px"
             transition="transform 0.3s ease-in-out"
+            _groupHover={{ transform: 'translateX(5px)' }}
           >
             <Image src="images/common/ico-arrow-brock.svg" alt="arrow" />
           </Box>
@@ -77,7 +68,7 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
       </Text>
       <Grid
         templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
-        gap="6px"
+        gap={1.5}
       >
         {imageContent}
       </Grid>

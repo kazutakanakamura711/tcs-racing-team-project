@@ -4,6 +4,7 @@ import {
   MemberId,
   OUR_TEAM_DETAIL,
   OUR_TEAM,
+  MemberTypeDisplay,
 } from '@/shared/constants';
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { NavigateFunction } from 'react-router-dom';
@@ -61,7 +62,7 @@ export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
                   transform="translateY(-100%)"
                 >
                   <Text fontSize={{ base: '10px', lg: '16px' }}>
-                    {staff.memberType}
+                    {MemberTypeDisplay[staff.memberType]}
                   </Text>
                   <Text fontSize={{ base: '10px', lg: '16px' }}>
                     {staff.nameJa}

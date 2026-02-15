@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { MemberContent } from './member-content';
 import { MemberId } from '@/shared/constants';
+import { NavigateFunction } from 'react-router-dom';
 
 type Props = {
   leftName: string;
@@ -17,6 +18,7 @@ type Props = {
   rightWidth?: string;
   rightLink?: string;
   rightId?: MemberId;
+  navigate: NavigateFunction;
 };
 
 export const Member: FC<Props> = ({
@@ -33,6 +35,7 @@ export const Member: FC<Props> = ({
   rightBg,
   rightLink,
   rightId,
+  navigate,
 }) => {
   return (
     <Box
@@ -58,6 +61,7 @@ export const Member: FC<Props> = ({
               imageUrl={leftImage}
               link={leftLink}
               id={leftId}
+              navigate={navigate}
             />
             <Box
               width="1px"
@@ -71,7 +75,7 @@ export const Member: FC<Props> = ({
             />
 
             {/* TODO: 後でrightBgを必須にする */}
-            {rightName && rightImage && rightLink && rightId && (
+            {rightName && rightLink && rightId && (
               <MemberContent
                 backgroundUrl={rightBg}
                 name={rightName}
@@ -80,6 +84,7 @@ export const Member: FC<Props> = ({
                 width={rightWidth}
                 link={rightLink}
                 id={rightId}
+                navigate={navigate}
               />
             )}
           </Box>

@@ -1,14 +1,4 @@
 {
-  "name": {
-    "kohei-yamamoto": "KOHEI\nYAMAMOTO",
-    "yusuke-fukumitsu": "YUSUKE\nFUKUMITSU",
-    "eusebia-nicole": "EUSEBIA\nNICOLE",
-    "rina-zaki": "RINA\nZAKI",
-    "ayaka-hiyoshi": "AYAKA\nHIYOSHI",
-    "tshewang-norbu": "TSHEWANG\nNORBU",
-    "ikuta-yuga": "IKUTA\nYUGA",
-    "kadek-dwi": "KADEK\nDWI"
-  },
   "menuTitle": [
     "Kebangsaan",
     "Tempat lahir",
@@ -22,7 +12,7 @@
     "eusebia-nicole": "Satu-satunya cara untuk mencapai hal yang mustahil adalah dengan mempercayai bahwa hal itu mungkin dicapai",
     "rina-zaki": "Hard work beats talent when talent doesn't work hard",
     "ayaka-hiyoshi": "Familiarity breeds contempt",
-    "tshewang-norbu": "Stay disciplined, stay consistent, and keep moving forward.",
+    "tsewang-norboo": "Stay disciplined, stay consistent, and keep moving forward.",
     "ikuta-yuga": "",
     "kadek-dwi": ""
   },
@@ -32,7 +22,7 @@
     "eusebia-nicole": "Filipina",
     "rina-zaki": "Malaysia",
     "ayaka-hiyoshi": "Jepang",
-    "tshewang-norbu": "India",
+    "tsewang-norboo": "India",
     "ikuta-yuga": "Jepang",
     "kadek-dwi": "Indonesia"
   },
@@ -42,7 +32,7 @@
     "eusebia-nicole": "Kota Quezon",
     "rina-zaki": "Kota Kajang",
     "ayaka-hiyoshi": "Gifu, Jepang",
-    "tshewang-norbu": "Ladakh",
+    "tsewang-norboo": "Ladakh",
     "ikuta-yuga": "",
     "kadek-dwi": ""
   },
@@ -52,7 +42,7 @@
     "eusebia-nicole": "5 Mei 2001",
     "rina-zaki": "5 Maret 2003",
     "ayaka-hiyoshi": "1 April 2009",
-    "tshewang-norbu": "25 Mei 2006",
+    "tsewang-norboo": "25 Mei 2006",
     "ikuta-yuga": "",
     "kadek-dwi": ""
   },
@@ -62,7 +52,7 @@
     "eusebia-nicole": "168cm",
     "rina-zaki": "166cm",
     "ayaka-hiyoshi": "156cm",
-    "tshewang-norbu": "172cm",
+    "tsewang-norboo": "172cm",
     "ikuta-yuga": "",
     "kadek-dwi": ""
   },
@@ -72,17 +62,17 @@
     "eusebia-nicole": "Menyeduh kopi, membuat konten SNS, kegiatan seni",
     "rina-zaki": "",
     "ayaka-hiyoshi": "",
-    "tshewang-norbu": "",
+    "tsewang-norboo": "",
     "ikuta-yuga": "",
     "kadek-dwi": ""
   },
   "result": {
     "kohei-yamamoto": "2020.2.1 - 2.5\nPemenang Kejuaraan Asia XCO, XCE, DHI, XCR - Chiang Rai, Thailand\n2018.5.2 - 5.6\nPemenang Kejuaraan Kontinental Asia XCO, XCR, DHI - Kota Danao, Filipina\n2016.5.4 - 5.8\nPemenang Kejuaraan Kontinental Asia XCO, XCR, DHI, XCE - Provinsi Chiang Nat, Thailand\n2016.8.12 - 8.16\nPemenang Kejuaraan Kontinental Asia XCO-XCR-DHI - Malaka, Malaysia\n2014.10.29 - 11.2\nPemenang Kejuaraan Kontinental Asia XCO-DHI-XCR - Lubuk Lingau, Indonesia",
     "yusuke-fukumitsu": "Master Kejuaraan Jepang - peringkat ke-8",
-    "eusebia-nicole": "2023\nJuara ke-3 dalam Kejuaraan Filipina XCE\nBerpartisipasi dalam Sea Games",
-    "rina-zaki": "",
+    "eusebia-nicole": "2024\nJuara 2 Kejuaraan Nasional Filipina XCE\nJuara 3 Kejuaraan Nasional Filipina XCO\n2025\nJuara 1 Asian Mountain Bike Series Alegria XCE",
+    "rina-zaki": "2022\nJuara 2 Kejuaraan Nasional Malaysia XCM\n2023\nJuara 1 Kejuaraan Nasional U23 XCO\n2025\nJuara 3 Thailand Mountain Bike Cup U23 XCO",
     "ayaka-hiyoshi": "2024\nJuara 1 Kejuaraan Nasional Jepang Junior XCO\n2025\nJuara 2 Kejuaraan Nasional Jepang Junior XCO\nJuara 1 Japan Mountain Bike Cup XCO",
-    "tshewang-norbu": "2024\nJuara 2 Helaz XCO Series Seri ke-3 XCO\n2025\nJuara 1 Kejuaraan Nasional India XCO\nJuara 3 Thailand Mountain Bike Cup XCO",
+    "tsewang-norboo": "2024\nJuara 2 Helaz XCO Series Seri ke-3 XCO\n2025\nJuara 1 Kejuaraan Nasional India XCO\nJuara 3 Thailand Mountain Bike Cup XCO",
     "ikuta-yuga": "2025\nJuara 2 JOC Junior National Youth MTB XCO\nJuara 1 Kejuaraan Nasional Jepang Junior DHI (peringkat 4 keseluruhan termasuk Elite)\nJuara 1 Kejuaraan Asia Junior DHI\nJuara Umum Downhill Series (Kelas Elite)\nJuara Umum MTB ENS Enduro Series (Kelas Elite)",
     "kadek-dwi": " 2025\nJuara 1 kategori BMX Putra Porprov Bali\nJuara 2 kategori XCC Putra SMP Porjar Bali\nJuara 1 kategori ODE Porjar Bali"
   },
@@ -92,17 +82,17 @@
     "eusebia-nicole": "About Eusebia Nicole",
     "rina-zaki": "About Rina Zaki",
     "ayaka-hiyoshi": "About Ayaka Hiyoshi",
-    "tshewang-norbu": "About Tshewang Norbu",
+    "tsewang-norboo": "About Tshewang Norbu",
     "ikuta-yuga": "About Ikuta Yuga",
     "kadek-dwi": "About Kadek Dwi"
   },
   "about": {
     "kohei-yamamoto": "Kohei telah berhasil mencapai kesuksesan yang luar biasa dengan mewakili Jepang dalam empat Olimpiade berturut-turut sejak Olimpiade Beijing. Dengan 12 kemenangan di Kejuaraan Jepang dan 10 kemenangan di Kejuaraan Asia, ia berhasil meraih posisi ke-11 di peringkat dunia pada tahun 2013.\n\nSebagai legenda hidup di kancah sepeda gunung Asia, saat ini ia juga terlibat dalam dunia balap sebagai seorang manajer. Dengan memanfaatkan pengalaman masa lalunya, dia bekerja secara aktif untuk meneruskan keindahan olahraga sepeda ke generasi muda. Dia sangat ingin berkontribusi dalam perjalanan Asia untuk mencapai kejuaraan dunia.",
     "yusuke-fukumitsu": "Lahir dan dibesarkan di Hokkaido, Yusuke mendedikasikan masa sekolahnya untuk bisbol, judo, dan breakdance. \n\nPada usia 23 tahun, ia membuka klinik osteopati yang berspesialisasi sebagai terapis judo. Kemudian, ia memperoleh lisensi sebagai praktisi akupunktur dan moksibusi (pengobatan tradisional Tiongkok), dan terus mendapatkan permintaan yang stabil dari klien di seluruh Jepang. Selain itu, ia juga berperan sebagai multi-trainer, menawarkan perawatan dan pengkondisian bagi para atlet profesional.\n\nSaat ini, ia mengelola enam perusahaan dengan staf berjumlah 300 orang, mengawasi bisnis perawatan dan kesejahteraan di seluruh Jepang. Mottonya, 'Passion adalah bakat,' memandu pendekatannya saat ia secara konsisten terus bergerak maju, berinovasi, dan tetap antusias, bercita-cita untuk sukses dalam skala global.",
-    "eusebia-nicole": "Seorang pesepeda Filipina yang sangat menyukai bersepeda melewati tempat-tempat indah di Filipina, merasakan angin dan menikmati petualangan. Ayahnya memperkenalkannya pada olahraga bersepeda, dan olahraga ini menjadi lebih dari sekadar hobi - ini adalah sebuah perjalanan untuk menemukan jati diri dan menjadi pribadi yang kuat.\n\nDidorong oleh tekad dan kecintaannya pada bersepeda dan belajar, ia meraih gelar Sarjana di bidang Sains dan Manajemen Pariwisata. Baik saat menantang dirinya sendiri di jalur sepeda atau belajar dengan giat, ia bertujuan untuk menjadi yang terbaik dan melihat tantangan sebagai peluang untuk terus berkembang.\n\nDengan keinginan yang kuat untuk menjadi sosok hebat dalam bersepeda, dia bermimpi untuk berkompetisi di seluruh dunia, memakai seragam Olimpiade, dan menorehkan tanda sebagai juara dalam sejarah olahraga.",
+    "eusebia-nicole": "",
     "rina-zaki": "",
     "ayaka-hiyoshi": "",
-    "tshewang-norbu": "",
+    "tsewang-norboo": "",
     "ikuta-yuga": "",
     "kadek-dwi": ""
   }
