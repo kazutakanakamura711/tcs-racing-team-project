@@ -2,7 +2,7 @@ import { CenteredContainer } from '@/shared/ui';
 import { NotFoundPage } from '@/pages/not-found-page';
 import {
   OurTeamDetailAbout,
-  OurTeamDetailCarousel,
+  OurTeamDetailOtherMembers,
   OurTeamDetailHeroImage,
   OurTeamDetailProfileContent,
 } from './ui';
@@ -27,7 +27,7 @@ export const OurTeamDetailContainer = () => {
       </CenteredContainer>
       <OurTeamDetailAbout id={parsedId} t={t} member={member} />
       <CenteredContainer>
-        <OurTeamDetailCarousel
+        <OurTeamDetailOtherMembers
           isTablet={isTablet}
           navigate={navigate}
           memberList={memberList}
