@@ -24,7 +24,13 @@ export const OurTeamDetailOtherMembers: React.FC<Props> = ({
 
   return (
     <Box mb="139px">
-      <Text fontSize="34px" fontWeight="bold" textAlign="center" mb="88px">
+      <Text
+        fontSize="34px"
+        fontWeight="bold"
+        textAlign="center"
+        mb="88px"
+        textColor="#fff"
+      >
         Other Members
       </Text>
       {shouldUseGrid ? (

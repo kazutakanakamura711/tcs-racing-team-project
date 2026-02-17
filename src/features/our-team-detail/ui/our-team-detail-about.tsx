@@ -1,15 +1,14 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { MemberId, Member } from '@/shared/constants';
+import { Member } from '@/shared/constants';
 import { TFunction } from 'i18next';
 
 interface Props {
-  id: MemberId;
   member: Member;
   t: TFunction<'teamMember'>;
 }
 
-export const OurTeamDetailAbout: FC<Props> = ({ id, member, t }) => {
+export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
   return (
     <Box
       w={{ base: '100%', lg: '88%' }}
@@ -27,7 +26,7 @@ export const OurTeamDetailAbout: FC<Props> = ({ id, member, t }) => {
           fontWeight="bold"
           color="#fff"
         >
-          {t(`aboutTitle.${id}`)}
+          {t(`aboutTitle.${member.id}`)}
         </Text>
       </Box>
 
@@ -71,10 +70,10 @@ export const OurTeamDetailAbout: FC<Props> = ({ id, member, t }) => {
           mb="65px"
           display={{ base: 'none', lg: 'block' }}
         >
-          {t(`aboutTitle.${id}`)}
+          {t(`aboutTitle.${member.id}`)}
         </Text>
         <Text lineHeight="2" fontSize="14px" whiteSpace="pre-line">
-          {t(`about.${id}`)}
+          {t(`about.${member.id}`)}
         </Text>
       </Box>
     </Box>

@@ -38,16 +38,6 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
     }
   `;
 
-  const afterDot = css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &::after {
-      content: ':';
-      width: 5px;
-    }
-  `;
   return (
     <Box
       w="100%"
@@ -60,6 +50,7 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
         mb={{ base: '16px', lg: '0px' }}
         display="flex"
         flexDirection="column"
+        textColor="#fff"
       >
         <Text fontSize="24px" mb="16px">
           Profile
@@ -68,7 +59,10 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           <HStack mb="16px">
             <Text
               minW="106px"
-              css={afterDot}
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${0}`)}
@@ -83,7 +77,10 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           <HStack mb="16px">
             <Text
               minW="106px"
-              css={afterDot}
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${1}`)}
@@ -98,7 +95,10 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           <HStack mb="16px">
             <Text
               minW="106px"
-              css={afterDot}
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${2}`)}
@@ -110,7 +110,10 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           <HStack mb="16px">
             <Text
               minW="106px"
-              css={afterDot}
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${3}`)}
@@ -122,7 +125,10 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           <HStack>
             <Text
               minW="106px"
-              css={afterDot}
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${4}`)}
@@ -136,7 +142,7 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           </HStack>
         </Box>
       </Box>
-      <Box w={{ base: '100%', lg: 'calc(50% - 22px)' }}>
+      <Box w={{ base: '100%', lg: 'calc(50% - 22px)' }} textColor="#fff">
         <Text fontSize="24px" mb="16px">
           Result
         </Text>
