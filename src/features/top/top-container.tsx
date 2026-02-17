@@ -6,6 +6,7 @@ import { TopSchedule, TopSlider, TopStaff, TopTheTeam, TopUpdates } from './ui';
 export const TopContainer = () => {
   const {
     tTopTheTeam,
+    tTeamMember,
     message,
     isTablet,
     navigate,
@@ -46,7 +47,13 @@ export const TopContainer = () => {
       <CenteredContainer>
         <Title title="The Team" subTitle="The Team" />
       </CenteredContainer>
-      <TopTheTeam t={tTopTheTeam} director={director} riderPairs={riderPairs} />
+      <TopTheTeam
+        t={tTopTheTeam}
+        tTeamMember={tTeamMember}
+        director={director}
+        riderPairs={riderPairs}
+        navigate={navigate}
+      />
       <CenteredContainer>
         <Title
           title="TheStaff"

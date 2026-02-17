@@ -123,6 +123,9 @@ export const Header: FC<Props> = ({
           <Spacer display={{ base: 'block', lg: 'none' }} />
 
           <Select
+            aria-label="言語選択"
+            id="language-selector"
+            name="language"
             w="80px"
             h="26px"
             bg="#fff"

@@ -2,24 +2,29 @@ import { SnsIcon } from '@/shared/ui';
 import {
   facebookUrl,
   instagramUrl,
-  MemberId,
   tiktokUrl,
   youtubeUrl,
   Member,
 } from '@/shared/constants';
-import { HStack, Box, Image, Text } from '@chakra-ui/react';
+import {
+  HStack,
+  Box,
+  Image,
+  Text,
+  VStack,
+  Container,
+  Heading,
+} from '@chakra-ui/react';
 import { FC } from 'react';
 import { TFunction } from 'i18next';
 
 interface Props {
-  id: MemberId;
   member: Member;
   t: TFunction<'teamMember'>;
-  heroImageSrc: string | undefined;
+  heroImageSrc?: string;
 }
 
 export const OurTeamDetailHeroImage: FC<Props> = ({
-  id,
   member,
   t,
   heroImageSrc,
@@ -31,99 +36,117 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
   return (
     <Box
       position="relative"
-      w="100vw"
-      h={{ base: 'calc(100vh - 110px)', lg: 'calc(100vh - 52px)' }}
-      color="#fff"
-      mb="16px"
-      mt={{ base: '110px', lg: '50px' }}
-      overflowX={{ base: 'hidden', lg: 'visible' }}
+      w="100%"
+      h={{ base: 'auto', lg: '100vh' }}
+      bg="#1a1a1a"
+      overflow="hidden"
     >
-      <Box
-        w="100vw"
-        h={{ base: 'auto', lg: '89vh' }}
-        objectFit="cover"
-        position="relative"
-      >
-        <Image src={heroImageSrc} alt={member.nameEn} w="100%" h="100%" />
-      </Box>
-      <Box
+      {/* 背景画像 */}
+      <Image
+        src={heroImageSrc}
+        alt="個人ページの背景画像"
+        bg="#1a1a1a"
+        w="100%"
+        h="auto"
+        display="block"
+        zIndex="0"
+      />
+
+      {/* 人物画像：背景画像の上に重ねる */}
+      <Image
+        src={member.memberPageFirstViewMemberImagePath}
+        alt={`${member.nameEn}の画像`}
         position="absolute"
-        bottom={{ base: 'auto', lg: '0' }}
-        left={{ base: 'auto', lg: '60%' }}
-        top={{ base: '28%', lg: 'auto' }}
-        right={{ base: '-64px', lg: 'auto' }}
-        transform={{ base: 'translateY(-60%)', lg: 'translateX(-40%)' }}
-        width={{ base: '80%', lg: 'auto' }}
+        top="0"
+        left={{ base: '20%', lg: '0' }}
+        w="100%"
         h={{ base: 'auto', lg: '100%' }}
         objectFit="contain"
-        zIndex="2"
-      >
-        <Image
-          w="100%"
-          h="100%"
-          objectFit="cover"
-          src={member.memberPageFirstViewMemberImagePath}
-          alt={member.nameEn}
-        />
-      </Box>
+        objectPosition={['80% bottom', '90% bottom']}
+        zIndex="1"
+      />
 
+      {/* タイトルテキスト（名言） */}
       <Box
         position="absolute"
-        w={{ base: '66vw', lg: '40%' }}
-        right={{ base: 'auto', lg: '10px' }}
-        left={{ base: '10%', lg: 'auto' }}
-        top={{ base: '24%', lg: '50%' }}
-        transform={{ base: 'translateY(-60%)', lg: 'translateY(-50%)' }}
-        textAlign={{ base: 'left', lg: 'center' }}
-        zIndex="2"
+        top={{ base: '40%', lg: '50%' }}
+        left={{ base: '40%', lg: '70%' }}
+        transform="translate(-50%, -50%)"
+        zIndex="3"
+        w={{ base: '60%', lg: '48%' }}
+        textAlign="left"
       >
         <Text
+          fontFamily="'m-plus-1c', sans-serif !important"
           fontSize={{ base: '16px', lg: '32px' }}
           fontWeight="bold"
-          whiteSpace="pre-line"
+          color="#fff"
+          textShadow="2px 2px 8px rgba(0,0,0,1)"
+          lineHeight="1.2"
         >
-          {t(`title.${id}`)}
+          {t(`title.${member.id}`)}
         </Text>
       </Box>
-
-      <Box
-        position="absolute"
-        bottom={{ base: '96px', lg: '0' }}
-        left="50%"
-        w="76%"
-        transform="translateX(-50%)"
+      {/* コンテンツエリア（名前とSNS） */}
+      <Container
+        maxW="none"
+        w="100%"
+        px={0}
+        mx={0}
+        position={{ base: 'relative', lg: 'absolute' }}
+        top={{ lg: '0' }}
+        left={{ lg: '0' }}
+        transform="none"
+        h={{ base: 'auto', lg: '100%' }}
         zIndex="2"
+        mt={{ base: '24px', lg: '0' }}
       >
-        <Box
-          mb="45px"
-          fontSize={{ base: '36px', lg: '100px' }}
-          fontWeight="bold"
+        <VStack
+          align="flex-start"
+          spacing={3}
+          position={{ base: 'relative', lg: 'absolute' }}
+          bottom={{ lg: '15%' }}
+          left={{ base: '6%', lg: '12%' }}
+          w={['100%', 'auto']}
+          px={0}
+          pb={{ base: '20px', lg: '0' }}
         >
-          <Text whiteSpace="pre-line">{t(`name.${id}`)}</Text>
-        </Box>
-        <HStack alignItems="center" justifyContent="space-between" w="20%">
-          <SnsIcon
-            href={facebookUrl}
-            icon="/images/common/ico-facebook-bg-white.webp"
-            label="Facebook"
-          />
-          <SnsIcon
-            href={instagramUrl}
-            icon="/images/common/ico-instagram-bg-white.webp"
-            label="Instagram"
-          />
-          <SnsIcon
-            href={youtubeUrl}
-            icon="/images/common/ico-youtube-bg-white.webp"
-            label="YouTube"
-          />
-          <SnsIcon
-            href={tiktokUrl}
-            icon="/images/common/ico-tiktok-bg-white.webp"
-            label="TikTok"
-          />
-        </HStack>
-      </Box>
+          <Heading
+            fontFamily="'m-plus-1c', sans-serif !important"
+            color="white"
+            whiteSpace="pre-line"
+            fontSize={{ base: '32px', lg: '100px' }}
+            lineHeight="1.1"
+            textTransform="uppercase"
+            textShadow="2px 2px 10px rgba(0,0,0,0.8)"
+          >
+            {member.nameEn.replace(' ', '\n')}
+          </Heading>
+
+          <HStack spacing={4}>
+            <SnsIcon
+              href={facebookUrl}
+              icon="/images/common/ico-facebook-bg-white.webp"
+              label="Facebook"
+            />
+            <SnsIcon
+              href={instagramUrl}
+              icon="/images/common/ico-instagram-bg-white.webp"
+              label="Instagram"
+            />
+            <SnsIcon
+              href={youtubeUrl}
+              icon="/images/common/ico-youtube-bg-white.webp"
+              label="YouTube"
+            />
+            <SnsIcon
+              href={tiktokUrl}
+              icon="/images/common/ico-tiktok-bg-white.webp"
+              label="TikTok"
+            />
+          </HStack>
+        </VStack>
+      </Container>
     </Box>
   );
 };

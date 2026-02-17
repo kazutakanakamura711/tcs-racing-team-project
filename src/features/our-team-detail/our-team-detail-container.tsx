@@ -2,11 +2,12 @@ import { CenteredContainer } from '@/shared/ui';
 import { NotFoundPage } from '@/pages/not-found-page';
 import {
   OurTeamDetailAbout,
-  OurTeamDetailCarousel,
-  OurTeamDetailHeroImage,
+  OurTeamDetailOtherMembers,
   OurTeamDetailProfileContent,
 } from './ui';
 import { useOurTeamDetailContainer } from './model/hooks/use-our-team-detail-container';
+import { OurTeamDetailHeroImage } from './ui/our-team-detail-hero-image';
+import { Box } from '@chakra-ui/react';
 
 export const OurTeamDetailContainer = () => {
   const { parsedId, t, member, memberList, heroImageSrc, isTablet, navigate } =
@@ -15,24 +16,28 @@ export const OurTeamDetailContainer = () => {
   if (!parsedId || !member) return <NotFoundPage />;
 
   return (
-    <>
+    <Box mt={{ base: '110px', lg: '50px' }}>
       <OurTeamDetailHeroImage
-        id={parsedId}
-        t={t}
         member={member}
+        t={t}
         heroImageSrc={heroImageSrc}
       />
+      {/* Profile / Result エリア */}
+      <Box mt={{ base: '64px', lg: '96px' }}>
+        <CenteredContainer>
+          <OurTeamDetailProfileContent id={member.id} t={t} />
+        </CenteredContainer>
+      </Box>
+      {/* Aboutエリア */}
+      <OurTeamDetailAbout member={member} t={t} />
+      {/* Other Membersエリア */}
       <CenteredContainer>
-        <OurTeamDetailProfileContent id={parsedId} t={t} />
-      </CenteredContainer>
-      <OurTeamDetailAbout id={parsedId} t={t} member={member} />
-      <CenteredContainer>
-        <OurTeamDetailCarousel
+        <OurTeamDetailOtherMembers
           isTablet={isTablet}
-          navigate={navigate}
           memberList={memberList}
+          navigate={navigate}
         />
       </CenteredContainer>
-    </>
+    </Box>
   );
 };
