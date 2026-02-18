@@ -236,7 +236,7 @@ export const members: Record<MemberKey, Member> = {
   },
   [MemberKey.KadekDwi]: {
     id: MemberId.KadekDwi,
-    nameJa: 'カデク ドゥイ',
+    nameJa: 'カデック ドゥイ',
     nameEn: 'Kadek Dwi',
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え

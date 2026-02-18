@@ -1,5 +1,5 @@
 import { MemberId } from '@/shared/constants';
-import { Box, Text, HStack } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 import { FC } from 'react';
 import { TFunction } from 'i18next';
@@ -56,13 +56,19 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
           Profile
         </Text>
         <Box css={beforeImage} boxShadow="10px -10px #333333">
-          <HStack mb="16px">
+          <Box
+            display="grid"
+            gridTemplateColumns="max-content 1fr"
+            gap={{ base: 2, lg: 4 }}
+            rowGap={4}
+          >
+            {/* 国籍 */}
             <Text
-              minW="106px"
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              _after={{ content: '":"', width: '5px' }}
+              alignSelf="start"
+              _after={{ content: '":"', marginLeft: '4px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${0}`)}
@@ -73,31 +79,26 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
             >
               {t(`nationality.${id}`)}
             </Text>
-          </HStack>
-          <HStack mb="16px">
+            {/* 出身地 */}
             <Text
-              minW="106px"
               display="flex"
               alignItems="center"
               justifyContent="space-between"
+              alignSelf="start"
               _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${1}`)}
             </Text>
-            <Text
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-              whiteSpace="pre-line"
-            >
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`birthplace.${id}`)}
             </Text>
-          </HStack>
-          <HStack mb="16px">
+            {/* 生年月日 */}
             <Text
-              minW="106px"
               display="flex"
               alignItems="center"
               justifyContent="space-between"
+              alignSelf="start"
               _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
@@ -106,13 +107,12 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`berthDay.${id}`)}
             </Text>
-          </HStack>
-          <HStack mb="16px">
+            {/* 身長 */}
             <Text
-              minW="106px"
               display="flex"
               alignItems="center"
               justifyContent="space-between"
+              alignSelf="start"
               _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
@@ -121,25 +121,21 @@ export const OurTeamDetailProfileContent: FC<Props> = ({ id, t }) => {
             <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`stature.${id}`)}
             </Text>
-          </HStack>
-          <HStack>
+            {/* 趣味 */}
             <Text
-              minW="106px"
               display="flex"
               alignItems="center"
               justifyContent="space-between"
+              alignSelf="start"
               _after={{ content: '":"', width: '5px' }}
               fontSize={{ base: '16px', md: '17px', lg: '18px' }}
             >
               {t(`menuTitle.${4}`)}
             </Text>
-            <Text
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-              whiteSpace="pre-line"
-            >
+            <Text fontSize={{ base: '16px', md: '17px', lg: '18px' }}>
               {t(`tastes.${id}`)}
             </Text>
-          </HStack>
+          </Box>
         </Box>
       </Box>
       <Box w={{ base: '100%', lg: 'calc(50% - 22px)' }} textColor="#fff">

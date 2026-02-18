@@ -42,29 +42,52 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
       overflow="hidden"
     >
       {/* 背景画像 */}
-      <Image
-        src={heroImageSrc}
-        alt="個人ページの背景画像"
-        bg="#1a1a1a"
-        w="100%"
-        h="auto"
-        display="block"
-        zIndex="0"
-      />
+      {heroImageSrc ? (
+        <Image
+          src={heroImageSrc}
+          alt="個人ページの背景画像"
+          bg="#1a1a1a"
+          w="100%"
+          h="auto"
+          display="block"
+          zIndex="0"
+        />
+      ) : (
+        // 画像がない場合でも高さを確保してレイアウトが崩れないようにするための空のBox
+        <Box
+          bg="#1a1a1a"
+          w="100%"
+          h={{ base: '80vw', lg: '100vh' }}
+          display="block"
+          zIndex="0"
+        />
+      )}
 
       {/* 人物画像：背景画像の上に重ねる */}
-      <Image
-        src={member.memberPageFirstViewMemberImagePath}
-        alt={`${member.nameEn}の画像`}
-        position="absolute"
-        top="0"
-        left={{ base: '20%', lg: '0' }}
-        w="100%"
-        h={{ base: 'auto', lg: '100%' }}
-        objectFit="contain"
-        objectPosition={['80% bottom', '90% bottom']}
-        zIndex="1"
-      />
+      {member.memberPageFirstViewMemberImagePath ? (
+        <Image
+          src={member.memberPageFirstViewMemberImagePath}
+          alt={`${member.nameEn}の画像`}
+          position="absolute"
+          top="0"
+          left={{ base: '20%', lg: '0' }}
+          w="100%"
+          h={{ base: 'auto', lg: '100%' }}
+          objectFit="contain"
+          objectPosition={['80% bottom', '90% bottom']}
+          zIndex="1"
+        />
+      ) : (
+        // 画像がない場合でも高さを確保してレイアウトが崩れないようにするための空のBox
+        <Box
+          position="absolute"
+          top="0"
+          left={{ base: '20%', lg: '0' }}
+          w="100%"
+          h={{ base: 'auto', lg: '100%' }}
+          zIndex="1"
+        />
+      )}
 
       {/* タイトルテキスト（名言） */}
       <Box
