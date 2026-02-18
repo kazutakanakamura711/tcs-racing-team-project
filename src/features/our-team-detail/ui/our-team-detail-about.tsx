@@ -35,15 +35,19 @@ export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
         minW={{ base: '320px', lg: '850px' }}
         ml="auto"
         mb={{ base: '16px', lg: '0' }}
-        objectFit="cover"
       >
-        <Image
-          w="100%"
-          minH={{ customSm: '270px', custom: '350px', lg: '550px' }}
-          maxH={{ customSm: 'none', custom: '450px', lg: 'auto' }}
-          src={member.memberPageAboutSectionImagesPath}
-          alt={member.nameJa}
-        />
+        {member.memberPageAboutSectionImagesPath ? (
+          <Image
+            w="100%"
+            minH={{ base: 'none', lg: '550px' }}
+            maxH={{ base: '448px', lg: 'auto' }}
+            objectFit="cover"
+            src={member.memberPageAboutSectionImagesPath}
+            alt={member.nameJa}
+          />
+        ) : (
+          <Box w="100%" minH={{ base: '448px', lg: '550px' }} />
+        )}
       </Box>
 
       <Box
