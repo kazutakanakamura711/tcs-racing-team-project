@@ -209,8 +209,10 @@ export const members: Record<MemberKey, Member> = {
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '', //TODO: トップページの旗背景画像差し替え
-    topTheTeamSectionImagePath: '',
-    ourTeamPageTheRiderSectionImagePath: '',
+    topTheTeamSectionImagePath:
+      '/images/member/img-member-tsewang-norboo-rider.png',
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-tsewang-norboo-rider.png',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
@@ -223,8 +225,10 @@ export const members: Record<MemberKey, Member> = {
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', //TODO: トップページの旗背景画像差し替え
-    topTheTeamSectionImagePath: '',
-    ourTeamPageTheRiderSectionImagePath: '',
+    topTheTeamSectionImagePath:
+      '/images/member/img-member-ikuta-yuga-rider.png',
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-ikuta-yuga-rider.png',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
@@ -236,9 +240,11 @@ export const members: Record<MemberKey, Member> = {
     nameEn: 'Kadek Dwi',
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
-    topTheTeamSectionBackgroundImagePath: '', //TODO: トップページの旗背景画像差し替え
-    topTheTeamSectionImagePath: '',
-    ourTeamPageTheRiderSectionImagePath: '',
+    topTheTeamSectionBackgroundImagePath:
+      '/images/top/img-top-indonesia-flag.webp', //TODO: トップページの旗背景画像差し替え
+    topTheTeamSectionImagePath: '/images/member/img-member-kadek-dwi-rider.png',
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-kadek-dwi-rider.png',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
