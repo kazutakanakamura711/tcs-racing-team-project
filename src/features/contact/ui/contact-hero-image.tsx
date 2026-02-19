@@ -6,7 +6,7 @@ export const ContactHeroImage: FC = () => {
     <Box
       position="relative"
       mt={{ base: '110px', lg: '50px' }}
-      w="100vw"
+      w="100%"
       h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
       objectFit="contain"
     >

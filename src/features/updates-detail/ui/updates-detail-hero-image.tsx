@@ -9,7 +9,7 @@ export const UpdatesDetailHeroImage: FC<Props> = ({ heroImageSrc }) => {
   return (
     <Box
       mt={{ base: '110px', lg: '50px' }}
-      w="100vw"
+      w="100%"
       objectFit="contain"
       position="relative"
     >
