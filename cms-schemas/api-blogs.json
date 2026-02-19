@@ -1,0 +1,108 @@
+{
+  "apiFields": [
+    {
+      "fieldId": "titleJa",
+      "name": "タイトル",
+      "kind": "text",
+      "required": true,
+      "isUnique": false
+    },
+    {
+      "fieldId": "titleEn",
+      "name": "タイトル（英語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "titleId",
+      "name": "タイトル（インドネシア語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "contentJa",
+      "name": "内容",
+      "kind": "richEditorV2",
+      "required": true
+    },
+    {
+      "fieldId": "contentEn",
+      "name": "内容（英語）",
+      "kind": "richEditorV2",
+      "required": false
+    },
+    {
+      "fieldId": "contentId",
+      "name": "内容（インドネシア語）",
+      "kind": "richEditorV2",
+      "required": false
+    },
+    {
+      "fieldId": "eyecatch",
+      "name": "アイキャッチ",
+      "kind": "media",
+      "required": false
+    },
+    {
+      "fieldId": "category",
+      "name": "カテゴリ",
+      "kind": "relation",
+      "required": true
+    },
+    {
+      "fieldId": "startDateJa",
+      "name": "開始日",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "startDateEn",
+      "name": "開始日（英語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "startDateId",
+      "name": "開始日（インドネシア語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "endDateJa",
+      "name": "終了日",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "endDateEn",
+      "name": "終了日（英語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "endDateId",
+      "name": "終了日（インドネシア語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "locationJa",
+      "name": "開催場所",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "locationEn",
+      "name": "開催場所（英語）",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "locationId",
+      "name": "開催場所（インドネシア語）",
+      "kind": "text",
+      "required": false
+    }
+  ],
+  "customFields": []
+}
