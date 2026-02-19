@@ -62,7 +62,18 @@ npm run format:check
 
 # ビルド結果のプレビュー
 npm run preview
+
+# MicroCMSスキーマから型を再生成
+npm run generate:microcms-types
 ```
+
+`npm run generate:microcms-types` を実行すると、`cms-schemas/` 配下の `api-*.json` をもとに、`src/entities/microcms/model/generated-types.ts` が更新されます。
+
+### MicroCMS型更新の運用手順
+
+1. `cms-schemas/` 配下の `api-*.json` を更新する
+2. `npm run generate:microcms-types` を実行する
+3. `npm run build` で型エラーがないことを確認する
 
 ## ✨ コード品質管理
 
@@ -263,6 +274,12 @@ src/
 - **コンポーネント**: パスカルケース (`MemberDetail.tsx`)
 - **定数**: アッパーケース (`TEAM_MEMBER`, `OUR_PARTNERS`)
 - **関数/変数**: キャメルケース (`handleClick`, `userName`)
+
+### Entities と MicroCMS API 名の方針
+
+- `entities` は API 名ではなく、ドメイン語彙を優先します。
+- そのため、`entities/news` と `entities/schedule` は現状のまま維持します。
+- MicroCMS のエンドポイント名（例: `blogs`）との差分は、型ラッパーや取得層で吸収します。
 
 ## 🚢 デプロイ
 
