@@ -92,7 +92,7 @@ export const TopSlider: React.FC<{
                           ? {
                               objectFit: 'cover',
                               height: 'calc(100vh - 110px)',
-                              width: '100vw',
+                              width: '100%',
                             }
                           : { objectFit: 'cover', height: '100vh' }
                       }
@@ -201,7 +201,7 @@ export const TopSlider: React.FC<{
         display={{ base: 'none', lg: 'block' }}
         bottom="3%"
         left="0"
-        w="100vw"
+        w="100%"
         textAlign="center"
         color="white"
         className={styles.scrollText}
