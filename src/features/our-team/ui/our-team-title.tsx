@@ -29,7 +29,7 @@ export const OurTeamTitle: FC<Props> = ({ title, middleTitle, subTitle }) => {
           top="88px"
           left="50%"
           transform="translateX(-50%)"
-          color="#fff"
+          color="text.white"
           fontSize={{ base: '28px', lg: '40px' }}
           fontWeight="bold"
           zIndex="1"

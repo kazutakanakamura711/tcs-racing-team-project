@@ -7,7 +7,12 @@ export const OurPartnersContainer = () => {
   return (
     <Box pt="110px" bg="#1a1a1a">
       <CenteredContainer>
-        <Title title="Our Partners" subTitle="Our Partners" id="Partners" />
+        <Title
+          as="h1"
+          title="Our Partners"
+          subTitle="Our Partners"
+          id="Partners"
+        />
       </CenteredContainer>
       <CenteredContainer>
         {/* Black Partner */}

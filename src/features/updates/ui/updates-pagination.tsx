@@ -39,7 +39,7 @@ export const UpdatesPagination: FC<Props> = ({
           />
         </Grid>
 
-        <Box color="#FFF">
+        <Box color="text.white">
           <ReactPaginate
             nextLabel=">"
             onPageChange={handlePageClick}

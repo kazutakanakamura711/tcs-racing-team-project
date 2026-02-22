@@ -51,14 +51,14 @@ export const DirectorContent: FC<Props> = ({
               zIndex="2"
             >
               <Text
-                color="#fff"
+                color="text.white"
                 mb={{ base: '8px', lg: '14px' }}
                 fontSize={{ base: '10px', lg: '16px' }}
               >
                 {post}
               </Text>
               <Text
-                color="#fff"
+                color="text.white"
                 mb={{ base: '8px', lg: '71px' }}
                 fontWeight="bold"
                 fontSize={{ base: '24px', lg: '52px' }}
@@ -66,7 +66,7 @@ export const DirectorContent: FC<Props> = ({
                 {name}
               </Text>
               <Text
-                color="#fff"
+                color="text.white"
                 fontSize={{ base: '10px', lg: '16px' }}
                 w={{ base: '50%', lg: '50%' }}
                 whiteSpace="pre-line"
@@ -85,7 +85,7 @@ export const DirectorContent: FC<Props> = ({
               {imagePath && (
                 <Image
                   src={imagePath}
-                  alt="メンバー画像"
+                  alt={name}
                   transition="transform 0.3s ease"
                   _groupHover={{ transform: 'scale(1.05)' }}
                 />
@@ -105,7 +105,7 @@ export const DirectorContent: FC<Props> = ({
                 display="block"
                 w="100%"
                 src="/images/common/ico-arrow-white-brock.svg"
-                alt="矢印アイコン"
+                alt=""
               />
             </Box>
           </Box>

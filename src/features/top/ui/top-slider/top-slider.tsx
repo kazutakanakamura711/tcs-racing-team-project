@@ -53,6 +53,7 @@ export const TopSlider: React.FC<{
                 {image.isMovie ? (
                   <>
                     <Text
+                      as="h1"
                       position="absolute"
                       top={{ base: '0', lg: '50%' }}
                       left={{ base: '0', lg: '50%' }}
@@ -113,6 +114,7 @@ export const TopSlider: React.FC<{
                       zIndex="0"
                     />
                     <Text
+                      as="h1"
                       position="absolute"
                       top={{ base: '0', lg: '50%' }}
                       left={{ base: '0', lg: '50%' }}
@@ -147,7 +149,7 @@ export const TopSlider: React.FC<{
                         base: 'calc(100vh - 110px) !important',
                         lg: 'calc(100vh - 90px) !important',
                       }}
-                      objectFit={{ base: 'contain', lg: 'cover' }} // objectFitをcoverに変更
+                      objectFit={{ base: 'contain', lg: 'cover' }}
                       src={isTablet ? image.src.sp : image.src.pc}
                       alt={image.alt}
                     />

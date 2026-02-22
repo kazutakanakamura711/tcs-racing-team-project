@@ -19,7 +19,7 @@ export const ScheduleContainer = () => {
     <>
       <ScheduleHeroImage heroImageSrc={heroImageSrc} />
       <CenteredContainer>
-        <Title title="Schedule" subTitle="Schedule" />
+        <Title as="h1" title="Schedule" subTitle="Schedule" />
       </CenteredContainer>
       <Schedule
         raceScheduleList={raceScheduleList}
@@ -31,7 +31,7 @@ export const ScheduleContainer = () => {
           {/* <Grid
             templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
             gap={0}
-            color="#FFF"
+            color="text.white"
             fontWeight="bold"
           >
             {winCounterData.map((item, index) => (

@@ -17,7 +17,7 @@ interface Props {
 
 export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
   return (
-    <>
+    <Box as="footer">
       <CenteredContainer>
         <HStack alignItems="start" mb="37px">
           <Box
@@ -34,11 +34,19 @@ export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
               >
                 USEFUL LINKS
               </Text>
-              <VStack align="start">
-                <Link to={UPDATES}>News</Link>
-                <Link to={OUR_TEAM}>Team</Link>
-                <Link to={SCHEDULE}>Schedule</Link>
-                <Link to={OUR_PARTNERS}>Partner</Link>
+              <VStack as="ul" align="start" listStyleType="none" m="0" p="0">
+                <Box as="li">
+                  <Link to={UPDATES}>News</Link>
+                </Box>
+                <Box as="li">
+                  <Link to={OUR_TEAM}>Team</Link>
+                </Box>
+                <Box as="li">
+                  <Link to={SCHEDULE}>Schedule</Link>
+                </Box>
+                <Box as="li">
+                  <Link to={OUR_PARTNERS}>Partner</Link>
+                </Box>
               </VStack>
             </Box>
             <Box>
@@ -49,8 +57,10 @@ export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
               >
                 READ MORE ABOUT
               </Text>
-              <VStack align="start">
-                <Link to={CONTACT}>Contact</Link>
+              <VStack as="ul" align="start" listStyleType="none" m="0" p="0">
+                <Box as="li">
+                  <Link to={CONTACT}>Contact</Link>
+                </Box>
               </VStack>
             </Box>
           </Box>
@@ -58,7 +68,7 @@ export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
             <Link
               to="#"
               style={{
-                color: '#fff',
+                color: 'text.white',
                 fontWeight: 'bold',
                 textAlign: 'left',
                 fontSize,
@@ -76,13 +86,13 @@ export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
         pt="7.5px"
         pb="5px"
         bg="#fff"
-        color="#000"
+        color="#333333"
         fontSize={{ base: '10px', lg: '14px' }}
         fontWeight="bold"
         textAlign="center"
       >
         Copyright &copy; 2024 TCS Racing Team All Rights Reserved.
       </Box>
-    </>
+    </Box>
   );
 };

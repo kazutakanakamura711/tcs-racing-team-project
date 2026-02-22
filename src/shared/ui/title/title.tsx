@@ -8,6 +8,7 @@ type Props = {
   isHiddenUnderLine?: boolean;
   // idはhtmlのid属性
   id?: string;
+  as?: 'h1' | 'h2' | 'h3' | 'h4';
 };
 
 export const Title: FC<Props> = ({
@@ -16,6 +17,7 @@ export const Title: FC<Props> = ({
   isCenter = false,
   isHiddenUnderLine = false,
   id,
+  as = 'h2',
 }) => {
   return (
     <Box
@@ -37,11 +39,12 @@ export const Title: FC<Props> = ({
         {subTitle}
       </Box>
       <Box
+        as={as}
         position="absolute"
         bottom="0"
         left={isCenter ? '50%' : '0'}
         transform={isCenter ? 'translateX(-50%)' : ''}
-        color="#fff"
+        color="text.white"
         fontSize={{ base: '24px', lg: '56px' }}
         fontWeight="bold"
         zIndex="1"

@@ -24,7 +24,7 @@ export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
           pb="8px"
           fontSize="24px"
           fontWeight="bold"
-          color="#fff"
+          color="text.white"
         >
           {t(`aboutTitle.${member.id}`)}
         </Text>
@@ -61,7 +61,7 @@ export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
         display={{ base: 'none', lg: 'block' }}
       />
       <Box
-        color="#fff"
+        color="text.white"
         w={{ base: '88%', lg: '60%' }}
         position={{ base: 'unset', lg: 'absolute' }}
         top="10px"
@@ -76,7 +76,12 @@ export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
         >
           {t(`aboutTitle.${member.id}`)}
         </Text>
-        <Text lineHeight="2" fontSize="14px" whiteSpace="pre-line">
+        <Text
+          lineHeight="2"
+          fontSize="14px"
+          whiteSpace="pre-line"
+          color="text.white"
+        >
           {t(`about.${member.id}`)}
         </Text>
       </Box>

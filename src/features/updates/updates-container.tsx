@@ -17,7 +17,7 @@ export const UpdatesContainer = () => {
     <>
       <Box pt="128px" mb="128px">
         <CenteredContainer>
-          <Title title="Updates" subTitle="Updates" />
+          <Title as="h1" title="Updates" subTitle="Updates" />
         </CenteredContainer>
       </Box>
       <UpdatesPagination

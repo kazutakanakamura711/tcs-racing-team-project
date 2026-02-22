@@ -62,7 +62,7 @@ export const TopUpdates: React.FC<Props> = ({
           {updateFirstArray.length === 0 &&
             updateSecondArray.length === 0 &&
             updateThirdArray.length === 0 && (
-              <Box color="#FFF">Coming soon..</Box>
+              <Box color="text.white">Coming soon..</Box>
             )}
         </Box>
 

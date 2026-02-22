@@ -32,7 +32,7 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
           {image.imagePath !== '' && (
             <Image
               src={image.imagePath}
-              alt="black"
+              alt=""
               transition="transform 0.3s ease-in-out"
               _groupHover={{ transform: 'scale(1.05)' }}
             />
@@ -46,7 +46,7 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
           alignItems="center"
           gap={2}
         >
-          <Text color="#000" fontSize="16px" fontWeight="bold">
+          <Text color="#333333" fontSize="16px" fontWeight="bold">
             Read more
           </Text>
           <Box
@@ -55,7 +55,7 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
             transition="transform 0.3s ease-in-out"
             _groupHover={{ transform: 'translateX(5px)' }}
           >
-            <Image src="images/common/ico-arrow-brock.svg" alt="arrow" />
+            <Image src="images/common/ico-arrow-brock.svg" alt="" />
           </Box>
         </Box>
       </Box>
@@ -63,7 +63,7 @@ export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
   ));
   return (
     <Box mb="47px">
-      <Text color="#fff" fontSize="36px" fontWeight="bold" mb="21px">
+      <Text color="text.white" fontSize="36px" fontWeight="bold" mb="21px">
         {title}
       </Text>
       <Grid

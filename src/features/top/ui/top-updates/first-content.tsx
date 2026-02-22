@@ -5,7 +5,7 @@ import { NewsItem } from '@/entities/news';
 import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 import { noImageUrl, UPDATE_DETAIL } from '@/shared/constants';
-
+import { cleanHtml } from '@/shared/utils/clean-html/clean-html';
 interface Props {
   updateArray: NewsItem[];
   navigate: NavigateFunction;
@@ -17,7 +17,7 @@ export const FirstContent: FC<Props> = ({
   navigate,
   selectedLanguage,
 }) => {
-  if (!updateArray) return <Box color="white">データがありません。</Box>;
+  if (!updateArray) return <Box color="text.white">データがありません。</Box>;
 
   return (
     <>
@@ -39,26 +39,26 @@ export const FirstContent: FC<Props> = ({
           />
           <Box position="absolute" bottom="0" left="20px" zIndex="2">
             <HStack>
-              <Text color="#FF9080" fontSize={{ base: '12px', lg: '16px' }}>
+              <Text color="news.accent" fontSize={{ base: '12px', lg: '16px' }}>
                 News |
               </Text>
-              <Text color="#fff" fontSize={{ base: '12px', lg: '16px' }}>
+              <Text color="text.white" fontSize={{ base: '12px', lg: '16px' }}>
                 {formatDate(item.publishedAt)}
               </Text>
             </HStack>
-            <Text color="#fff">{item[`title${selectedLanguage}`]}</Text>
+            <Text color="text.white">{item[`title${selectedLanguage}`]}</Text>
             <Box
               maxH="200px"
               maxW="450px"
               overflow="hidden"
-              color="#fff"
+              color="text.white"
               fontSize={{ base: '10px', lg: '16px' }}
               mb="20px"
             >
               <Box
                 as="span"
                 dangerouslySetInnerHTML={{
-                  __html: item[`content${selectedLanguage}`],
+                  __html: cleanHtml(item[`content${selectedLanguage}`]),
                 }}
                 style={{
                   display: '-webkit-box',

@@ -45,6 +45,7 @@ export const OurTeamRiders: FC<Props> = ({ riders, navigate }) => {
                 src={rider.ourTeamPageTheRiderSectionImagePath}
                 h="100%"
                 mx="auto"
+                alt={rider.nameJa}
               />
               <Box
                 position="absolute"
@@ -64,6 +65,7 @@ export const OurTeamRiders: FC<Props> = ({ riders, navigate }) => {
                     w="11px"
                     h="25px"
                     src="/images/common/ico-arrow-white-brock.svg"
+                    alt=""
                   />
                 </Box>
               </Box>

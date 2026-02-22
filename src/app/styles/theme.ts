@@ -19,6 +19,16 @@ const customTheme = extendTheme({
     '2xl': '1536px',
   },
 
+  colors: {
+    text: {
+      white: '#fff',
+      black: '#333333',
+    },
+    news: {
+      accent: '#FF9080',
+    },
+  },
+
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {

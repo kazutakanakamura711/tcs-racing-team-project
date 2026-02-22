@@ -5,6 +5,7 @@ import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import { formatDate } from '@/shared/utils/date-format/date-format';
 import { noImageUrl, UPDATE_DETAIL } from '@/shared/constants';
+import { cleanHtml } from '@/shared/utils/clean-html/clean-html';
 
 interface Props {
   updateArray: NewsItem[];
@@ -49,21 +50,22 @@ export const SecondContent: FC<Props> = ({
               <Text color="#FF9080" fontSize={{ base: '12px', lg: '16px' }}>
                 News |
               </Text>
-              <Text color="#fff" fontSize={{ base: '12px', lg: '16px' }}>
+              <Text color="text.white" fontSize={{ base: '12px', lg: '16px' }}>
                 {formatDate(item.publishedAt)}
               </Text>
             </HStack>
-            <Text color="#fff">{item[`title${selectedLanguage}`]}</Text>
+            <Text color="text.white">{item[`title${selectedLanguage}`]}</Text>
             <Box
               maxH="200px"
               overflow="hidden"
+              color="text.white"
               fontSize={{ base: '10px', lg: '16px' }}
               mb="20px"
             >
               <Box
                 as="span"
                 dangerouslySetInnerHTML={{
-                  __html: item[`content${selectedLanguage}`],
+                  __html: cleanHtml(item[`content${selectedLanguage}`]),
                 }}
                 style={{
                   display: '-webkit-box',
@@ -75,15 +77,22 @@ export const SecondContent: FC<Props> = ({
                 }}
               />
             </Box>
-            <Link to="#" style={{ color: '#fff', display: 'inline-block' }}>
+            <Link
+              to="#"
+              style={{ color: 'text.white', display: 'inline-block' }}
+            >
               <HStack borderBottom="solid 1px #FF9080">
-                <Text color="#fff" fontSize={{ base: '10px', lg: '12px' }}>
+                <Text
+                  color="text.white"
+                  fontSize={{ base: '10px', lg: '12px' }}
+                >
                   もっと見る
                 </Text>
                 <Image
                   w="5px"
                   h="10px"
                   src="/images/common/ico-arrow-white-brock.svg"
+                  alt=""
                 />
               </HStack>
             </Link>

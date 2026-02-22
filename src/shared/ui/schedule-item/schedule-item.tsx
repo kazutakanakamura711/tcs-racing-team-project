@@ -28,7 +28,7 @@ export const ScheduleItem = ({
           position="absolute"
           w="100%"
           h="100%"
-          bg="#808080"
+          bg="#555555"
           left="-6px"
           bottom="-6px"
           display="flex"
@@ -50,6 +50,7 @@ export const ScheduleItem = ({
               w="100%"
               display="block"
               src="/images/schedule/ico-hexagon-black.svg"
+              alt=""
             />
           </Box>
           <Flex
@@ -90,7 +91,7 @@ export const ScheduleItem = ({
               </Text>
               <Flex alignItems="center">
                 <Box mr="6px">
-                  <Image src="/images/schedule/ico-pin-green.svg" />
+                  <Image src="/images/schedule/ico-pin-green.svg" alt="" />
                 </Box>
                 <Text fontSize={{ base: '10px', lg: '12px' }}>
                   {location || ''}
@@ -112,6 +113,7 @@ export const ScheduleItem = ({
               w="11px"
               h="25px"
               src="/images/common/ico-arrow-white-brock.svg"
+              alt=""
             />
           </Box>
         </Box>

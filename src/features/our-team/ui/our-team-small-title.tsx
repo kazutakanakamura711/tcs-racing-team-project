@@ -8,7 +8,7 @@ interface SmallTitleProps {
 export const OurTeamSmallTitle: FC<SmallTitleProps> = ({ title }) => {
   return (
     <Box mb={{ base: '46px', lg: '68px' }} textAlign="center">
-      <Box color="#fff" fontSize="32px" fontWeight="bold">
+      <Box color="text.white" fontSize="32px" fontWeight="bold">
         {title}
       </Box>
     </Box>

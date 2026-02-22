@@ -29,7 +29,7 @@ export const OurTeamDetailOtherMembers: React.FC<Props> = ({
         fontWeight="bold"
         textAlign="center"
         mb="88px"
-        textColor="#fff"
+        color="text.white"
       >
         Other Members
       </Text>

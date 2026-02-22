@@ -6,7 +6,6 @@ import { OurPartners } from '@/widgets/our-partners';
 import { OfficialMedia } from '@/widgets/official-media';
 import { Title, CenteredContainer } from '@/shared/ui';
 import { OUR_PARTNERS } from '@/shared/constants';
-import { Box } from '@chakra-ui/react';
 
 export const AppRoutes = () => {
   const element = useRoutes(publicRoutes);
@@ -23,21 +22,21 @@ export const AppRoutes = () => {
   return (
     <>
       <Header />
-      {element}
-      {shouldShowPartners && (
-        <>
-          <CenteredContainer>
-            <Title title="Our Partners" subTitle="Our Partners" />
-          </CenteredContainer>
-          <CenteredContainer>
-            <OurPartners />
-          </CenteredContainer>
-        </>
-      )}
-      <Box display={'flex'} flexDirection={'column'} gap={28}>
+      <main>
+        {element}
+        {shouldShowPartners && (
+          <>
+            <CenteredContainer>
+              <Title title="Our Partners" subTitle="Our Partners" />
+            </CenteredContainer>
+            <CenteredContainer>
+              <OurPartners />
+            </CenteredContainer>
+          </>
+        )}
         <OfficialMedia />
-        <Footer />
-      </Box>
+      </main>
+      <Footer />
     </>
   );
 };

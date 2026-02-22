@@ -31,12 +31,7 @@ export const OurPartners: FC<Props> = ({ partnersData }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image
-              src={partnerImage.imagePath}
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
+            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
           </Box>
         ))}
       </SimpleGrid>
@@ -56,12 +51,7 @@ export const OurPartners: FC<Props> = ({ partnersData }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image
-              src={partnerImage.imagePath}
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
+            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
           </Box>
         ))}
       </SimpleGrid>
@@ -81,12 +71,7 @@ export const OurPartners: FC<Props> = ({ partnersData }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image
-              src={partnerImage.imagePath}
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
+            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
           </Box>
         ))}
       </SimpleGrid>
@@ -106,12 +91,7 @@ export const OurPartners: FC<Props> = ({ partnersData }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image
-              src={partnerImage.imagePath}
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
+            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
           </Box>
         ))}
       </SimpleGrid>
@@ -131,12 +111,7 @@ export const OurPartners: FC<Props> = ({ partnersData }) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image
-              src={partnerImage.imagePath}
-              alt="OurPartners"
-              w="100%"
-              h="auto"
-            />
+            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
           </Box>
         ))}
       </SimpleGrid>

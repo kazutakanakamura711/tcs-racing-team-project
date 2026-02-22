@@ -52,7 +52,7 @@ export const MemberContent: FC<Props> = ({
         flexDirection="column"
       >
         <Text
-          color="#fff"
+          color="text.white"
           mb="16px"
           fontWeight="bold"
           fontSize={{ base: '14px', lg: '24px' }}
@@ -60,7 +60,7 @@ export const MemberContent: FC<Props> = ({
           {name}
         </Text>
         <Text
-          color="#fff"
+          color="text.white"
           fontSize={{ base: '10px', lg: '12px' }}
           whiteSpace="pre-line"
         >
@@ -90,7 +90,7 @@ export const MemberContent: FC<Props> = ({
         {imageUrl && (
           <Image
             src={imageUrl}
-            alt="メンバー画像"
+            alt={name}
             transition="transform 0.3s ease"
             h="100%"
             mx="auto"
@@ -112,7 +112,7 @@ export const MemberContent: FC<Props> = ({
           display="block"
           w="100%"
           src="/images/common/ico-arrow-white-brock.svg"
-          alt="矢印アイコン"
+          alt=""
         />
       </Box>
     </Box>
