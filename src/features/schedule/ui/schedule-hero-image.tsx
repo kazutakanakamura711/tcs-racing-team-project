@@ -15,6 +15,7 @@ export const ScheduleHeroImage: FC<Props> = ({ heroImageSrc }) => {
         mt={{ base: '0', lg: '52px' }}
       >
         <Image
+          alt=""
           src={heroImageSrc}
           mt={{ base: '108px', lg: '0' }}
           w={{ base: 'auto', lg: '100%' }}

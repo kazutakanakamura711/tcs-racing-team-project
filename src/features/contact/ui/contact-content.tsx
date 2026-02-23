@@ -1,4 +1,4 @@
-import { Box, HStack, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Image, Link, Stack, Text, VStack } from '@chakra-ui/react';
 import { Link as LinkRouter, NavigateFunction } from 'react-router-dom';
 import {
   facebookUrl,
@@ -31,145 +31,240 @@ export const ContactContent: FC<Props> = ({
       mt={{ base: '0px', lg: '-50px' }}
       mb="116px"
       zIndex={2}
+      textColor="#333333"
     >
       <Box
         w={{ base: '100%', lg: '70%' }}
         h="100%"
         pt="95px"
         pb="114px"
-        pl="68px"
+        px={{ base: 10, lg: '68px' }}
         ml={{ base: '0px', lg: '10%' }}
         bg="#fff"
+        display="flex"
+        flexDirection="column"
+        gap={20}
       >
-        <Text fontSize="36px" fontWeight="bold" mb="34px">
-          Contact
-        </Text>
-        <Text
-          w={{ base: '60%', lg: '50%' }}
-          mb="80px"
-          fontWeight="bold"
-          whiteSpace="pre-line"
-        >
-          {t('title')}
-        </Text>
-
-        <Text fontSize="36px" fontWeight="bold" mb="34px">
-          E-mail
-        </Text>
-
-        <Text w={{ base: '60%', lg: '50%' }} mb="23px" fontWeight="bold">
-          Please contact us by email at the email address below.
-        </Text>
-
-        <HStack>
-          <Text fontSize="12px">{t('EmailMainTitle')}</Text>
-          <Link href={`mailto:${t('EmailMainAddress')}`}>
-            <Text fontSize="16px" fontWeight="bold" color="#000">
-              {t('EmailMainAddress')}
-            </Text>
-          </Link>
-        </HStack>
-        <HStack>
-          <Text fontSize="12px">{t('EmailSubTitle')}</Text>
-          <Link href={`mailto:${t('EmailSubAddress')}`}>
-            <Text fontSize="16px" fontWeight="bold" color="#000">
-              {t('EmailSubAddress')}
-            </Text>
-          </Link>
-        </HStack>
-        <HStack mb="85px">
-          <Text fontSize="12px">{t('EmailMediaTitle')}</Text>
-          <Link href={`mailto:${t('EmailMediaAddress')}`}>
-            <Text fontSize="16px" fontWeight="bold" color="#000">
-              {t('EmailMediaAddress')}
-            </Text>
-          </Link>
-        </HStack>
-
-        <Text fontSize="36px" fontWeight="bold" mb="34px">
-          Social media
-        </Text>
-        <Text mb="27px" fontWeight="bold">
-          Follow us on social media.
-        </Text>
-        <Box display="flex" alignItems="center" mb="16px">
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
+        {/* Contact */}
+        <Box display="flex" flexDirection="column" gap={8}>
+          <Text
+            as="h1"
+            fontSize="36px"
+            fontWeight="bold"
+            w={{ base: '100%', lg: '66%' }}
           >
-            <Image src="/images/common/ico-youtube-white.svg" alt="contact" />
-          </Box>
-          <LinkRouter to={youtubeUrl} target="_blank" rel="noopener noreferrer">
-            <Text>{t('Youtube')}</Text>
-          </LinkRouter>
+            Contact
+          </Text>
+          <Text
+            w={{ base: '100%', lg: '66%' }}
+            fontWeight="bold"
+            whiteSpace="pre-line"
+          >
+            {t('title')}
+          </Text>
         </Box>
-        <Box display="flex" alignItems="center" mb="16px">
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
-          >
-            <Image src="/images/common/ico-facebook-white.svg" alt="contact" />
-          </Box>
 
-          <LinkRouter
-            to={facebookUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+        {/* E-mail */}
+        <Box display="flex" flexDirection="column" gap={8}>
+          <Text
+            as="h2"
+            fontSize="36px"
+            fontWeight="bold"
+            w={{ base: '100%', lg: '66%' }}
           >
-            <Text>{t('Facebook')}</Text>
-          </LinkRouter>
-        </Box>
-        <Box display="flex" alignItems="center" mb="16px">
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
-          >
-            <Image src="/images/common/ico-instagram-white.svg" alt="contact" />
+            E-mail
+          </Text>
+          <Box display="flex" flexDirection="column" gap={6}>
+            <Text w={{ base: '100%', lg: '66%' }} fontWeight="bold">
+              Please contact us by email at the email address below.
+            </Text>
+            <VStack align="start" gap={{ base: 4, lg: 2 }}>
+              <Stack
+                direction={{ base: 'column', lg: 'row' }}
+                align={{ base: 'flex-start', lg: 'baseline' }}
+                w={{ base: '100%', lg: '66%' }}
+                gap={0}
+              >
+                <Text fontSize="12px" flexShrink={0} minW="120px">
+                  {t('EmailMainTitle')}
+                </Text>
+                <Link href={`mailto:${t('EmailMainAddress')}`}>
+                  <Text
+                    fontSize="16px"
+                    fontWeight="bold"
+                    color="#333333"
+                    wordBreak="break-all"
+                  >
+                    {t('EmailMainAddress')}
+                  </Text>
+                </Link>
+              </Stack>
+              <Stack
+                direction={{ base: 'column', lg: 'row' }}
+                align={{ base: 'flex-start', lg: 'baseline' }}
+                w={{ base: '100%', lg: '66%' }}
+                gap={0}
+              >
+                <Text fontSize="12px" flexShrink={0} minW="120px">
+                  {t('EmailSubTitle')}
+                </Text>
+                <Link href={`mailto:${t('EmailSubAddress')}`}>
+                  <Text
+                    fontSize="16px"
+                    fontWeight="bold"
+                    color="#333333"
+                    wordBreak="break-all"
+                  >
+                    {t('EmailSubAddress')}
+                  </Text>
+                </Link>
+              </Stack>
+              <Stack
+                direction={{ base: 'column', lg: 'row' }}
+                align={{ base: 'flex-start', lg: 'baseline' }}
+                w={{ base: '100%', lg: '66%' }}
+                gap={0}
+              >
+                <Text fontSize="12px" flexShrink={0} minW="120px">
+                  {t('EmailMediaTitle')}
+                </Text>
+                <Link href={`mailto:${t('EmailMediaAddress')}`}>
+                  <Text
+                    fontSize="16px"
+                    fontWeight="bold"
+                    color="#333333"
+                    wordBreak="break-all"
+                  >
+                    {t('EmailMediaAddress')}
+                  </Text>
+                </Link>
+              </Stack>
+            </VStack>
           </Box>
-          <LinkRouter
-            to={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Text>{t('Instagram')}</Text>
-          </LinkRouter>
         </Box>
-        <Box display="flex" alignItems="center" mb="16px">
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            bg="#000"
-            w="27px"
-            h="27px"
-            rounded="50%"
-            mr="18px"
+
+        {/* Social media */}
+        <Box display="flex" flexDirection="column" gap={8}>
+          <Text
+            as="h2"
+            fontSize="36px"
+            fontWeight="bold"
+            w={{ base: '100%', lg: '66%' }}
           >
-            <Image src="/images/common/ico-tiktok-white.svg" alt="contact" />
+            Social media
+          </Text>
+          <Box display="flex" flexDirection="column" gap={6}>
+            <Text fontWeight="bold" w={{ base: '100%', lg: '66%' }}>
+              Follow us on social media.
+            </Text>
+            <VStack align="start" gap={4}>
+              <Box
+                display="flex"
+                alignItems="center"
+                w={{ base: '100%', lg: '66%' }}
+                gap={4}
+              >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  bg="#333333"
+                  w="27px"
+                  h="27px"
+                  rounded="50%"
+                  flexShrink={0}
+                >
+                  <Image src="/images/common/ico-youtube-white.svg" alt="" />
+                </Box>
+                <LinkRouter
+                  to={youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Text>{t('Youtube')}</Text>
+                </LinkRouter>
+              </Box>
+              <Box
+                display="flex"
+                alignItems="center"
+                w={{ base: '100%', lg: '66%' }}
+                gap={4}
+              >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  bg="#333333"
+                  w="27px"
+                  h="27px"
+                  rounded="50%"
+                >
+                  <Image src="/images/common/ico-facebook-white.svg" alt="" />
+                </Box>
+                <LinkRouter
+                  to={facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Text>{t('Facebook')}</Text>
+                </LinkRouter>
+              </Box>
+              <Box
+                display="flex"
+                alignItems="center"
+                w={{ base: '100%', lg: '66%' }}
+                gap={4}
+              >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  bg="#333333"
+                  w="27px"
+                  h="27px"
+                  rounded="50%"
+                >
+                  <Image src="/images/common/ico-instagram-white.svg" alt="" />
+                </Box>
+                <LinkRouter
+                  to={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Text>{t('Instagram')}</Text>
+                </LinkRouter>
+              </Box>
+              <Box
+                display="flex"
+                alignItems="center"
+                w={{ base: '100%', lg: '66%' }}
+                gap={4}
+              >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  bg="#333333"
+                  w="27px"
+                  h="27px"
+                  rounded="50%"
+                >
+                  <Image src="/images/common/ico-tiktok-white.svg" alt="" />
+                </Box>
+                <LinkRouter
+                  to={tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Text>{t('TikTok')}</Text>
+                </LinkRouter>
+              </Box>
+            </VStack>
           </Box>
-          <LinkRouter to={tiktokUrl} target="_blank" rel="noopener noreferrer">
-            <Text>{t('TikTok')}</Text>
-          </LinkRouter>
         </Box>
       </Box>
+
+      {/* Latest news */}
       <Box
         position={{ base: 'static', lg: 'absolute' }}
         top={{ base: 'auto', lg: '50%' }}
@@ -184,9 +279,9 @@ export const ContactContent: FC<Props> = ({
           pb="16px"
           fontSize="24px"
           fontWeight="bold"
-          color="#fff"
+          color="text.white"
           borderBottom="solid 1px"
-          borderColor="#fff"
+          borderColor="text.white"
         >
           Latest news
         </Text>

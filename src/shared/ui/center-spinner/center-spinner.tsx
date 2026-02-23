@@ -14,7 +14,7 @@ export const CenterSpinner = () => {
         thickness="4px"
         speed="0.65s"
         emptyColor="gray.200"
-        color="#000"
+        color="#333333"
         w="250px"
         h="250px"
       />

@@ -1,9 +1,16 @@
-import { FirstContent } from '@/features/top/ui/top-updates/first-content';
 import { Box, Grid } from '@chakra-ui/react';
-import ReactPaginate from 'react-paginate';
 import { NewsItem } from '@/entities/news';
-import styles from './updates-pagination.module.css';
-import { CenteredContainer } from '@/shared/ui';
+import {
+  CenteredContainer,
+  ImageCard,
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/shared/ui';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -14,6 +21,9 @@ interface Props {
   news: NewsItem[];
   navigate: NavigateFunction;
   selectedLanguage: string;
+  currentPage: number;
+  isSquareImage?: boolean;
+  pageNumbers: (string | number)[];
 }
 
 export const UpdatesPagination: FC<Props> = ({
@@ -23,43 +33,83 @@ export const UpdatesPagination: FC<Props> = ({
   news,
   navigate,
   selectedLanguage,
+  currentPage,
+  isSquareImage,
+  pageNumbers,
 }) => {
   return (
     <CenteredContainer>
       <Box mb="156px">
-        {!news.length && <Box color="#FFF">Coming Soon</Box>}
+        {!news.length && <Box color="text.white">Coming Soon</Box>}
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
-          gap="32px"
+          gap={8}
         >
-          <FirstContent
+          <ImageCard
             updateArray={currentNews}
             navigate={navigate}
             selectedLanguage={selectedLanguage}
+            isSquareImage={isSquareImage}
           />
         </Grid>
 
-        <Box color="#FFF">
-          <ReactPaginate
-            nextLabel=">"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={2}
-            pageCount={pageCount}
-            previousLabel="<"
-            pageClassName={styles.pageItem}
-            pageLinkClassName={styles.pageLink}
-            previousClassName={styles.pageItem}
-            previousLinkClassName={styles.pageLink}
-            nextClassName={styles.pageItem}
-            nextLinkClassName={styles.pageLink}
-            breakLabel="..."
-            breakClassName={styles.pageItem}
-            breakLinkClassName={styles.pageLink}
-            containerClassName={styles.pagination}
-            activeClassName={styles.active}
-            renderOnZeroPageCount={null}
-          />
+        <Box mt="76px">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    if (currentPage > 0)
+                      handlePageClick({ selected: currentPage - 1 });
+                  }}
+                  aria-disabled={currentPage === 0}
+                  className={
+                    currentPage === 0 ? 'pointer-events-none opacity-50' : ''
+                  }
+                />
+              </PaginationItem>
+
+              {pageNumbers.map((page, index) =>
+                page === 'ellipsis' ? (
+                  <PaginationItem key={`ellipsis-${index}`}>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                ) : (
+                  <PaginationItem key={page}>
+                    <PaginationLink
+                      href="#"
+                      isActive={currentPage === page}
+                      onClick={e => {
+                        e.preventDefault();
+                        handlePageClick({ selected: page as number });
+                      }}
+                    >
+                      {(page as number) + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                ),
+              )}
+
+              <PaginationItem>
+                <PaginationNext
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    if (currentPage < pageCount - 1)
+                      handlePageClick({ selected: currentPage + 1 });
+                  }}
+                  aria-disabled={currentPage === pageCount - 1}
+                  className={
+                    currentPage === pageCount - 1
+                      ? 'pointer-events-none opacity-50'
+                      : ''
+                  }
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </Box>
       </Box>
     </CenteredContainer>

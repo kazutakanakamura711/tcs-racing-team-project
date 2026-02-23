@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { OurPartners } from './our-partners';
 import { Partner, PartnerCategory } from '@/shared/constants/partners-images';
@@ -64,11 +64,13 @@ describe('OurPartners', () => {
   };
 
   it('全てのカテゴリのパートナー画像がレンダリングされること', () => {
-    render(<OurPartners partnersData={mockPartnersData} />);
+    const { container } = render(
+      <OurPartners partnersData={mockPartnersData} />,
+    );
 
-    // 画像がレンダリングされているか確認します。altテキストは全て"OurPartners"なので、数を確認します。
-    // モックデータには合計5つの画像があります。
-    const images = screen.getAllByAltText('OurPartners');
+    // 現在の実装ではパートナーロゴは装飾画像として alt="" で描画されるため、img要素で確認します。
+    // このウィジェットで描画対象なのは black/platinum/gold/silver/bronze の合計5件です。
+    const images = Array.from(container.querySelectorAll('img'));
     expect(images).toHaveLength(5);
 
     // 特定の画像が正しいマッピングであることを確認するためにソースを検証します

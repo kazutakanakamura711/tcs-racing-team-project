@@ -26,7 +26,7 @@ export const UpdatesDetailContainer = () => {
       />
       <CenteredContainer>
         <Text
-          color="#fff"
+          color="text.white"
           fontSize={{ base: '24px', lg: '56px' }}
           fontWeight="bold"
           mb="42px"
@@ -38,6 +38,7 @@ export const UpdatesDetailContainer = () => {
             updateArray={updateArray}
             selectedLanguage={selectedLanguage}
             navigate={navigate}
+            isSquareImage={true}
           />
         )}
       </CenteredContainer>

@@ -36,7 +36,7 @@ export const OfficialMedia: FC<Props> = ({ socialLinks }) => {
           justifyContent="space-between"
           position="absolute"
           left="50%"
-          top="5px"
+          top={{ base: '-32px', lg: '5px' }}
           transform="translateX(-50%)"
           w={{ base: '50%', lg: '20%' }}
           mx="auto"

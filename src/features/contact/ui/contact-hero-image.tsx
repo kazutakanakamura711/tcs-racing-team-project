@@ -7,7 +7,6 @@ export const ContactHeroImage: FC = () => {
       position="relative"
       mt={{ base: '110px', lg: '50px' }}
       w="100%"
-      h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
       objectFit="contain"
     >
       <Image
@@ -15,7 +14,7 @@ export const ContactHeroImage: FC = () => {
         objectFit="contain"
         display="block"
         src="/images/contact/img-contact-top.webp"
-        alt="contact"
+        alt=""
       />
       <Box
         position="absolute"
@@ -23,7 +22,7 @@ export const ContactHeroImage: FC = () => {
         left="0"
         right="0"
         bottom="0"
-        bg="#000"
+        bg="#1A1A1A"
         opacity={0.5}
         zIndex="1"
       />

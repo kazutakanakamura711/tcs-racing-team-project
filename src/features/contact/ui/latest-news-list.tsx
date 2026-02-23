@@ -4,6 +4,7 @@ import { NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import { UPDATE_DETAIL } from '@/shared/constants';
+import { cleanHtml } from '@/shared/utils/clean-html/clean-html';
 
 interface Props {
   news: NewsItem[];
@@ -29,19 +30,21 @@ export const LatestNewsList: FC<Props> = ({
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <Box display="flex" alignItems="center" mb="15px">
-            <Text color="#FF8F80" fontSize="16px" fontWeight="bold">
+            <Text color="news.accent" fontSize="16px" fontWeight="bold">
               News |
             </Text>
-            <Text pl="8px" fontSize="16px" fontWeight="bold" color="#fff">
+            <Text pl="8px" fontSize="16px" fontWeight="bold" color="text.white">
               {formatDate(item.publishedAt)}
             </Text>
           </Box>
-          <Text color="#fff" fontSize="16px" fontWeight="bold">
+          <Text color="text.white" fontSize="16px" fontWeight="bold">
             {item[`title${selectedLanguage}`]}
           </Text>
           <Box
+            color="text.white"
+            fontSize="14px"
             dangerouslySetInnerHTML={{
-              __html: item[`content${selectedLanguage}`],
+              __html: cleanHtml(item[`content${selectedLanguage}`]),
             }}
             style={{
               display: '-webkit-box',
@@ -50,8 +53,6 @@ export const LatestNewsList: FC<Props> = ({
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               maxHeight: '3em',
-              color: '#fff',
-              fontSize: '14px',
             }}
           />
         </Box>

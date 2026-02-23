@@ -11,13 +11,15 @@ export const UpdatesContainer = () => {
     news,
     navigate,
     selectedLanguage,
+    currentPage,
+    pageNumbers,
   } = useUpdatesContainer();
 
   return (
     <>
       <Box pt="128px" mb="128px">
         <CenteredContainer>
-          <Title title="Updates" subTitle="Updates" />
+          <Title as="h1" title="Updates" subTitle="Updates" />
         </CenteredContainer>
       </Box>
       <UpdatesPagination
@@ -27,6 +29,9 @@ export const UpdatesContainer = () => {
         news={news}
         navigate={navigate}
         selectedLanguage={selectedLanguage}
+        currentPage={currentPage}
+        pageNumbers={pageNumbers}
+        isSquareImage={true}
       />
     </>
   );

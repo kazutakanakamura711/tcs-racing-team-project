@@ -18,6 +18,7 @@ export const OurTeamHeroImage: FC<Props> = ({ heroImageSrc }) => {
         h={{ base: 'auto', lg: '100%' }}
         objectFit={{ base: 'initial', lg: 'cover' }}
         mt={{ base: '108px', lg: '0' }}
+        alt=""
       />
       <Box
         position="absolute"
@@ -31,9 +32,10 @@ export const OurTeamHeroImage: FC<Props> = ({ heroImageSrc }) => {
         display={{ base: 'none', lg: 'block' }}
       />
       <Text
+        as="h1"
         fontSize="48px"
         fontWeight="bold"
-        color="#FFF"
+        color="text.white"
         position="absolute"
         bottom="0"
         left="50%"

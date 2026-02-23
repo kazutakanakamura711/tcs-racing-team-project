@@ -45,7 +45,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
       {heroImageSrc ? (
         <Image
           src={heroImageSrc}
-          alt="個人ページの背景画像"
+          alt=""
           bg="#1a1a1a"
           w="100%"
           h="auto"
@@ -67,7 +67,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
       {member.memberPageFirstViewMemberImagePath ? (
         <Image
           src={member.memberPageFirstViewMemberImagePath}
-          alt={`${member.nameEn}の画像`}
+          alt={member.nameJa}
           position="absolute"
           top="0"
           left={{ base: '20%', lg: '0' }}
@@ -103,7 +103,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
           fontFamily="'m-plus-1c', sans-serif !important"
           fontSize={{ base: '16px', lg: '32px' }}
           fontWeight="bold"
-          color="#fff"
+          color="text.white"
           textShadow="2px 2px 8px rgba(0,0,0,1)"
           lineHeight="1.2"
         >
@@ -136,7 +136,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
         >
           <Heading
             fontFamily="'m-plus-1c', sans-serif !important"
-            color="white"
+            color="text.white"
             whiteSpace="pre-line"
             fontSize={{ base: '32px', lg: '100px' }}
             lineHeight="1.1"

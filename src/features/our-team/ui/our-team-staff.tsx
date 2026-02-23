@@ -41,7 +41,7 @@ export const OurTeamStaff: FC<Props> = ({
                   bg="black"
                   h="100%"
                 >
-                  <Image src={staff.gradationImagesPath} />
+                  <Image src={staff.gradationImagesPath} alt={staff.nameJa} />
                 </Box>
                 <Box
                   position="absolute"
@@ -61,6 +61,7 @@ export const OurTeamStaff: FC<Props> = ({
                       w="11px"
                       h="25px"
                       src="/images/common/ico-arrow-white-brock.svg"
+                      alt=""
                     />
                   </Box>
                 </Box>
@@ -82,7 +83,7 @@ export const OurTeamStaff: FC<Props> = ({
                   h="100%"
                   minH="126px"
                 >
-                  <Image src={staff.gradationImagesPath} />
+                  <Image src={staff.gradationImagesPath} alt={staff.nameJa} />
                 </Box>
                 <Box
                   position="absolute"

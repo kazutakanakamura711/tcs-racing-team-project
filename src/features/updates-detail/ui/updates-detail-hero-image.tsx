@@ -13,7 +13,7 @@ export const UpdatesDetailHeroImage: FC<Props> = ({ heroImageSrc }) => {
       objectFit="contain"
       position="relative"
     >
-      <Image w="100%" display="block" src={heroImageSrc} alt="UpdateContent" />
+      <Image w="100%" display="block" src={heroImageSrc} alt="" />
       <Box
         position="absolute"
         top="0"

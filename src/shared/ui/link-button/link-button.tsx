@@ -72,10 +72,10 @@ export const LinkButton: FC<Props> = ({ link, text }) => {
             }
           `}
         >
-          <Text color="#fff" fontWeight="bold">
+          <Text color="text.white" fontWeight="bold">
             {text}
           </Text>
-          <Image src="/images/common/ico-arrow-white-brock.svg" />
+          <Image src="/images/common/ico-arrow-white-brock.svg" alt="" />
         </HStack>
       </Link>
     </HStack>

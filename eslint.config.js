@@ -107,6 +107,14 @@ export default [
     },
   },
 
+  // shadcnが自動生成したファイルに対するルールの上書き
+  {
+    files: ['src/shared/ui/**'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
+
   // Prettier との統合（最後に配置して他のルールを上書き）
   prettierConfig,
 ];

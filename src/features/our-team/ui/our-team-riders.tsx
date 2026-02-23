@@ -1,10 +1,5 @@
 import { CenteredContainer } from '@/shared/ui';
-import {
-  Member,
-  MemberId,
-  OUR_TEAM,
-  OUR_TEAM_DETAIL,
-} from '@/shared/constants';
+import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
 import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
@@ -29,22 +24,14 @@ export const OurTeamRiders: FC<Props> = ({ riders, navigate }) => {
               position="relative"
               aspectRatio="1097 / 880"
               onClick={() => {
-                // TODO: 後でidがRinaZaki,AyakaHiyoshiの条件分岐を削除する
-                if (
-                  rider.id === MemberId.RinaZaki ||
-                  rider.id === MemberId.AyakaHiyoshi
-                ) {
-                  navigate(OUR_TEAM);
-                  return;
-                }
-                const path = OUR_TEAM_DETAIL.replace(':id', rider.id);
-                navigate(path);
+                navigate(OUR_TEAM_DETAIL.replace(':id', rider.id));
               }}
             >
               <Image
                 src={rider.ourTeamPageTheRiderSectionImagePath}
                 h="100%"
                 mx="auto"
+                alt={rider.nameJa}
               />
               <Box
                 position="absolute"
@@ -64,6 +51,7 @@ export const OurTeamRiders: FC<Props> = ({ riders, navigate }) => {
                     w="11px"
                     h="25px"
                     src="/images/common/ico-arrow-white-brock.svg"
+                    alt=""
                   />
                 </Box>
               </Box>

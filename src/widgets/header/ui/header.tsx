@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -59,78 +60,95 @@ export const Header: FC<Props> = ({
           </Box>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
-            <DrawerContent mt="110px">
+            <DrawerContent mt="110px" color="text.black" bg="#fff">
               <DrawerCloseButton />
               <DrawerHeader>Menu</DrawerHeader>
               <DrawerBody
+                as="nav"
+                aria-label="Mobile navigation"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
                 flexDirection="column"
               >
-                <RouterLink
-                  to={UPDATES}
-                  style={{ marginBottom: mb }}
-                  onClick={onClose}
+                <Box
+                  as="ul"
+                  listStyleType="none"
+                  m="0"
+                  p="0"
+                  textAlign="center"
                 >
-                  Updates
-                </RouterLink>
-                <RouterLink
-                  to={OUR_TEAM}
-                  style={{ marginBottom: mb }}
-                  onClick={onClose}
-                >
-                  Our Team
-                </RouterLink>
-                <RouterLink
-                  to={SCHEDULE}
-                  style={{ marginBottom: mb }}
-                  onClick={onClose}
-                >
-                  Schedule
-                </RouterLink>
-                <RouterLink
-                  to={OUR_PARTNERS}
-                  style={{ marginBottom: mb }}
-                  onClick={onClose}
-                >
-                  Partners
-                </RouterLink>
-                <RouterLink
-                  to={CONTACT}
-                  style={{ marginBottom: mb }}
-                  onClick={onClose}
-                >
-                  Contact
-                </RouterLink>
+                  <Box as="li" mb={mb}>
+                    <RouterLink to={UPDATES} onClick={onClose}>
+                      Updates
+                    </RouterLink>
+                  </Box>
+                  <Box as="li" mb={mb}>
+                    <RouterLink to={OUR_TEAM} onClick={onClose}>
+                      Our Team
+                    </RouterLink>
+                  </Box>
+                  <Box as="li" mb={mb}>
+                    <RouterLink to={SCHEDULE} onClick={onClose}>
+                      Schedule
+                    </RouterLink>
+                  </Box>
+                  <Box as="li" mb={mb}>
+                    <RouterLink to={OUR_PARTNERS} onClick={onClose}>
+                      Partners
+                    </RouterLink>
+                  </Box>
+                  <Box as="li" mb={mb}>
+                    <RouterLink to={CONTACT} onClick={onClose}>
+                      Contact
+                    </RouterLink>
+                  </Box>
+                </Box>
               </DrawerBody>
             </DrawerContent>
           </Drawer>
           <Spacer display={{ base: 'none', lg: 'block' }} />
-          <HStack
-            spacing="41px"
-            color="#fff"
-            mr="16px"
-            display={{ base: 'none', lg: 'flex' }}
-          >
-            <RouterLink to={UPDATES}>Updates</RouterLink>
-            <RouterLink to={OUR_TEAM}>Our Team</RouterLink>
-            <RouterLink to={SCHEDULE}>Schedule</RouterLink>
-            <RouterLink to={OUR_PARTNERS}>Partners</RouterLink>
-            <RouterLink to={CONTACT}>Contact</RouterLink>
-          </HStack>
+          <Box as="nav" aria-label="Primary navigation">
+            <HStack
+              as="ul"
+              spacing="41px"
+              color="text.white"
+              mr="16px"
+              display={{ base: 'none', lg: 'flex' }}
+              listStyleType="none"
+              m="0"
+              p="0"
+            >
+              <Box as="li">
+                <RouterLink to={UPDATES}>Updates</RouterLink>
+              </Box>
+              <Box as="li">
+                <RouterLink to={OUR_TEAM}>Our Team</RouterLink>
+              </Box>
+              <Box as="li">
+                <RouterLink to={SCHEDULE}>Schedule</RouterLink>
+              </Box>
+              <Box as="li">
+                <RouterLink to={OUR_PARTNERS}>Partners</RouterLink>
+              </Box>
+              <Box as="li">
+                <RouterLink to={CONTACT}>Contact</RouterLink>
+              </Box>
+            </HStack>
+          </Box>
 
           <Spacer display={{ base: 'block', lg: 'none' }} />
 
           <Select
-            aria-label="言語選択"
+            aria-label="Select language"
             id="language-selector"
             name="language"
             w="80px"
             h="26px"
             bg="#fff"
-            color="#000"
-            mr={{ base: '16px', lg: '0px' }}
+            color="text.black"
+            mr={{ base: 4, lg: 0 }}
+            ml={{ base: 0, lg: 4 }}
             value={selectedLanguage}
             onChange={handleLanguageChange}
           >
@@ -139,17 +157,21 @@ export const Header: FC<Props> = ({
             <option value={Language.Id}>{LanguageDisplay[Language.Id]}</option>
           </Select>
 
-          <Box
+          <Button
+            type="button"
+            variant="unstyled"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
             display={{ base: 'block', lg: 'none' }}
             ml="auto"
-            onClick={onOpen}
+            onClick={isOpen ? onClose : onOpen}
             cursor="pointer"
             data-testid="hamburger-menu"
           >
             <Box w="30px" h="2px" bg="#fff" mb="5px" />
             <Box w="30px" h="2px" bg="#fff" mb="5px" ml="8px" />
             <Box w="30px" h="2px" bg="#fff" />
-          </Box>
+          </Button>
         </Box>
       </Box>
     </Box>

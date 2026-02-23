@@ -12,7 +12,11 @@ export const Message: FC<Props> = ({ message }) => {
   return (
     <Box position="relative" my="92px">
       <Box w="214px" h="214px" m="0 auto" opacity="0.5">
-        <Image src="/images/common/ico-team-logo.webp" objectFit="cover" />
+        <Image
+          src="/images/common/ico-team-logo.webp"
+          objectFit="cover"
+          alt=""
+        />
       </Box>
       <Box
         w="100%"

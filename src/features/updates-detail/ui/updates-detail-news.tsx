@@ -10,6 +10,7 @@ import {
 import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
 import styles from './updates-detail-news.module.css';
+import { cleanHtml } from '@/shared/utils/clean-html/clean-html';
 
 interface Props {
   singleNews: NewsItem | null;
@@ -33,14 +34,14 @@ export const UpdatesDetailNews: FC<Props> = ({
     >
       <HStack mb="38px">
         <Text
-          color="#FF9080"
+          color="news.accent"
           fontSize={{ base: '12px', lg: '16px' }}
           fontWeight="bold"
         >
           News |
         </Text>
         <Text
-          color="#000"
+          color="text.black"
           fontSize={{ base: '12px', lg: '16px' }}
           fontWeight="bold"
         >
@@ -49,7 +50,8 @@ export const UpdatesDetailNews: FC<Props> = ({
       </HStack>
 
       <Text
-        color="#000"
+        as="h1"
+        color="text.black"
         fontSize={{ base: '16px', lg: '36px' }}
         fontWeight="bold"
         mb="34px"
@@ -58,7 +60,7 @@ export const UpdatesDetailNews: FC<Props> = ({
       </Text>
 
       <Text
-        color="#FF9080"
+        color="news.accent"
         fontSize={{ base: '16px', lg: '36px' }}
         mb="34px"
         fontWeight="bold"
@@ -69,9 +71,10 @@ export const UpdatesDetailNews: FC<Props> = ({
       {singleNews?.[`content${selectedLanguage}`] && (
         <Box
           className={styles.newsContent}
+          color="text.black"
           mb="37px"
           dangerouslySetInnerHTML={{
-            __html: singleNews?.[`content${selectedLanguage}`],
+            __html: cleanHtml(singleNews?.[`content${selectedLanguage}`]),
           }}
         />
       )}
@@ -83,60 +86,80 @@ export const UpdatesDetailNews: FC<Props> = ({
         w={{ base: '90%', lg: '27%' }}
         mx="auto"
       >
-        <LinkRouter to={youtubeUrl} target="_blank" rel="noopener noreferrer">
+        <LinkRouter
+          to={youtubeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
           <Box
             display="flex"
             alignItems="center"
             justifyContent="center"
-            bg="#000"
+            bg="#333333"
             w="27px"
             h="27px"
             rounded="50%"
             mr="18px"
           >
-            <Image src="/images/common/ico-youtube-white.svg" alt="contact" />
+            <Image src="/images/common/ico-youtube-white.svg" alt="" />
           </Box>
         </LinkRouter>
-        <LinkRouter to={facebookUrl} target="_blank" rel="noopener noreferrer">
+        <LinkRouter
+          to={facebookUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
           <Box
             display="flex"
             alignItems="center"
             justifyContent="center"
-            bg="#000"
+            bg="#333333"
             w="27px"
             h="27px"
             rounded="50%"
             mr="18px"
           >
-            <Image src="/images/common/ico-facebook-white.svg" alt="contact" />
+            <Image src="/images/common/ico-facebook-white.svg" alt="" />
           </Box>
         </LinkRouter>
-        <LinkRouter to={instagramUrl} target="_blank" rel="noopener noreferrer">
+        <LinkRouter
+          to={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
           <Box
             display="flex"
             alignItems="center"
             justifyContent="center"
-            bg="#000"
+            bg="#333333"
             w="27px"
             h="27px"
             rounded="50%"
             mr="18px"
           >
-            <Image src="/images/common/ico-instagram-white.svg" alt="contact" />
+            <Image src="/images/common/ico-instagram-white.svg" alt="" />
           </Box>
         </LinkRouter>
-        <LinkRouter to={tiktokUrl} target="_blank" rel="noopener noreferrer">
+        <LinkRouter
+          to={tiktokUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
           <Box
             display="flex"
             alignItems="center"
             justifyContent="center"
-            bg="#000"
+            bg="#333333"
             w="27px"
             h="27px"
             rounded="50%"
             mr="18px"
           >
-            <Image src="/images/common/ico-tiktok-white.svg" alt="contact" />
+            <Image src="/images/common/ico-tiktok-white.svg" alt="" />
           </Box>
         </LinkRouter>
       </Box>
