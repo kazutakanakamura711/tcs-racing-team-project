@@ -59,7 +59,7 @@ function PaginationLink({
           size,
         }),
         isActive &&
-          '!bg-[#ff8f80] text-white !border-[#ff8f80] hover:!bg-[#ff8f80] hover:text-white rounded-none',
+          'bg-[#ff8f80]! text-white border-[#ff8f80]! hover:bg-[#ff8f80]! hover:text-white rounded-none',
         className,
       )}
       {...props}

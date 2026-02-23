@@ -1,7 +1,8 @@
 import { Box, Grid } from '@chakra-ui/react';
 import { NewsItem } from '@/entities/news';
-import { CenteredContainer, ImageCard } from '@/shared/ui';
 import {
+  CenteredContainer,
+  ImageCard,
   Pagination,
   PaginationContent,
   PaginationEllipsis,
@@ -9,7 +10,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from '@/shared/ui/pagination';
+} from '@/shared/ui';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ interface Props {
   selectedLanguage: string;
   currentPage: number;
   isSquareImage?: boolean;
+  pageNumbers: (string | number)[];
 }
 
 export const UpdatesPagination: FC<Props> = ({
@@ -33,31 +35,8 @@ export const UpdatesPagination: FC<Props> = ({
   selectedLanguage,
   currentPage,
   isSquareImage,
+  pageNumbers,
 }) => {
-  const getPageNumbers = () => {
-    const pages = [];
-    if (pageCount <= 5) {
-      for (let i = 0; i < pageCount; i++) pages.push(i);
-    } else {
-      if (currentPage <= 2) {
-        pages.push(0, 1, 2, 'ellipsis', pageCount - 1);
-      } else if (currentPage >= pageCount - 3) {
-        pages.push(0, 'ellipsis', pageCount - 3, pageCount - 2, pageCount - 1);
-      } else {
-        pages.push(
-          0,
-          'ellipsis',
-          currentPage - 1,
-          currentPage,
-          currentPage + 1,
-          'ellipsis',
-          pageCount - 1,
-        );
-      }
-    }
-    return pages;
-  };
-
   return (
     <CenteredContainer>
       <Box mb="156px">
@@ -92,7 +71,7 @@ export const UpdatesPagination: FC<Props> = ({
                 />
               </PaginationItem>
 
-              {getPageNumbers().map((page, index) =>
+              {pageNumbers.map((page, index) =>
                 page === 'ellipsis' ? (
                   <PaginationItem key={`ellipsis-${index}`}>
                     <PaginationEllipsis />

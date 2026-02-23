@@ -1,4 +1,5 @@
-import { Box, Button, Center, Spinner, VStack, Text } from '@chakra-ui/react';
+import { Button } from '@/shared/ui';
+import { Box, Center, Spinner, VStack, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -37,17 +38,10 @@ const ErrorFallback = () => {
           </Text>
         </VStack>
         <Button
-          as="a"
-          href="/"
-          bg="white"
-          color="black"
-          fontWeight="bold"
-          px={8}
-          py={6}
-          fontSize={{ base: 'sm', md: 'md' }}
-          _hover={{ bg: 'gray.200' }}
+          asChild
+          className="bg-white text-black font-bold px-8 py-6 text-sm md:text-md hover:bg-gray-200"
         >
-          Back to Top
+          <a href="/">Back to Top</a>
         </Button>
       </VStack>
     </Box>
@@ -57,7 +51,6 @@ const ErrorFallback = () => {
 type AppProviderProps = {
   children: React.ReactNode;
 };
-
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <React.Suspense
