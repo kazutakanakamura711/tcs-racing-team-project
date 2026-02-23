@@ -60,7 +60,7 @@ export const Header: FC<Props> = ({
           </Box>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
-            <DrawerContent mt="110px" color="#text.black" bg="#fff">
+            <DrawerContent mt="110px" color="text.black" bg="#fff">
               <DrawerCloseButton />
               <DrawerHeader>Menu</DrawerHeader>
               <DrawerBody

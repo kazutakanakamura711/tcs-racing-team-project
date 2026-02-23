@@ -12,6 +12,7 @@ export const useUpdatesContainer = () => {
   const { news } = useGetNews({ limit: 100 }); // APIからニュースを取得
   const navigate = useNavigate();
   const [selectedLanguage] = useLanguage();
+  const currentPage = Math.floor(itemOffset / newsPerPage); // 現在のページ番号
 
   useEffect(() => {
     // ニュースが更新されたとき、またはオフセットが変更されたときに実行
@@ -32,5 +33,6 @@ export const useUpdatesContainer = () => {
     news,
     navigate,
     selectedLanguage,
+    currentPage,
   };
 };

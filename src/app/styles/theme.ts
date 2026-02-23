@@ -21,7 +21,7 @@ const customTheme = extendTheme({
 
   colors: {
     text: {
-      white: '#fff',
+      white: '#FFF',
       black: '#333333',
     },
     news: {

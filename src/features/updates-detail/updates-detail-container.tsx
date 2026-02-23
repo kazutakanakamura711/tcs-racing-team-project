@@ -38,6 +38,7 @@ export const UpdatesDetailContainer = () => {
             updateArray={updateArray}
             selectedLanguage={selectedLanguage}
             navigate={navigate}
+            isSquareImage={true}
           />
         )}
       </CenteredContainer>

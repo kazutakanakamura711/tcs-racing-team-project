@@ -11,12 +11,14 @@ interface Props {
   updateArray: { news: NewsItem[] };
   selectedLanguage: string;
   navigate: NavigateFunction;
+  isSquareImage?: boolean;
 }
 
 export const RelatedUpdates: FC<Props> = ({
   updateArray,
   selectedLanguage,
   navigate,
+  isSquareImage,
 }) => {
   return (
     <Grid
@@ -35,11 +37,33 @@ export const RelatedUpdates: FC<Props> = ({
           _hover={{ boxShadow: '15px -15px #626063' }}
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
-          <ImageFilter
-            src={item.eyecatch?.url || noImageUrl}
-            isHoverEffectEnabled={true}
-          />
-          <Box position="absolute" bottom="0" left="20px" zIndex="2">
+          {isSquareImage ? (
+            <Box
+              w="100%"
+              aspectRatio="1 / 1"
+              overflow="hidden"
+              sx={{
+                '& > div': { h: '100%' },
+                '& img': {
+                  minH: '100%',
+                  maxH: '100%',
+                  h: '100%',
+                  objectFit: 'cover',
+                },
+              }}
+            >
+              <ImageFilter
+                src={item.eyecatch?.url || noImageUrl}
+                isHoverEffectEnabled={true}
+              />
+            </Box>
+          ) : (
+            <ImageFilter
+              src={item.eyecatch?.url || noImageUrl}
+              isHoverEffectEnabled={true}
+            />
+          )}
+          <Box position="absolute" bottom="0" p={4} zIndex="2">
             <HStack>
               <Text color="#c0392b " fontSize={{ base: '12px', lg: '16px' }}>
                 News |
