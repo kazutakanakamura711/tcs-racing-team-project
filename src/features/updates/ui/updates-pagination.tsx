@@ -1,7 +1,6 @@
-import { FirstContent } from '@/features/top/ui/top-updates/first-content';
 import { Box, Grid } from '@chakra-ui/react';
 import { NewsItem } from '@/entities/news';
-import { CenteredContainer } from '@/shared/ui';
+import { CenteredContainer, ImageCard } from '@/shared/ui';
 import {
   Pagination,
   PaginationContent,
@@ -67,7 +66,7 @@ export const UpdatesPagination: FC<Props> = ({
           templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
           gap={8}
         >
-          <FirstContent
+          <ImageCard
             updateArray={currentNews}
             navigate={navigate}
             selectedLanguage={selectedLanguage}

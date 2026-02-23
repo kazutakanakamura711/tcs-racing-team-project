@@ -32,23 +32,25 @@ export const TopUpdates: React.FC<Props> = ({
           justifyContent="space-between"
           mb="79px"
         >
-          {updateFirstArray.length !== 0 && (
-            <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
+          {/* PC: 左カラム / モバイル: 上から順に */}
+          <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
+            {updateFirstArray.length !== 0 && (
               <FirstContent
                 updateArray={updateFirstArray}
                 navigate={navigate}
                 selectedLanguage={selectedLanguage}
               />
-              {updateSecondArray.length !== 0 && (
-                <SecondContent
-                  updateArray={updateSecondArray}
-                  navigate={navigate}
-                  selectedLanguage={selectedLanguage}
-                />
-              )}
-            </Box>
-          )}
+            )}
+            {updateSecondArray.length !== 0 && (
+              <SecondContent
+                updateArray={updateSecondArray}
+                navigate={navigate}
+                selectedLanguage={selectedLanguage}
+              />
+            )}
+          </Box>
 
+          {/* PC: 右カラム / モバイル: 下に続く */}
           {updateThirdArray.length !== 0 && (
             <Box w={{ base: '100%', lg: 'calc(50% - 16px)' }}>
               <OtherContents

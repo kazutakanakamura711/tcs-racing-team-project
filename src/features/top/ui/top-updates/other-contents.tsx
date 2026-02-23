@@ -29,39 +29,35 @@ export const OtherContents: FC<Props> = ({
           cursor="pointer"
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
-          <HStack mb={{ base: '8px', lg: '8px' }}>
+          <HStack mb={2} overflow="hidden">
             <Text color="news.accent">News |</Text>
-            <Text color="text.white">{formatDate(item.publishedAt)}</Text>
+            <Text color="text.white" noOfLines={1}>
+              {formatDate(item.publishedAt)}
+            </Text>
           </HStack>
           <Text
             color="text.white"
             fontSize={{ base: '14px', lg: '16px' }}
-            mb={{ base: '8px', lg: '8px' }}
+            mb={2}
+            noOfLines={1}
           >
             {item[`title${selectedLanguage}`]}
           </Text>
-          <Box
-            maxH="200px"
-            overflow="hidden"
+          <Text
             color="text.white"
             fontSize={{ base: '10px', lg: '16px' }}
-            mb={{ base: '8px', lg: '16px' }}
-          >
-            <Box
-              as="span"
-              dangerouslySetInnerHTML={{
-                __html: cleanHtml(item[`content${selectedLanguage}`]),
-              }}
-              style={{
-                display: '-webkit-box',
-                WebkitBoxOrient: 'vertical',
-                WebkitLineClamp: 1,
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                maxHeight: '3em',
-              }}
-            />
-          </Box>
+            mb={{ base: 2, lg: 4 }}
+            dangerouslySetInnerHTML={{
+              __html: cleanHtml(item[`content${selectedLanguage}`]),
+            }}
+            sx={{
+              display: '-webkit-box',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 1,
+              overflow: 'hidden',
+              '& *': { display: 'inline' },
+            }}
+          />
         </Box>
       ))}
     </>

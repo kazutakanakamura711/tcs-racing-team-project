@@ -1,11 +1,8 @@
-import { ImageFilter, LinkUnderBarButton } from '@/shared/ui';
-import { formatDate } from '@/shared/utils/date-format/date-format';
-import { HStack, Box, Text, Grid } from '@chakra-ui/react';
+import { ImageCard } from '@/shared/ui';
+import { Grid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
-import { noImageUrl, UPDATE_DETAIL } from '@/shared/constants';
-import { cleanHtml } from '@/shared/utils/clean-html/clean-html';
 
 interface Props {
   updateArray: { news: NewsItem[] };
@@ -24,82 +21,14 @@ export const RelatedUpdates: FC<Props> = ({
     <Grid
       templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
       gap={6}
+      mb={{ base: 32, lg: 8 }}
     >
-      {updateArray.news.map((item, index) => (
-        <Box
-          key={index}
-          w="100%"
-          position="relative"
-          mb={{ base: '46px', lg: '22.6px' }}
-          cursor="pointer"
-          boxShadow="10px -10px #626063"
-          transition="box-shadow 0.3s ease"
-          _hover={{ boxShadow: '15px -15px #626063' }}
-          onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
-        >
-          {isSquareImage ? (
-            <Box
-              w="100%"
-              aspectRatio="1 / 1"
-              overflow="hidden"
-              sx={{
-                '& > div': { h: '100%' },
-                '& img': {
-                  minH: '100%',
-                  maxH: '100%',
-                  h: '100%',
-                  objectFit: 'cover',
-                },
-              }}
-            >
-              <ImageFilter
-                src={item.eyecatch?.url || noImageUrl}
-                isHoverEffectEnabled={true}
-              />
-            </Box>
-          ) : (
-            <ImageFilter
-              src={item.eyecatch?.url || noImageUrl}
-              isHoverEffectEnabled={true}
-            />
-          )}
-          <Box position="absolute" bottom="0" p={4} zIndex="2">
-            <HStack>
-              <Text color="#c0392b " fontSize={{ base: '12px', lg: '16px' }}>
-                News |
-              </Text>
-              <Text color="text.white" fontSize={{ base: '12px', lg: '16px' }}>
-                {formatDate(item.publishedAt)}
-              </Text>
-            </HStack>
-            <Text color="text.white">{item[`title${selectedLanguage}`]}</Text>
-            <Box
-              maxH="200px"
-              maxW="450px"
-              overflow="hidden"
-              color="text.white"
-              fontSize={{ base: '10px', lg: '16px' }}
-              mb="20px"
-            >
-              <Box
-                as="span"
-                dangerouslySetInnerHTML={{
-                  __html: cleanHtml(item[`content${selectedLanguage}`]),
-                }}
-                style={{
-                  display: '-webkit-box',
-                  WebkitBoxOrient: 'vertical',
-                  WebkitLineClamp: 1,
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  maxHeight: '3em',
-                }}
-              />
-            </Box>
-            <LinkUnderBarButton url="#" text="もっと見る" />
-          </Box>
-        </Box>
-      ))}
+      <ImageCard
+        updateArray={updateArray.news}
+        selectedLanguage={selectedLanguage}
+        navigate={navigate}
+        isSquareImage={isSquareImage}
+      />
     </Grid>
   );
 };

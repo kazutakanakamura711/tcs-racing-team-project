@@ -8,3 +8,4 @@ export * from './not-found';
 export * from './schedule-item';
 export * from './sns-icon';
 export * from './title';
+export * from './image-card';
