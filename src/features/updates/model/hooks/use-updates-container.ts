@@ -13,29 +13,7 @@ export const useUpdatesContainer = () => {
   const navigate = useNavigate();
   const [selectedLanguage] = useLanguage();
   const currentPage = Math.floor(itemOffset / newsPerPage); // 現在のページ番号
-  const getPageNumbers = () => {
-    const pages = [];
-    if (pageCount <= 5) {
-      for (let i = 0; i < pageCount; i++) pages.push(i);
-    } else {
-      if (currentPage <= 2) {
-        pages.push(0, 1, 2, 'ellipsis', pageCount - 1);
-      } else if (currentPage >= pageCount - 3) {
-        pages.push(0, 'ellipsis', pageCount - 3, pageCount - 2, pageCount - 1);
-      } else {
-        pages.push(
-          0,
-          'ellipsis',
-          currentPage - 1,
-          currentPage,
-          currentPage + 1,
-          'ellipsis',
-          pageCount - 1,
-        );
-      }
-    }
-    return pages;
-  };
+
   useEffect(() => {
     // ニュースが更新されたとき、またはオフセットが変更されたときに実行
     const endOffset = itemOffset + newsPerPage;
@@ -56,6 +34,5 @@ export const useUpdatesContainer = () => {
     navigate,
     selectedLanguage,
     currentPage,
-    pageNumbers: getPageNumbers(),
   };
 };

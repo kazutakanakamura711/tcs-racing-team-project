@@ -12,7 +12,6 @@ export const UpdatesContainer = () => {
     navigate,
     selectedLanguage,
     currentPage,
-    pageNumbers,
   } = useUpdatesContainer();
 
   return (
@@ -30,7 +29,6 @@ export const UpdatesContainer = () => {
         navigate={navigate}
         selectedLanguage={selectedLanguage}
         currentPage={currentPage}
-        pageNumbers={pageNumbers}
         isSquareImage={true}
       />
     </>

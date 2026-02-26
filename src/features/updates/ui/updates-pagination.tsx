@@ -23,7 +23,6 @@ interface Props {
   selectedLanguage: string;
   currentPage: number;
   isSquareImage?: boolean;
-  pageNumbers: (string | number)[];
 }
 
 export const UpdatesPagination: FC<Props> = ({
@@ -35,8 +34,32 @@ export const UpdatesPagination: FC<Props> = ({
   selectedLanguage,
   currentPage,
   isSquareImage,
-  pageNumbers,
 }) => {
+  // ページネーションに表示するボタンのリストを生成する関数
+  const getPageNumbers = (): (number | string)[] => {
+    if (pageCount <= 5) {
+      return Array.from({ length: pageCount }, (_, i) => i);
+    }
+
+    if (currentPage <= 2) {
+      return [0, 1, 2, 'ellipsis', pageCount - 1];
+    }
+
+    if (currentPage >= pageCount - 3) {
+      return [0, 'ellipsis', pageCount - 3, pageCount - 2, pageCount - 1];
+    }
+
+    return [
+      0,
+      'ellipsis',
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      'ellipsis',
+      pageCount - 1,
+    ];
+  };
+
   return (
     <CenteredContainer>
       <Box mb="156px">
@@ -71,7 +94,7 @@ export const UpdatesPagination: FC<Props> = ({
                 />
               </PaginationItem>
 
-              {pageNumbers.map((page, index) =>
+              {getPageNumbers().map((page, index) =>
                 page === 'ellipsis' ? (
                   <PaginationItem key={`ellipsis-${index}`}>
                     <PaginationEllipsis />
