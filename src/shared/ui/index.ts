@@ -11,3 +11,4 @@ export * from './image-card';
 export * from './pagination';
 export * from './button';
 export * from './spinner';
+export * from './carousel';

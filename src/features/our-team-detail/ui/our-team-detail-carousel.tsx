@@ -3,7 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
   type CarouselApi,
-} from '@/shared/ui/carousel';
+} from '@/shared/ui';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef, useState, useEffect } from 'react';
 import { NavigateFunction } from 'react-router-dom';

@@ -4,7 +4,7 @@ import {
   CarouselContent,
   CarouselItem,
   type CarouselApi,
-} from '@/shared/ui/carousel';
+} from '@/shared/ui';
 import { useEffect, useState } from 'react';
 
 export interface SliderImage {
