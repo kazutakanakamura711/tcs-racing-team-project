@@ -1,10 +1,17 @@
-import { useMediaQuery } from '@chakra-ui/react';
-import { mediaQuery } from '../utils/break-point/break-point';
+import { mediaQuery } from '@/shared/utils/break-point/break-point';
+import { useState, useEffect } from 'react';
 
 export const useGetWindowWidth = () => {
-  const [isTablet] = useMediaQuery(mediaQuery.tablet);
+  const [isTablet, setIsTablet] = useState(
+    window.matchMedia(mediaQuery.tablet).matches,
+  );
 
-  return {
-    isTablet,
-  };
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(mediaQuery.tablet);
+    const handler = (e: MediaQueryListEvent) => setIsTablet(e.matches);
+    mediaQueryList.addEventListener('change', handler);
+    return () => mediaQueryList.removeEventListener('change', handler);
+  }, []);
+
+  return { isTablet };
 };

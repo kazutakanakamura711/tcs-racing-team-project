@@ -1,20 +1,13 @@
-import { Box, Text, Image } from '@chakra-ui/react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from '@/shared/ui';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef, useState, useEffect } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
-
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  arrows: false,
-};
 
 interface Props {
   memberList: Member[];
@@ -25,35 +18,61 @@ export const OurTeamDetailCarousel: React.FC<Props> = ({
   navigate,
   memberList,
 }) => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
-    <Slider {...settings}>
-      {memberList.map(member => (
-        <Box key={member.id} w="23%" h="100%" px={2}>
-          <Box
-            w="100%"
-            aspectRatio="1"
-            overflow="hidden"
-            cursor="pointer"
-            onClick={() => {
-              navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
-            }}
-          >
-            {member.gradationImagesPath && (
-              <Image
-                display="block"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-                src={member.gradationImagesPath}
-                alt={member.nameJa}
-              />
-            )}
-          </Box>
-          <Text fontSize="16px" color="white" textAlign="center">
-            {member.nameEn.toUpperCase()}
-          </Text>
-        </Box>
-      ))}
-    </Slider>
+    <div className="relative">
+      <Carousel
+        setApi={setApi}
+        plugins={[plugin.current]}
+        opts={{ loop: true, align: 'start' }}
+        className="w-full"
+      >
+        <CarouselContent className="ml-0">
+          {memberList.map(member => (
+            <CarouselItem key={member.id} className="pl-2 basis-1/4">
+              <div
+                className="w-full aspect-square overflow-hidden cursor-pointer"
+                onClick={() => {
+                  navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
+                }}
+              >
+                {member.gradationImagesPath && (
+                  <img
+                    className="block w-full h-full object-cover"
+                    src={member.gradationImagesPath}
+                    alt={member.nameJa}
+                  />
+                )}
+              </div>
+              <p className="text-base text-white text-center mt-1">
+                {member.nameEn.toUpperCase()}
+              </p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      {/* ドットナビゲーション */}
+      <div className="flex justify-center gap-3 mt-4">
+        {memberList.map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full cursor-pointer ${current === index ? 'bg-dot-active' : 'bg-dot-inactive'}`}
+            onClick={() => api?.scrollTo(index)}
+          />
+        ))}
+      </div>
+    </div>
   );
 };

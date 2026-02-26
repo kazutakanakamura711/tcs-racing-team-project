@@ -1,4 +1,3 @@
-export * from './center-spinner';
 export * from './image-filter';
 export * from './link-button';
 export * from './link-under-bar-button';
@@ -11,3 +10,5 @@ export * from './title';
 export * from './image-card';
 export * from './pagination';
 export * from './button';
+export * from './spinner';
+export * from './carousel';

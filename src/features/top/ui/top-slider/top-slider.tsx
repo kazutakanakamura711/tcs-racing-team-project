@@ -1,215 +1,158 @@
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
-import { Box, Image, Text } from '@chakra-ui/react';
-import styles from './top-slider.module.css';
+import * as React from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from '@/shared/ui';
+import { useEffect, useState } from 'react';
 
 export interface SliderImage {
   id: number;
-  src: {
-    sp: string;
-    pc: string;
-  };
+  src: { sp: string; pc: string };
   alt: string;
   isMovie?: boolean;
 }
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplaySpeed: 3000,
-};
 
 export const TopSlider: React.FC<{
   isTablet: boolean;
   images: SliderImage[];
 }> = ({ isTablet, images }) => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <>
-      <Box className={styles.sliderWrapper}>
-        <Slider {...settings}>
-          {images.map(image => (
-            <Box
-              key={image.id}
-              w="100%"
-              h={{
-                base: 'calc(100vh - 110px) !important',
-                lg: 'calc(100vh - 90px) !important',
-              }}
-              position="relative"
-            >
-              <Box
-                w="100%"
-                h={{
-                  base: 'calc(100vh - 110px) !important',
-                  lg: 'calc(100vh - 52px) !important',
-                }}
-                objectFit="cover"
-                position="relative"
-              >
-                {image.isMovie ? (
-                  <>
-                    <Text
-                      as="h1"
-                      position="absolute"
-                      top={{ base: '0', lg: '50%' }}
-                      left={{ base: '0', lg: '50%' }}
-                      transform={{
-                        base: 'rotate(-90deg)',
-                        lg: 'translate(-50%, -50%)',
-                      }}
-                      color="white"
-                      fontSize={{
-                        customSm: '40px',
-                        customMd: '56px',
-                        lg: '7vw',
-                      }}
-                      fontWeight="bold"
-                      textAlign={{ base: 'left', lg: 'center' }}
-                      bg="white"
-                      backgroundClip="text"
-                      backgroundRepeat="no-repeat"
-                      backgroundSize={{ base: 'contain', lg: 'cover' }}
-                      backgroundPosition={{ base: '0px 0px', lg: 'center' }}
-                      pt={{ base: '0px', lg: 'calc(100vh - 43vh)' }}
-                      w={{ base: 'calc(100vh - 115px)', lg: '100%' }}
-                      h="100%"
-                      opacity={0.3}
-                    >
-                      Asia Union TCS Racing Team
-                    </Text>
-                    <video
-                      key={isTablet ? 'sp' : 'pc'} // 追加：ソースが切り替わった時にビデオ要素をリフレッシュ
-                      src={isTablet ? image.src.sp : image.src.pc} // sourceタグではなくこちらに直接書く
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      style={
-                        isTablet
-                          ? {
-                              objectFit: 'cover',
-                              height: 'calc(100vh - 110px)',
-                              width: '100%',
-                            }
-                          : { objectFit: 'cover', height: '100vh' }
-                      }
-                    >
-                      お使いのブラウザはビデオタグをサポートしていません。
-                    </video>
-                  </>
-                ) : (
-                  <>
-                    <Box
-                      position="absolute"
-                      top="0"
-                      left="0"
-                      right="0"
-                      bottom="0"
-                      bg="#000"
-                      opacity={0.5}
-                      zIndex="0"
-                    />
-                    <Text
-                      as="h1"
-                      position="absolute"
-                      top={{ base: '0', lg: '50%' }}
-                      left={{ base: '0', lg: '50%' }}
-                      transform={{
-                        base: 'rotate(-90deg)',
-                        lg: 'translate(-50%, -50%)',
-                      }}
-                      color="white"
-                      fontSize={{
-                        customSm: '40px',
-                        customMd: '56px',
-                        lg: '7vw',
-                      }}
-                      fontWeight="bold"
-                      textAlign={{ base: 'left', lg: 'center' }}
-                      bg="white"
-                      backgroundClip="text"
-                      backgroundRepeat="no-repeat"
-                      backgroundSize={{ base: 'contain', lg: 'cover' }}
-                      backgroundPosition={{ base: '0px 0px', lg: 'center' }}
-                      pt={{ base: '0px', lg: 'calc(100vh - 43vh)' }}
-                      w={{ base: 'calc(100vh - 115px)', lg: '100%' }}
-                      h="100%"
-                      opacity={0.3}
-                    >
-                      Asia Union TCS Racing Team
-                    </Text>
-                    <Image
-                      display="block"
-                      w="100%"
-                      h={{
-                        base: 'calc(100vh - 110px) !important',
-                        lg: 'calc(100vh - 90px) !important',
-                      }}
-                      objectFit={{ base: 'contain', lg: 'cover' }}
-                      src={isTablet ? image.src.sp : image.src.pc}
-                      alt={image.alt}
-                    />
-                  </>
-                )}
-              </Box>
-              <Box
-                display={{ base: 'none', lg: 'flex' }}
-                position="absolute"
-                top="50%"
-                left={{ base: '50%', lg: '256px' }}
-                transform="translate(-50%, -50%)"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Text
-                  fontSize={{ base: '5xl', lg: 'xl' }}
-                  color="white"
-                  fontWeight="bold"
-                >
-                  TCS
-                  <Box as="span" fontSize="xl" ml="16px">
-                    Racing Team
-                  </Box>
-                </Text>
-              </Box>
-              <Box
-                display={{ base: 'none', lg: 'flex' }}
-                flexDirection={{ base: 'column', lg: 'row' }}
-                justifyContent={{ base: 'none', lg: 'center' }}
-                position="absolute"
-                top={{ base: '60%', lg: '85%' }}
-                left="50%"
-                transform="translateX(-50%)"
-                w="100%"
-                color="white"
-                fontWeight="bold"
-                fontSize={{ base: 'md', lg: '2xl' }}
-                textAlign="center"
-              >
-                <Text textAlign="center">日本からアジアへ</Text>
-                <Text textAlign="center">そして世界へ</Text>
-              </Box>
-            </Box>
-          ))}
-        </Slider>
-      </Box>
+      <div className="relative">
+        <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
+          <CarouselContent className="ml-0">
+            {images.map(image => (
+              <CarouselItem key={image.id} className="pl-0">
+                <div className="relative w-full overflow-hidden h-[calc(100vh-110px)]">
+                  {image.isMovie ? (
+                    <>
+                      {isTablet ? (
+                        // モバイル: 縦表示
+                        // TODO: Chakraを削除したら!を外す
+                        <h1 className="absolute font-bold! opacity-30 z-10 top-0 left-0 -rotate-90 text-[40px]! w-[calc(100vh-115px)] h-full bg-white bg-clip-text text-transparent">
+                          Asia Union TCS Racing Team
+                        </h1>
+                      ) : (
+                        // PC: 横表示
+                        // TODO: Chakraを削除したら!を外す
+                        <h1 className="absolute font-bold! opacity-30 z-10 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7vw]! text-center w-full bg-white bg-clip-text text-transparent">
+                          Asia Union TCS Racing Team
+                        </h1>
+                      )}
+                      <video
+                        key={isTablet ? 'sp' : 'pc'}
+                        // TODO: Chakraを削除したら!を外す
+                        className="object-cover w-full h-screen!"
+                        src={isTablet ? image.src.sp : image.src.pc}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        お使いのブラウザはビデオタグをサポートしていません。
+                      </video>
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-black opacity-50 z-10" />
+                      {isTablet ? (
+                        // モバイル: 縦表示
+                        // TODO: Chakraを削除したら!を外す
+                        <h1 className="absolute font-bold! opacity-30 z-20 top-0 left-0 -rotate-90 text-[40px]! w-[calc(100vh-115px)] h-full bg-white bg-clip-text text-transparent">
+                          Asia Union TCS Racing Team
+                        </h1>
+                      ) : (
+                        // PC: 横表示
+                        // TODO: Chakraを削除したら!を外す
+                        <h1 className="absolute font-bold! opacity-30 z-20 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7vw]! text-center w-full bg-white bg-clip-text text-transparent">
+                          Asia Union TCS Racing Team
+                        </h1>
+                      )}
+                      {/* TODO: Chakraを削除したら!を外す */}
+                      <img
+                        className="block w-full object-cover h-[calc(100vh-110px)]!"
+                        src={isTablet ? image.src.sp : image.src.pc}
+                        alt={image.alt}
+                      />
+                    </>
+                  )}
 
-      <Text
-        position="absolute"
-        display={{ base: 'none', lg: 'block' }}
-        bottom="3%"
-        left="0"
-        w="100%"
-        textAlign="center"
-        color="white"
-        className={styles.scrollText}
-      >
+                  {/* PCオーバーレイテキスト */}
+                  {!isTablet && (
+                    <>
+                      <div className="absolute top-1/2 left-64 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center z-30">
+                        <span className="text-white font-bold text-xl">
+                          TCS <span className="ml-4">Racing Team</span>
+                        </span>
+                      </div>
+                      <div className="absolute top-[85%] left-1/2 -translate-x-1/2 hidden md:flex justify-center w-full text-white font-bold text-2xl text-center z-30">
+                        <span>日本からアジアへ</span>
+                        <span>そして世界へ</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          {/* 前ボタン: PCのみ */}
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 hidden md:block"
+            onClick={() => api?.scrollPrev()}
+            aria-label="Previous slide"
+          >
+            <img
+              className="w-7 h-15 rotate-180"
+              src="/images/common/ico-arrow-white-brock.svg"
+              alt=""
+            />
+          </button>
+
+          {/* 次ボタン: PCのみ */}
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 hidden md:block"
+            onClick={() => api?.scrollNext()}
+            aria-label="Next slide"
+          >
+            <img
+              className="w-7 h-15"
+              src="/images/common/ico-arrow-white-brock.svg"
+              alt=""
+            />
+          </button>
+        </Carousel>
+
+        {/* ドットナビゲーション: モバイルのみ */}
+        {isTablet && (
+          <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full cursor-pointer ${current === index ? 'bg-dot-active' : 'bg-dot-inactive'}`}
+                onClick={() => api?.scrollTo(index)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <p className="absolute hidden lg:block bottom-[3%] left-0 w-full text-center text-white animate-[bounce_1s_ease-in-out_infinite] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.5 after:h-12.5 after:w-0.5 after:bg-white">
         SCROLL
-      </Text>
+      </p>
     </>
   );
 };
