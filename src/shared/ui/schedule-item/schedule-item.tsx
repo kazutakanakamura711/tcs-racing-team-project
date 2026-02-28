@@ -1,4 +1,3 @@
-import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -17,114 +16,59 @@ export const ScheduleItem = ({
   location,
 }: Props) => {
   return (
-    <Box
-      position="relative"
-      w={{ base: '100%', lg: '100%' }}
-      h="80px"
-      role="group"
-    >
+    <div className="group relative h-20 w-full">
       <Link to={url || ''}>
-        <Box
-          position="absolute"
-          w="100%"
-          h="100%"
-          bg="#555555"
-          left="-6px"
-          bottom="-6px"
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          cursor="pointer"
-          zIndex="1"
-        >
-          <Box
-            w="58px"
-            h="58px"
-            objectFit="cover"
-            position="absolute"
-            transform="translateY(-50%)"
-            top="55%"
-            left="-18px"
-          >
-            <Image
-              w="100%"
-              display="block"
+        {/* 前面カード（影付き） */}
+        <div className="absolute -bottom-1.5 -left-1.5 z-1 flex h-full w-full cursor-pointer items-center justify-between bg-[#808080]">
+          {/* 六角形アイコン */}
+          <div className="absolute -left-4.5 top-[55%] size-14.5 -translate-y-1/2">
+            <img
+              className="block w-full"
               src="/images/schedule/ico-hexagon-black.svg"
               alt=""
             />
-          </Box>
-          <Flex
-            pl={{ base: '42px', lg: '50px' }}
-            alignItems="center"
-            w={{ base: 'calc( 100% - 48px)', lg: 'calc( 100% - 62px)' }}
-          >
-            <Box
-              w="50px"
-              textAlign="center"
-              mr={{ base: '12px', lg: '18px' }}
-              flex={{ base: '0 0 40px', lg: '0 0 64px' }}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              flexDirection="column"
-            >
-              <Text fontSize={{ base: '10px', sm: '11px', lg: '12px' }}>
+          </div>
+
+          {/* コンテンツ本体 */}
+          <div className="flex w-[calc(100%-48px)] items-center pl-10.5 md:w-[calc(100%-62px)] md:pl-12.5">
+            {/* 日付 */}
+            <div className="mr-3 flex w-12.5 flex-[0_0_40px] flex-col items-center justify-center text-center md:mr-4.5 md:flex-[0_0_64px]">
+              <span className="text-[10px] sm:text-[11px] md:text-xs">
                 {startDate}
-              </Text>
-              <Box
-                display="inline-block"
-                transform="rotate(90deg)"
-                fontSize="12px"
-              >
+              </span>
+              <span className="inline-block rotate-90 text-xs">
                 {endDate ? '〜' : ''}
-              </Box>
-              <Text fontSize={{ base: '10px', sm: '11px', lg: '12px' }}>
+              </span>
+              <span className="text-[10px] sm:text-[11px] md:text-xs">
                 {endDate || ''}
-              </Text>
-            </Box>
-            <Box
-              w={{ base: 'calc(100% - 48px)', lg: 'calc(100% - 80px)' }}
-              overflow="hidden"
-            >
-              <Text isTruncated fontSize={{ base: '12px', lg: '16px' }}>
-                {title}
-              </Text>
-              <Flex alignItems="center">
-                <Box mr="6px">
-                  <Image src="/images/schedule/ico-pin-green.svg" alt="" />
-                </Box>
-                <Text fontSize={{ base: '10px', lg: '12px' }}>
-                  {location || ''}
-                </Text>
-              </Flex>
-            </Box>
-          </Flex>
-          <Box
-            w="50px"
-            ml="8px"
-            transition="transform 0.3s ease-in-out"
-            flex={{ base: '0 0 40px', lg: '0 0 50px' }}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            _groupHover={{ transform: 'translateX(6px)' }}
-          >
-            <Image
-              w="11px"
-              h="25px"
+              </span>
+            </div>
+
+            {/* タイトル・場所 */}
+            <div className="w-[calc(100%-48px)] overflow-hidden md:w-[calc(100%-80px)]">
+              <p className="truncate text-xs md:text-base">{title}</p>
+              <div className="flex items-center">
+                <div className="mr-1.5">
+                  <img src="/images/schedule/ico-pin-green.svg" alt="" />
+                </div>
+                <span className="text-[10px] md:text-xs">{location || ''}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 矢印 */}
+          <div className="ml-2 flex flex-[0_0_40px] items-center justify-center transition-transform duration-300 ease-in-out group-hover:translate-x-1.5 md:flex-[0_0_50px]">
+            <img
+              className="w-2.75 h-6.25"
               src="/images/common/ico-arrow-white-brock.svg"
               alt=""
             />
-          </Box>
-        </Box>
-        <Box
-          w="100%"
-          h="100%"
-          bg="#707070"
-          transition="transform 0.3s ease-in-out"
-          _groupHover={{ transform: 'translateX(6px) translateY(-6px)' }}
-        />
+          </div>
+        </div>
+
+        {/* 背面カード（影） */}
+        <div className="h-full w-full bg-[#707070] transition-transform duration-300 ease-in-out group-hover:translate-x-1.5 group-hover:-translate-y-1.5" />
       </Link>
-    </Box>
+    </div>
   );
 };

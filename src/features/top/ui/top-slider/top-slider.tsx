@@ -36,7 +36,8 @@ export const TopSlider: React.FC<{
           <CarouselContent className="ml-0">
             {images.map(image => (
               <CarouselItem key={image.id} className="pl-0">
-                <div className="relative w-full overflow-hidden h-[calc(100vh-110px)]">
+                {/* TODO: Chakraを削除したら!を外す */}
+                <div className="relative w-full overflow-hidden h-[calc(100vh-110px)]! md:h-[calc(100vh-50px)]!">
                   {image.isMovie ? (
                     <>
                       {isTablet ? (
@@ -55,7 +56,7 @@ export const TopSlider: React.FC<{
                       <video
                         key={isTablet ? 'sp' : 'pc'}
                         // TODO: Chakraを削除したら!を外す
-                        className="object-cover w-full h-screen!"
+                        className="object-cover w-full h-[calc(100vh-110px)]! md:h-[calc(100vh-50px)]!"
                         src={isTablet ? image.src.sp : image.src.pc}
                         autoPlay
                         loop
@@ -83,7 +84,7 @@ export const TopSlider: React.FC<{
                       )}
                       {/* TODO: Chakraを削除したら!を外す */}
                       <img
-                        className="block w-full object-cover h-[calc(100vh-110px)]!"
+                        className="block w-full object-cover h-[calc(100vh-110px)]! md:h-[calc(100vh-50px)]!"
                         src={isTablet ? image.src.sp : image.src.pc}
                         alt={image.alt}
                       />
@@ -150,7 +151,7 @@ export const TopSlider: React.FC<{
         )}
       </div>
 
-      <p className="absolute hidden lg:block bottom-[3%] left-0 w-full text-center text-white animate-[bounce_1s_ease-in-out_infinite] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.5 after:h-12.5 after:w-0.5 after:bg-white">
+      <p className="absolute hidden md:block bottom-[3%] left-0 w-full text-center text-white animate-[bounce_1s_ease-in-out_infinite] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.5 after:h-12.5 after:w-0.5 after:bg-white">
         SCROLL
       </p>
     </>

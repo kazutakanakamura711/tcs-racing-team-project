@@ -27,7 +27,7 @@ export const TopContainer = () => {
       <Box
         position="relative"
         h={{ base: 'calc(100vh - 90px)', lg: 'calc(100vh - 90px)' }}
-        mt={{ base: '110px', lg: '50px' }}
+        mt={{ base: '110px', md: '50px' }}
       >
         <TopSlider isTablet={isTablet} images={topSliderImages} />
       </Box>

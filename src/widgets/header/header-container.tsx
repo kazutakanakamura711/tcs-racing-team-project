@@ -2,14 +2,8 @@ import { Header } from './ui/header';
 import { useHeader } from './model/use-header';
 
 export const HeaderContainer = () => {
-  const {
-    isOpen,
-    onOpen,
-    onClose,
-    selectedLanguage,
-    handleLanguageChange,
-    mb,
-  } = useHeader();
+  const { isOpen, onOpen, onClose, selectedLanguage, handleLanguageChange } =
+    useHeader();
 
   return (
     <Header
@@ -18,7 +12,6 @@ export const HeaderContainer = () => {
       onClose={onClose}
       selectedLanguage={selectedLanguage}
       handleLanguageChange={handleLanguageChange}
-      mb={mb}
     />
   );
 };

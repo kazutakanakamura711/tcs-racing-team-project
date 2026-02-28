@@ -1,4 +1,3 @@
-import { Box, Image } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
@@ -11,33 +10,22 @@ export const ImageFilter: FC<Props> = ({
   isHoverEffectEnabled = false,
 }) => {
   return (
-    <Box
-      w="100%"
-      position="relative"
-      overflow="hidden"
-      _hover={{
-        '> img': isHoverEffectEnabled ? { transform: 'scale(1.1)' } : {},
-      }}
-    >
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        bgGradient="linear(to-b, rgba(26, 26, 26, 0), #000)"
-        zIndex="2"
+    <div className={`w-full relative overflow-hidden group`}>
+      <div
+        className="absolute inset-0 z-5"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(26, 26, 26, 0), #000)',
+        }}
       />
-      <Image
-        display="block"
-        w="100%"
-        minH="285px"
-        maxH="378px"
+      <img
+        className={`block w-full min-h-71.25 max-h-94.5 object-cover ${
+          isHoverEffectEnabled
+            ? 'transition-transform duration-300 ease-in-out group-hover:scale-110'
+            : ''
+        }`}
         src={src}
         alt=""
-        transition={isHoverEffectEnabled ? 'transform 0.3s ease' : ''}
-        objectFit="cover"
       />
-    </Box>
+    </div>
   );
 };

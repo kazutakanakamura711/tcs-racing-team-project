@@ -30,7 +30,7 @@ export const OtherContents: FC<Props> = ({
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <HStack mb={2} overflow="hidden">
-            <Text color="news.accent">News |</Text>
+            <Text className="text-accent-pink!">News |</Text>
             <Text color="text.white" noOfLines={1}>
               {formatDate(item.publishedAt)}
             </Text>

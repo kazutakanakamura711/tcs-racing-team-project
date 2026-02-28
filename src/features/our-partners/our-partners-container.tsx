@@ -26,7 +26,13 @@ export const OurPartnersContainer = () => {
           title="Supporter"
           imagePath={partnersImages.supporters}
         />
-        <Divider orientation="horizontal" mx="auto" w="100%" mb="40px" />
+        <Divider
+          orientation="horizontal"
+          mx="auto"
+          w="100%"
+          mb="40px"
+          borderColor="white"
+        />
         <OurPartnersList
           title="Suppliers"
           imagePath={partnersImages.suppliers}

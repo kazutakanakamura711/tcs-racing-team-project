@@ -36,7 +36,9 @@ export const AppRoutes = () => {
         )}
         <OfficialMedia />
       </main>
-      <Footer />
+      <div className="mt-28">
+        <Footer />
+      </div>
     </>
   );
 };

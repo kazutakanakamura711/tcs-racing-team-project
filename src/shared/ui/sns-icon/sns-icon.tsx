@@ -1,4 +1,3 @@
-import { Box, Image } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,9 +10,9 @@ interface Props {
 export const SnsIcon: FC<Props> = ({ href, icon, label }) => {
   return (
     <Link to={href} target="_blank" rel="noopener noreferrer">
-      <Box w="35px" h="35px" borderRadius="50%">
-        <Image src={icon} alt={label} />
-      </Box>
+      <div className="size-8.75 rounded-full overflow-hidden">
+        <img src={icon} alt={label} />
+      </div>
     </Link>
   );
 };

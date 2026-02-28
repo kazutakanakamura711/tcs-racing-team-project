@@ -10,7 +10,7 @@ interface Props {
 export const OurTeamSummary: FC<Props> = ({ t }) => {
   return (
     <Box mb="192px" color="white">
-      <Divider orientation="horizontal" mx="auto" w="76%" />
+      <Divider orientation="horizontal" mx="auto" w="76%" borderColor="white" />
       <Box
         background={`linear-gradient(rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
         backgroundSize="80%"
@@ -36,7 +36,7 @@ export const OurTeamSummary: FC<Props> = ({ t }) => {
           </Text>
         </VStack>
       </Box>
-      <Divider orientation="horizontal" mx="auto" w="76%" />
+      <Divider orientation="horizontal" mx="auto" w="76%" borderColor="white" />
       <Box
         background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
         backgroundSize="80%"
@@ -74,7 +74,7 @@ export const OurTeamSummary: FC<Props> = ({ t }) => {
           </Text>
         </VStack>
       </Box>
-      <Divider orientation="horizontal" mx="auto" w="76%" />
+      <Divider orientation="horizontal" mx="auto" w="76%" borderColor="white" />
       <Box
         background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1)), url(/images/common/img-bg-lattice.webp)`}
         backgroundSize="80%"

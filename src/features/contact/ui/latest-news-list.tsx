@@ -30,7 +30,11 @@ export const LatestNewsList: FC<Props> = ({
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <Box display="flex" alignItems="center" mb="15px">
-            <Text color="news.accent" fontSize="16px" fontWeight="bold">
+            <Text
+              className="text-accent-pink!"
+              fontSize="16px"
+              fontWeight="bold"
+            >
               News |
             </Text>
             <Text pl="8px" fontSize="16px" fontWeight="bold" color="text.white">

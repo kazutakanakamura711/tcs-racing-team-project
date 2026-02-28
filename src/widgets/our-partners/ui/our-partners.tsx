@@ -1,4 +1,3 @@
-import { Box, Image, SimpleGrid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Partner, PartnerCategory } from '@/shared/constants/partners-images';
 
@@ -8,113 +7,116 @@ interface Props {
 
 export const OurPartners: FC<Props> = ({ partnersData }) => {
   return (
-    <Box
-      w="100%"
-      bg="white"
-      pt="85px"
-      pb={{ base: '31px', lg: '64px' }}
-      px={4}
-      mb="95px"
-    >
+    <div className="w-full bg-light pt-21.25 pb-7.75 lg:pb-16 px-4 mb-23.75">
       {/* 一番上の画像（中央配置） */}
-      <SimpleGrid
-        columns={partnersData.black.length}
-        spacing={4}
-        justifyItems="center"
-        mb={{ base: '54px', lg: '84px' }}
+      <div
+        className="grid justify-items-center gap-4 mb-13.5 lg:mb-21"
+        style={{
+          gridTemplateColumns: `repeat(${partnersData.black.length}, minmax(0, 1fr))`,
+        }}
       >
         {partnersData.black.map((partnerImage, index) => (
-          <Box
+          <div
             key={index}
-            maxW={partnerImage.commonLogoImageWidth}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            className="flex items-center justify-center"
+            style={{ maxWidth: partnerImage.commonLogoImageWidth }}
           >
-            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
-          </Box>
+            <img
+              src={partnerImage.imagePath}
+              alt=""
+              className="w-full h-auto"
+            />
+          </div>
         ))}
-      </SimpleGrid>
+      </div>
 
       {/* 2段目（3つの画像） */}
-      <SimpleGrid
-        columns={partnersData.platinum.length}
-        spacing={4}
-        justifyItems="center"
-        mb={{ base: '54px', lg: '84px' }}
+      <div
+        className="grid justify-items-center gap-4 mb-13.5 lg:mb-21"
+        style={{
+          gridTemplateColumns: `repeat(${partnersData.platinum.length}, minmax(0, 1fr))`,
+        }}
       >
         {partnersData.platinum.map((partnerImage, index) => (
-          <Box
+          <div
             key={index}
-            maxW={partnerImage.partnersPageLogoImageWidth}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            className="flex items-center justify-center"
+            style={{ maxWidth: partnerImage.partnersPageLogoImageWidth }}
           >
-            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
-          </Box>
+            <img
+              src={partnerImage.imagePath}
+              alt=""
+              className="w-full h-auto"
+            />
+          </div>
         ))}
-      </SimpleGrid>
+      </div>
 
       {/* 3段目（4つの画像） */}
-      <SimpleGrid
-        columns={partnersData.gold.length}
-        spacing={4}
-        justifyItems="center"
-        mb={{ base: '54px', lg: '84px' }}
+      <div
+        className="grid justify-items-center gap-4 mb-13.5 lg:mb-21"
+        style={{
+          gridTemplateColumns: `repeat(${partnersData.gold.length}, minmax(0, 1fr))`,
+        }}
       >
         {partnersData.gold.map((partnerImage, index) => (
-          <Box
+          <div
             key={index}
-            maxW={partnerImage.partnersPageLogoImageWidth}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            className="flex items-center justify-center"
+            style={{ maxWidth: partnerImage.partnersPageLogoImageWidth }}
           >
-            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
-          </Box>
+            <img
+              src={partnerImage.imagePath}
+              alt=""
+              className="w-full h-auto"
+            />
+          </div>
         ))}
-      </SimpleGrid>
+      </div>
 
       {/* 4段目（中央配置） */}
-      <SimpleGrid
-        columns={partnersData.silver.length}
-        spacing={4}
-        justifyItems="center"
-        mb={{ base: '54px', lg: '84px' }}
+      <div
+        className="grid justify-items-center gap-4 mb-13.5 lg:mb-21"
+        style={{
+          gridTemplateColumns: `repeat(${partnersData.silver.length}, minmax(0, 1fr))`,
+        }}
       >
         {partnersData.silver.map((partnerImage, index) => (
-          <Box
+          <div
             key={index}
-            maxW={partnerImage.commonLogoImageWidth}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            className="flex items-center justify-center"
+            style={{ maxWidth: partnerImage.commonLogoImageWidth }}
           >
-            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
-          </Box>
+            <img
+              src={partnerImage.imagePath}
+              alt=""
+              className="w-full h-auto"
+            />
+          </div>
         ))}
-      </SimpleGrid>
+      </div>
 
       {/* 5段目（2つの画像） */}
-      <SimpleGrid
-        columns={partnersData.bronze.length}
-        spacing={4}
-        justifyItems="center"
-        mb={{ base: '54px', lg: '84px' }}
+      <div
+        className="grid justify-items-center gap-4 mb-13.5 lg:mb-21"
+        style={{
+          gridTemplateColumns: `repeat(${partnersData.bronze.length}, minmax(0, 1fr))`,
+        }}
       >
         {partnersData.bronze.map((partnerImage, index) => (
-          <Box
+          <div
             key={index}
-            maxW={partnerImage.commonLogoImageWidth}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            className="flex items-center justify-center"
+            style={{ maxWidth: partnerImage.commonLogoImageWidth }}
           >
-            <Image src={partnerImage.imagePath} alt="" w="100%" h="auto" />
-          </Box>
+            <img
+              src={partnerImage.imagePath}
+              alt=""
+              className="w-full h-auto"
+            />
+          </div>
         ))}
-      </SimpleGrid>
-    </Box>
+      </div>
+    </div>
   );
 };

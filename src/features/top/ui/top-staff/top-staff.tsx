@@ -1,4 +1,4 @@
-import { LinkButton, CenteredContainer } from '@/shared/ui';
+import { RainbowUnderlineLink, CenteredContainer } from '@/shared/ui';
 import {
   Member,
   MemberId,
@@ -72,9 +72,17 @@ export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
             </GridItem>
           ))}
         </Grid>
-        <LinkButton link={OUR_TEAM} text="Overview" />
+        <Box display="flex" justifyContent="flex-end">
+          <RainbowUnderlineLink link={OUR_TEAM} text="Overview" />
+        </Box>
       </CenteredContainer>
-      <Divider orientation="horizontal" mt="64px" mx="auto" w="90%" />
+      <Divider
+        orientation="horizontal"
+        mt="64px"
+        mx="auto"
+        w="90%"
+        borderColor="white"
+      />
     </Box>
   );
 };

@@ -1,4 +1,8 @@
-import { CenteredContainer, ScheduleItem, LinkButton } from '@/shared/ui';
+import {
+  CenteredContainer,
+  ScheduleItem,
+  RainbowUnderlineLink,
+} from '@/shared/ui';
 import { ScheduleTitle } from '.';
 
 import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
@@ -59,7 +63,9 @@ export const TopSchedule: React.FC<Props> = ({
             </VStack>
           </Box>
         </Box>
-        <LinkButton link="/schedule-page" text="Overview" />
+        <Box display="flex" justifyContent="flex-end">
+          <RainbowUnderlineLink link="/schedule-page" text="Overview" />
+        </Box>
       </CenteredContainer>
     </Box>
   );

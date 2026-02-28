@@ -1,14 +1,13 @@
-import { Box } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, type ReactNode } from 'react';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const CenteredContainer: FC<Props> = ({ children }) => {
   return (
-    <Box w={{ base: '85%', lg: '76%' }} maxW="1000px" m="0 auto" color="white">
+    <div className="mx-auto w-[85%] max-w-250 text-light md:w-[76%]">
       {children}
-    </Box>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 interface Props {
@@ -10,41 +9,20 @@ interface Props {
 
 export const Message: FC<Props> = ({ message }) => {
   return (
-    <Box position="relative" my="92px">
-      <Box w="214px" h="214px" m="0 auto" opacity="0.5">
-        <Image
+    <div className="relative my-23">
+      <div className="mx-auto size-53.5 opacity-50">
+        <img
           src="/images/common/ico-team-logo.webp"
-          objectFit="cover"
+          className="object-cover"
           alt=""
         />
-      </Box>
-      <Box
-        w="100%"
-        position="absolute"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        textAlign="center"
-        zIndex="2"
-      >
-        <Text
-          fontSize={{ base: '17px', lg: '50px' }}
-          fontWeight="bold"
-          mb="16px"
-          color="white"
-        >
-          {message.title}
-        </Text>
-        <Text
-          fontSize={{ base: '10px', lg: '18px' }}
-          fontWeight="bold"
-          color="white"
-          maxW={{ base: '', lg: '590px' }}
-          m="0 auto"
-        >
+      </div>
+      <div className="flex flex-col gap-4 absolute left-1/2 top-1/2 z-2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
+        <p className="font-bold text-light md:text-5xl">{message.title}</p>
+        <p className="mx-auto font-bold text-light text-[10px] md:text-lg md:max-w-147.5">
           {message.text}
-        </Text>
-      </Box>
-    </Box>
+        </p>
+      </div>
+    </div>
   );
 };

@@ -5,94 +5,65 @@ import {
   OUR_PARTNERS,
   CONTACT,
 } from '@/shared/constants';
-import { Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { CenteredContainer } from '@/shared/ui';
-import { FC } from 'react';
 
-interface Props {
-  isTablet: boolean;
-  fontSize: string;
-}
-
-export const Footer: FC<Props> = ({ isTablet, fontSize }) => {
+export const Footer = () => {
   return (
-    <Box as="footer">
+    <footer className="flex flex-col gap-28">
       <CenteredContainer>
-        <HStack alignItems="start" mb="37px">
-          <Box
-            display={{ base: 'block', lg: 'flex' }}
-            w="50%"
-            justifyContent="space-between"
-            alignItems="start"
-          >
-            <Box mb={{ base: '71px', lg: '0px' }}>
-              <Text
-                fontWeight="bold"
-                fontSize={{ base: '12px', lg: '24px' }}
-                mb="23px"
-              >
-                USEFUL LINKS
-              </Text>
-              <VStack as="ul" align="start" listStyleType="none" m="0" p="0">
-                <Box as="li">
+        <div className="flex items-start mb-9">
+          {/* 左側: USEFUL LINKS + READ MORE ABOUT */}
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start w-1/2 gap-10 md:gap-0">
+            <div className="flex flex-col gap-4">
+              <p className="font-bold text-xs md:text-2xl mb-6">USEFUL LINKS</p>
+              <ul className="flex flex-col items-start list-none m-0 p-0 gap-2">
+                <li>
                   <Link to={UPDATES}>News</Link>
-                </Box>
-                <Box as="li">
+                </li>
+                <li>
                   <Link to={OUR_TEAM}>Team</Link>
-                </Box>
-                <Box as="li">
+                </li>
+                <li>
                   <Link to={SCHEDULE}>Schedule</Link>
-                </Box>
-                <Box as="li">
+                </li>
+                <li>
                   <Link to={OUR_PARTNERS}>Partner</Link>
-                </Box>
-              </VStack>
-            </Box>
-            <Box>
-              <Text
-                fontWeight="bold"
-                fontSize={{ base: '12px', lg: '24px' }}
-                mb="23px"
-              >
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-4">
+              <p className="font-bold text-xs md:text-2xl mb-6">
                 READ MORE ABOUT
-              </Text>
-              <VStack as="ul" align="start" listStyleType="none" m="0" p="0">
-                <Box as="li">
+              </p>
+              <ul className="flex flex-col items-start list-none m-0 p-0">
+                <li>
                   <Link to={CONTACT}>Contact</Link>
-                </Box>
-              </VStack>
-            </Box>
-          </Box>
-          <Box w="50%" display="flex" justifyContent="center">
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 右側: FOLLOW US */}
+          <div className="w-1/2 flex justify-center">
             <Link
               to="#"
-              style={{
-                color: 'text.white',
-                fontWeight: 'bold',
-                textAlign: 'left',
-                fontSize,
-              }}
+              className="font-bold text-left text-light text-[10px] md:text-2xl"
             >
-              FOLLOW US AND {isTablet && <br />}CHECK THE{!isTablet && <br />}
-              TEAM {isTablet && <br />}ACTIVITY AND {isTablet && <br />}DAILY
-              LIFE
+              FOLLOW US AND <br className="md:hidden" />
+              CHECK THE
+              <br className="hidden md:block" />
+              TEAM <br className="md:hidden" />
+              ACTIVITY AND <br className="md:hidden" />
+              DAILY LIFE
             </Link>
-          </Box>
-        </HStack>
+          </div>
+        </div>
       </CenteredContainer>
-      <Box
-        w="100%"
-        pt="7.5px"
-        pb="5px"
-        bg="#fff"
-        color="#333333"
-        fontSize={{ base: '10px', lg: '14px' }}
-        fontWeight="bold"
-        textAlign="center"
-      >
+
+      <div className="w-full py-2 bg-light text-dark text-[10px] md:text-sm font-bold text-center">
         Copyright &copy; 2024 TCS Racing Team All Rights Reserved.
-      </Box>
-    </Box>
+      </div>
+    </footer>
   );
 };
