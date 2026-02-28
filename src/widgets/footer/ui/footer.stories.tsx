@@ -21,18 +21,9 @@ const meta: Meta<typeof Footer> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Desktop: Story = {
-  args: {
-    isTablet: false,
-    fontSize: '24px',
-  },
-};
+export const Desktop: Story = {};
 
 export const Mobile: Story = {
-  args: {
-    isTablet: true,
-    fontSize: '10px',
-  },
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',

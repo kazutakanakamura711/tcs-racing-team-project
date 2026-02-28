@@ -5,7 +5,7 @@ import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 import { noImageUrl, UPDATE_DETAIL } from '@/shared/constants';
 import { cleanHtml } from '@/shared/utils/clean-html/clean-html';
-import { ImageFilter, LinkUnderBarButton } from '@/shared/ui';
+import { AspectRatio, ImageFilter, LinkUnderBarButton } from '@/shared/ui';
 
 export interface ImageCardProps {
   updateArray: NewsItem[];
@@ -35,34 +35,28 @@ export const ImageCard: FC<ImageCardProps> = ({
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           {isSquareImage ? (
-            <Box
-              w="100%"
-              aspectRatio="1 / 1"
-              overflow="hidden"
-              sx={{
-                '& > div': { h: '100%' },
-                '& img': {
-                  minH: '100%',
-                  maxH: '100%',
-                  h: '100%',
-                  objectFit: 'cover',
-                },
-              }}
+            <AspectRatio
+              ratio={1 / 1}
+              // TODO: Chakraを削除したら<AspectRatio ratio={1 / 1}>に変更する
+              className="[&_img]:h-full [&_img]:object-cover [&>div]:h-full"
             >
               <ImageFilter
                 src={item.eyecatch?.url || noImageUrl}
                 isHoverEffectEnabled={true}
               />
-            </Box>
+            </AspectRatio>
           ) : (
             <ImageFilter
               src={item.eyecatch?.url || noImageUrl}
               isHoverEffectEnabled={true}
             />
           )}
-          <Box position="absolute" bottom="0" p={4} zIndex="2">
+          <Box position="absolute" bottom="0" p={4} zIndex={10}>
             <HStack overflow="hidden">
-              <Text color="news.accent" fontSize={{ base: '12px', lg: '16px' }}>
+              <Text
+                className="text-accent-pink!"
+                fontSize={{ base: '12px', lg: '16px' }}
+              >
                 News |
               </Text>
               <Text

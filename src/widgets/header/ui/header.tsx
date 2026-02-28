@@ -1,17 +1,4 @@
-import {
-  Box,
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerHeader,
-  DrawerOverlay,
-  HStack,
-  Image,
-  Select,
-  Spacer,
-} from '@chakra-ui/react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/shared/ui';
 import {
   TOP,
   OUR_TEAM,
@@ -30,7 +17,6 @@ interface Props {
   onClose: () => void;
   selectedLanguage: Language;
   handleLanguageChange: (event: ChangeEvent<HTMLSelectElement>) => void;
-  mb: string;
 }
 
 export const Header: FC<Props> = ({
@@ -39,141 +25,140 @@ export const Header: FC<Props> = ({
   onClose,
   selectedLanguage,
   handleLanguageChange,
-  mb,
 }) => {
+  const isHeaderElement = (target: EventTarget | null) => {
+    return target instanceof HTMLElement && !!target.closest('header');
+  };
+
   return (
-    <Box as="header" position="fixed" top="0" left="0" zIndex="99999" w="100%">
-      <Box bg="#1A1A1A" p={{ base: '33px 40px', lg: '13px 80px' }}>
-        <Box position="relative" display="flex" alignItems="center">
-          <Box
-            position={{ base: 'unset', lg: 'absolute' }}
-            top="50%"
-            left="40px"
-            zIndex="999"
-            w={{ base: '128px', lg: '222px' }}
-            h={{ base: 'auto', lg: 'auto' }}
-            objectFit={{ base: 'contain', lg: 'none' }}
-          >
+    <header className="fixed top-0 left-0 z-99999 w-full">
+      <div className="bg-[#1A1A1A] px-6 py-8 md:px-12 md:py-3">
+        <div className="relative flex items-center">
+          {/* ロゴ */}
+          <div className="w-32 md:w-55.5 md:absolute md:top-15 md:-translate-y-1/2 md:left-0 z-999">
             <RouterLink to={TOP} onClick={onClose}>
-              <Image src="/images/common/ico-team-logo-name.webp" alt="logo" />
+              <img
+                src="/images/common/ico-team-logo-name.webp"
+                alt="Asia Union TCS Racing Team ロゴ"
+              />
             </RouterLink>
-          </Box>
-          <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-            <DrawerOverlay />
-            <DrawerContent mt="110px" color="text.black" bg="#fff">
-              <DrawerCloseButton />
-              <DrawerHeader>Menu</DrawerHeader>
-              <DrawerBody
-                as="nav"
-                aria-label="Mobile navigation"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                flexDirection="column"
-              >
-                <Box
-                  as="ul"
-                  listStyleType="none"
-                  m="0"
-                  p="0"
-                  textAlign="center"
-                >
-                  <Box as="li" mb={mb}>
-                    <RouterLink to={UPDATES} onClick={onClose}>
-                      Updates
-                    </RouterLink>
-                  </Box>
-                  <Box as="li" mb={mb}>
-                    <RouterLink to={OUR_TEAM} onClick={onClose}>
-                      Our Team
-                    </RouterLink>
-                  </Box>
-                  <Box as="li" mb={mb}>
-                    <RouterLink to={SCHEDULE} onClick={onClose}>
-                      Schedule
-                    </RouterLink>
-                  </Box>
-                  <Box as="li" mb={mb}>
-                    <RouterLink to={OUR_PARTNERS} onClick={onClose}>
-                      Partners
-                    </RouterLink>
-                  </Box>
-                  <Box as="li" mb={mb}>
-                    <RouterLink to={CONTACT} onClick={onClose}>
-                      Contact
-                    </RouterLink>
-                  </Box>
-                </Box>
-              </DrawerBody>
-            </DrawerContent>
-          </Drawer>
-          <Spacer display={{ base: 'none', lg: 'block' }} />
-          <Box as="nav" aria-label="Primary navigation">
-            <HStack
-              as="ul"
-              spacing="41px"
-              color="text.white"
-              mr="16px"
-              display={{ base: 'none', lg: 'flex' }}
-              listStyleType="none"
-              m="0"
-              p="0"
-            >
-              <Box as="li">
-                <RouterLink to={UPDATES}>Updates</RouterLink>
-              </Box>
-              <Box as="li">
-                <RouterLink to={OUR_TEAM}>Our Team</RouterLink>
-              </Box>
-              <Box as="li">
-                <RouterLink to={SCHEDULE}>Schedule</RouterLink>
-              </Box>
-              <Box as="li">
-                <RouterLink to={OUR_PARTNERS}>Partners</RouterLink>
-              </Box>
-              <Box as="li">
-                <RouterLink to={CONTACT}>Contact</RouterLink>
-              </Box>
-            </HStack>
-          </Box>
+          </div>
 
-          <Spacer display={{ base: 'block', lg: 'none' }} />
+          {/* PCナビゲーション */}
+          <div className="hidden md:block ml-auto">
+            <nav aria-label="Primary navigation">
+              <ul className="flex items-center gap-10 text-light list-none m-0 p-0 mr-4">
+                <li>
+                  <RouterLink to={UPDATES}>Updates</RouterLink>
+                </li>
+                <li>
+                  <RouterLink to={OUR_TEAM}>Our Team</RouterLink>
+                </li>
+                <li>
+                  <RouterLink to={SCHEDULE}>Schedule</RouterLink>
+                </li>
+                <li>
+                  <RouterLink to={OUR_PARTNERS}>Partners</RouterLink>
+                </li>
+                <li>
+                  <RouterLink to={CONTACT}>Contact</RouterLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-          <Select
+          {/* スペーサー: モバイルのみ */}
+          <div className="flex-1 md:hidden" />
+
+          {/* 言語セレクター */}
+          <select
             aria-label="Select language"
             id="language-selector"
             name="language"
-            w="80px"
-            h="26px"
-            bg="#fff"
-            color="text.black"
-            mr={{ base: 4, lg: 0 }}
-            ml={{ base: 0, lg: 4 }}
+            className="w-20 h-6.5 pl-4! bg-white text-dark! mr-4! md:mr-0! md:ml-4! text-sm"
             value={selectedLanguage}
             onChange={handleLanguageChange}
+            style={{ borderRadius: '6px' }}
           >
             <option value={Language.Ja}>{LanguageDisplay[Language.Ja]}</option>
             <option value={Language.En}>{LanguageDisplay[Language.En]}</option>
             <option value={Language.Id}>{LanguageDisplay[Language.Id]}</option>
-          </Select>
+          </select>
 
-          <Button
+          {/* ハンバーガーメニュー: モバイルのみ */}
+          <button
             type="button"
-            variant="unstyled"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
-            display={{ base: 'block', lg: 'none' }}
-            ml="auto"
+            className="block md:hidden ml-auto cursor-pointer"
             onClick={isOpen ? onClose : onOpen}
-            cursor="pointer"
             data-testid="hamburger-menu"
           >
-            <Box w="30px" h="2px" bg="#fff" mb="5px" />
-            <Box w="30px" h="2px" bg="#fff" mb="5px" ml="8px" />
-            <Box w="30px" h="2px" bg="#fff" />
-          </Button>
-        </Box>
-      </Box>
-    </Box>
+            <div className="w-7.5 h-0.5 bg-white mb-1.25" />
+            <div className="w-7.5 h-0.5 bg-white mb-1.25 ml-2" />
+            <div className="w-7.5 h-0.5 bg-white" />
+          </button>
+
+          {/* モバイルドロワー */}
+          <Sheet
+            modal={false}
+            open={isOpen}
+            onOpenChange={open => !open && onClose()}
+          >
+            <SheetContent
+              side="right"
+              className="mt-27.5 bg-white text-dark flex flex-col h-auto"
+              onInteractOutside={event => {
+                if (isHeaderElement(event.target)) {
+                  event.preventDefault();
+                }
+              }}
+              onFocusOutside={event => {
+                if (isHeaderElement(event.target)) {
+                  event.preventDefault();
+                }
+              }}
+            >
+              <SheetHeader>
+                {/* TODO: Chakraを削除したら!を外す */}
+                <SheetTitle className="text-lg! font-bold!">Menu</SheetTitle>
+              </SheetHeader>
+              <nav
+                aria-label="Mobile navigation"
+                className="flex items-center justify-center flex-col flex-1"
+              >
+                <ul className="list-none m-0 p-0 text-center flex flex-col gap-4">
+                  <li>
+                    <RouterLink to={UPDATES} onClick={onClose}>
+                      Updates
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <RouterLink to={OUR_TEAM} onClick={onClose}>
+                      Our Team
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <RouterLink to={SCHEDULE} onClick={onClose}>
+                      Schedule
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <RouterLink to={OUR_PARTNERS} onClick={onClose}>
+                      Partners
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <RouterLink to={CONTACT} onClick={onClose}>
+                      Contact
+                    </RouterLink>
+                  </li>
+                </ul>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
   );
 };

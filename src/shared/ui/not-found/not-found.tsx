@@ -1,7 +1,6 @@
-import { Box, VStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
-import { LinkButton } from '../link-button';
 import { TOP } from '@/shared/constants';
+import { RainbowUnderlineLink } from '@/shared/ui';
 
 type NotFoundProps = {
   errorCode: string;
@@ -17,36 +16,19 @@ export const NotFound: FC<NotFoundProps> = ({
   backToTopText,
 }) => {
   return (
-    <Box
-      minH="100vh"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      bg="#1a1a1a"
-      px={{ base: 4, md: 8 }}
-    >
-      <VStack spacing={8} textAlign="center">
-        <VStack spacing={4}>
-          <Text
-            fontSize={{ base: '4xl', md: '6xl' }}
-            fontWeight="bold"
-            color="white"
-          >
+    <div className="flex min-h-screen items-center justify-center bg-[#1A1A1A] px-4 md:px-8">
+      <div className="space-y-8 text-center">
+        <div className="space-y-4">
+          <p className="text-4xl font-bold text-light md:text-6xl">
             {errorCode}
-          </Text>
-          <Text
-            fontSize={{ base: 'xl', md: '2xl' }}
-            fontWeight="bold"
-            color="white"
-          >
-            {title}
-          </Text>
-          <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.400">
-            {description}
-          </Text>
-        </VStack>
-        <LinkButton text={backToTopText} link={TOP} />
-      </VStack>
-    </Box>
+          </p>
+          <p className="text-xl font-bold text-light md:text-2xl">{title}</p>
+          <p className="text-base text-gray-400 md:text-lg">{description}</p>
+        </div>
+        <div className="flex justify-end">
+          <RainbowUnderlineLink text={backToTopText} link={TOP} />
+        </div>
+      </div>
+    </div>
   );
 };

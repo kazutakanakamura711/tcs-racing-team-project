@@ -1,5 +1,5 @@
 export * from './image-filter';
-export * from './link-button';
+export * from './rainbow-underline-link';
 export * from './link-under-bar-button';
 export * from './centered-container';
 export * from './message';
@@ -12,3 +12,5 @@ export * from './pagination';
 export * from './button';
 export * from './spinner';
 export * from './carousel';
+export * from './sheet';
+export * from './aspect-ratio';

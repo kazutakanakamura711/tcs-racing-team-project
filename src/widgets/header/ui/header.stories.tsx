@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Header } from './header';
 import { MemoryRouter } from 'react-router-dom';
 import { Language } from '@/shared/store/language-store';
-import { Box } from '@chakra-ui/react';
 import { useState } from 'react';
 
 const meta: Meta<typeof Header> = {
@@ -15,10 +14,9 @@ const meta: Meta<typeof Header> = {
   decorators: [
     Story => (
       <MemoryRouter>
-        {/* 背景色を設定 */}
-        <Box bg="#cccccc" minH="100vh">
+        <div className="bg-[#cccccc] min-h-screen">
           <Story />
-        </Box>
+        </div>
       </MemoryRouter>
     ),
   ],
@@ -41,7 +39,7 @@ export const Default: Story = {
       );
 
       return (
-        <Box maxW="375px" mx="auto">
+        <div className="max-w-93.75 mx-auto">
           <Header
             isOpen={isOpen}
             onOpen={() => setIsOpen(true)}
@@ -51,9 +49,8 @@ export const Default: Story = {
               const newLanguage = e.target.value as Language;
               setSelectedLanguage(newLanguage);
             }}
-            mb="16px"
           />
-        </Box>
+        </div>
       );
     },
   ],

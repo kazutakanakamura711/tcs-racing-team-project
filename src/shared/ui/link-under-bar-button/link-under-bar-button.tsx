@@ -1,4 +1,3 @@
-import { HStack, Text, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -9,20 +8,17 @@ interface Props {
 
 export const LinkUnderBarButton = ({ text, url, isCenter }: Props) => {
   return (
-    <HStack justifyContent={isCenter ? 'center' : 'left'}>
-      <Link to={url} style={{ color: 'text.white', display: 'inline-block' }}>
-        <HStack borderBottom="solid 1px #FF9080">
-          <Text color="text.white" fontSize={{ base: '10px', lg: '12px' }}>
-            {text}
-          </Text>
-          <Image
-            w="5px"
-            h="10px"
+    <div className={`flex ${isCenter ? 'justify-center' : 'justify-start'}`}>
+      <Link to={url} className="inline-block text-white">
+        <div className="flex items-center gap-2 border-b! border-accent-pink!">
+          <span className="text-[10px] text-white lg:text-xs">{text}</span>
+          <img
+            className="h-1 w-1.5"
             src="/images/common/ico-arrow-white-brock.svg"
             alt=""
           />
-        </HStack>
+        </div>
       </Link>
-    </HStack>
+    </div>
   );
 };

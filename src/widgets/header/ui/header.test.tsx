@@ -11,7 +11,6 @@ describe('Header', () => {
     onClose: vi.fn(),
     selectedLanguage: Language.Ja,
     handleLanguageChange: vi.fn(),
-    mb: '10px',
   };
 
   it('renders logo', () => {
@@ -22,7 +21,9 @@ describe('Header', () => {
         <Header {...defaultProps} />
       </MemoryRouter>,
     );
-    expect(screen.getByAltText('logo')).toBeInTheDocument();
+    expect(
+      screen.getByAltText('Asia Union TCS Racing Team ロゴ'),
+    ).toBeInTheDocument();
   });
 
   it('renders navigation links in desktop view', () => {

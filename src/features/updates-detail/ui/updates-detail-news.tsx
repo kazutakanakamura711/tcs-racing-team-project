@@ -34,7 +34,7 @@ export const UpdatesDetailNews: FC<Props> = ({
     >
       <HStack mb="38px">
         <Text
-          color="news.accent"
+          className="text-accent-pink!"
           fontSize={{ base: '12px', lg: '16px' }}
           fontWeight="bold"
         >
@@ -60,7 +60,7 @@ export const UpdatesDetailNews: FC<Props> = ({
       </Text>
 
       <Text
-        color="news.accent"
+        className="text-accent-pink!"
         fontSize={{ base: '16px', lg: '36px' }}
         mb="34px"
         fontWeight="bold"

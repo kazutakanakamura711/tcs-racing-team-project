@@ -1,4 +1,3 @@
-import { Box, Image, Link, Stack, Text, VStack } from '@chakra-ui/react';
 import { Link as LinkRouter, NavigateFunction } from 'react-router-dom';
 import {
   facebookUrl,
@@ -25,272 +24,124 @@ export const ContactContent: FC<Props> = ({
   t,
 }) => {
   return (
-    <Box
-      position="relative"
-      minH="964px"
-      mt={{ base: '0px', lg: '-50px' }}
-      mb="116px"
-      zIndex={2}
-      textColor="#333333"
-    >
-      <Box
-        w={{ base: '100%', lg: '70%' }}
-        h="100%"
-        pt="95px"
-        pb="114px"
-        px={{ base: 10, lg: '68px' }}
-        ml={{ base: '0px', lg: '10%' }}
-        bg="#fff"
-        display="flex"
-        flexDirection="column"
-        gap={20}
-      >
+    <div className="relative min-h-241 md:-mt-12.5 mb-29 z-2 text-dark">
+      <div className="w-full md:w-[70%] h-full pt-24 pb-28.5 px-10 md:px-17 md:ml-[10%] bg-white flex flex-col gap-20">
         {/* Contact */}
-        <Box display="flex" flexDirection="column" gap={8}>
-          <Text
-            as="h1"
-            fontSize="36px"
-            fontWeight="bold"
-            w={{ base: '100%', lg: '66%' }}
-          >
-            Contact
-          </Text>
-          <Text
-            w={{ base: '100%', lg: '66%' }}
-            fontWeight="bold"
-            whiteSpace="pre-line"
-          >
+        <div className="flex flex-col gap-8">
+          <h1 className="text-4xl! font-bold! w-full md:w-2/3">Contact</h1>
+          <p className="w-full md:w-2/3 font-bold whitespace-pre-line">
             {t('title')}
-          </Text>
-        </Box>
+          </p>
+        </div>
 
         {/* E-mail */}
-        <Box display="flex" flexDirection="column" gap={8}>
-          <Text
-            as="h2"
-            fontSize="36px"
-            fontWeight="bold"
-            w={{ base: '100%', lg: '66%' }}
-          >
-            E-mail
-          </Text>
-          <Box display="flex" flexDirection="column" gap={6}>
-            <Text w={{ base: '100%', lg: '66%' }} fontWeight="bold">
+        <div className="flex flex-col gap-8">
+          <h2 className="text-4xl! font-bold! w-full md:w-2/3">E-mail</h2>
+          <div className="flex flex-col gap-6">
+            <p className="w-full md:w-2/3 font-bold">
               Please contact us by email at the email address below.
-            </Text>
-            <VStack align="start" gap={{ base: 4, lg: 2 }}>
-              <Stack
-                direction={{ base: 'column', lg: 'row' }}
-                align={{ base: 'flex-start', lg: 'baseline' }}
-                w={{ base: '100%', lg: '66%' }}
-                gap={0}
-              >
-                <Text fontSize="12px" flexShrink={0} minW="120px">
-                  {t('EmailMainTitle')}
-                </Text>
-                <Link href={`mailto:${t('EmailMainAddress')}`}>
-                  <Text
-                    fontSize="16px"
-                    fontWeight="bold"
-                    color="#333333"
-                    wordBreak="break-all"
-                  >
+            </p>
+            <div className="flex flex-col gap-4 md:gap-2">
+              <div className="flex flex-row flex-wrap items-baseline gap-x-2 w-full md:w-2/3">
+                <span className="text-xs shrink-0">{t('EmailMainTitle')}</span>
+                <a href={`mailto:${t('EmailMainAddress')}`}>
+                  <span className="text-base font-bold text-dark break-all">
                     {t('EmailMainAddress')}
-                  </Text>
-                </Link>
-              </Stack>
-              <Stack
-                direction={{ base: 'column', lg: 'row' }}
-                align={{ base: 'flex-start', lg: 'baseline' }}
-                w={{ base: '100%', lg: '66%' }}
-                gap={0}
-              >
-                <Text fontSize="12px" flexShrink={0} minW="120px">
-                  {t('EmailSubTitle')}
-                </Text>
-                <Link href={`mailto:${t('EmailSubAddress')}`}>
-                  <Text
-                    fontSize="16px"
-                    fontWeight="bold"
-                    color="#333333"
-                    wordBreak="break-all"
-                  >
+                  </span>
+                </a>
+              </div>
+              <div className="flex flex-row flex-wrap items-baseline gap-x-2 w-full md:w-2/3">
+                <span className="text-xs shrink-0">{t('EmailSubTitle')}</span>
+                <a href={`mailto:${t('EmailSubAddress')}`}>
+                  <span className="text-base font-bold text-dark break-all">
                     {t('EmailSubAddress')}
-                  </Text>
-                </Link>
-              </Stack>
-              <Stack
-                direction={{ base: 'column', lg: 'row' }}
-                align={{ base: 'flex-start', lg: 'baseline' }}
-                w={{ base: '100%', lg: '66%' }}
-                gap={0}
-              >
-                <Text fontSize="12px" flexShrink={0} minW="120px">
-                  {t('EmailMediaTitle')}
-                </Text>
-                <Link href={`mailto:${t('EmailMediaAddress')}`}>
-                  <Text
-                    fontSize="16px"
-                    fontWeight="bold"
-                    color="#333333"
-                    wordBreak="break-all"
-                  >
+                  </span>
+                </a>
+              </div>
+              <div className="flex flex-row flex-wrap items-baseline gap-x-2 w-full md:w-2/3">
+                <span className="text-xs shrink-0">{t('EmailMediaTitle')}</span>
+                <a href={`mailto:${t('EmailMediaAddress')}`}>
+                  <span className="text-base font-bold text-dark break-all">
                     {t('EmailMediaAddress')}
-                  </Text>
-                </Link>
-              </Stack>
-            </VStack>
-          </Box>
-        </Box>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Social media */}
-        <Box display="flex" flexDirection="column" gap={8}>
-          <Text
-            as="h2"
-            fontSize="36px"
-            fontWeight="bold"
-            w={{ base: '100%', lg: '66%' }}
-          >
-            Social media
-          </Text>
-          <Box display="flex" flexDirection="column" gap={6}>
-            <Text fontWeight="bold" w={{ base: '100%', lg: '66%' }}>
+        <div className="flex flex-col gap-8">
+          <h2 className="text-4xl! font-bold! w-full md:w-2/3">Social media</h2>
+          <div className="flex flex-col gap-6">
+            <p className="font-bold w-full md:w-2/3">
               Follow us on social media.
-            </Text>
-            <VStack align="start" gap={4}>
-              <Box
-                display="flex"
-                alignItems="center"
-                w={{ base: '100%', lg: '66%' }}
-                gap={4}
-              >
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  bg="#333333"
-                  w="27px"
-                  h="27px"
-                  rounded="50%"
-                  flexShrink={0}
-                >
-                  <Image src="/images/common/ico-youtube-white.svg" alt="" />
-                </Box>
+            </p>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center w-full md:w-2/3 gap-4">
+                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
+                  <img src="/images/common/ico-youtube-white.svg" alt="" />
+                </div>
                 <LinkRouter
                   to={youtubeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Text>{t('Youtube')}</Text>
+                  <span>{t('Youtube')}</span>
                 </LinkRouter>
-              </Box>
-              <Box
-                display="flex"
-                alignItems="center"
-                w={{ base: '100%', lg: '66%' }}
-                gap={4}
-              >
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  bg="#333333"
-                  w="27px"
-                  h="27px"
-                  rounded="50%"
-                >
-                  <Image src="/images/common/ico-facebook-white.svg" alt="" />
-                </Box>
+              </div>
+              <div className="flex items-center w-full md:w-2/3 gap-4">
+                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
+                  <img src="/images/common/ico-facebook-white.svg" alt="" />
+                </div>
                 <LinkRouter
                   to={facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Text>{t('Facebook')}</Text>
+                  <span>{t('Facebook')}</span>
                 </LinkRouter>
-              </Box>
-              <Box
-                display="flex"
-                alignItems="center"
-                w={{ base: '100%', lg: '66%' }}
-                gap={4}
-              >
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  bg="#333333"
-                  w="27px"
-                  h="27px"
-                  rounded="50%"
-                >
-                  <Image src="/images/common/ico-instagram-white.svg" alt="" />
-                </Box>
+              </div>
+              <div className="flex items-center w-full md:w-2/3 gap-4">
+                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
+                  <img src="/images/common/ico-instagram-white.svg" alt="" />
+                </div>
                 <LinkRouter
                   to={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Text>{t('Instagram')}</Text>
+                  <span>{t('Instagram')}</span>
                 </LinkRouter>
-              </Box>
-              <Box
-                display="flex"
-                alignItems="center"
-                w={{ base: '100%', lg: '66%' }}
-                gap={4}
-              >
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  bg="#333333"
-                  w="27px"
-                  h="27px"
-                  rounded="50%"
-                >
-                  <Image src="/images/common/ico-tiktok-white.svg" alt="" />
-                </Box>
+              </div>
+              <div className="flex items-center w-full md:w-2/3 gap-4">
+                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
+                  <img src="/images/common/ico-tiktok-white.svg" alt="" />
+                </div>
                 <LinkRouter
                   to={tiktokUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Text>{t('TikTok')}</Text>
+                  <span>{t('TikTok')}</span>
                 </LinkRouter>
-              </Box>
-            </VStack>
-          </Box>
-        </Box>
-      </Box>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Latest news */}
-      <Box
-        position={{ base: 'static', lg: 'absolute' }}
-        top={{ base: 'auto', lg: '50%' }}
-        right={{ base: 'auto', lg: '10%' }}
-        transform={{ base: 'none', lg: 'translateY(-50%)' }}
-        w={{ base: 'calc(100% - 120px)', lg: '30%' }}
-        bg="#666666"
-        p="79px 5%"
-        m={{ base: '79px 60px', lg: '0px' }}
-      >
-        <Text
-          pb="16px"
-          fontSize="24px"
-          fontWeight="bold"
-          color="text.white"
-          borderBottom="solid 1px"
-          borderColor="text.white"
-        >
+      <div className="static md:absolute md:top-1/2 md:right-[10%] md:-translate-y-1/2 w-[calc(100%-120px)] md:w-[30%] bg-[#666666] py-16 px-[5%] my-20 mx-15 md:m-0">
+        <p className="pb-4 text-2xl font-bold text-light border-b! border-light!">
           Latest news
-        </Text>
+        </p>
         <LatestNewsList
           news={news}
           selectedLanguage={selectedLanguage}
           navigate={navigate}
         />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };

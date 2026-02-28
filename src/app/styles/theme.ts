@@ -24,9 +24,6 @@ const customTheme = extendTheme({
       white: '#FFF',
       black: '#333333',
     },
-    news: {
-      accent: '#FF9080',
-    },
   },
 
   styles: {

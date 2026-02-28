@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { LinkButton } from './link-button';
+import { RainbowUnderlineLink } from './rainbow-underline-link';
 import { MemoryRouter } from 'react-router-dom';
 
-const meta: Meta<typeof LinkButton> = {
-  title: 'shared/ui/LinkButton',
-  component: LinkButton,
+const meta: Meta<typeof RainbowUnderlineLink> = {
+  title: 'shared/ui/RainbowUnderlineLink',
+  component: RainbowUnderlineLink,
   parameters: {
     layout: 'padded',
   },

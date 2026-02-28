@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
-import { LinkButton } from './link-button';
+import { RainbowUnderlineLink } from './rainbow-underline-link';
 
-describe('LinkButton', () => {
+describe('RainbowUnderlineLink', () => {
   it('renders the button text', () => {
     render(
       <MemoryRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
-        <LinkButton text="Click Me" link="/target" />
+        <RainbowUnderlineLink text="Click Me" link="/target" />
       </MemoryRouter>,
     );
     expect(screen.getByText('Click Me')).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('LinkButton', () => {
       <MemoryRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
-        <LinkButton text="Go Home" link="/home" />
+        <RainbowUnderlineLink text="Go Home" link="/home" />
       </MemoryRouter>,
     );
     const linkElement = screen.getByRole('link');

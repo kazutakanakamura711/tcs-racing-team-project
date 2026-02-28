@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
@@ -14,56 +13,41 @@ type Props = {
 export const Title: FC<Props> = ({
   title,
   subTitle,
-  isCenter = false,
-  isHiddenUnderLine = false,
+  isCenter,
+  isHiddenUnderLine,
   id,
-  as = 'h2',
+  as: Heading = 'h2',
 }) => {
   return (
-    <Box
-      position="relative"
-      minH={{ base: '56px', lg: '160px' }}
-      mb={{ base: '48px', lg: '56px' }}
-      id={id}
-    >
-      <Box
-        position="absolute"
-        top="50%"
-        left={isCenter ? '50%' : '0'}
-        transform={isCenter ? 'translate(-50%, -50%)' : 'translateY(-50%)'}
-        color="#1A1A1A"
-        fontSize={{ base: '36px', lg: '108px' }}
-        textShadow="1px 1px 0 #707070, -1px -1px 0 #707070, -1px 1px 0 #707070, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0"
-        zIndex="0"
+    <div className="relative mb-12 min-h-14 md:mb-14 md:min-h-40" id={id}>
+      {/* SubTitle（背景装飾テキスト） */}
+      <span
+        className={`absolute top-1/2 z-0 -translate-y-1/2 text-4xl text-[#1A1A1A] md:text-[108px] ${
+          isCenter ? 'left-1/2 -translate-x-1/2' : 'left-0'
+        }`}
+        style={{
+          textShadow:
+            '1px 1px 0 #707070, -1px -1px 0 #707070, -1px 1px 0 #707070, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0',
+        }}
       >
         {subTitle}
-      </Box>
-      <Box
-        as={as}
-        position="absolute"
-        bottom="0"
-        left={isCenter ? '50%' : '0'}
-        transform={isCenter ? 'translateX(-50%)' : ''}
-        color="text.white"
-        fontSize={{ base: '24px', lg: '56px' }}
-        fontWeight="bold"
-        zIndex="1"
+      </span>
+
+      {/* Title */}
+      <Heading
+        className={`absolute bottom-0 z-1 text-[24px]! font-bold! text-white md:text-[56px]! ${
+          isCenter ? 'left-1/2 -translate-x-1/2' : 'left-0'
+        }`}
       >
         {title}
-      </Box>
-      <Box
-        display={isHiddenUnderLine ? 'none' : 'block'}
-        position="absolute"
-        bottom="0"
-        left={isCenter ? '50%' : '0'}
-        transform={isCenter ? 'translateX(-50%)' : ''}
-        w="10%"
-        maxW="87px"
-        height="3px"
-        bg={'url(images/common/img-text-bg-rainbow.webp)'}
-        bgSize="cover"
-        bgRepeat="no-repeat"
+      </Heading>
+
+      {/* レインボー下線 */}
+      <div
+        className={`absolute bottom-0 h-0.75 w-[10%] max-w-21.75 bg-[url('/images/common/img-text-bg-rainbow.webp')] bg-cover bg-no-repeat ${
+          isCenter ? 'left-1/2 -translate-x-1/2' : 'left-0'
+        } ${isHiddenUnderLine ? 'hidden' : 'block'}`}
       />
-    </Box>
+    </div>
   );
 };
