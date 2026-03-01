@@ -1,4 +1,3 @@
-import { Box, VStack } from '@chakra-ui/react';
 import { CenteredContainer, ScheduleItem } from '@/shared/ui';
 import { ScheduleTitle } from './schedule-title';
 import { ScheduleItem as ScheduleItemType } from '@/entities/schedule';
@@ -15,14 +14,14 @@ export const Schedule: React.FC<Props> = ({
   selectedLanguage,
 }) => {
   return (
-    <Box mb="117px">
+    <div className="mb-29">
       <CenteredContainer>
-        <Box display={{ base: 'block', lg: 'flex' }} gap="64px" mb="70px">
-          <Box flex="1" mb={{ base: '81px', lg: '0px' }}>
+        <div className="block md:flex gap-16 mb-17.5">
+          <div className="flex-1 mb-20 md:mb-0">
             <ScheduleTitle text="Race" />
-            <VStack gap="24px" display="grid">
+            <div className="grid gap-6">
               {raceScheduleList.length === 0 && (
-                <Box color="white">Coming soon..</Box>
+                <div className="text-white">Coming soon..</div>
               )}
               {raceScheduleList.map(item => (
                 <ScheduleItem
@@ -34,13 +33,13 @@ export const Schedule: React.FC<Props> = ({
                   location={item[`location${selectedLanguage}`]}
                 />
               ))}
-            </VStack>
-          </Box>
-          <Box flex="1">
+            </div>
+          </div>
+          <div className="flex-1">
             <ScheduleTitle text="Events" />
-            <VStack gap="24px" display="grid">
+            <div className="grid gap-6">
               {eventScheduleList.length === 0 && (
-                <Box color="white">Coming soon..</Box>
+                <div className="text-white">Coming soon..</div>
               )}
               {eventScheduleList.map(item => (
                 <ScheduleItem
@@ -52,10 +51,10 @@ export const Schedule: React.FC<Props> = ({
                   location={item[`location${selectedLanguage}`]}
                 />
               ))}
-            </VStack>
-          </Box>
-        </Box>
+            </div>
+          </div>
+        </div>
       </CenteredContainer>
-    </Box>
+    </div>
   );
 };
