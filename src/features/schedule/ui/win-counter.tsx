@@ -1,5 +1,4 @@
 import { WinCounterData } from '@/shared/constants';
-import { Box, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 interface Props extends WinCounterData {
@@ -12,18 +11,17 @@ export const WinCounter: FC<Props> = ({
   isLastContent = false,
 }) => {
   return (
-    <Box
-      textAlign={{ base: 'center', lg: 'left' }}
-      borderLeft={{ base: '0px', lg: '1px' }}
-      borderRight={{ base: '0px', lg: isLastContent ? '1px' : '0px' }}
-      borderBottom={{ base: '1px', lg: '0px' }}
-      pb="48px"
-      px="36px"
+    <div
+      className={`
+        text-center md:text-left
+        border-l-0 md:border-l md:border-l-current
+        border-b md:border-b-0
+        ${isLastContent ? 'md:border-r md:border-r-current' : ''}
+        pb-12 px-9
+      `}
     >
-      <Box fontWeight="bold" fontSize="96px">
-        {count}
-      </Box>
-      <Text>{text}</Text>
-    </Box>
+      <div className="font-bold text-[96px]">{count}</div>
+      <p>{text}</p>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-import { Box, Image } from '@chakra-ui/react';
 import { FC } from 'react';
 
 interface Props {
@@ -8,31 +7,26 @@ interface Props {
 export const ScheduleHeroImage: FC<Props> = ({ heroImageSrc }) => {
   return (
     <>
-      <Box
-        position="relative"
-        h={{ base: 'auto', lg: 'calc(100vh - 55px)' }}
-        mb={{ base: '64px', lg: '128px' }}
-        mt={{ base: '0', lg: '52px' }}
+      <div
+        className="
+          relative
+          h-auto md:h-[calc(100vh-55px)]
+          mb-16 md:mb-32
+          mt-0 md:mt-13
+        "
       >
-        <Image
+        <img
           alt=""
           src={heroImageSrc}
-          mt={{ base: '108px', lg: '0' }}
-          w={{ base: 'auto', lg: '100%' }}
-          h={{ base: 'auto', lg: '100%' }}
-          objectFit={{ base: 'contain', lg: 'cover' }}
+          className="
+            mt-27 md:mt-0
+            w-auto md:w-full
+            h-auto! md:h-full!
+            object-contain md:object-cover
+          "
         />
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          right="0"
-          bottom="0"
-          bg="#000"
-          opacity={0.5}
-          zIndex="1"
-        />
-      </Box>
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-10" />
+      </div>
     </>
   );
 };
