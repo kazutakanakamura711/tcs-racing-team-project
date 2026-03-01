@@ -1,5 +1,4 @@
 import { ImageCard } from '@/shared/ui';
-import { Grid } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
@@ -18,17 +17,13 @@ export const RelatedUpdates: FC<Props> = ({
   isSquareImage,
 }) => {
   return (
-    <Grid
-      templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
-      gap={6}
-      mb={{ base: 32, lg: 8 }}
-    >
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32 md:mb-8">
       <ImageCard
         updateArray={updateArray.news}
         selectedLanguage={selectedLanguage}
         navigate={navigate}
         isSquareImage={isSquareImage}
       />
-    </Grid>
+    </div>
   );
 };

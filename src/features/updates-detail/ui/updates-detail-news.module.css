@@ -1,3 +1,4 @@
+/* MicroCMSで画像を挿入時の余白を調整するため、figure imgにmargin-topを追加 */
 figure img {
   margin-top: 16px;
 }
