@@ -1,4 +1,3 @@
-import { Box, Grid } from '@chakra-ui/react';
 import { NewsItem } from '@/entities/news';
 import {
   CenteredContainer,
@@ -62,21 +61,18 @@ export const UpdatesPagination: FC<Props> = ({
 
   return (
     <CenteredContainer>
-      <Box mb="156px">
-        {!news.length && <Box color="text.white">Coming Soon</Box>}
-        <Grid
-          templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
-          gap={8}
-        >
+      <div className="mb-39">
+        {!news.length && <div className="text-light">Coming Soon</div>}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <ImageCard
             updateArray={currentNews}
             navigate={navigate}
             selectedLanguage={selectedLanguage}
             isSquareImage={isSquareImage}
           />
-        </Grid>
+        </div>
 
-        <Box mt="76px">
+        <div className="mt-19">
           <Pagination>
             <PaginationContent>
               <PaginationItem>
@@ -133,8 +129,8 @@ export const UpdatesPagination: FC<Props> = ({
               </PaginationItem>
             </PaginationContent>
           </Pagination>
-        </Box>
-      </Box>
+        </div>
+      </div>
     </CenteredContainer>
   );
 };
