@@ -1,4 +1,3 @@
-import { Text } from '@chakra-ui/react';
 import { CenteredContainer } from '@/shared/ui';
 import { useUpdatesDetailContainer } from './model/hooks/use-updates-detail-container';
 import {
@@ -25,14 +24,10 @@ export const UpdatesDetailContainer = () => {
         selectedLanguage={selectedLanguage}
       />
       <CenteredContainer>
-        <Text
-          color="text.white"
-          fontSize={{ base: '24px', lg: '56px' }}
-          fontWeight="bold"
-          mb="42px"
-        >
+        {/* TODO: Chakraを削除したら!を外す */}
+        <p className="text-light text-2xl font-bold mb-10.5! md:text-[56px] ">
           Related Updates
-        </Text>
+        </p>
         {id && (
           <RelatedUpdates
             updateArray={updateArray}
