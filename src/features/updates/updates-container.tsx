@@ -1,5 +1,4 @@
 import { CenteredContainer, Title } from '@/shared/ui';
-import { Box } from '@chakra-ui/react';
 import { UpdatesPagination } from './ui';
 import { useUpdatesContainer } from './model/hooks/use-updates-container';
 
@@ -16,11 +15,11 @@ export const UpdatesContainer = () => {
 
   return (
     <>
-      <Box pt="128px" mb="128px">
+      <div className="pt-32 mb-32">
         <CenteredContainer>
           <Title as="h1" title="Updates" subTitle="Updates" />
         </CenteredContainer>
-      </Box>
+      </div>
       <UpdatesPagination
         currentNews={currentNews}
         pageCount={pageCount}
