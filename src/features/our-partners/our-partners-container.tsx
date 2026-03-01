@@ -1,11 +1,10 @@
 import { OurPartnersBlackList, OurPartnersList } from './ui';
 import { partnersImages } from '@/shared/constants';
 import { Title, CenteredContainer } from '@/shared/ui';
-import { Box, Divider } from '@chakra-ui/react';
 
 export const OurPartnersContainer = () => {
   return (
-    <Box pt="110px" bg="#1a1a1a">
+    <div className="pt-27.5 bg-[#1a1a1a]">
       <CenteredContainer>
         <Title
           as="h1"
@@ -26,18 +25,12 @@ export const OurPartnersContainer = () => {
           title="Supporter"
           imagePath={partnersImages.supporters}
         />
-        <Divider
-          orientation="horizontal"
-          mx="auto"
-          w="100%"
-          mb="40px"
-          borderColor="white"
-        />
+        <hr className="w-full mb-10! border! border-white! opacity-40" />
         <OurPartnersList
           title="Suppliers"
           imagePath={partnersImages.suppliers}
         />
       </CenteredContainer>
-    </Box>
+    </div>
   );
 };
