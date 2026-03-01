@@ -9,7 +9,7 @@ const sampleNews = [
     publishedAt: '2026-01-01T00:00:00.000Z',
     titleJa: 'サンプルニュースタイトル',
     contentJa: '<p>サンプルニュース本文です。1行で省略表示されます。</p>',
-    eyecatch: { url: '/images/top/img-top-slider-01.webp' },
+    eyecatch: { url: '/images/top/img-slider01.webp' },
     category: null,
   } as unknown as NewsItem,
 ];

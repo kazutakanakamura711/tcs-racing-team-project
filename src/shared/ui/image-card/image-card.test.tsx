@@ -1,4 +1,3 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -20,17 +19,15 @@ const createNewsItem = (): NewsItem =>
 describe('ImageCard', () => {
   it('ニュース情報を表示すること', () => {
     render(
-      <ChakraProvider>
-        <MemoryRouter
-          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-        >
-          <ImageCard
-            updateArray={[createNewsItem()]}
-            navigate={vi.fn() as unknown as NavigateFunction}
-            selectedLanguage="Ja"
-          />
-        </MemoryRouter>
-      </ChakraProvider>,
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <ImageCard
+          updateArray={[createNewsItem()]}
+          navigate={vi.fn() as unknown as NavigateFunction}
+          selectedLanguage="Ja"
+        />
+      </MemoryRouter>,
     );
 
     expect(screen.getByText('News |')).toBeInTheDocument();
@@ -42,17 +39,15 @@ describe('ImageCard', () => {
     const navigate = vi.fn() as unknown as NavigateFunction;
 
     render(
-      <ChakraProvider>
-        <MemoryRouter
-          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-        >
-          <ImageCard
-            updateArray={[createNewsItem()]}
-            navigate={navigate}
-            selectedLanguage="Ja"
-          />
-        </MemoryRouter>
-      </ChakraProvider>,
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <ImageCard
+          updateArray={[createNewsItem()]}
+          navigate={navigate}
+          selectedLanguage="Ja"
+        />
+      </MemoryRouter>,
     );
 
     await user.click(screen.getByText('テストタイトル'));

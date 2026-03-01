@@ -1,4 +1,3 @@
-import { Box, HStack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NewsItem } from '@/entities/news';
 import { formatDate } from '@/shared/utils/date-format/date-format';
@@ -20,24 +19,20 @@ export const ImageCard: FC<ImageCardProps> = ({
   selectedLanguage,
   isSquareImage,
 }) => {
-  if (!updateArray) return <Box color="text.white">データがありません。</Box>;
+  if (!updateArray) return <p className="text-light">データがありません。</p>;
 
   return (
     <>
       {updateArray.map((item, index) => (
-        <Box
+        <div
           key={index}
-          position="relative"
-          cursor="pointer"
-          boxShadow="5px -5px #626063"
-          transition="box-shadow 0.3s ease"
-          _hover={{ boxShadow: '10px -10px #626063' }}
+          className="relative cursor-pointer shadow-[5px_-5px_#626063] transition-shadow duration-300 ease-in-out hover:shadow-[10px_-10px_#626063]"
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           {isSquareImage ? (
             <AspectRatio
               ratio={1 / 1}
-              // TODO: Chakraを削除したら<AspectRatio ratio={1 / 1}>に変更する
+              // TODO: Chakraを削除したら className を削除する
               className="[&_img]:h-full [&_img]:object-cover [&>div]:h-full"
             >
               <ImageFilter
@@ -51,44 +46,27 @@ export const ImageCard: FC<ImageCardProps> = ({
               isHoverEffectEnabled={true}
             />
           )}
-          <Box position="absolute" bottom="0" p={4} zIndex={10}>
-            <HStack overflow="hidden">
-              <Text
-                className="text-accent-pink!"
-                fontSize={{ base: '12px', lg: '16px' }}
-              >
+          <div className="absolute bottom-0 p-4 z-10 w-full">
+            <div className="flex items-center overflow-hidden gap-1">
+              <span className="text-accent-pink text-xs lg:text-base shrink-0">
                 News |
-              </Text>
-              <Text
-                color="text.white"
-                fontSize={{ base: '12px', lg: '16px' }}
-                noOfLines={1}
-              >
+              </span>
+              <span className="text-light text-xs lg:text-base truncate">
                 {formatDate(item.publishedAt)}
-              </Text>
-            </HStack>
-            <Text color="text.white" noOfLines={1}>
+              </span>
+            </div>
+            <p className="text-light truncate">
               {item[`title${selectedLanguage}`]}
-            </Text>
-            <Text
-              overflow="hidden"
-              color="text.white"
-              fontSize={{ base: '10px', lg: '16px' }}
-              mb={2}
+            </p>
+            <div
+              className="text-light text-[10px] lg:text-base mb-2 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] overflow-hidden **:inline"
               dangerouslySetInnerHTML={{
                 __html: cleanHtml(item[`content${selectedLanguage}`]),
               }}
-              sx={{
-                display: '-webkit-box',
-                WebkitBoxOrient: 'vertical',
-                WebkitLineClamp: 1,
-                overflow: 'hidden',
-                '& *': { display: 'inline' },
-              }}
             />
             <LinkUnderBarButton url="#" text="もっと見る" />
-          </Box>
-        </Box>
+          </div>
+        </div>
       ))}
     </>
   );

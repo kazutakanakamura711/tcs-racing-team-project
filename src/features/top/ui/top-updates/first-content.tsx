@@ -8,14 +8,12 @@ interface Props {
   updateArray: NewsItem[];
   navigate: NavigateFunction;
   selectedLanguage: string;
-  isSquareImage?: boolean;
 }
 
 export const FirstContent: FC<Props> = ({
   updateArray,
   navigate,
   selectedLanguage,
-  isSquareImage,
 }) => {
   return (
     <Box mb={{ base: 8, lg: 4 }}>
@@ -23,7 +21,7 @@ export const FirstContent: FC<Props> = ({
         updateArray={updateArray}
         navigate={navigate}
         selectedLanguage={selectedLanguage}
-        isSquareImage={isSquareImage}
+        isSquareImage={true}
       />
     </Box>
   );

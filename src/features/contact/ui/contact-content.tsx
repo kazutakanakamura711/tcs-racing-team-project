@@ -78,54 +78,44 @@ export const ContactContent: FC<Props> = ({
               Follow us on social media.
             </p>
             <div className="flex flex-col gap-4">
-              <div className="flex items-center w-full md:w-2/3 gap-4">
-                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
-                  <img src="/images/common/ico-youtube-white.svg" alt="" />
-                </div>
-                <LinkRouter
-                  to={youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {[
+                {
+                  icon: '/images/common/ico-youtube-white.svg',
+                  label: t('Youtube'),
+                  url: youtubeUrl,
+                },
+                {
+                  icon: '/images/common/ico-facebook-white.svg',
+                  label: t('Facebook'),
+                  url: facebookUrl,
+                },
+                {
+                  icon: '/images/common/ico-instagram-white.svg',
+                  label: t('Instagram'),
+                  url: instagramUrl,
+                },
+                {
+                  icon: '/images/common/ico-tiktok-white.svg',
+                  label: t('TikTok'),
+                  url: tiktokUrl,
+                },
+              ].map(({ icon, label, url }) => (
+                <div
+                  key={url}
+                  className="flex items-center w-full md:w-2/3 gap-4"
                 >
-                  <span>{t('Youtube')}</span>
-                </LinkRouter>
-              </div>
-              <div className="flex items-center w-full md:w-2/3 gap-4">
-                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
-                  <img src="/images/common/ico-facebook-white.svg" alt="" />
+                  <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
+                    <img src={icon} alt="" />
+                  </div>
+                  <LinkRouter
+                    to={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>{label}</span>
+                  </LinkRouter>
                 </div>
-                <LinkRouter
-                  to={facebookUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>{t('Facebook')}</span>
-                </LinkRouter>
-              </div>
-              <div className="flex items-center w-full md:w-2/3 gap-4">
-                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
-                  <img src="/images/common/ico-instagram-white.svg" alt="" />
-                </div>
-                <LinkRouter
-                  to={instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>{t('Instagram')}</span>
-                </LinkRouter>
-              </div>
-              <div className="flex items-center w-full md:w-2/3 gap-4">
-                <div className="flex items-center justify-center bg-dark size-6.75 rounded-full shrink-0">
-                  <img src="/images/common/ico-tiktok-white.svg" alt="" />
-                </div>
-                <LinkRouter
-                  to={tiktokUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>{t('TikTok')}</span>
-                </LinkRouter>
-              </div>
+              ))}
             </div>
           </div>
         </div>
