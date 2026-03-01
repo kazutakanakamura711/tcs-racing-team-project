@@ -48,10 +48,10 @@ export const ImageCard: FC<ImageCardProps> = ({
           )}
           <div className="absolute bottom-0 p-4 z-10 w-full">
             <div className="flex items-center overflow-hidden gap-1">
-              <span className="text-accent-pink text-xs lg:text-base shrink-0">
+              <span className="text-accent-pink text-xs md:text-base shrink-0">
                 News |
               </span>
-              <span className="text-light text-xs lg:text-base truncate">
+              <span className="text-light text-xs md:text-base truncate">
                 {formatDate(item.publishedAt)}
               </span>
             </div>
@@ -59,7 +59,7 @@ export const ImageCard: FC<ImageCardProps> = ({
               {item[`title${selectedLanguage}`]}
             </p>
             <div
-              className="text-light text-[10px] lg:text-base mb-2 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] overflow-hidden **:inline"
+              className="text-light text-[10px] md:text-base mb-2 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] overflow-hidden **:inline"
               dangerouslySetInnerHTML={{
                 __html: cleanHtml(item[`content${selectedLanguage}`]),
               }}
