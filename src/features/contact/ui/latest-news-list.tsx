@@ -1,4 +1,3 @@
-import { Box, Text } from '@chakra-ui/react';
 import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 import { NewsItem } from '@/entities/news';
@@ -20,33 +19,22 @@ export const LatestNewsList: FC<Props> = ({
   return (
     <>
       {news.map(item => (
-        <Box
+        <div
           key={item.id}
-          borderBottom="solid 1px"
-          borderColor="#fff"
-          pt="27px"
-          pb="19px"
-          cursor="pointer"
+          className="border-b! border-light! pt-7 pb-5 cursor-pointer"
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
-          <Box display="flex" alignItems="center" mb="15px">
-            <Text
-              className="text-accent-pink!"
-              fontSize="16px"
-              fontWeight="bold"
-            >
-              News |
-            </Text>
-            <Text pl="8px" fontSize="16px" fontWeight="bold" color="text.white">
+          <div className="flex items-center mb-4">
+            <p className="text-accent-pink! text-base font-bold">News |</p>
+            <p className="pl-2 text-base font-bold text-light">
               {formatDate(item.publishedAt)}
-            </Text>
-          </Box>
-          <Text color="text.white" fontSize="16px" fontWeight="bold">
+            </p>
+          </div>
+          <p className="text-light text-base font-bold">
             {item[`title${selectedLanguage}`]}
-          </Text>
-          <Box
-            color="text.white"
-            fontSize="14px"
+          </p>
+          <div
+            className="text-light text-sm"
             dangerouslySetInnerHTML={{
               __html: cleanHtml(item[`content${selectedLanguage}`]),
             }}
@@ -59,7 +47,7 @@ export const LatestNewsList: FC<Props> = ({
               maxHeight: '3em',
             }}
           />
-        </Box>
+        </div>
       ))}
     </>
   );
