@@ -17,9 +17,9 @@ export const Message: FC<Props> = ({ message }) => {
           alt=""
         />
       </div>
-      <div className="flex flex-col gap-4 absolute left-1/2 top-1/2 z-2 w-full -translate-x-1/2 -translate-y-1/2 text-center">
+      <div className="flex flex-col items-center gap-4 text-center absolute left-1/2 top-1/2 z-2 w-full -translate-x-1/2 -translate-y-1/2">
         <p className="font-bold text-light md:text-5xl">{message.title}</p>
-        <p className="mx-auto font-bold text-light text-[10px] md:text-lg md:max-w-147.5">
+        <p className="mx-auto font-bold text-light text-xs md:max-w-147.5 md:text-lg">
           {message.text}
         </p>
       </div>
