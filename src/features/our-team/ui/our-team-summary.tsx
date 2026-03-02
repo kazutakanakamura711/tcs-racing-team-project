@@ -1,4 +1,3 @@
-import { Box, Divider, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { OurTeamTitle } from './our-team-title';
 import { TFunction } from 'i18next';
@@ -9,136 +8,96 @@ interface Props {
 
 export const OurTeamSummary: FC<Props> = ({ t }) => {
   return (
-    <Box mb="192px" color="white">
-      <Divider orientation="horizontal" mx="auto" w="76%" borderColor="white" />
-      <Box
-        background={`linear-gradient(rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
-        backgroundSize="80%"
-        pt="74px"
-        pb={{ base: '92px', lg: '118px' }}
+    <div className="mb-48 text-white">
+      {/* TODO: Chakraを削除したら!を外す */}
+      <hr className="w-[76%] mx-auto! border! border-white! opacity-40" />
+      <div
+        className="pt-18.5 pb-23 md:pb-29.5 bg-position-[80%]"
+        style={{
+          background: `linear-gradient(rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`,
+          backgroundSize: '80%',
+        }}
       >
         <OurTeamTitle
           title='"存在意義・使命"'
           middleTitle="Mission"
           subTitle="Mission"
         />
-        <VStack
-          spacing="48px"
-          m="0 auto"
-          mt="128px"
-          w={{ base: '76%', lg: '418px' }}
-        >
-          <Text
-            textAlign="center"
-            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-          >
+        <div className="flex flex-col gap-12 mx-auto mt-32 w-[76%] md:w-104.5">
+          <p className="text-center text-base md:text-[18px]">
             {t('ourTeamMission')}
-          </Text>
-        </VStack>
-      </Box>
-      <Divider orientation="horizontal" mx="auto" w="76%" borderColor="white" />
-      <Box
-        background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`}
-        backgroundSize="80%"
-        pt="74px"
-        pb={{ base: '92px', lg: '118px' }}
+          </p>
+        </div>
+      </div>
+
+      {/* TODO: Chakraを削除したら!を外す */}
+      <hr className="w-[76%] mx-auto! border! border-white! opacity-40" />
+      <div
+        className="pt-18.5 pb-23 md:pb-29.5"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1), rgba(0, 0, 0, 0.3)), url(/images/common/img-bg-lattice.webp)`,
+          backgroundSize: '80%',
+        }}
       >
         <OurTeamTitle
           title='"将来像・方向性"'
           middleTitle="Vision"
           subTitle="Vision"
         />
-        <VStack
-          spacing="48px"
-          m="0 auto"
-          mt="128px"
-          w={{ base: '76%', lg: '648px' }}
-        >
-          <Text
-            textAlign="center"
-            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-          >
+        <div className="flex flex-col gap-12 mx-auto mt-32 w-[76%] md:w-162">
+          <p className="text-center text-base md:text-[18px]">
             {t(`ourTeamVision.${0}`)}
-          </Text>
-          <Text
-            textAlign="center"
-            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-          >
+          </p>
+          <p className="text-center text-base md:text-[18px]">
             {t(`ourTeamVision.${1}`)}
-          </Text>
-          <Text
-            textAlign="center"
-            fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-          >
+          </p>
+          <p className="text-center text-base md:text-[18px]">
             {t(`ourTeamVision.${2}`)}
-          </Text>
-        </VStack>
-      </Box>
-      <Divider orientation="horizontal" mx="auto" w="76%" borderColor="white" />
-      <Box
-        background={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1)), url(/images/common/img-bg-lattice.webp)`}
-        backgroundSize="80%"
-        pt="74px"
-        pb={{ base: '92px', lg: '118px' }}
+          </p>
+        </div>
+      </div>
+
+      {/* TODO: Chakraを削除したら!を外す */}
+      <hr className="w-[76%] mx-auto! border! border-white! opacity-40" />
+      <div
+        className="pt-18.5 pb-23 md:pb-29.5"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(26, 26, 26, 1)), url(/images/common/img-bg-lattice.webp)`,
+          backgroundSize: '80%',
+        }}
       >
         <OurTeamTitle
           title='"価値観・行動指針"'
           middleTitle="Value"
           subTitle="Value"
         />
-        <VStack
-          spacing="48px"
-          m="0 auto"
-          mt="128px"
-          w={{ base: '76%', lg: '648px' }}
-        >
-          <Box>
-            <Text
-              textAlign="center"
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-              fontWeight="bold"
-            >
+        <div className="flex flex-col gap-12 mx-auto mt-32 w-[76%] md:w-162">
+          <div>
+            <p className="text-center text-base md:text-[18px] font-bold">
               {t(`ourTeamValueTitle.${0}`)}
-            </Text>
-            <Text
-              textAlign="center"
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-            >
+            </p>
+            <p className="text-center text-base md:text-[18px]">
               {t('ourTeamValueBusiness')}
-            </Text>
-          </Box>
-          <Box>
-            <Text
-              textAlign="center"
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-              fontWeight="bold"
-            >
+            </p>
+          </div>
+          <div>
+            <p className="text-center text-base md:text-[18px] font-bold">
               {t(`ourTeamValueTitle.${1}`)}
-            </Text>
-            <Text
-              textAlign="center"
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-            >
+            </p>
+            <p className="text-center text-base md:text-[18px]">
               {t('ourTeamValueChallenge')}
-            </Text>
-          </Box>
-          <Box>
-            <Text
-              textAlign="center"
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-              fontWeight="bold"
-            >
+            </p>
+          </div>
+          <div>
+            <p className="text-center text-base md:text-[18px] font-bold">
               {t(`ourTeamValueTitle.${2}`)}
-            </Text>
-            <Text
-              textAlign="center"
-              fontSize={{ base: '16px', md: '17px', lg: '18px' }}
-            >
+            </p>
+            <p className="text-center text-base md:text-[18px]">
               {t('ourTeamValueFeeling')}
-            </Text>
-          </Box>
-        </VStack>
-      </Box>
-    </Box>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

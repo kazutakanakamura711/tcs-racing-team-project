@@ -1,6 +1,5 @@
 import { CenteredContainer } from '@/shared/ui';
 import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
-import { Box, Grid, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -12,53 +11,35 @@ interface Props {
 export const OurTeamRiders: FC<Props> = ({ riders, navigate }) => {
   return (
     <CenteredContainer>
-      <Box mb="160px">
-        <Grid
-          templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
-          gap={8}
-        >
+      <div className="mb-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {riders.map(rider => (
-            <Box
+            <div
               key={rider.id}
-              cursor="pointer"
-              position="relative"
-              aspectRatio="1097 / 880"
+              className="cursor-pointer relative aspect-1097/880"
               onClick={() => {
                 navigate(OUR_TEAM_DETAIL.replace(':id', rider.id));
               }}
             >
-              <Image
+              <img
                 src={rider.ourTeamPageTheRiderSectionImagePath}
-                h="100%"
-                mx="auto"
+                className="h-full! mx-auto"
                 alt={rider.nameJa}
               />
-              <Box
-                position="absolute"
-                bottom="0"
-                left="50%"
-                transform="translate(-50%, -50%)"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                w="100%"
-              >
-                <Text fontSize="24px" mr="48px">
-                  {rider.nameJa}
-                </Text>
-                <Box>
-                  <Image
-                    w="11px"
-                    h="25px"
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center gap-6 w-full drop-shadow-[0_0_2px_rgba(0,0,0,1)]">
+                <p className="text-[24px] text-white">{rider.nameJa}</p>
+                <div>
+                  <img
+                    className="w-3 h-6!"
                     src="/images/common/ico-arrow-white-brock.svg"
                     alt=""
                   />
-                </Box>
-              </Box>
-            </Box>
+                </div>
+              </div>
+            </div>
           ))}
-        </Grid>
-      </Box>
+        </div>
+      </div>
     </CenteredContainer>
   );
 };

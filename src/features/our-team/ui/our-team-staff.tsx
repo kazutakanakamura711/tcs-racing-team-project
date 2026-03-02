@@ -1,6 +1,5 @@
 import { CenteredContainer } from '@/shared/ui';
 import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
-import { Box, Grid, Image, Text, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { OurTeamSmallTitle } from './our-team-small-title';
 import { NavigateFunction } from 'react-router-dom';
@@ -18,97 +17,57 @@ export const OurTeamStaff: FC<Props> = ({
 }) => {
   return (
     <CenteredContainer>
-      <Box mb={{ base: '200px', lg: '280px' }}>
+      <div className="mb-50 md:mb-70">
         <OurTeamSmallTitle title="The Staff" />
-        <VStack spacing={24}>
+        <div className="flex flex-col gap-24">
           {/* メインスタッフ表示 */}
-          <Grid
-            templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
-            gap={8}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {mainStaffs.map(staff => (
-              <Box
+              <div
                 key={staff.id}
-                cursor="pointer"
-                position="relative"
+                className="cursor-pointer relative"
                 onClick={() => {
                   navigate(OUR_TEAM_DETAIL.replace(':id', staff.id));
                 }}
               >
-                <Box
-                  w={{ base: '100%', lg: '72%' }}
-                  m="0 auto"
-                  bg="black"
-                  h="100%"
-                >
-                  <Image src={staff.gradationImagesPath} alt={staff.nameJa} />
-                </Box>
-                <Box
-                  position="absolute"
-                  bottom="0"
-                  left="50%"
-                  transform="translate(-50%, -50%)"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  w="100%"
-                >
-                  <Text fontSize="18px" mr="48px">
-                    {staff.nameJa}
-                  </Text>
-                  <Box>
-                    <Image
-                      w="11px"
-                      h="25px"
+                <div className="w-full md:w-[72%] mx-auto bg-black h-full">
+                  <img src={staff.gradationImagesPath} alt={staff.nameJa} />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center gap-6 w-full drop-shadow-[0_0_2px_rgba(0,0,0,1)]">
+                  <p className="text-[18px]">{staff.nameJa}</p>
+                  <div>
+                    <img
+                      className="w-3 h-6!"
                       src="/images/common/ico-arrow-white-brock.svg"
                       alt=""
                     />
-                  </Box>
-                </Box>
-              </Box>
+                  </div>
+                </div>
+              </div>
             ))}
-          </Grid>
+          </div>
 
           {/* サブスタッフ表示 */}
-          <Grid
-            templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)' }}
-            gap={{ base: 8, lg: 8 }}
-          >
+          <div className="grid grid-cols-2 gap-8">
             {subStaffs.map(staff => (
-              <Box key={staff.id} position="relative">
-                <Box
-                  w={{ base: '100%', lg: '72%' }}
-                  m="0 auto"
-                  bg="black"
-                  h="100%"
-                  minH="126px"
-                >
-                  <Image src={staff.gradationImagesPath} alt={staff.nameJa} />
-                </Box>
-                <Box
-                  position="absolute"
-                  bottom="0"
-                  left="50%"
-                  transform="translate(-50%, -50%)"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  w="100%"
-                >
-                  <Text
-                    fontSize={{
-                      base: staff.nameJa.length >= 7 ? '12px' : '18px',
-                      lg: '18px',
-                    }}
+              <div key={staff.id} className="relative">
+                <div className="w-full md:w-[72%] mx-auto bg-black h-full">
+                  <img src={staff.gradationImagesPath} alt={staff.nameJa} />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center w-full drop-shadow-[0_0_2px_rgba(0,0,0,1)]">
+                  <p
+                    className={`md:text-[18px] ${
+                      staff.nameJa.length >= 7 ? 'text-[12px]' : 'text-[18px]'
+                    }`}
                   >
                     {staff.nameJa}
-                  </Text>
-                </Box>
-              </Box>
+                  </p>
+                </div>
+              </div>
             ))}
-          </Grid>
-        </VStack>
-      </Box>
+          </div>
+        </div>
+      </div>
     </CenteredContainer>
   );
 };

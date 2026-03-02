@@ -1,5 +1,4 @@
 import { CenteredContainer } from '@/shared/ui';
-import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
 type Props = {
@@ -11,49 +10,30 @@ type Props = {
 export const OurTeamTitle: FC<Props> = ({ title, middleTitle, subTitle }) => {
   return (
     <CenteredContainer>
-      <Box position="relative" minH="160px" mb="56px">
-        <Box
-          position="absolute"
-          top="50%"
-          left="50%"
-          transform="translate(-50%, -50%)"
-          color="#1A1A1A"
-          fontSize={{ base: '68px', lg: '108px' }}
-          textShadow="1px 1px 0 #C0C0C0, -1px -1px 0 #C0C0C0, -1px 1px 0 #C0C0C0, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0"
-          zIndex="0"
+      {/* Container Box */}
+      <div className="relative min-h-40 mb-14">
+        {/* Subtitle (Background Stroke Text) */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#1A1A1A] text-[68px] md:text-[108px] z-0 whitespace-nowrap"
+          style={{
+            textShadow:
+              '1px 1px 0 #C0C0C0, -1px -1px 0 #C0C0C0, -1px 1px 0 #C0C0C0, 1px -1px 0 #C0C0C0, 0px 1px 0 #C0C0C0, 0 -1px 0 #C0C0C0, -1px 0 0 #C0C0C0, 1px 0 0 #C0C0C0',
+          }}
         >
           {subTitle}
-        </Box>
-        <Box
-          position="absolute"
-          top="88px"
-          left="50%"
-          transform="translateX(-50%)"
-          color="text.white"
-          fontSize={{ base: '28px', lg: '40px' }}
-          fontWeight="bold"
-          zIndex="1"
-          textAlign="center"
-          w="100%"
-        >
+        </div>
+
+        {/* Main Title Wrapper */}
+        <div className="absolute top-22 left-1/2 -translate-x-1/2 text-white text-[28px] md:text-[40px] font-bold z-1 text-center w-full">
           {title}
-          <Box fontSize={{ base: '28px', lg: '40px' }} position="relative">
+
+          {/* Middle Title with Rainbow Underline */}
+          <div className="relative inline-block w-full text-[28px] md:text-[40px]">
             {middleTitle}
-            <Box
-              position="absolute"
-              bottom="0"
-              left="50%"
-              transform="translateX(-50%)"
-              w="100%"
-              maxW="87px"
-              height="3px"
-              bg={'url(images/common/img-text-bg-rainbow.webp)'}
-              bgSize="cover"
-              bgRepeat="no-repeat"
-            />
-          </Box>
-        </Box>
-      </Box>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-21.75 h-0.75 bg-cover bg-no-repeat bg-[url('/images/common/img-text-bg-rainbow.webp')]" />
+          </div>
+        </div>
+      </div>
     </CenteredContainer>
   );
 };
