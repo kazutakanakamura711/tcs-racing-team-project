@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
 interface SmallTitleProps {
@@ -7,10 +6,8 @@ interface SmallTitleProps {
 
 export const OurTeamSmallTitle: FC<SmallTitleProps> = ({ title }) => {
   return (
-    <Box mb={{ base: '46px', lg: '68px' }} textAlign="center">
-      <Box color="text.white" fontSize="32px" fontWeight="bold">
-        {title}
-      </Box>
-    </Box>
+    <div className="mb-11.5 md:mb-17 text-center">
+      <h2 className="text-light text-[32px]! font-bold!">{title}</h2>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 interface Props {
@@ -7,47 +6,19 @@ interface Props {
 
 export const OurTeamHeroImage: FC<Props> = ({ heroImageSrc }) => {
   return (
-    <Box
-      position="relative"
-      h={{ base: 'auto', lg: 'calc(100vh - 52px)' }}
-      mt={{ base: '0', lg: '52px' }}
-    >
-      <Image
+    <div className="relative h-auto md:h-[calc(100vh-52px)] mt-0 md:mt-13">
+      <img
         src={heroImageSrc}
-        w={{ base: 'auto', lg: '100%' }}
-        h={{ base: 'auto', lg: '100%' }}
-        objectFit={{ base: 'initial', lg: 'cover' }}
-        mt={{ base: '108px', lg: '0' }}
+        className="w-auto md:w-full h-auto md:h-full! md:object-cover mt-27 md:mt-0"
         alt=""
       />
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        bg="#000"
-        opacity={0.5}
-        zIndex="1"
-        display={{ base: 'none', lg: 'block' }}
-      />
-      <Text
-        as="h1"
-        fontSize="48px"
-        fontWeight="bold"
-        color="text.white"
-        position="absolute"
-        bottom="0"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        zIndex="2"
-        display={{ base: 'none', lg: 'block' }}
-      >
+      <div className="hidden md:block absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-10" />
+      <h1 className="hidden md:block absolute bottom-32 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 text-[48px]! font-bold! text-light">
         熱狂的に | Go Crazy
-        <Box as="span" display="block" textAlign="center" fontSize="30px">
+        <span className="block text-center text-[30px]">
           - 前進・革新・熱心 -
-        </Box>
-      </Text>
-    </Box>
+        </span>
+      </h1>
+    </div>
   );
 };
