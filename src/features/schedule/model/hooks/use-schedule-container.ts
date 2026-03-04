@@ -1,16 +1,17 @@
-import { useBreakpointValue } from '@chakra-ui/react';
 import { useGetSchedule } from '@/shared/hooks/use-get-schedule';
 import { useLanguage } from '@/shared/hooks/use-language';
+import { useMediaQuery } from '@/shared/hooks/use-media-query';
+import { mediaQuery } from '@/shared/utils/break-point/break-point';
 
 export const useScheduleContainer = () => {
   const [selectedLanguage] = useLanguage();
   const { raceScheduleList, eventScheduleList } = useGetSchedule({
     limit: 100,
   });
-  const heroImageSrc = useBreakpointValue({
-    base: '/images/schedule/img-schedule-top-sp.webp',
-    lg: '/images/schedule/img-schedule-top-pc.webp',
-  });
+  const isTablet = useMediaQuery(mediaQuery.tablet);
+  const heroImageSrc = isTablet
+    ? '/images/schedule/img-schedule-top-sp.webp'
+    : '/images/schedule/img-schedule-top-pc.webp';
 
   return {
     selectedLanguage,

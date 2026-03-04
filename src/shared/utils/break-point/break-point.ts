@@ -1,4 +1,4 @@
 export const mediaQuery = {
-  // 他のブレークポイントが必要な場合はここに追加
+  // 767px以下: モバイルレイアウト / 768px以上: PCレイアウト
   tablet: '(max-width: 767px)',
 };

@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/react-vite';
-import { Box, ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 
 // CSSのインポート
@@ -14,7 +13,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-
     a11y: {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
@@ -22,27 +20,22 @@ const preview: Preview = {
       test: 'todo',
     },
     backgrounds: {
-      values: [
-        { name: 'dark', value: '#1a1a1a' }, // アプリと同じ色を定義
-      ],
+      values: [{ name: 'dark', value: '#1a1a1a' }],
     },
   },
   decorators: [
     Story =>
       React.createElement(
-        ChakraProvider,
-        null,
-        // Boxで包んで背景色を強制する
-        React.createElement(
-          Box,
-          {
-            bg: '#1a1a1a',
-            p: 8, // 余白
-            minH: '100%', // 全体の高さ
-            color: 'white', // デフォルト文字色を白に
+        'div',
+        {
+          style: {
+            backgroundColor: '#1a1a1a',
+            padding: '32px',
+            minHeight: '100%',
+            color: 'white',
           },
-          React.createElement(Story),
-        ),
+        },
+        React.createElement(Story),
       ),
   ],
 };

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { useBreakpointValue } from '@chakra-ui/react';
+import { useMediaQuery } from '@/shared/hooks/use-media-query';
+import { mediaQuery } from '@/shared/utils/break-point/break-point';
 import {
   getOurTeamPageTheRiderSectionList,
   getOurTeamTheStaffMainList,
@@ -19,10 +20,10 @@ export const useOurTeamContainer = () => {
     text: t('ourTeamMissionText'),
   };
 
-  const heroImageSrc = useBreakpointValue({
-    base: '/images/team/img-team-top-sp.webp',
-    lg: '/images/team/img-team-top-pc.webp',
-  });
+  const isTablet = useMediaQuery(mediaQuery.tablet);
+  const heroImageSrc = isTablet
+    ? '/images/team/img-team-top-sp.webp'
+    : '/images/team/img-team-top-pc.webp';
 
   return {
     t,
