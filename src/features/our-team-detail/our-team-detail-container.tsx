@@ -7,7 +7,6 @@ import {
 } from './ui';
 import { useOurTeamDetailContainer } from './model/hooks/use-our-team-detail-container';
 import { OurTeamDetailHeroImage } from './ui/our-team-detail-hero-image';
-import { Box } from '@chakra-ui/react';
 
 export const OurTeamDetailContainer = () => {
   const { parsedId, t, member, memberList, heroImageSrc, isTablet, navigate } =
@@ -16,18 +15,18 @@ export const OurTeamDetailContainer = () => {
   if (!parsedId || !member) return <NotFoundPage />;
 
   return (
-    <Box mt={{ base: '110px', lg: '50px' }}>
+    <div className="mt-27.5 md:mt-12.5">
       <OurTeamDetailHeroImage
         member={member}
         t={t}
         heroImageSrc={heroImageSrc}
       />
       {/* Profile / Result エリア */}
-      <Box mt={{ base: '64px', lg: '96px' }}>
+      <div className="mt-16 md:mt-24">
         <CenteredContainer>
           <OurTeamDetailProfileContent id={member.id} t={t} />
         </CenteredContainer>
-      </Box>
+      </div>
       {/* Aboutエリア */}
       <OurTeamDetailAbout member={member} t={t} />
       {/* Other Membersエリア */}
@@ -38,6 +37,6 @@ export const OurTeamDetailContainer = () => {
           navigate={navigate}
         />
       </CenteredContainer>
-    </Box>
+    </div>
   );
 };

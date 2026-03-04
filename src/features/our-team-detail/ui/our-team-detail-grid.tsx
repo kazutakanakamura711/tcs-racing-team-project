@@ -1,4 +1,4 @@
-import { Box, Text, Image, SimpleGrid } from '@chakra-ui/react';
+import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { Member, OUR_TEAM_DETAIL } from '@/shared/constants';
 
@@ -8,40 +8,35 @@ interface Props {
   columns: number;
 }
 
-export const OurTeamDetailGrid: React.FC<Props> = ({
+export const OurTeamDetailGrid: FC<Props> = ({
   memberList,
   navigate,
   columns,
 }) => {
   return (
-    <SimpleGrid columns={columns} spacing={10} justifyContent="center">
+    <div
+      className="grid gap-10"
+      style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
+    >
       {memberList.map(member => (
-        <Box key={member.id} w="100%" h="100%">
-          <Box
-            w="100%"
-            aspectRatio="1"
-            overflow="hidden"
-            cursor="pointer"
-            onClick={() => {
-              navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
-            }}
+        <div key={member.id} className="w-full h-full">
+          <div
+            className="w-full aspect-square overflow-hidden cursor-pointer"
+            onClick={() => navigate(OUR_TEAM_DETAIL.replace(':id', member.id))}
           >
             {member.gradationImagesPath && (
-              <Image
-                display="block"
-                w="100%"
-                h="100%"
-                objectFit="cover"
+              <img
+                className="block w-full h-full object-cover"
                 src={member.gradationImagesPath}
                 alt={member.nameJa}
               />
             )}
-          </Box>
-          <Text fontSize="16px" color="white" textAlign="center">
+          </div>
+          <p className="text-base text-white text-center mt-1">
             {member.nameEn.toUpperCase()}
-          </Text>
-        </Box>
+          </p>
+        </div>
       ))}
-    </SimpleGrid>
+    </div>
   );
 };

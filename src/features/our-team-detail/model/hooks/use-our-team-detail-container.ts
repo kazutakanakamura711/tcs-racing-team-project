@@ -20,7 +20,7 @@ export const useOurTeamDetailContainer = () => {
 
   const heroImageSrc = useBreakpointValue({
     base: member?.memberPageFirstViewBackgroundImageSp,
-    lg: member?.memberPageFirstViewBackgroundImagePc,
+    md: member?.memberPageFirstViewBackgroundImagePc,
   });
 
   return {
