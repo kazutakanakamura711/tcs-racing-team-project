@@ -1,4 +1,3 @@
-import { Box, Image, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Member } from '@/shared/constants';
 import { TFunction } from 'i18next';
@@ -10,81 +9,63 @@ interface Props {
 
 export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
   return (
-    <Box
-      w={{ base: '100%', lg: '88%' }}
-      ml="auto"
-      mb={{ base: '139px', lg: '288px' }}
-      position="relative"
-    >
-      <Box display={{ base: 'flex', lg: 'none' }} justifyContent="center">
-        <Text
-          position="relative"
-          display="inline-block"
-          mb="65px"
-          pb="8px"
-          fontSize="24px"
-          fontWeight="bold"
-          color="text.white"
-        >
+    <div className="w-full md:w-[88%] ml-auto mb-35 md:mb-72">
+      {/* タイトル: モバイルのみ */}
+      <div className="flex md:hidden justify-center">
+        <p className="relative inline-block mb-16 pb-2 text-2xl font-bold text-light">
           {t(`aboutTitle.${member.id}`)}
-        </Text>
-      </Box>
+        </p>
+      </div>
 
-      <Box
-        w={{ base: '100%', lg: '50%' }}
-        minW={{ base: '320px', lg: '850px' }}
-        ml="auto"
-        mb={{ base: '16px', lg: '0' }}
-      >
+      {/* PC: 画像の上にテキストを重ねる */}
+      <div className="hidden md:block relative overflow-hidden">
+        {/* テキスト（高さの基準） */}
+        <div className="relative w-[56%] text-light py-8 pl-8 z-10 min-h-137.5">
+          {/* TODO: Chakraを削除したら!を外す */}
+          <p className="text-[35px] font-bold mb-8!">
+            {t(`aboutTitle.${member.id}`)}
+          </p>
+          <p className="leading-loose text-sm whitespace-pre-line">
+            {t(`about.${member.id}`)}
+          </p>
+        </div>
+
+        {/* 画像: テキストコンテナの高さに合わせる */}
         {member.memberPageAboutSectionImagesPath ? (
-          <Image
-            w="100%"
-            minH={{ base: 'none', lg: '550px' }}
-            maxH={{ base: '448px', lg: 'auto' }}
-            objectFit="cover"
+          <img
+            className="absolute inset-0 w-full h-full! object-contain object-right"
             src={member.memberPageAboutSectionImagesPath}
             alt={member.nameJa}
           />
         ) : (
-          <Box w="100%" minH={{ base: '448px', lg: '550px' }} />
+          <div className="absolute inset-0 w-full h-full" />
         )}
-      </Box>
 
-      <Box
-        position="absolute"
-        top="0"
-        right="0"
-        w="50%"
-        minW={{ base: 'auto', lg: '850px' }}
-        h="100%"
-        bgGradient="linear(to-r, #1A1A1A, transparent)"
-        display={{ base: 'none', lg: 'block' }}
-      />
-      <Box
-        color="text.white"
-        w={{ base: '88%', lg: '60%' }}
-        position={{ base: 'unset', lg: 'absolute' }}
-        top="10px"
-        left="0"
-        mx={{ base: 'auto', lg: '0' }}
-      >
-        <Text
-          fontSize="35px"
-          fontWeight="bold"
-          mb="65px"
-          display={{ base: 'none', lg: 'block' }}
-        >
-          {t(`aboutTitle.${member.id}`)}
-        </Text>
-        <Text
-          lineHeight="2"
-          fontSize="14px"
-          whiteSpace="pre-line"
-          color="text.white"
-        >
-          {t(`about.${member.id}`)}
-        </Text>
-      </Box>
-    </Box>
+        {/* グラデーションオーバーレイ */}
+        <div
+          className="absolute inset-0 z-5"
+          style={{
+            background:
+              'linear-gradient(to right, #1A1A1A 50%, transparent 70%)',
+          }}
+        />
+      </div>
+
+      {/* モバイル: 画像とテキスト縦並び */}
+      <div className="md:hidden">
+        {member.memberPageAboutSectionImagesPath && (
+          <img
+            className="w-full max-h-112 object-cover"
+            src={member.memberPageAboutSectionImagesPath}
+            alt={member.nameJa}
+          />
+        )}
+        <div className="w-[88%] mx-auto mt-8">
+          <p className="leading-loose text-sm whitespace-pre-line text-light">
+            {t(`about.${member.id}`)}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };

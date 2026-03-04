@@ -6,15 +6,6 @@ import {
   youtubeUrl,
   Member,
 } from '@/shared/constants';
-import {
-  HStack,
-  Box,
-  Image,
-  Text,
-  VStack,
-  Container,
-  Heading,
-} from '@chakra-ui/react';
 import { FC } from 'react';
 import { TFunction } from 'i18next';
 
@@ -30,123 +21,49 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
   heroImageSrc,
 }) => {
   if (!member) {
-    return <Text>No data</Text>;
+    return <p>No data</p>;
   }
 
   return (
-    <Box
-      position="relative"
-      w="100%"
-      h={{ base: 'auto', lg: '100vh' }}
-      bg="#1a1a1a"
-      overflow="hidden"
-    >
+    <div className="relative w-full h-auto md:h-screen bg-[#1a1a1a] overflow-hidden">
       {/* 背景画像 */}
       {heroImageSrc ? (
-        <Image
-          src={heroImageSrc}
-          alt=""
-          bg="#1a1a1a"
-          w="100%"
-          h="auto"
-          display="block"
-          zIndex="0"
-        />
+        <img src={heroImageSrc} alt="" className="w-full h-auto block z-0" />
       ) : (
-        // 画像がない場合でも高さを確保してレイアウトが崩れないようにするための空のBox
-        <Box
-          bg="#1a1a1a"
-          w="100%"
-          h={{ base: '80vw', lg: '100vh' }}
-          display="block"
-          zIndex="0"
-        />
+        <div className="bg-[#1a1a1a] w-full h-[80vw] md:h-screen block z-0" />
       )}
 
-      {/* 人物画像：背景画像の上に重ねる */}
+      {/* 人物画像 */}
       {member.memberPageFirstViewMemberImagePath ? (
-        <Image
+        <img
           src={member.memberPageFirstViewMemberImagePath}
           alt={member.nameJa}
-          position="absolute"
-          top="0"
-          left={{ base: '20%', lg: '0' }}
-          w="100%"
-          h={{ base: 'auto', lg: '100%' }}
-          objectFit="contain"
-          objectPosition={['80% bottom', '90% bottom']}
-          zIndex="1"
+          className="absolute top-0 left-[20%] md:left-0 w-full h-auto md:h-full! object-contain object-[80%_bottom] md:object-[90%_bottom] z-1"
         />
       ) : (
-        // 画像がない場合でも高さを確保してレイアウトが崩れないようにするための空のBox
-        <Box
-          position="absolute"
-          top="0"
-          left={{ base: '20%', lg: '0' }}
-          w="100%"
-          h={{ base: 'auto', lg: '100%' }}
-          zIndex="1"
-        />
+        <div className="absolute top-0 left-[20%] md:left-0 w-full h-auto md:h-full z-1" />
       )}
 
       {/* タイトルテキスト（名言） */}
-      <Box
-        position="absolute"
-        top={{ base: '40%', lg: '50%' }}
-        left={{ base: '40%', lg: '70%' }}
-        transform="translate(-50%, -50%)"
-        zIndex="3"
-        w={{ base: '60%', lg: '48%' }}
-        textAlign="left"
-      >
-        <Text
-          fontFamily="'m-plus-1c', sans-serif !important"
-          fontSize={{ base: '16px', lg: '32px' }}
-          fontWeight="bold"
-          color="text.white"
-          textShadow="2px 2px 8px rgba(0,0,0,1)"
-          lineHeight="1.2"
+      <div className="p-2 absolute top-[40%] md:top-1/2 left-[40%] md:left-[80%] -translate-x-1/2 -translate-y-1/2 z-3 w-[60%] md:w-[40%] text-left">
+        <p
+          className="text-base md:text-[32px] font-bold text-light leading-[1.2]"
+          style={{ textShadow: '2px 2px 8px rgba(0,0,0,1)' }}
         >
           {t(`title.${member.id}`)}
-        </Text>
-      </Box>
+        </p>
+      </div>
+
       {/* コンテンツエリア（名前とSNS） */}
-      <Container
-        maxW="none"
-        w="100%"
-        px={0}
-        mx={0}
-        position={{ base: 'relative', lg: 'absolute' }}
-        top={{ lg: '0' }}
-        left={{ lg: '0' }}
-        transform="none"
-        h={{ base: 'auto', lg: '100%' }}
-        zIndex="2"
-        mt={{ base: '24px', lg: '0' }}
-      >
-        <VStack
-          align="flex-start"
-          spacing={3}
-          position={{ base: 'relative', lg: 'absolute' }}
-          bottom={{ lg: '15%' }}
-          left={{ base: '6%', lg: '12%' }}
-          w={['100%', 'auto']}
-          px={0}
-          pb={{ base: '20px', lg: '0' }}
-        >
-          <Heading
-            fontFamily="'m-plus-1c', sans-serif !important"
-            color="text.white"
-            whiteSpace="pre-line"
-            fontSize={{ base: '32px', lg: '100px' }}
-            lineHeight="1.1"
-            textTransform="uppercase"
-            textShadow="2px 2px 10px rgba(0,0,0,0.8)"
+      <div className="w-full px-0 mx-0 relative md:absolute md:top-0 md:left-0 md:h-full z-2 mt-6 md:mt-0">
+        <div className="flex flex-col gap-3 relative md:absolute md:bottom-[15%] left-[6%] md:left-[12%] pb-5 md:pb-0">
+          <h1
+            className="text-light whitespace-pre-line text-[32px]! font-bold! md:text-[100px]! leading-[1.1] uppercase"
+            style={{ textShadow: '2px 2px 10px rgba(0,0,0,0.8)' }}
           >
             {member.nameEn.replace(' ', '\n')}
-          </Heading>
-
-          <HStack spacing={4}>
+          </h1>
+          <div className="flex items-center gap-4">
             <SnsIcon
               href={facebookUrl}
               icon="/images/common/ico-facebook-bg-white.webp"
@@ -167,9 +84,9 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
               icon="/images/common/ico-tiktok-bg-white.webp"
               label="TikTok"
             />
-          </HStack>
-        </VStack>
-      </Container>
-    </Box>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

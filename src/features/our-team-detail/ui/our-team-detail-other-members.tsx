@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { Member } from '@/shared/constants';
 import { OurTeamDetailGrid } from './our-team-detail-grid';
@@ -10,7 +10,7 @@ interface Props {
   memberList: Member[];
 }
 
-export const OurTeamDetailOtherMembers: React.FC<Props> = ({
+export const OurTeamDetailOtherMembers: FC<Props> = ({
   isTablet,
   navigate,
   memberList,
@@ -23,16 +23,10 @@ export const OurTeamDetailOtherMembers: React.FC<Props> = ({
       : 4;
 
   return (
-    <Box mb="139px">
-      <Text
-        fontSize="34px"
-        fontWeight="bold"
-        textAlign="center"
-        mb="88px"
-        color="text.white"
-      >
+    <div className="mb-35">
+      <p className="text-[34px] font-bold text-center mb-22! text-light">
         Other Members
-      </Text>
+      </p>
       {shouldUseGrid ? (
         <OurTeamDetailGrid
           memberList={memberList}
@@ -42,6 +36,6 @@ export const OurTeamDetailOtherMembers: React.FC<Props> = ({
       ) : (
         <OurTeamDetailCarousel memberList={memberList} navigate={navigate} />
       )}
-    </Box>
+    </div>
   );
 };
