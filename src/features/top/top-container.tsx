@@ -1,6 +1,5 @@
 import { Title, Message, CenteredContainer } from '@/shared/ui';
 import { useTopContainer } from './model/hooks/use-top-container';
-import { Box } from '@chakra-ui/react';
 import { TopSchedule, TopSlider, TopStaff, TopTheTeam, TopUpdates } from './ui';
 
 export const TopContainer = () => {
@@ -24,13 +23,9 @@ export const TopContainer = () => {
 
   return (
     <>
-      <Box
-        position="relative"
-        h={{ base: 'calc(100vh - 90px)', lg: 'calc(100vh - 90px)' }}
-        mt={{ base: '110px', md: '50px' }}
-      >
+      <div className="relative h-[calc(100vh-90px)] mt-27.5 md:mt-12.5">
         <TopSlider isTablet={isTablet} images={topSliderImages} />
-      </Box>
+      </div>
       <CenteredContainer>
         <Message message={message} />
       </CenteredContainer>

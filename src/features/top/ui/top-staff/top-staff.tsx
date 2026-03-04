@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { RainbowUnderlineLink, CenteredContainer } from '@/shared/ui';
 import {
   Member,
@@ -6,7 +7,6 @@ import {
   OUR_TEAM,
   MemberTypeDisplay,
 } from '@/shared/constants';
-import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import { NavigateFunction } from 'react-router-dom';
 
 interface Props {
@@ -14,75 +14,48 @@ interface Props {
   navigate: NavigateFunction;
 }
 
-export const TopStaff: React.FC<Props> = ({ staffList, navigate }) => {
+export const TopStaff: FC<Props> = ({ staffList, navigate }) => {
   return (
-    <Box mb="116px">
+    <div className="mb-29">
       <CenteredContainer>
-        <Grid
-          templateColumns={{ base: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-          gap={{ base: '16px', lg: 12 }}
-          mb="16px"
-          justifyItems="center"
-        >
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12 mb-4 justify-items-center">
           {staffList.map(staff => (
-            <GridItem
+            <div
               key={staff.id}
-              w="full"
-              h="auto"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
+              className="w-full h-auto flex justify-center items-center"
             >
-              <Box
-                position="relative"
-                mb="16px"
-                h="100%"
-                cursor={
-                  staff.id === MemberId.YusukeFukumitsu ? 'pointer' : 'default'
-                }
+              <div
+                className={`relative mb-4 h-full ${
+                  staff.id === MemberId.YusukeFukumitsu
+                    ? 'cursor-pointer'
+                    : 'cursor-default'
+                }`}
                 onClick={() => {
                   if (staff.id === MemberId.YusukeFukumitsu) {
                     navigate(OUR_TEAM_DETAIL.replace(':id', staff.id));
                   }
                 }}
               >
-                <Image
+                <img
                   src={staff.gradationImagesPath}
                   alt={staff.nameJa}
-                  margin="auto"
-                  w="full"
-                  maxW={{ base: 'full', lg: '216px' }}
-                  h="auto"
-                  objectFit="cover"
+                  className="mx-auto w-full md:max-w-54 h-auto object-cover"
                 />
-                <Box
-                  position="absolute"
-                  top="104%"
-                  left="10%"
-                  transform="translateY(-100%)"
-                >
-                  <Text fontSize={{ base: '10px', lg: '16px' }}>
+                <div className="absolute top-[104%] left-[10%] -translate-y-full">
+                  <p className="text-[10px] md:text-base">
                     {MemberTypeDisplay[staff.memberType]}
-                  </Text>
-                  <Text fontSize={{ base: '10px', lg: '16px' }}>
-                    {staff.nameJa}
-                  </Text>
-                </Box>
-              </Box>
-            </GridItem>
+                  </p>
+                  <p className="text-[10px] md:text-base">{staff.nameJa}</p>
+                </div>
+              </div>
+            </div>
           ))}
-        </Grid>
-        <Box display="flex" justifyContent="flex-end">
+        </div>
+        <div className="flex justify-end">
           <RainbowUnderlineLink link={OUR_TEAM} text="Overview" />
-        </Box>
+        </div>
       </CenteredContainer>
-      <Divider
-        orientation="horizontal"
-        mt="64px"
-        mx="auto"
-        w="90%"
-        borderColor="white"
-      />
-    </Box>
+      <hr className="mt-16! mx-auto! w-[90%] border! border-white! opacity-40" />
+    </div>
   );
 };

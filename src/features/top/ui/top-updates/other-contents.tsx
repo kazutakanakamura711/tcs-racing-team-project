@@ -1,6 +1,5 @@
-import { Box, HStack, Text } from '@chakra-ui/react';
-import { NewsItem } from '@/entities/news';
 import { FC } from 'react';
+import { NewsItem } from '@/entities/news';
 import { formatDate } from '@/shared/utils/date-format/date-format';
 import { NavigateFunction } from 'react-router-dom';
 import { UPDATE_DETAIL } from '@/shared/constants';
@@ -17,48 +16,33 @@ export const OtherContents: FC<Props> = ({
   navigate,
   selectedLanguage,
 }) => {
-  if (!updateArray) return <Box>データがありません。</Box>;
+  if (!updateArray) return <p className="text-light">データがありません。</p>;
+
   return (
     <>
       {updateArray.map(item => (
-        <Box
+        <div
           key={item.id}
-          borderBottom="solid 1px"
-          borderColor="text.white"
-          mb="16px"
-          cursor="pointer"
+          className="mb-4 cursor-pointer"
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
-          <HStack mb={2} overflow="hidden">
-            <Text className="text-accent-pink!">News |</Text>
-            <Text color="text.white" noOfLines={1}>
+          <div className="flex items-center gap-2 overflow-hidden mb-2">
+            <span className="text-accent-pink shrink-0">News |</span>
+            <span className="text-light truncate">
               {formatDate(item.publishedAt)}
-            </Text>
-          </HStack>
-          <Text
-            color="text.white"
-            fontSize={{ base: '14px', lg: '16px' }}
-            mb={2}
-            noOfLines={1}
-          >
+            </span>
+          </div>
+          <p className="text-light text-sm md:text-base mb-2! truncate">
             {item[`title${selectedLanguage}`]}
-          </Text>
-          <Text
-            color="text.white"
-            fontSize={{ base: '10px', lg: '16px' }}
-            mb={{ base: 2, lg: 4 }}
+          </p>
+          <div
+            className="text-light text-[10px] md:text-base mb-2 md:mb-4 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] overflow-hidden **:inline"
             dangerouslySetInnerHTML={{
               __html: cleanHtml(item[`content${selectedLanguage}`]),
             }}
-            sx={{
-              display: '-webkit-box',
-              WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: 1,
-              overflow: 'hidden',
-              '& *': { display: 'inline' },
-            }}
           />
-        </Box>
+          <hr className="border! border-white! opacity-40" />
+        </div>
       ))}
     </>
   );

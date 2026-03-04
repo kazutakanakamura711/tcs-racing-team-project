@@ -1,15 +1,12 @@
-import { HStack, Text } from '@chakra-ui/react';
-
 interface Props {
   text: string;
 }
 
 export const ScheduleTitle = ({ text }: Props) => {
   return (
-    <HStack borderBottom="solid 1px #83B833" display="inline-block" mb="16px">
-      <Text color="#fff" fontSize="22px">
-        {text}
-      </Text>
-    </HStack>
+    //  TODO: Chakraを削除したら!を外す
+    <div className="inline-block border-b! border-[#83B833]! mb-4">
+      <p className="text-light text-[22px]">{text}</p>
+    </div>
   );
 };

@@ -26,45 +26,50 @@ export const ImageCard: FC<ImageCardProps> = ({
       {updateArray.map((item, index) => (
         <div
           key={index}
-          className="relative cursor-pointer shadow-[5px_-5px_#626063] transition-shadow duration-300 ease-in-out hover:shadow-[10px_-10px_#626063]"
+          className="group relative cursor-pointer"
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
-          {isSquareImage ? (
-            <AspectRatio
-              ratio={1 / 1}
-              // TODO: Chakraを削除したら className を削除する
-              className="[&_img]:h-full [&_img]:object-cover [&>div]:h-full"
-            >
+          {/* 背面カード（影） */}
+          <div className="absolute inset-0 translate-x-1.25 -translate-y-1.25 bg-[#626063]" />
+
+          {/* 前面カード */}
+          <div className="relative transition-transform duration-300 ease-in-out hover:-translate-x-1.25 hover:translate-y-1.25">
+            {isSquareImage ? (
+              <AspectRatio
+                ratio={1 / 1}
+                className="[&_img]:h-full [&_img]:object-cover [&>div]:h-full"
+              >
+                <ImageFilter
+                  src={item.eyecatch?.url || noImageUrl}
+                  isHoverEffectEnabled={true}
+                />
+              </AspectRatio>
+            ) : (
               <ImageFilter
                 src={item.eyecatch?.url || noImageUrl}
                 isHoverEffectEnabled={true}
               />
-            </AspectRatio>
-          ) : (
-            <ImageFilter
-              src={item.eyecatch?.url || noImageUrl}
-              isHoverEffectEnabled={true}
-            />
-          )}
-          <div className="absolute bottom-0 p-4 z-10 w-full">
-            <div className="flex items-center overflow-hidden gap-1">
-              <span className="text-accent-pink text-xs md:text-base shrink-0">
-                News |
-              </span>
-              <span className="text-light text-xs md:text-base truncate">
-                {formatDate(item.publishedAt)}
-              </span>
+            )}
+            <div className="absolute bottom-0 p-4 z-10 w-full">
+              <div className="flex items-center overflow-hidden gap-1">
+                <span className="text-accent-pink text-xs md:text-base shrink-0">
+                  News |
+                </span>
+                <span className="text-light text-xs md:text-base truncate">
+                  {formatDate(item.publishedAt)}
+                </span>
+              </div>
+              <p className="text-light truncate">
+                {item[`title${selectedLanguage}`]}
+              </p>
+              <div
+                className="text-light text-[10px] md:text-base mb-2 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] overflow-hidden **:inline"
+                dangerouslySetInnerHTML={{
+                  __html: cleanHtml(item[`content${selectedLanguage}`]),
+                }}
+              />
+              <LinkUnderBarButton url="#" text="もっと見る" />
             </div>
-            <p className="text-light truncate">
-              {item[`title${selectedLanguage}`]}
-            </p>
-            <div
-              className="text-light text-[10px] md:text-base mb-2 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] overflow-hidden **:inline"
-              dangerouslySetInnerHTML={{
-                __html: cleanHtml(item[`content${selectedLanguage}`]),
-              }}
-            />
-            <LinkUnderBarButton url="#" text="もっと見る" />
           </div>
         </div>
       ))}
