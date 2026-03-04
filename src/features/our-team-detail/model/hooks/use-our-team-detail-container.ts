@@ -1,4 +1,3 @@
-import { useBreakpointValue } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -18,10 +17,9 @@ export const useOurTeamDetailContainer = () => {
   const member = parsedId ? getMemberById(parsedId) : undefined;
   const memberList = getOtherMembersList();
 
-  const heroImageSrc = useBreakpointValue({
-    base: member?.memberPageFirstViewBackgroundImageSp,
-    md: member?.memberPageFirstViewBackgroundImagePc,
-  });
+  const heroImageSrc = isTablet
+    ? member?.memberPageFirstViewBackgroundImageSp
+    : member?.memberPageFirstViewBackgroundImagePc;
 
   return {
     parsedId,

@@ -1,4 +1,3 @@
-import { useBreakpointValue } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '@/shared/hooks/use-language';
 import { useGetNews } from '@/shared/hooks/use-get-news';
@@ -14,10 +13,7 @@ export const useUpdatesDetailContainer = () => {
   // RelatedUpdatesコンポーネントが期待する形式 { news: NewsItem[] } に合わせる
   const updateArray = { news };
 
-  const heroImageSrc = useBreakpointValue({
-    base: '/images/updateContent/img-updateContent-top.jpeg',
-    lg: '/images/updateContent/img-updateContent-top.jpeg',
-  });
+  const heroImageSrc = '/images/updateContent/img-updateContent-top.jpeg';
 
   return {
     id,

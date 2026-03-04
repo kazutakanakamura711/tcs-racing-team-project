@@ -1,5 +1,4 @@
 import { Title } from '@/shared/ui/title';
-import { Box } from '@chakra-ui/react';
 import { Schedule, ScheduleHeroImage } from './ui';
 import { CenteredContainer } from '@/shared/ui';
 import { useScheduleContainer } from './model/hooks/use-schedule-container';
@@ -13,7 +12,7 @@ export const ScheduleContainer = () => {
   } = useScheduleContainer();
 
   if (!raceScheduleList || !eventScheduleList)
-    return <Box>データがありません。</Box>;
+    return <p className="text-light">データがありません。</p>;
 
   return (
     <>
@@ -27,23 +26,9 @@ export const ScheduleContainer = () => {
         selectedLanguage={selectedLanguage}
       />
       <CenteredContainer>
-        <Box mb={{ base: '144px', lg: '192px' }}>
-          {/* <Grid
-            templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
-            gap={0}
-            color="text.white"
-            fontWeight="bold"
-          >
-            {winCounterData.map((item, index) => (
-              <WinCounter
-                key={index}
-                count={item.count}
-                text={item.text}
-                isLastContent={index === winCounterData.length - 1}
-              />
-            ))}
-          </Grid> */}
-        </Box>
+        <div className="mb-36 md:mb-48">
+          {/* WinCounterコンポーネントを使う場合は、ここに配置 */}
+        </div>
       </CenteredContainer>
     </>
   );
