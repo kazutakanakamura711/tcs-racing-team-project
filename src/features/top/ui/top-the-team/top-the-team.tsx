@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { DirectorContent } from './director-content';
 import { TFunction } from 'i18next';
 import { NavigateFunction } from 'react-router-dom';
@@ -21,7 +20,7 @@ export const TopTheTeam: React.FC<Props> = ({
   navigate,
 }) => {
   return (
-    <Box mb="98px">
+    <div className="mb-24">
       <DirectorContent
         post={'株式会社 A-Union TCS 代表取締兼監督'}
         name={director.nameJa}
@@ -40,7 +39,6 @@ export const TopTheTeam: React.FC<Props> = ({
             leftImage={leftRider.ourTeamPageTheRiderSectionImagePath || ''}
             leftBg={leftRider.topTheTeamSectionBackgroundImagePath || ''}
             leftLink={OUR_TEAM_DETAIL.replace(':id', leftRider.id)}
-            leftId={leftRider.id}
             rightName={rightRider?.nameJa}
             rightComment={
               rightRider ? tTeamMember(`result.${rightRider.id}`) : undefined
@@ -50,11 +48,10 @@ export const TopTheTeam: React.FC<Props> = ({
             rightLink={
               rightRider ? OUR_TEAM_DETAIL.replace(':id', rightRider.id) : TOP
             }
-            rightId={rightRider?.id}
             navigate={navigate}
           />
         );
       })}
-    </Box>
+    </div>
   );
 };
