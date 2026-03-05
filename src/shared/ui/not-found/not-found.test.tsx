@@ -13,7 +13,9 @@ describe('NotFound', () => {
 
   it('404エラーメッセージが表示される', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <NotFound {...defaultProps} />
       </BrowserRouter>,
     );
@@ -29,7 +31,9 @@ describe('NotFound', () => {
 
   it('トップに戻るボタンが表示される', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <NotFound {...defaultProps} />
       </BrowserRouter>,
     );
@@ -46,7 +50,9 @@ describe('NotFound', () => {
     };
 
     render(
-      <BrowserRouter>
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <NotFound {...customProps} />
       </BrowserRouter>,
     );

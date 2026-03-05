@@ -9,7 +9,7 @@ describe('Footer', () => {
       <MemoryRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
-        <Footer isTablet={false} fontSize="14px" />
+        <Footer />
       </MemoryRouter>,
     );
     expect(screen.getByText('USEFUL LINKS')).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe('Footer', () => {
       <MemoryRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
-        <Footer isTablet={false} fontSize="14px" />
+        <Footer />
       </MemoryRouter>,
     );
     expect(screen.getByText('READ MORE ABOUT')).toBeInTheDocument();
@@ -39,7 +39,7 @@ describe('Footer', () => {
       <MemoryRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
-        <Footer isTablet={false} fontSize="14px" />
+        <Footer />
       </MemoryRouter>,
     );
     // テキストは条件付きで<br/>によって分割されますが、testing-libraryのテキストマッチャーは通常それを処理するか、正規表現を使用します。
@@ -53,7 +53,7 @@ describe('Footer', () => {
       <MemoryRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
-        <Footer isTablet={false} fontSize="14px" />
+        <Footer />
       </MemoryRouter>,
     );
     expect(screen.getByText(/Copyright.*TCS Racing Team/)).toBeInTheDocument();
