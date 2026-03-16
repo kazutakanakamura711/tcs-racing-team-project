@@ -21,7 +21,7 @@ export const ScheduleHeroImage: FC<Props> = ({ heroImageSrc }) => {
           className="
             mt-27 md:mt-0
             w-auto md:w-full
-            h-auto! md:h-full!
+            h-auto md:h-full
             object-contain md:object-cover
           "
         />

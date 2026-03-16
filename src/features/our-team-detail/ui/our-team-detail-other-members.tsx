@@ -24,7 +24,7 @@ export const OurTeamDetailOtherMembers: FC<Props> = ({
 
   return (
     <div className="mb-35">
-      <p className="text-[34px] font-bold text-center mb-22! text-light">
+      <p className="text-[34px] font-bold text-center mb-22 text-light">
         Other Members
       </p>
       {shouldUseGrid ? (

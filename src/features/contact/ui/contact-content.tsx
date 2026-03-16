@@ -28,7 +28,7 @@ export const ContactContent: FC<Props> = ({
       <div className="w-full md:w-[70%] h-full pt-24 pb-28.5 px-10 md:px-17 md:ml-[10%] bg-white flex flex-col gap-20">
         {/* Contact */}
         <div className="flex flex-col gap-8">
-          <h1 className="text-4xl! font-bold! w-full md:w-2/3">Contact</h1>
+          <h1 className="text-4xl font-bold w-full md:w-2/3">Contact</h1>
           <p className="w-full md:w-2/3 font-bold whitespace-pre-line">
             {t('title')}
           </p>
@@ -36,7 +36,7 @@ export const ContactContent: FC<Props> = ({
 
         {/* E-mail */}
         <div className="flex flex-col gap-8">
-          <h2 className="text-4xl! font-bold! w-full md:w-2/3">E-mail</h2>
+          <h2 className="text-4xl font-bold w-full md:w-2/3">E-mail</h2>
           <div className="flex flex-col gap-6">
             <p className="w-full md:w-2/3 font-bold">
               Please contact us by email at the email address below.
@@ -72,7 +72,7 @@ export const ContactContent: FC<Props> = ({
 
         {/* Social media */}
         <div className="flex flex-col gap-8">
-          <h2 className="text-4xl! font-bold! w-full md:w-2/3">Social media</h2>
+          <h2 className="text-4xl font-bold w-full md:w-2/3">Social media</h2>
           <div className="flex flex-col gap-6">
             <p className="font-bold w-full md:w-2/3">
               Follow us on social media.
@@ -123,7 +123,7 @@ export const ContactContent: FC<Props> = ({
 
       {/* Latest news */}
       <div className="static md:absolute md:top-1/2 md:right-[10%] md:-translate-y-1/2 w-[calc(100%-120px)] md:w-[30%] bg-[#666666] py-16 px-[5%] my-20 mx-15 md:m-0">
-        <p className="pb-4 text-2xl font-bold text-light border-b! border-light!">
+        <p className="pb-4 text-2xl font-bold text-light border-b border-light">
           Latest news
         </p>
         <LatestNewsList

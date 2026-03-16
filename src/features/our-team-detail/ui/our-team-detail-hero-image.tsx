@@ -38,7 +38,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
         <img
           src={member.memberPageFirstViewMemberImagePath}
           alt={member.nameJa}
-          className="absolute top-0 left-[20%] md:left-0 w-full h-auto md:h-full! object-contain object-[80%_bottom] md:object-[90%_bottom] z-1"
+          className="absolute top-0 left-[20%] md:left-0 w-full h-auto md:h-full object-contain object-[80%_bottom] md:object-[90%_bottom] z-1"
         />
       ) : (
         <div className="absolute top-0 left-[20%] md:left-0 w-full h-auto md:h-full z-1" />
@@ -58,7 +58,7 @@ export const OurTeamDetailHeroImage: FC<Props> = ({
       <div className="w-full px-0 mx-0 relative md:absolute md:top-0 md:left-0 md:h-full z-2 mt-6 md:mt-0">
         <div className="flex flex-col gap-3 relative md:absolute md:bottom-[15%] left-[6%] md:left-[12%] pb-5 md:pb-0">
           <h1
-            className="text-light whitespace-pre-line text-[32px]! font-bold! md:text-[100px]! leading-[1.1] uppercase"
+            className="text-light whitespace-pre-line text-[32px] font-bold md:text-[100px] leading-[1.1] uppercase"
             style={{ textShadow: '2px 2px 10px rgba(0,0,0,0.8)' }}
           >
             {member.nameEn.replace(' ', '\n')}

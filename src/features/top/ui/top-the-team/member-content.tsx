@@ -33,8 +33,8 @@ export const MemberContent: FC<Props> = ({
     >
       {/* テキスト */}
       <div className="absolute left-0 bottom-7.5 z-2 flex flex-col">
-        <p className="text-light font-bold text-sm md:text-2xl mb-4!">{name}</p>
-        <p className="text-light text-[10px]! md:text-xs! whitespace-pre-line">
+        <p className="text-light font-bold text-sm md:text-2xl mb-4">{name}</p>
+        <p className="text-light text-[10px] md:text-xs whitespace-pre-line">
           {comment}
         </p>
       </div>
@@ -43,7 +43,7 @@ export const MemberContent: FC<Props> = ({
         <AspectRatio ratio={1097 / 880}>
           {imageUrl && (
             <img
-              className="h-full! mx-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
+              className="h-full mx-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
               src={imageUrl}
               alt={name}
               loading="lazy"
@@ -60,7 +60,7 @@ export const MemberContent: FC<Props> = ({
         />
       </div>
       {/* 区切り線: モバイルのみ */}
-      <hr className="md:hidden absolute bottom-0 left-0 w-full border! border-white! opacity-40" />
+      <hr className="md:hidden absolute bottom-0 left-0 w-full border border-white opacity-40" />
     </div>
   );
 };

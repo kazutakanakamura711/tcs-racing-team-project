@@ -21,11 +21,11 @@ export const LatestNewsList: FC<Props> = ({
       {news.map(item => (
         <div
           key={item.id}
-          className="border-b! border-light! pt-7 pb-5 cursor-pointer"
+          className="border-b border-light pt-7 pb-5 cursor-pointer"
           onClick={() => navigate(UPDATE_DETAIL.replace(':id', item.id))}
         >
           <div className="flex items-center mb-4">
-            <p className="text-accent-pink! text-base font-bold">News |</p>
+            <p className="text-accent-pink text-base font-bold">News |</p>
             <p className="pl-2 text-base font-bold text-light">
               {formatDate(item.publishedAt)}
             </p>

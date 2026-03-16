@@ -75,7 +75,7 @@ export const Header: FC<Props> = ({
             aria-label="Select language"
             id="language-selector"
             name="language"
-            className="w-20 h-6.5 pl-4! bg-white text-dark! mr-4! md:mr-0! md:ml-4! text-sm"
+            className="w-20 h-6.5 pl-4 bg-white text-dark mr-4 md:mr-0 md:ml-4 text-sm"
             value={selectedLanguage}
             onChange={handleLanguageChange}
             style={{ borderRadius: '6px' }}
@@ -120,8 +120,7 @@ export const Header: FC<Props> = ({
               }}
             >
               <SheetHeader>
-                {/* TODO: Chakraを削除したら!を外す */}
-                <SheetTitle className="text-lg! font-bold!">Menu</SheetTitle>
+                <SheetTitle className="text-lg font-bold">Menu</SheetTitle>
               </SheetHeader>
               <nav
                 aria-label="Mobile navigation"

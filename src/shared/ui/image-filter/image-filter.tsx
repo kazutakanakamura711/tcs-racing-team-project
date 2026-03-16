@@ -18,7 +18,7 @@ export const ImageFilter: FC<Props> = ({
         }}
       />
       <img
-        className={`block w-full  object-cover h-[inherit]! ${
+        className={`block w-full  object-cover h-[inherit] ${
           isHoverEffectEnabled
             ? 'transition-transform duration-300 ease-in-out group-hover:scale-110'
             : ''

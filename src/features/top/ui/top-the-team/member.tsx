@@ -56,7 +56,7 @@ export const Member: FC<Props> = ({
               <MemberContent
                 backgroundUrl={rightBg}
                 name={rightName}
-                comment={rightComment!}
+                comment={rightComment || ''}
                 imageUrl={rightImage}
                 link={rightLink}
                 navigate={navigate}

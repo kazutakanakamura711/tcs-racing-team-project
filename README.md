@@ -301,7 +301,40 @@ src/
 
 MicroCMS の記事 ID が必要なため、現時点ではサイトマップに含めていません。
 
-## �🚢 デプロイ
+## 🎬 動画ファイルの管理 (Git LFS)
+
+動画ファイル（`public/movie/` 配下の `.mp4` など）は **Git LFS** で管理しています。
+
+### 動画ファイルを差し替える手順
+
+```bash
+# 1. 作業ブランチを作成
+git checkout -b your-branch-name
+
+# 2. リモート main の LFS オブジェクトをローカルに取得
+git lfs fetch origin main
+git lfs checkout
+
+# 3. 動画ファイルを差し替え（エクスプローラー or cp コマンド等）
+
+# 4. コミット
+git add public/movie/
+git commit -m "chore: replace video files"
+
+# 5. LFS オブジェクトを先に push（--all は使わない）
+git lfs push origin your-branch-name
+
+# 6. 通常の push
+git push origin your-branch-name
+```
+
+### 注意事項
+
+- **`git lfs push --all` は使わない**: 過去の履歴にある LFS オブジェクトまで対象になり、ローカルに存在しないオブジェクトがあるとエラーになります。ブランチ名を指定するだけで現在のブランチの LFS オブジェクトのみ push されます。
+- **手順2は必須**: 他のブランチ・他のマシンから作業する場合、LFS ポインタファイルのみがローカルにある状態になっています。`git lfs fetch` + `git lfs checkout` を実行しないと実体ファイルが存在しません。
+- **LFS push は git push より先に**: LFS オブジェクトを push する前に通常の git push をすると、リモート側で LFS オブジェクトが見つからずエラーになります。
+
+## 🚢 デプロイ
 
 本番環境へのデプロイ手順：
 

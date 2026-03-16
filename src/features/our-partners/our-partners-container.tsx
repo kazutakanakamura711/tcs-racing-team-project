@@ -25,7 +25,7 @@ export const OurPartnersContainer = () => {
           title="Supporter"
           imagePath={partnersImages.supporters}
         />
-        <hr className="w-full mb-10! border! border-white! opacity-40" />
+        <hr className="w-full mb-10 border border-white opacity-40" />
         <OurPartnersList
           title="Suppliers"
           imagePath={partnersImages.suppliers}
