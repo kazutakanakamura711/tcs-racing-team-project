@@ -37,7 +37,7 @@ export const OurTeamStaff: FC<Props> = ({
                   <p className="text-[18px]">{staff.nameJa}</p>
                   <div>
                     <img
-                      className="w-3 h-6!"
+                      className="w-3 h-6"
                       src="/images/common/ico-arrow-white-brock.svg"
                       alt=""
                     />

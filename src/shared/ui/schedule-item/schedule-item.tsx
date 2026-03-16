@@ -30,7 +30,7 @@ export const ScheduleItem = ({
           </div>
 
           {/* コンテンツ本体 */}
-          <div className="flex w-[calc(100%-48px)] gap-1 items-center pl-9! md:w-[calc(100%-62px)] md:pl-12.5">
+          <div className="flex w-[calc(100%-48px)] gap-1 items-center pl-9 md:w-[calc(100%-62px)]">
             {/* 日付 */}
             <div className="flex w-12.5 shrink-0 flex-col items-center justify-center text-center md:w-16">
               <span className="text-[10px] sm:text-[11px] md:text-xs">

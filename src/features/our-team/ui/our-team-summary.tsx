@@ -9,8 +9,7 @@ interface Props {
 export const OurTeamSummary: FC<Props> = ({ t }) => {
   return (
     <div className="mb-48 text-white">
-      {/* TODO: Chakraを削除したら!を外す */}
-      <hr className="w-[76%] mx-auto! border! border-white! opacity-40" />
+      <hr className="w-[76%] mx-auto border border-white opacity-40" />
       <div
         className="pt-18.5 pb-23 md:pb-29.5 bg-position-[80%]"
         style={{
@@ -30,8 +29,7 @@ export const OurTeamSummary: FC<Props> = ({ t }) => {
         </div>
       </div>
 
-      {/* TODO: Chakraを削除したら!を外す */}
-      <hr className="w-[76%] mx-auto! border! border-white! opacity-40" />
+      <hr className="w-[76%] mx-auto border border-white opacity-40" />
       <div
         className="pt-18.5 pb-23 md:pb-29.5"
         style={{
@@ -57,8 +55,7 @@ export const OurTeamSummary: FC<Props> = ({ t }) => {
         </div>
       </div>
 
-      {/* TODO: Chakraを削除したら!を外す */}
-      <hr className="w-[76%] mx-auto! border! border-white! opacity-40" />
+      <hr className="w-[76%] mx-auto border border-white opacity-40" />
       <div
         className="pt-18.5 pb-23 md:pb-29.5"
         style={{

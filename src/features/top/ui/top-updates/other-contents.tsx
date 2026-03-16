@@ -32,7 +32,7 @@ export const OtherContents: FC<Props> = ({
               {formatDate(item.publishedAt)}
             </span>
           </div>
-          <p className="text-light text-sm md:text-base mb-2! truncate">
+          <p className="text-light text-sm md:text-base mb-2 truncate">
             {item[`title${selectedLanguage}`]}
           </p>
           <div
@@ -41,7 +41,7 @@ export const OtherContents: FC<Props> = ({
               __html: cleanHtml(item[`content${selectedLanguage}`]),
             }}
           />
-          <hr className="border! border-white! opacity-40" />
+          <hr className="border border-white opacity-40" />
         </div>
       ))}
     </>

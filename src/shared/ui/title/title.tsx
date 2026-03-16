@@ -35,7 +35,7 @@ export const Title: FC<Props> = ({
 
       {/* Title */}
       <Heading
-        className={`absolute bottom-0 z-1 text-[24px]! font-bold! text-white md:text-[56px]! ${
+        className={`absolute bottom-0 z-1 text-[24px] font-bold text-white md:text-[56px] ${
           isCenter ? 'left-1/2 -translate-x-1/2' : 'left-0'
         }`}
       >

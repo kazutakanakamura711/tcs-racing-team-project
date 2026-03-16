@@ -56,7 +56,7 @@ export const TopStaff: FC<Props> = ({ staffList, navigate }) => {
           <RainbowUnderlineLink link={OUR_TEAM} text="Overview" />
         </div>
       </CenteredContainer>
-      <hr className="mt-16! mx-auto! w-[90%] border! border-white! opacity-40" />
+      <hr className="mt-16 mx-auto w-[90%] border border-white opacity-40" />
     </div>
   );
 };

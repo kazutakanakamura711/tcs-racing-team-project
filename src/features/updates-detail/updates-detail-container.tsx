@@ -24,8 +24,7 @@ export const UpdatesDetailContainer = () => {
         selectedLanguage={selectedLanguage}
       />
       <CenteredContainer>
-        {/* TODO: Chakraを削除したら!を外す */}
-        <p className="text-light text-2xl font-bold mb-10.5! md:text-[56px] ">
+        <p className="text-light text-2xl font-bold mb-10.5 md:text-[56px] ">
           Related Updates
         </p>
         {id && (

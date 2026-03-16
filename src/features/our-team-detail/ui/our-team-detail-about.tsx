@@ -21,8 +21,7 @@ export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
       <div className="hidden md:block relative overflow-hidden">
         {/* テキスト（高さの基準） */}
         <div className="relative w-[56%] text-light py-8 pl-8 z-10 min-h-137.5">
-          {/* TODO: Chakraを削除したら!を外す */}
-          <p className="text-[35px] font-bold mb-8!">
+          <p className="text-[35px] font-bold mb-8">
             {t(`aboutTitle.${member.id}`)}
           </p>
           <p className="leading-loose text-sm whitespace-pre-line">
@@ -33,7 +32,7 @@ export const OurTeamDetailAbout: FC<Props> = ({ member, t }) => {
         {/* 画像: テキストコンテナの高さに合わせる */}
         {member.memberPageAboutSectionImagesPath ? (
           <img
-            className="absolute inset-0 w-full h-full! object-contain object-right"
+            className="absolute inset-0 w-full h-full object-contain object-right"
             src={member.memberPageAboutSectionImagesPath}
             alt={member.nameJa}
           />

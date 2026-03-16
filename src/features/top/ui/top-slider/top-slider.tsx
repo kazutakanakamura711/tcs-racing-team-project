@@ -36,27 +36,23 @@ export const TopSlider: React.FC<{
           <CarouselContent className="ml-0">
             {images.map(image => (
               <CarouselItem key={image.id} className="pl-0">
-                {/* TODO: Chakraを削除したら!を外す */}
-                <div className="relative w-full overflow-hidden h-[calc(100vh-110px)]! md:h-[calc(100vh-50px)]!">
+                <div className="relative w-full overflow-hidden h-[calc(100vh-110px)] md:h-[calc(100vh-50px)]">
                   {image.isMovie ? (
                     <>
                       {isTablet ? (
                         // モバイル: 縦表示
-                        // TODO: Chakraを削除したら!を外す
-                        <h1 className="absolute font-bold! opacity-30 z-10 top-0 left-0 -rotate-90 text-[40px]! w-[calc(100vh-115px)] h-full bg-white bg-clip-text text-transparent">
+                        <h1 className="absolute font-bold opacity-30 z-10 top-0 left-0 -rotate-90 text-[40px] w-[calc(100vh-115px)] h-full bg-white bg-clip-text text-transparent">
                           Asia Union TCS Racing Team
                         </h1>
                       ) : (
                         // PC: 横表示
-                        // TODO: Chakraを削除したら!を外す
-                        <h1 className="absolute font-bold! opacity-30 z-10 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7vw]! text-center w-full bg-white bg-clip-text text-transparent">
+                        <h1 className="absolute font-bold opacity-30 z-10 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7vw] text-center w-full bg-white bg-clip-text text-transparent">
                           Asia Union TCS Racing Team
                         </h1>
                       )}
                       <video
                         key={isTablet ? 'sp' : 'pc'}
-                        // TODO: Chakraを削除したら!を外す
-                        className="object-cover w-full h-[calc(100vh-110px)]! md:h-[calc(100vh-50px)]!"
+                        className="object-cover w-full h-[calc(100vh-110px)] md:h-[calc(100vh-50px)]"
                         src={isTablet ? image.src.sp : image.src.pc}
                         autoPlay
                         loop
@@ -71,20 +67,17 @@ export const TopSlider: React.FC<{
                       <div className="absolute inset-0 bg-black opacity-50 z-10" />
                       {isTablet ? (
                         // モバイル: 縦表示
-                        // TODO: Chakraを削除したら!を外す
-                        <h1 className="absolute font-bold! opacity-30 z-20 top-0 left-0 -rotate-90 text-[40px]! w-[calc(100vh-115px)] h-full bg-white bg-clip-text text-transparent">
+                        <h1 className="absolute font-bold opacity-30 z-20 top-0 left-0 -rotate-90 text-[40px] w-[calc(100vh-115px)] h-full bg-white bg-clip-text text-transparent">
                           Asia Union TCS Racing Team
                         </h1>
                       ) : (
                         // PC: 横表示
-                        // TODO: Chakraを削除したら!を外す
-                        <h1 className="absolute font-bold! opacity-30 z-20 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7vw]! text-center w-full bg-white bg-clip-text text-transparent">
+                        <h1 className="absolute font-bold opacity-30 z-20 top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7vw] text-center w-full bg-white bg-clip-text text-transparent">
                           Asia Union TCS Racing Team
                         </h1>
                       )}
-                      {/* TODO: Chakraを削除したら!を外す */}
                       <img
-                        className="block w-full object-cover h-[calc(100vh-110px)]! md:h-[calc(100vh-50px)]!"
+                        className="block w-full object-cover h-[calc(100vh-110px)] md:h-[calc(100vh-50px)]"
                         src={isTablet ? image.src.sp : image.src.pc}
                         alt={image.alt}
                       />

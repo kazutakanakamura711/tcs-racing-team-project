@@ -32,10 +32,10 @@ export const DirectorContent: FC<Props> = ({
           <div className="min-h-70 md:min-h-114.25 py-25 relative">
             {/* テキスト */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 z-2">
-              <p className="text-light text-[10px] md:text-base mb-2 md:mb-3.5!">
+              <p className="text-light text-[10px] md:text-base mb-2 md:mb-3.5">
                 {post}
               </p>
-              <p className="text-light font-bold text-2xl md:text-[52px] mb-2! md:mb-17.5!">
+              <p className="text-light font-bold text-2xl md:text-[52px] mb-2 md:mb-17.5">
                 {name}
               </p>
               <p className="text-light text-[10px] md:text-base w-1/2 whitespace-pre-line">
@@ -67,7 +67,7 @@ export const DirectorContent: FC<Props> = ({
         </div>
 
         {/* 下線 */}
-        <hr className="border! border-white! opacity-40" />
+        <hr className="border border-white opacity-40" />
       </div>
     </div>
   );

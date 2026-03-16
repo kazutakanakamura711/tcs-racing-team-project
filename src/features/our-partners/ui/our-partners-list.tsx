@@ -13,7 +13,7 @@ interface Props {
 export const OurPartnersList: FC<Props> = ({ title, imagePath }) => {
   return (
     <div className="mb-12">
-      <p className="text-light text-[36px] font-bold mb-5!">{title}</p>
+      <p className="text-light text-[36px] font-bold mb-5">{title}</p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5">
         {imagePath.map((image, index) => (
           <Link
