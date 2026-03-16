@@ -4,9 +4,9 @@ Asia Union TCS Racing Team の公式ウェブサイト
 
 ## 🚀 技術スタック
 
-- **フレームワーク**: React 18 + TypeScript
+- **フレームワーク**: React 19 + TypeScript
 - **ビルドツール**: Vite
-- **UIライブラリ**: Chakra UI
+- **UIライブラリ**: Tailwind CSS v4 + shadcn/ui + Radix UI
 - **状態管理**: Zustand
 - **ルーティング**: React Router v6
 - **国際化**: i18next (日本語、英語、インドネシア語対応)
@@ -281,7 +281,27 @@ src/
 - そのため、`entities/news` と `entities/schedule` は現状のまま維持します。
 - MicroCMS のエンドポイント名（例: `blogs`）との差分は、型ラッパーや取得層で吸収します。
 
-## 🚢 デプロイ
+## �️ サイトマップ
+
+`npm run build` 実行時に `dist/sitemap.xml` が自動生成されます（[vite-plugin-sitemap](https://github.com/jbaubree/vite-plugin-sitemap) 使用）。
+
+### 静的ルート
+
+`vite.config.ts` の `dynamicRoutes` に直接記載しています。ルートを追加・削除した場合はここを更新してください。
+
+### `/our-team/:id` ルート
+
+`vite.config.ts` の `ourTeamDetailRoutes` 配列で管理しています。  
+メンバーを追加・削除した場合は `members.ts` の `MemberId` と合わせてこの配列も更新してください。
+
+> **注意**: `vite.config.ts` から `src/` 配下のファイルを直接 import することはできません。  
+> TypeScript の composite プロジェクト制約（`tsconfig.node.json` と `tsconfig.json` の競合）により、`src/` 内のファイルは `vite.config.ts` に import せず、ルートは直接記述してください。
+
+### `/updates/:id` ルート
+
+MicroCMS の記事 ID が必要なため、現時点ではサイトマップに含めていません。
+
+## �🚢 デプロイ
 
 本番環境へのデプロイ手順：
 

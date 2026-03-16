@@ -102,7 +102,7 @@ export const members: Record<MemberKey, Member> = {
     topTheTeamSectionImagePath:
       '/images/member/img-member-kohei-yamamoto-top-theTeam.webp',
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-kohei-yamamoto.png',
+      '/images/memberPage/img-memberPage-bg-kohei-yamamoto.webp',
     memberPageFirstViewMemberImagePath:
       '/images/memberPage/img-memberPage-kohei-yamamoto.webp',
     memberPageFirstViewBackgroundImagePc:
@@ -119,7 +119,7 @@ export const members: Record<MemberKey, Member> = {
     gradationImagesPath:
       '/images/member/img-member-yusuke-fukumitsu-gradation.webp',
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-yusuke-fukumitsu.jpeg',
+      '/images/memberPage/img-memberPage-bg-yusuke-fukumitsu.webp',
     memberPageFirstViewMemberImagePath:
       '/images/memberPage/img-memberPage-yusuke-fukumitsu.webp',
     memberPageFirstViewBackgroundImagePc:
@@ -143,7 +143,7 @@ export const members: Record<MemberKey, Member> = {
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-eusebia-nicole-rider.webp',
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-eusebia-nicole.jpeg',
+      '/images/memberPage/img-memberPage-bg-eusebia-nicole.webp',
     memberPageFirstViewMemberImagePath:
       '/images/memberPage/img-memberPage-eusebia-nicole.webp',
     memberPageFirstViewBackgroundImagePc:
@@ -167,7 +167,7 @@ export const members: Record<MemberKey, Member> = {
     nameEn: 'Deddy Kurniawan',
     memberType: MemberType.Staff,
     gradationImagesPath:
-      '/images/member/img-member-deddy-Kurniawan-gradation.png',
+      '/images/member/img-member-deddy-Kurniawan-gradation.webp',
     isTopTheStaff: true,
     isOurTeamTheStaffSub: true,
   },
@@ -178,9 +178,10 @@ export const members: Record<MemberKey, Member> = {
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '', //TODO: トップページの旗背景画像差し替え
-    topTheTeamSectionImagePath: '/images/member/img-member-rina-zaki-rider.png',
+    topTheTeamSectionImagePath:
+      '/images/member/img-member-rina-zaki-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-rina-zaki-rider.png',
+      '/images/member/img-member-rina-zaki-rider.webp',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
@@ -194,9 +195,9 @@ export const members: Record<MemberKey, Member> = {
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', //TODO: トップページの旗背景画像差し替え
     topTheTeamSectionImagePath:
-      '/images/member/img-member-ayaka-hiyoshi-rider.png',
+      '/images/member/img-member-ayaka-hiyoshi-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-ayaka-hiyoshi-rider.png',
+      '/images/member/img-member-ayaka-hiyoshi-rider.webp',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
@@ -210,9 +211,9 @@ export const members: Record<MemberKey, Member> = {
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '', //TODO: トップページの旗背景画像差し替え
     topTheTeamSectionImagePath:
-      '/images/member/img-member-tsewang-norboo-rider.png',
+      '/images/member/img-member-tsewang-norboo-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-tsewang-norboo-rider.png',
+      '/images/member/img-member-tsewang-norboo-rider.webp',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
@@ -226,9 +227,9 @@ export const members: Record<MemberKey, Member> = {
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', //TODO: トップページの旗背景画像差し替え
     topTheTeamSectionImagePath:
-      '/images/member/img-member-ikuta-yuga-rider.png',
+      '/images/member/img-member-ikuta-yuga-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-ikuta-yuga-rider.png',
+      '/images/member/img-member-ikuta-yuga-rider.webp',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
@@ -242,9 +243,10 @@ export const members: Record<MemberKey, Member> = {
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath:
       '/images/top/img-top-indonesia-flag.webp', //TODO: トップページの旗背景画像差し替え
-    topTheTeamSectionImagePath: '/images/member/img-member-kadek-dwi-rider.png',
+    topTheTeamSectionImagePath:
+      '/images/member/img-member-kadek-dwi-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-kadek-dwi-rider.png',
+      '/images/member/img-member-kadek-dwi-rider.webp',
     memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
     memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
     memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
