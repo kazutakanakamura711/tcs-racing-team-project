@@ -50,6 +50,7 @@ export const DirectorContent: FC<Props> = ({
                   className="transition-transform duration-300 ease-in-out group-hover:scale-105"
                   src={imagePath}
                   alt={name}
+                  loading="lazy"
                 />
               )}
             </div>

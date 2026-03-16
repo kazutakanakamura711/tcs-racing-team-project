@@ -67,7 +67,7 @@ export const members: Record<MemberKey, Member> = {
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-eusebia-nicole-rider.webp',
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-eusebia-nicole.jpeg',
+      '/images/memberPage/img-memberPage-bg-eusebia-nicole.webp',
     memberPageFirstViewMemberImagePath:
       '/images/memberPage/img-memberPage-eusebia-nicole.webp',
     memberPageFirstViewBackgroundImagePc:

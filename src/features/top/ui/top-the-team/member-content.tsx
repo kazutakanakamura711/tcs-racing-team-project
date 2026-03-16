@@ -46,6 +46,7 @@ export const MemberContent: FC<Props> = ({
               className="h-full! mx-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
               src={imageUrl}
               alt={name}
+              loading="lazy"
             />
           )}
         </AspectRatio>

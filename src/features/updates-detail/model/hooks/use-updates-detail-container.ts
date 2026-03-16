@@ -13,7 +13,7 @@ export const useUpdatesDetailContainer = () => {
   // RelatedUpdatesコンポーネントが期待する形式 { news: NewsItem[] } に合わせる
   const updateArray = { news };
 
-  const heroImageSrc = '/images/updateContent/img-updateContent-top.jpeg';
+  const heroImageSrc = '/images/updateContent/img-updateContent-top.webp';
 
   return {
     id,

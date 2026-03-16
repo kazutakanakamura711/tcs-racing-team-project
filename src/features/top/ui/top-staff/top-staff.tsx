@@ -40,6 +40,7 @@ export const TopStaff: FC<Props> = ({ staffList, navigate }) => {
                   src={staff.gradationImagesPath}
                   alt={staff.nameJa}
                   className="mx-auto w-full md:max-w-54 h-auto object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute top-[104%] left-[10%] -translate-y-full">
                   <p className="text-[10px] md:text-base">
