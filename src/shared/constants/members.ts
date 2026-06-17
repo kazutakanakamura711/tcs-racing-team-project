@@ -25,7 +25,7 @@ export const MemberId = {
   RinaZaki: 'rina-zaki',
   AyakaHiyoshi: 'ayaka-hiyoshi',
   TsewangNorboo: 'tsewang-norboo',
-  IkutaYuga: 'ikuta-yuga',
+  YugaIkuta: 'yuga-ikuta',
   KadekDwi: 'kadek-dwi',
 } as const;
 
@@ -49,8 +49,8 @@ export const parseMemberId = (id: string): MemberId | undefined => {
       return MemberId.AyakaHiyoshi;
     case MemberId.TsewangNorboo:
       return MemberId.TsewangNorboo;
-    case MemberId.IkutaYuga:
-      return MemberId.IkutaYuga;
+    case MemberId.YugaIkuta:
+      return MemberId.YugaIkuta;
     case MemberId.KadekDwi:
       return MemberId.KadekDwi;
     default:
@@ -67,7 +67,7 @@ export const MemberKey = {
   RinaZaki: 'RinaZaki',
   AyakaHiyoshi: 'AyakaHiyoshi',
   TsewangNorboo: 'TsewangNorboo',
-  IkutaYuga: 'IkutaYuga',
+  YugaIkuta: 'YugaIkuta',
   KadekDwi: 'KadekDwi',
 } as const;
 
@@ -96,19 +96,22 @@ export const members: Record<MemberKey, Member> = {
     id: MemberId.KoheiYamamoto,
     nameJa: '山本 幸平',
     nameEn: 'Kohei Yamamoto',
-    memberType: MemberType.Director,
+    memberType: MemberType.Director, // メンバーのタイプ
     gradationImagesPath:
-      '/images/member/img-member-kohei-yamamoto-gradation.webp',
+      '/images/member/img-member-kohei-yamamoto-gradation.webp', // メンバー個人ページのOtherMemberのスライドに使用(グラデーション画像のパス)
+    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', // トップページのTheTeamセクションの背景画像のパス
     topTheTeamSectionImagePath:
-      '/images/member/img-member-kohei-yamamoto-top-theTeam.webp',
+      '/images/member/img-member-kohei-yamamoto-top-theTeam.webp', // トップページのTheTeamセクションのメンバー画像のパス
+    ourTeamPageTheRiderSectionImagePath:
+      '/images/member/img-member-kohei-yamamoto-rider.webp', // OurTeamページのTheRiderセクションのメンバー画像のパス
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-kohei-yamamoto.webp',
+      '/images/memberPage/img-memberPage-bg-kohei-yamamoto.webp', // メンバー個人ページのAboutセクションの背景画像のパス
     memberPageFirstViewMemberImagePath:
-      '/images/memberPage/img-memberPage-kohei-yamamoto.webp',
+      '/images/memberPage/img-memberPage-kohei-yamamoto.webp', // メンバー個人ページのFirstViewのメンバー画像のパス
     memberPageFirstViewBackgroundImagePc:
-      '/images/memberPage/img-memberPage-top-kohei-yamamoto-pc.webp',
+      '/images/memberPage/img-memberPage-top-kohei-yamamoto-pc.webp', // メンバー個人ページのFirstViewの背景画像のパス（PC用）
     memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-kohei-yamamoto-sp.webp',
+      '/images/memberPage/img-memberPage-top-kohei-yamamoto-sp.webp', // メンバー個人ページのFirstViewの背景画像のパス（SP用）
     isOurTeamTheStaffMain: true,
   },
   [MemberKey.YusukeFukumitsu]: {
@@ -182,10 +185,14 @@ export const members: Record<MemberKey, Member> = {
       '/images/member/img-member-rina-zaki-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-rina-zaki-rider.webp',
-    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
-    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
-    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
-    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+    memberPageAboutSectionImagesPath:
+      '/images/memberPage/img-memberPage-bg-rina-zaki.webp',
+    memberPageFirstViewMemberImagePath:
+      '/images/memberPage/img-memberPage-rina-zaki.webp',
+    memberPageFirstViewBackgroundImagePc:
+      '/images/memberPage/img-memberPage-top-rina-zaki-pc.webp',
+    memberPageFirstViewBackgroundImageSp:
+      '/images/memberPage/img-memberPage-top-rina-zaki-sp.webp',
   },
   [MemberKey.AyakaHiyoshi]: {
     id: MemberId.AyakaHiyoshi,
@@ -193,15 +200,19 @@ export const members: Record<MemberKey, Member> = {
     nameEn: 'Ayaka Hiyoshi',
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
-    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', //TODO: トップページの旗背景画像差し替え
+    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-ayaka-hiyoshi-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-ayaka-hiyoshi-rider.webp',
-    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
-    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
-    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
-    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+    memberPageAboutSectionImagesPath:
+      '/images/memberPage/img-memberPage-bg-ayaka-hiyoshi.webp',
+    memberPageFirstViewMemberImagePath:
+      '/images/memberPage/img-memberPage-ayaka-hiyoshi.webp',
+    memberPageFirstViewBackgroundImagePc:
+      '/images/memberPage/img-memberPage-top-ayaka-hiyoshi-pc.webp',
+    memberPageFirstViewBackgroundImageSp:
+      '/images/memberPage/img-memberPage-top-ayaka-hiyoshi-sp.webp',
   },
   [MemberKey.TsewangNorboo]: {
     id: MemberId.TsewangNorboo,
@@ -214,26 +225,34 @@ export const members: Record<MemberKey, Member> = {
       '/images/member/img-member-tsewang-norboo-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-tsewang-norboo-rider.webp',
-    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
-    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
-    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
-    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+    memberPageAboutSectionImagesPath:
+      '/images/memberPage/img-memberPage-bg-tsewang-norboo.webp',
+    memberPageFirstViewMemberImagePath:
+      '/images/memberPage/img-memberPage-tsewang-norboo.webp',
+    memberPageFirstViewBackgroundImagePc:
+      '/images/memberPage/img-memberPage-top-tsewang-norboo-pc.webp',
+    memberPageFirstViewBackgroundImageSp:
+      '/images/memberPage/img-memberPage-top-tsewang-norboo-sp.webp',
   },
-  [MemberKey.IkutaYuga]: {
-    id: MemberId.IkutaYuga,
+  [MemberKey.YugaIkuta]: {
+    id: MemberId.YugaIkuta,
     nameJa: '幾田 悠雅',
-    nameEn: 'Ikuta Yuga',
+    nameEn: 'Yuga Ikuta',
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', //TODO: トップページの旗背景画像差し替え
     topTheTeamSectionImagePath:
-      '/images/member/img-member-ikuta-yuga-rider.webp',
+      '/images/member/img-member-yuga-ikuta-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
-      '/images/member/img-member-ikuta-yuga-rider.webp',
-    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
-    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
-    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
-    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+      '/images/member/img-member-yuga-ikuta-rider.webp',
+    memberPageAboutSectionImagesPath:
+      '/images/memberPage/img-memberPage-bg-yuga-ikuta.webp', //TODO: 個人ページのAboutセクション画像が来たら差し替え
+    memberPageFirstViewMemberImagePath:
+      '/images/memberPage/img-memberPage-yuga-ikuta.webp', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
+    memberPageFirstViewBackgroundImagePc:
+      '/images/memberPage/img-memberPage-top-yuga-ikuta-pc.webp', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
+    memberPageFirstViewBackgroundImageSp:
+      '/images/memberPage/img-memberPage-top-yuga-ikuta-sp.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
   [MemberKey.KadekDwi]: {
     id: MemberId.KadekDwi,
@@ -247,10 +266,14 @@ export const members: Record<MemberKey, Member> = {
       '/images/member/img-member-kadek-dwi-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-kadek-dwi-rider.webp',
-    memberPageAboutSectionImagesPath: '', //TODO: 個人ページのAboutセクション画像が来たら差し替え
-    memberPageFirstViewMemberImagePath: '', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
-    memberPageFirstViewBackgroundImagePc: '', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
-    memberPageFirstViewBackgroundImageSp: '', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+    memberPageAboutSectionImagesPath:
+      '/images/memberPage/img-memberPage-bg-kadek-dwi.webp', //TODO: 個人ページのAboutセクション画像が来たら差し替え
+    memberPageFirstViewMemberImagePath:
+      '/images/memberPage/img-memberPage-kadek-dwi.webp', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
+    memberPageFirstViewBackgroundImagePc:
+      '/images/memberPage/img-memberPage-top-kadek-dwi-pc.webp', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
+    memberPageFirstViewBackgroundImageSp:
+      '/images/memberPage/img-memberPage-top-kadek-dwi-sp.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
 } as const;
 
@@ -262,7 +285,9 @@ export const getTopTheStaffList = (): Member[] => {
 // OurTeamページのTheRiders使用する配列を取得
 export const getOurTeamPageTheRiderSectionList = (): Member[] => {
   return Object.values(members).filter(
-    member => member.ourTeamPageTheRiderSectionImagePath !== undefined,
+    member =>
+      member.memberType === MemberType.Rider &&
+      member.ourTeamPageTheRiderSectionImagePath !== undefined,
   );
 };
 
