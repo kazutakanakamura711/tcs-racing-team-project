@@ -192,7 +192,7 @@ export const members: Record<MemberKey, Member> = {
     memberPageFirstViewBackgroundImagePc:
       '/images/memberPage/img-memberPage-top-rina-zaki-pc.webp',
     memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-rina-zaki-sp.webp',
+      '/images/memberPage/img-memberPage-top-rina-zaki-pc.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
   [MemberKey.AyakaHiyoshi]: {
     id: MemberId.AyakaHiyoshi,
@@ -212,7 +212,7 @@ export const members: Record<MemberKey, Member> = {
     memberPageFirstViewBackgroundImagePc:
       '/images/memberPage/img-memberPage-top-ayaka-hiyoshi-pc.webp',
     memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-ayaka-hiyoshi-sp.webp',
+      '/images/memberPage/img-memberPage-top-ayaka-hiyoshi-pc.webp', // TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
   [MemberKey.TsewangNorboo]: {
     id: MemberId.TsewangNorboo,
@@ -232,7 +232,7 @@ export const members: Record<MemberKey, Member> = {
     memberPageFirstViewBackgroundImagePc:
       '/images/memberPage/img-memberPage-top-tsewang-norboo-pc.webp',
     memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-tsewang-norboo-sp.webp',
+      '/images/memberPage/img-memberPage-top-tsewang-norboo-pc.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
   [MemberKey.YugaIkuta]: {
     id: MemberId.YugaIkuta,
@@ -240,19 +240,19 @@ export const members: Record<MemberKey, Member> = {
     nameEn: 'Yuga Ikuta',
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
-    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp', //TODO: トップページの旗背景画像差し替え
+    topTheTeamSectionBackgroundImagePath: '/images/top/img-top-japan-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-yuga-ikuta-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-yuga-ikuta-rider.webp',
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-yuga-ikuta.webp', //TODO: 個人ページのAboutセクション画像が来たら差し替え
+      '/images/memberPage/img-memberPage-bg-yuga-ikuta.webp',
     memberPageFirstViewMemberImagePath:
-      '/images/memberPage/img-memberPage-yuga-ikuta.webp', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
+      '/images/memberPage/img-memberPage-yuga-ikuta.webp',
     memberPageFirstViewBackgroundImagePc:
-      '/images/memberPage/img-memberPage-top-yuga-ikuta-pc.webp', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
+      '/images/memberPage/img-memberPage-top-yuga-ikuta-pc.webp',
     memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-yuga-ikuta-sp.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+      '/images/memberPage/img-memberPage-top-yuga-ikuta-pc.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
   [MemberKey.KadekDwi]: {
     id: MemberId.KadekDwi,
@@ -261,19 +261,19 @@ export const members: Record<MemberKey, Member> = {
     memberType: MemberType.Rider,
     gradationImagesPath: '', //TODO: 個人ページのcarouselの画像が来たら差し替え
     topTheTeamSectionBackgroundImagePath:
-      '/images/top/img-top-indonesia-flag.webp', //TODO: トップページの旗背景画像差し替え
+      '/images/top/img-top-indonesia-flag.webp',
     topTheTeamSectionImagePath:
       '/images/member/img-member-kadek-dwi-rider.webp',
     ourTeamPageTheRiderSectionImagePath:
       '/images/member/img-member-kadek-dwi-rider.webp',
     memberPageAboutSectionImagesPath:
-      '/images/memberPage/img-memberPage-bg-kadek-dwi.webp', //TODO: 個人ページのAboutセクション画像が来たら差し替え
+      '/images/memberPage/img-memberPage-bg-kadek-dwi.webp',
     memberPageFirstViewMemberImagePath:
-      '/images/memberPage/img-memberPage-kadek-dwi.webp', //TODO: 個人ページのFirstViewメンバー画像が来たら差し替え
+      '/images/memberPage/img-memberPage-kadek-dwi.webp',
     memberPageFirstViewBackgroundImagePc:
-      '/images/memberPage/img-memberPage-top-kadek-dwi-pc.webp', //TODO: 個人ページのPC用FirstView背景画像が来たら差し替え
+      '/images/memberPage/img-memberPage-top-kadek-dwi-pc.webp',
     memberPageFirstViewBackgroundImageSp:
-      '/images/memberPage/img-memberPage-top-kadek-dwi-sp.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
+      '/images/memberPage/img-memberPage-top-kadek-dwi-pc.webp', //TODO: 個人ページのSP用FirstView背景画像が来たら差し替え
   },
 } as const;
 
