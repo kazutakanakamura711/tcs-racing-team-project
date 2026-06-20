@@ -31,7 +31,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate required build secrets
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+          VITE_UPDATES_CONTENTS_ID: ${{ secrets.VITE_UPDATES_CONTENTS_ID }}
+          VITE_RACE_SCHEDULE_CONTENTS_ID: ${{ secrets.VITE_RACE_SCHEDULE_CONTENTS_ID }}
+          VITE_EVENT_SCHEDULE_CONTENTS_ID: ${{ secrets.VITE_EVENT_SCHEDULE_CONTENTS_ID }}
+        run: |
+          test -n "$VITE_API_URL" || { echo "Missing secret: VITE_API_URL"; exit 1; }
+          test -n "$VITE_API_KEY" || { echo "Missing secret: VITE_API_KEY"; exit 1; }
+          test -n "$VITE_UPDATES_CONTENTS_ID" || { echo "Missing secret: VITE_UPDATES_CONTENTS_ID"; exit 1; }
+          test -n "$VITE_RACE_SCHEDULE_CONTENTS_ID" || { echo "Missing secret: VITE_RACE_SCHEDULE_CONTENTS_ID"; exit 1; }
+          test -n "$VITE_EVENT_SCHEDULE_CONTENTS_ID" || { echo "Missing secret: VITE_EVENT_SCHEDULE_CONTENTS_ID"; exit 1; }
+
       - name: Build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+          VITE_UPDATES_CONTENTS_ID: ${{ secrets.VITE_UPDATES_CONTENTS_ID }}
+          VITE_RACE_SCHEDULE_CONTENTS_ID: ${{ secrets.VITE_RACE_SCHEDULE_CONTENTS_ID }}
+          VITE_EVENT_SCHEDULE_CONTENTS_ID: ${{ secrets.VITE_EVENT_SCHEDULE_CONTENTS_ID }}
         run: npm run build
 
       - name: Deploy dist via FTPS
