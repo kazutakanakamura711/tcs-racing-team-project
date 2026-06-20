@@ -334,6 +334,20 @@ git push origin your-branch-name
 - **手順2は必須**: 他のブランチ・他のマシンから作業する場合、LFS ポインタファイルのみがローカルにある状態になっています。`git lfs fetch` + `git lfs checkout` を実行しないと実体ファイルが存在しません。
 - **LFS push は git push より先に**: LFS オブジェクトを push する前に通常の git push をすると、リモート側で LFS オブジェクトが見つからずエラーになります。
 
+### GitHub Actions での注意点
+
+GitHub Actions 上で動画が表示されない場合は、`actions/checkout` で LFS 実体を取得できていない可能性があります。
+
+`deploy.yml` などの checkout ステップで `lfs: true` を設定してください。
+
+```yaml
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      lfs: true
+```
+
 ## 🚢 デプロイ
 
 本番環境へのデプロイ手順：
