@@ -39,27 +39,36 @@ export const OurTeamDetailCarousel: React.FC<Props> = ({
         className="w-full"
       >
         <CarouselContent className="ml-0">
-          {memberList.map(member => (
-            <CarouselItem key={member.id} className="pl-2 basis-1/4">
-              <div
-                className="w-full aspect-square overflow-hidden cursor-pointer"
-                onClick={() => {
-                  navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
-                }}
-              >
-                {member.gradationImagesPath && (
-                  <img
-                    className="block w-full h-full object-cover"
-                    src={member.gradationImagesPath}
-                    alt={member.nameJa}
-                  />
-                )}
-              </div>
-              <p className="text-base text-white text-center mt-1">
-                {member.nameEn.toUpperCase()}
-              </p>
-            </CarouselItem>
-          ))}
+          {memberList.map(member => {
+            const hasImage = Boolean(member.gradationImagesPath);
+
+            return (
+              <CarouselItem key={member.id} className="pl-2 basis-1/4">
+                <div
+                  className={`w-full aspect-square overflow-hidden ${hasImage ? 'cursor-pointer' : 'bg-[#232323] flex items-center justify-center px-4'}`}
+                  onClick={() => {
+                    if (!hasImage) return;
+                    navigate(OUR_TEAM_DETAIL.replace(':id', member.id));
+                  }}
+                >
+                  {hasImage ? (
+                    <img
+                      className="block w-full h-full object-cover"
+                      src={member.gradationImagesPath}
+                      alt={member.nameJa}
+                    />
+                  ) : (
+                    <p className="text-white/80 text-sm text-center">
+                      Coming soon..
+                    </p>
+                  )}
+                </div>
+                <p className="text-base text-white text-center mt-1">
+                  {member.nameEn.toUpperCase()}
+                </p>
+              </CarouselItem>
+            );
+          })}
         </CarouselContent>
       </Carousel>
 

@@ -94,6 +94,29 @@ export const members: Record<MemberKey, Member> = {
 - メンバーページ画像: `img-memberPage-{member-id}.webp`
 - メンバーページトップビュー: `img-memberPage-top-{member-id}-pc.webp` / `-sp.webp`
 
+### 2.1 画像パスの役割
+
+`src/shared/constants/members.ts` の各画像パスは、次の画面・用途に対応しています。
+
+- `gradationImagesPath`
+  - 個人ページの `Other Members` スライドで使用するグラデーション画像
+- `topTheTeamSectionBackgroundImagePath`
+  - トップページ `TheTeam` セクションの背景画像
+- `topTheTeamSectionImagePath`
+  - トップページ `TheTeam` セクションのメンバー画像
+- `ourTeamPageTheRiderSectionImagePath`
+  - `OurTeam` ページ `TheRiders` セクションのメンバー画像
+- `memberPageAboutSectionImagesPath`
+  - 個人ページ `About` セクションの背景画像
+- `memberPageFirstViewMemberImagePath`
+  - 個人ページ `FirstView` のメンバー画像
+- `memberPageFirstViewBackgroundImagePc`
+  - 個人ページ `FirstView` の背景画像 `PC` 用
+- `memberPageFirstViewBackgroundImageSp`
+  - 個人ページ `FirstView` の背景画像 `SP` 用
+
+更新時は、`members.ts` のコメントよりもこの一覧を参照してください。
+
 ### 3. 翻訳ファイルの更新
 
 以下の3つのロケールファイルに翻訳を追加します：
