@@ -6,25 +6,26 @@ export type Partner = {
 };
 
 export type PartnersKey =
-  | 'alpenBlick'
-  | 'blisStage'
-  | 'hokuei'
-  | 'polygonBike'
-  | 'naturalWin'
-  | 'repetir'
-  | 'yowapeda'
-  | 'revoFish'
-  | 'kabuto'
-  | 'hirooSangyo'
-  | 'houseWs'
-  | 'beeSpeed'
-  | 'shibaken'
-  | 'honda'
-  | 'maxxis'
-  | 'fox'
-  | 'raceface'
-  | 'proApparel'
-  | 'inno';
+  | 'alpenBlick' // アルペンブリックリゾート
+  | 'blisStage' // 株式会社ブリステージ
+  | 'hokuei' // 北英電工株式会社
+  | 'naturalWin' // ナチュラルウィン
+  | 'yowapeda' // 弱虫ペダル
+  | 'revoFish' // 池下産業株式会社（Revofish）
+  | 'sgElectrical' // SG Electrical
+  | 'kabuto' // 株式会社ＯＧＫカブト
+  | 'hirooSangyo' // ヒロオ産業
+  | 'houseWs' // 株式会社渡部製作所
+  | 'beeSpeed' // BEESPEED (EXLUB)
+  | 'shibaken' // 株式会社芝堅
+  | 'honda' // HONDA
+  | 'maxxis' // MAXXIS（タイヤ）
+  | 'fox' // Fox
+  | 'raceface' // Raceface
+  | 'proApparel' // Proapparel
+  | 'inno' // 株式会社カーメイト（Inno）
+  | 'crazyBoost' // Crazy Boost
+  | 'asics'; // Asics
 
 export const partners: Record<PartnersKey, Partner> = {
   alpenBlick: {
@@ -45,23 +46,11 @@ export const partners: Record<PartnersKey, Partner> = {
     partnersPageLogoImageWidth: '64px',
     commonLogoImageWidth: '80px',
   },
-  polygonBike: {
-    imagePath: '/images/partner/img-sponsor-polygonbike.png',
-    link: 'https://www.polygonbikes.com/',
-    partnersPageLogoImageWidth: '80px',
-    commonLogoImageWidth: '96px',
-  },
   naturalWin: {
     imagePath: '/images/partner/img-sponsor-naturalWin.webp',
     link: 'https://www.3plmnt.co.jp/',
     partnersPageLogoImageWidth: '72px',
     commonLogoImageWidth: '80px',
-  },
-  repetir: {
-    imagePath: '/images/partner/img-sponsor-repetir.webp',
-    link: 'https://repetir.official.ec/',
-    partnersPageLogoImageWidth: '96px',
-    commonLogoImageWidth: '104px',
   },
   yowapeda: {
     imagePath: '/images/partner/img-sponsor-yowapeda.webp',
@@ -74,6 +63,12 @@ export const partners: Record<PartnersKey, Partner> = {
     link: 'https://www.revofish.com/',
     partnersPageLogoImageWidth: '64px',
     commonLogoImageWidth: '80px',
+  },
+  sgElectrical: {
+    imagePath: '/images/partner/img-sg-electrical.jpg',
+    link: '',
+    partnersPageLogoImageWidth: '136px',
+    commonLogoImageWidth: '160px',
   },
   kabuto: {
     imagePath: '/images/partner/img-sponsor-kabuto.webp',
@@ -133,6 +128,16 @@ export const partners: Record<PartnersKey, Partner> = {
     link: 'https://www.innoracks.com/',
     partnersPageLogoImageWidth: '112px',
   },
+  crazyBoost: {
+    imagePath: '/images/partner/img-crazy-boost.jpg',
+    link: '',
+    partnersPageLogoImageWidth: '132px',
+  },
+  asics: {
+    imagePath: '/images/partner/img-asics.png',
+    link: '',
+    partnersPageLogoImageWidth: '112px',
+  },
 } as const;
 
 export type PartnerCategory =
@@ -147,22 +152,24 @@ export type PartnerCategory =
 // スポンサーのカテゴリごとの配列を作成
 export const partnersImages: Record<PartnerCategory, Partner[]> = {
   black: [partners.alpenBlick],
-  platinum: [partners.blisStage, partners.hokuei, partners.polygonBike],
+  platinum: [partners.blisStage, partners.hokuei],
   gold: [
     partners.naturalWin,
-    partners.repetir,
     partners.yowapeda,
     partners.revoFish,
+    partners.sgElectrical,
   ],
-  silver: [partners.kabuto],
+  silver: [partners.kabuto, partners.inno],
   bronze: [partners.hirooSangyo, partners.houseWs],
-  supporters: [partners.beeSpeed, partners.shibaken],
+  supporters: [partners.shibaken],
   suppliers: [
+    partners.beeSpeed,
     partners.honda,
     partners.maxxis,
     partners.fox,
     partners.raceface,
     partners.proApparel,
-    partners.inno,
+    partners.crazyBoost,
+    partners.asics,
   ],
 } as const;
