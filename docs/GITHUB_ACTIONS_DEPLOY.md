@@ -6,9 +6,16 @@ main ブランチへの push（PR merge を含む）をトリガーに、GitHub 
 
 main ブランチへ push
 -> .github/workflows/deploy.yml が起動
+-> .nvmrc の Node.js をセットアップ
 -> npm ci
 -> npm run build
 -> dist/ を FTPS でサーバへ転送
+
+### Node.js と Actions のバージョン
+
+- ビルドに使用する Node.js は `.nvmrc` の `24.22.1` です。`actions/setup-node` の `node-version-file` で読み込み、ローカルの `nvm install` / `nvm use` と揃えています。
+- Actions は `actions/checkout@v7.0.1`、`actions/setup-node@v7.1.0`、`SamKirkland/FTP-Deploy-Action@v4.4.0` を使用します。いずれも Action 自体は Node.js 24 で動作します。この実行環境は `.nvmrc` で指定するビルド用 Node.js とは別です。
+- Node.js を更新する場合は `.nvmrc` を変更し、ローカルで依存関係のインストール・ビルド・Lint・テストを確認してください。
 
 ### 事前準備
 

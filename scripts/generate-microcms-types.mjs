@@ -1,4 +1,3 @@
-/* eslint-env node */
 /*
  * MicroCMS schema JSON から TypeScript 型を再生成するスクリプト。
  * 1) cms-schemas/api-*.json を一時ディレクトリへコピー（CLIが要求する命名に変換）
