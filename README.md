@@ -18,10 +18,10 @@ Asia Union TCS Racing Team の公式ウェブサイト
 
 ## 📋 必要な環境
 
-- Node.js: `>=20.0.0`
+- Node.js: `24.22.1`（`.nvmrc` で管理）
 - npm: `>=10.0.0`
 
-推奨: `nvm` を使用してNode.jsバージョンを管理
+推奨: `nvm` を使用してNode.jsバージョンを管理します。ローカルとGitHub Actionsは `.nvmrc` のバージョンを使用します。
 
 ## 🛠️ セットアップ
 
@@ -29,6 +29,10 @@ Asia Union TCS Racing Team の公式ウェブサイト
 # リポジトリをクローン
 git clone https://github.com/kazutakanakamura711/tcs-racing-team-project.git
 cd tcs-racing-team-project
+
+# .nvmrc に指定した Node.js をインストール・使用
+nvm install
+nvm use
 
 # 依存関係をインストール
 npm install
@@ -343,7 +347,7 @@ GitHub Actions 上で動画が表示されない場合は、`actions/checkout` �
 ```yaml
 steps:
   - name: Checkout repository
-    uses: actions/checkout@v4
+    uses: actions/checkout@v7.0.1
     with:
       lfs: true
 ```
